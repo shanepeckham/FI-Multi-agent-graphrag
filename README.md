@@ -64,7 +64,7 @@ APPLICATIONINSIGHTS_CONNECTION_STRING=your_connection_string_here
 
 # Optional - Model Configurations (defaults provided)
 MODEL_DEPLOYMENT_NAME=gpt-4.1
-REASONING_MODEL_DEPLOYMENT_NAME=o3-mini
+REASONING_MODEL_DEPLOYMENT_NAME=o3-mini  # Used for complex analytical reasoning when use_reasoning=true
 AI_SEARCH_TYPE=SIMPLE
 GRAPH_QUERY_TYPE=local
 AI_SEARCH_INDEX_NAME=your_search_index_name
@@ -130,7 +130,8 @@ curl -X POST "http://localhost:8000/query_team" \
     "search_query_type": "SEMANTIC",
     "use_search": true,
     "use_graph": true,
-    "use_web": false
+    "use_web": false,
+    "use_reasoning": false
   }'
 ```
 
@@ -153,7 +154,8 @@ Send financial queries to the agent team. The system will automatically route yo
   "search_query_type": "SEMANTIC", 
   "use_search": true,
   "use_graph": true,
-  "use_web": false
+  "use_web": false,
+  "use_reasoning": false
 }
 ```
 
@@ -165,6 +167,7 @@ Send financial queries to the agent team. The system will automatically route yo
 - `use_search`: Enable Azure AI Search for document retrieval (default: `true`)
 - `use_graph`: Enable GraphRAG knowledge graph queries (default: `true`)
 - `use_web`: Enable Bing Search for external data (default: `false`)
+- `use_reasoning`: Enable reasoning capabilities for complex queries (default: `false`)
 
 #### Response
 
@@ -184,7 +187,7 @@ Send financial queries to the agent team. The system will automatically route yo
 ### Example Queries
 
 ```bash
-# Revenue analysis
+# Basic revenue analysis
 curl -X POST "http://localhost:8000/query_team" \
   -H "Content-Type: application/json" \
   -d '{"query": "Analyze the revenue trends by segment", "graph_query_type": "global", "search_query_type": "SEMANTIC"}'
@@ -198,6 +201,16 @@ curl -X POST "http://localhost:8000/query_team" \
 curl -X POST "http://localhost:8000/query_team" \
   -H "Content-Type: application/json" \
   -d '{"query": "Current market conditions affecting our industry", "use_web": true}'
+
+# Complex financial analysis (with reasoning)
+curl -X POST "http://localhost:8000/query_team" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "Evaluate the overall financial health of the company and provide investment recommendations", "use_reasoning": true, "use_search": true, "use_graph": true}'
+
+# Strategic analysis with reasoning
+curl -X POST "http://localhost:8000/query_team" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "Given the current financial data, what are the long-term strategic risks and opportunities?", "use_reasoning": true, "graph_query_type": "global"}'
 ```
 
 ## 🔧 Environment Variables Reference
@@ -315,7 +328,19 @@ graph TB
 - **Intelligent Routing**: Coordinator agent automatically routes queries to the most appropriate specialist
 - **Multi-Source Data**: Combines internal knowledge graphs, document search, and external web data
 - **LLM-Powered**: Each agent uses Large Language Models (LLM) for intelligent processing
+- **Reasoning Capabilities**: Advanced reasoning mode using specialized models (o3-mini) for complex analytical tasks
 - **Conversational Interface**: Natural language interaction through the User Proxy Agent
+
+### Reasoning Mode
+
+When `use_reasoning: true` is enabled, the system uses a specialized reasoning model (`o3-mini` by default) for complex analytical tasks such as:
+
+- **Strategic Analysis**: Long-term financial planning and risk assessment
+- **Investment Recommendations**: Comprehensive evaluation of financial health and investment viability
+- **Complex Correlations**: Multi-factor analysis across different data sources
+- **Scenario Planning**: What-if analysis and future projections
+
+The reasoning mode is particularly useful for complex queries that require deeper analytical thinking and synthesis across multiple data points.
 
 Each agent is optimized for specific types of financial analysis tasks, providing comprehensive coverage of both internal documents and external market data.
 

@@ -25,10 +25,7 @@ REQUIREMENTS:
     - Environment variables: OPENAI_API_KEY, AZURE_* credentials
 
 Environment Variables:
-    OPENAI_API_KEY: OpenAI API key for language models
-    AZURE_CLIENT_ID: Azure client ID for authentication
-    AZURE_CLIENT_SECRET: Azure client secret
-    AZURE_TENANT_ID: Azure tenant ID
+    AZURE_OPENAI_API_KEY: Azure OpenAI API key for language models
 """
 
 """
@@ -38,10 +35,10 @@ All sensitive information and configuration values have been moved to environmen
 The following variables are supported in the .env file:
 
 REQUIRED VARIABLES:
-- OPENAI_API_KEY: OpenAI API key for language models
-- GRAPHRAG_API_KEY: Azure OpenAI API key (used as AZURE_OPENAI_API_KEY)
+- AZURE_OPENAI_API_KEY: Azure OpenAI API key for language models
+- API_KEY: API key for securing FastAPI endpoints (auto-generated if not provided)
 
-OPTIONAL VARIABLES (with defaults):
+OPTIONAL VARIABLES:
 - ENV_FILE_PATH: Path to .env file (default: "/Users/shanepeckham/sources/graphrag/apple/.env")
 - PROJECT_ENDPOINT: Azure AI Project endpoint (default: Azure fiagent endpoint)
 - AZURE_OPENAI_ENDPOINT: Azure OpenAI endpoint (default: Azure fiagent cognitive services)
@@ -53,14 +50,9 @@ OPTIONAL VARIABLES (with defaults):
 - RAW_INPUT_PATH: Raw input data path
 - OUTPUT_PATH: Output data path
 - GRAPH_OUTPUT_PATH: Graph output data path
-- CONFIG_PATH: Configuration file path (default: "./config.json")
 - INPUT_DIR: Input directory for GraphRAG (default: "./apple/output")
 
-SECURITY IMPROVEMENTS:
-- All hardcoded API keys have been removed
-- Sensitive endpoints are now configurable
-- File paths can be customized for different environments
-- Environment file path is configurable for deployment flexibility
+
 """
 
 # pylint: disable=line-too-long,useless-suppression
@@ -74,7 +66,9 @@ SECURITY IMPROVEMENTS:
 # Core imports
 import asyncio
 import logging
+import hashlib
 import os
+import secrets
 import sys
 import threading
 import time
@@ -178,7 +172,8 @@ from utils.agent_team import AgentTeam, AgentTask
 from utils.agent_trace_configurator import AgentTraceConfigurator
 
 # FastAPI imports
-from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Security
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -256,6 +251,10 @@ class QueryRequest(BaseModel):
         default=False,
         description="Whether to use Bing Search for external information grounding"
     )
+    use_reasoning: bool = Field(
+        default=False,
+        description="Whether to use reasoning capabilities for complex queries"
+    )
 
 # FastAPI app initialization
 app = FastAPI(
@@ -311,7 +310,7 @@ def _load_environment_variables() -> None:
         ValueError: If required environment variables are missing
     """
     # Load environment variables from .env file
-    env_file_path = os.getenv("ENV_FILE_PATH", "/Users/shanepeckham/sources/graphrag/apple/.env")
+    env_file_path = os.getenv("ENV_FILE_PATH", "/Users/shanepeckham/sources/graphrag/app/.env")
     load_dotenv(env_file_path)
     
     # Verify critical environment variables
@@ -381,17 +380,64 @@ SAMPLE_QUESTIONS = [
 # Current question being processed
 CURRENT_QUESTION = "Are there any drops in revenue? If yes, what are the reasons for the drop? Which services/products are affected? What is the percentage drop in revenue? "
 
-REASON = False
-
-if REASON:
-    # If reasoning is enabled, set the current question to a reasoning task
-    CURRENT_QUESTION = (
+REASON_CURRENT_QUESTION = (
         "Given only the information provided to you, evaluate the financial health of the company. "
         "What are the key indicators of financial health? "
         "What are the key risks to financial health? What are the key opportunities for financial health? "
         "What is your overall assessment of the company's financial health? Would you invest in this company? "
         "Why or why not?"
     )
+
+# ==============================================================================
+# API SECURITY CONFIGURATION
+# ==============================================================================
+
+# Generate a secure API key (in production, store this in environment variables)
+# You should set this in your .env file: API_KEY=your_secure_key_here
+DEFAULT_API_KEY = "graphrag_" + secrets.token_urlsafe(32)
+
+# Load API key from environment or use generated default
+API_KEY = os.getenv("API_KEY", DEFAULT_API_KEY)
+
+# Hash the API key for secure comparison
+API_KEY_HASH = hashlib.sha256(API_KEY.encode()).hexdigest()
+
+# Security scheme for FastAPI
+security = HTTPBearer()
+
+def verify_api_key(credentials: HTTPAuthorizationCredentials = Depends(security)) -> bool:
+    """
+    Verify the provided API key against the stored hash.
+    
+    Args:
+        credentials: The Bearer token credentials from the request header
+        
+    Returns:
+        bool: True if the API key is valid
+        
+    Raises:
+        HTTPException: If the API key is invalid or missing
+    """
+    if not credentials:
+        raise HTTPException(
+            status_code=401,
+            detail="Missing API key",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
+    # Hash the provided token for comparison
+    provided_hash = hashlib.sha256(credentials.credentials.encode()).hexdigest()
+    
+    # Compare hashes to prevent timing attacks
+    if not secrets.compare_digest(API_KEY_HASH, provided_hash):
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid API key",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
+    return True
+
 # ==============================================================================
 # AZURE AI CLIENT INITIALIZATION
 # ==============================================================================
@@ -902,57 +948,7 @@ def _create_agent_toolsets() -> Tuple[ToolSet, AsyncToolSet]:
     
     return sync_toolset, async_toolset
 
-def _create_search_tools(project_client: AIProjectClient) -> Tuple[AzureAISearchTool, BingGroundingTool]:
-    """
-    Create search tools for agents.
-    
-    Args:
-        project_client: Azure AI Project client
-        
-    Returns:
-        Tuple[AzureAISearchTool, BingGroundingTool]: (search_tool, bing_tool)
-    """
-    # Azure AI Search tool
-    search_conn = project_client.connections.get(name="agentsearcher", include_credentials=True)
-
-    if AI_SEARCH_TYPE == "SEMANTIC":
-        search_tool = AzureAISearchTool(
-            index_connection_id=search_conn.id,
-            index_name=AI_SEARCH_INDEX_NAME,
-            query_type=AzureAISearchQueryType.SEMANTIC,
-            top_k=3,
-            filter=""
-        )
-    elif AI_SEARCH_TYPE == "SIMPLE":
-        search_tool = AzureAISearchTool(
-            index_connection_id=search_conn.id,
-            index_name=AI_SEARCH_INDEX_NAME,
-            query_type=AzureAISearchQueryType.SIMPLE,
-            top_k=3,
-            filter=""
-        )
-    else:
-        # Default to SEMANTIC if type is not recognized
-        search_tool = AzureAISearchTool(
-            index_connection_id=search_conn.id,
-            index_name=AI_SEARCH_INDEX_NAME,
-            query_type=AzureAISearchQueryType.SEMANTIC,
-            top_k=3,
-            filter=""
-        )
-
-    # Bing Search tool
-    if not REASON:
-        # Limited external data access for non-reasoning agents
-        bing_conn = project_client.connections.get(name="agentbing", include_credentials=True)
-    else:
-        # Full external data access for reasoning agents
-        bing_conn = project_client.connections.get(name="bingagent", include_credentials=True)
-    bing_tool = BingGroundingTool(connection_id=bing_conn.id)
-    
-    return search_tool, bing_tool
-
-def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_query_type: str, use_search: bool, use_graph: bool, use_web: bool) -> str:
+def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_query_type: str, use_search: bool, use_graph: bool, use_web: bool, use_reasoning: bool) -> str:
     """
     Set up and run the agent team using pre-loaded global resources.
     
@@ -986,6 +982,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         with open(file_path, "r") as config_file:
             config = yaml.safe_load(config_file)
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS"].strip()
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS"].strip()
             RAG_AGENT_INSTRUCTIONS = config["RAG_AGENT_INSTRUCTIONS"].strip()
             KG_AGENT_INSTRUCTIONS = config["KG_AGENT_INSTRUCTIONS"].strip()
             BING_AGENT_INSTRUCTIONS = config["BING_AGENT_INSTRUCTIONS"].strip()
@@ -993,25 +990,46 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
             KG_AGENT_DESCRIPTION = config["KG_AGENT_DESCRIPTION"].strip()
             BING_AGENT_DESCRIPTION = config["BING_AGENT_DESCRIPTION"].strip()
 
-            if use_search:
-                print(f"Using search type: {search_query_type}")
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{RAG_AGENT_DESCRIPTION}"
+            if not use_reasoning:
+                if use_search:
+                    print(f"Using search type: {search_query_type}")
+                    TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{RAG_AGENT_DESCRIPTION}"
 
-            if use_graph:
-                print(f"Using graph type: {graph_query_type}")
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{KG_AGENT_DESCRIPTION}"
+                if use_graph:
+                    print(f"Using graph type: {graph_query_type}")
+                    TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{KG_AGENT_DESCRIPTION}"
 
-            if use_web:
-                print(f"Using web type: {BING_AGENT_DESCRIPTION}")
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{BING_AGENT_DESCRIPTION}"
+                if use_web:
+                    print(f"Using web type: {BING_AGENT_DESCRIPTION}")
+                    TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{BING_AGENT_DESCRIPTION}"
+            else:
+                # Reasoning agent uses different instructions
+                if use_search:
+                    TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{RAG_AGENT_DESCRIPTION}"
+                if use_graph:
+                    TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{KG_AGENT_DESCRIPTION}"
+                if use_web:
+                    TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{BING_AGENT_DESCRIPTION}"
+                # If no question is provided, use the reasoning current question
+                if question == "":
+                    question = REASON_CURRENT_QUESTION
 
         # Configure Team Leader (simplified configuration)
-        agent_team.set_team_leader(
-            model=MODEL_DEPLOYMENT_NAME,
-            name="TeamLeader",
-            instructions=(TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS),
-            toolset=sync_toolset,
-        )
+        if not use_reasoning:
+            agent_team.set_team_leader(
+                model=MODEL_DEPLOYMENT_NAME,
+                name="TeamLeader",
+                instructions=(TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS),
+                toolset=sync_toolset,
+            )
+        else:
+            # Reasoning agent uses a different model
+            agent_team.set_team_leader(
+                model=REASONING_MODEL_DEPLOYMENT_NAME,
+                name="TeamLeader",
+                instructions=(TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS),
+                toolset=sync_toolset,
+            )
         
         # Configure agents with proper toolsets
         if use_search:
@@ -1076,10 +1094,7 @@ def _create_search_tools_with_type(project_client: AIProjectClient, search_type:
         )
 
     # Bing Search tool
-    if not REASON:
-        bing_conn = project_client.connections.get(name="agentbing", include_credentials=True)
-    else:
-        bing_conn = project_client.connections.get(name="bingagent", include_credentials=True)
+    bing_conn = project_client.connections.get(name="agentbing", include_credentials=True)
     bing_tool = BingGroundingTool(connection_id=bing_conn.id)
     
     return search_tool, bing_tool
@@ -1088,18 +1103,18 @@ def _create_search_tools_with_type(project_client: AIProjectClient, search_type:
 
 @app.get("/")
 async def root():
-    """Root endpoint with API information."""
+    """Root endpoint with API information (no authentication required)."""
     return {
         "message": "GraphRAG API",
         "version": "1.0.0",
         "documentation": "/docs",
+        "authentication": "Bearer token required for /query_team endpoint",
         "endpoints": {
             "querying": {
-                "/query_team": "POST - Query the agent team",
+                "/query_team": "POST - Query the agent team (requires API key)",
             },
             "utilities": {
                 "/health": "GET - Health check",
-                "/config": "GET - Get current configuration",
             }
         }
     }
@@ -1113,12 +1128,17 @@ async def health_check():
 
 
 @app.post("/query_team", response_model=QueryResponse)
-def query_team_endpoint(request: QueryRequest) -> QueryResponse:
+def query_team_endpoint(request: QueryRequest, _: bool = Depends(verify_api_key)) -> QueryResponse:
     """
     Query the agent team for financial analysis.
     
+    Requires Bearer token authentication in the Authorization header.
+    
     This endpoint uses pre-loaded resources from application startup
     to provide fast responses without reloading data.
+    
+    Headers:
+        Authorization: Bearer <your_api_key>
     """
     try:
         # Use global variables loaded at startup
@@ -1132,7 +1152,7 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
             raise HTTPException(status_code=400, detail="Query is required")
         
         # Run the agent team with the question using pre-loaded resources
-        markdown_response = _setup_agent_team_with_globals(question, request.search_query_type, request.graph_query_type, use_search=request.use_search, use_graph=request.use_graph, use_web=request.use_web)
+        markdown_response = _setup_agent_team_with_globals(question, request.search_query_type, request.graph_query_type, use_search=request.use_search, use_graph=request.use_graph, use_web=request.use_web, use_reasoning=request.use_reasoning)
         
         return QueryResponse(
             response=markdown_response,

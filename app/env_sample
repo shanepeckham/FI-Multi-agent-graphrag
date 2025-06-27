@@ -1,3 +1,7 @@
+# API Security - Generate your own secure API key
+API_KEY=
+
+# Azure Configuration
 AZURE_OPENAI_API_KEY=
 APPLICATIONINSIGHTS_CONNECTION_STRING=
 PROJECT_ENDPOINT=https://fiagent-resource.services.ai.azure.com/api/projects/fiagent/
