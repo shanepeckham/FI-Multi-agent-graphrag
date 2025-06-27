@@ -1,0 +1,19 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pandas==2.2.3
+python-multipart==0.0.6
+pydantic==2.10.3
+pydantic-core>=2.14.0
+spacy>=3.8.4,<4.0.0
+typing-extensions>=4.9.0
+
+# GraphRAG dependencies - these will be installed from the main package
+# graphrag
+
+# Additional useful dependencies
+httpx==0.25.2
+python-dotenv==1.0.0
+
+# Explicit dependency management to prevent conflicts
+setuptools>=65.0.0
+wheel>=0.38.0
