@@ -1,0 +1,14 @@
+AZURE_OPENAI_API_KEY=
+APPLICATIONINSIGHTS_CONNECTION_STRING=
+PROJECT_ENDPOINT=https://fiagent-resource.services.ai.azure.com/api/projects/fiagent/
+AZURE_OPENAI_ENDPOINT=https://fiagent-resource.cognitiveservices.azure.com
+MODEL_DEPLOYMENT_NAME=gpt-4.1
+REASONING_MODEL_DEPLOYMENT_NAME=o3-mini
+AI_SEARCH_TYPE=SIMPLE
+GRAPH_QUERY_TYPE=local
+AI_SEARCH_INDEX_NAME=apple_report_agent
+RAW_INPUT_PATH=/Users/shanepeckham/sources/data/apple/extracted_text
+OUTPUT_PATH=/Users/shanepeckham/sources/data/apple/processed_text
+GRAPH_OUTPUT_PATH=/Users/shanepeckham/sources/data/apple/graph_output/
+INPUT_DIR=./apple/output
+
