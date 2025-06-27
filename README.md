@@ -235,12 +235,87 @@ The application uses environment variables for configuration. Copy `app/env_samp
 
 ## 🏗️ Architecture
 
-The system consists of four specialized agents:
+The system consists of four specialized agents working together in a coordinated multi-agent framework:
 
-1. **TeamLeader**: Orchestrates tasks and determines which agent should handle specific queries
-2. **KG-agent-multi**: Uses GraphRAG knowledge graphs for precise financial data extraction
-3. **RAG-agent-multi**: Searches indexed documents using Azure AI Search
-4. **Bing-agent-multi**: Retrieves external market data using Bing Search
+```mermaid
+graph TB
+    User[� User] --> UserProxy[User Proxy Agent]
+    UserProxy <--> Coordinator[CoordinatorAgent]
+    
+    Memory[(Memory<br/>history of work)] --> Coordinator
+    
+    Coordinator --> KG[Knowledge Graph Agent<br/>LLM]
+    Coordinator --> Retrieval[Retrieval Agent<br/>LLM] 
+    Coordinator --> Web[Web Agent<br/>LLM]
+    
+    KG --> KnowledgeGraph[(Knowledge Graph)]
+    Retrieval --> Search1[(Search)]
+    Web --> Search2[(Search)]
+    
+    KG -.->|input| KnowledgeGraph
+    KG -.->|output| KnowledgeGraph
+    
+    Retrieval -.->|query| Search1
+    Retrieval -.->|data| Search1
+    
+    Web -.->|query| Search2  
+    Web -.->|data| Search2
+    
+    UserProxy -.->|conversation| User
+    
+    classDef agent fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff
+    classDef storage fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff
+    classDef user fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+    
+    class UserProxy,Coordinator,KG,Retrieval,Web agent
+    class Memory,KnowledgeGraph,Search1,Search2 storage
+    class User user
+```
+
+*If the diagram above doesn't display, here's a text representation:*
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Multi-Agent Architecture                     │
+└─────────────────────────────────────────────────────────────────┘
+
+    👤 User
+       ↕ (conversation)
+┌─────────────────┐
+│ User Proxy      │ ←─→ ┌─────────────────┐ ←─ 🧠 Memory
+│ Agent           │     │ CoordinatorAgent│    (history)
+└─────────────────┘     └─────────────────┘
+                               │
+                    ┌──────────┼──────────┐
+                    ↓          ↓          ↓
+            ┌───────────┐ ┌───────────┐ ┌───────────┐
+            │Knowledge  │ │Retrieval  │ │Web Agent  │
+            │Graph Agent│ │Agent      │ │🌐 LLM     │
+            │🧩 LLM     │ │🔍 LLM     │ └───────────┘
+            └───────────┘ └───────────┘       │
+                    │           │             ↓
+                    ↓           ↓      ┌────────────┐
+            ┌─────────────┐ ┌─────────────┐ │   Search   │
+            │ Knowledge   │ │   Search    │ │🏛️ (External)│
+            │ Graph 🕸️   │ │🔍 (Internal)│ └────────────┘
+            └─────────────┘ └─────────────┘
+```
+
+### Agent Responsibilities
+
+1. **User Proxy Agent**: Interface between users and the agent team, managing conversation flow
+2. **CoordinatorAgent (TeamLeader)**: Orchestrates tasks and determines which specialized agent should handle specific queries
+3. **Knowledge Graph Agent (KG-agent)**: Uses GraphRAG knowledge graphs for precise financial data extraction from indexed documents
+4. **Retrieval Agent (RAG-agent)**: Searches indexed financial documents using Azure AI Search
+5. **Web Agent (Bing-agent)**: Retrieves external market data and financial news using Bing Search
+
+### Key Features
+
+- **Memory System**: Maintains conversation history and context across interactions
+- **Intelligent Routing**: Coordinator agent automatically routes queries to the most appropriate specialist
+- **Multi-Source Data**: Combines internal knowledge graphs, document search, and external web data
+- **LLM-Powered**: Each agent uses Large Language Models (LLM) for intelligent processing
+- **Conversational Interface**: Natural language interaction through the User Proxy Agent
 
 Each agent is optimized for specific types of financial analysis tasks, providing comprehensive coverage of both internal documents and external market data.
 
