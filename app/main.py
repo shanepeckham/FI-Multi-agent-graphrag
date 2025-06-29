@@ -164,12 +164,8 @@ from graphrag.vector_stores.lancedb import LanceDBVectorStore
 import sys
 from pathlib import Path
 
-# Add the parent directory to Python path to access utils
-parent_dir = Path(__file__).parent.parent
-sys.path.insert(0, str(parent_dir))
-
-from utils.agent_team import AgentTeam, AgentTask
-from utils.agent_trace_configurator import AgentTraceConfigurator
+from agent_team import AgentTeam, AgentTask
+from agent_trace_configurator import AgentTraceConfigurator
 
 # FastAPI imports
 from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Security
@@ -976,10 +972,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         # Create agent team without using 'with' statement to avoid closing the client
         agent_team = AgentTeam("cr_team", agents_client=agents_client)
 
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        # Construct the full path to the config file
-        file_path = os.path.join(current_dir, "agent_team_config.yaml")
-        with open(file_path, "r") as config_file:
+        with open("agent_team_config.yaml", "r") as config_file:
             config = yaml.safe_load(config_file)
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS"].strip()
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS"].strip()

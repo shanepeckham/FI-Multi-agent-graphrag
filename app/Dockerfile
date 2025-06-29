@@ -1,8 +1,10 @@
 # Use Python 3.11 as base image
 FROM python:3.11-slim
 
-# Set working directory
-WORKDIR /app
+RUN mkdir -p /app/ /app/api
+
+# Set working directory to where the app files are copied
+WORKDIR /app/api
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -11,23 +13,17 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy the parent GraphRAG source code
-COPY graphrag /app/graphrag
-
-# Install GraphRAG package in development mode
-RUN cd /app && pip install -e ./graphrag
-
 # Copy FastAPI application files
-COPY app /app/api
+COPY . /app/api
 
 # Install FastAPI application dependencies
-RUN pip install -r /app/api/requirements.txt
+RUN pip install -r requirements.txt
 
 # Create directories for data
 RUN mkdir -p /app/data/input /app/data/output
 
 # Set environment variables
-ENV PYTHONPATH=/app:/app/graphrag:/app/api
+ENV PYTHONPATH=/app/api
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
