@@ -629,7 +629,7 @@ def _load_graphrag_data() -> Tuple[Any, Any, Any, Any, Any, Any, Any, Any]:
         
     except Exception as e:
         print(f"Error loading GraphRAG data: {e}")
-        raise
+        
 
 def read_community_reports(input_dir: str, community_report_table: str = COMMUNITY_REPORT_TABLE) -> pd.DataFrame:
     """
