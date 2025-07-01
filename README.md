@@ -99,6 +99,9 @@ Place the generated GraphRAG output files in the `data/output/` directory (or up
 # Build the container
 docker build -t graphrag-agents .
 
+# Apple silicon
+docker buildx build --platform linux/amd64 -t graphrag-agents .
+
 # Run the container
 docker run -p 8000:8000 --env-file .env graphrag-agents
 ```
