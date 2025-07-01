@@ -360,6 +360,7 @@ REASONING_MODEL_DEPLOYMENT_NAME = os.getenv("REASONING_MODEL_DEPLOYMENT_NAME", "
 
 # Query configuration
 AI_SEARCH_TYPE = os.getenv("AI_SEARCH_TYPE", "SIMPLE")
+AI_SEARCH_CONNECTION_NAME = os.getenv("AI_SEARCH_CONNECTION_NAME", "agentsearcher")
 GRAPH_QUERY_TYPE = os.getenv("GRAPH_QUERY_TYPE", "local")
 AI_SEARCH_INDEX_NAME = os.getenv("AI_SEARCH_INDEX_NAME", "apple_report_agent")
 
@@ -1067,7 +1068,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
 def _create_search_tools_with_type(project_client: AIProjectClient, search_type: str) -> Tuple[AzureAISearchTool, BingGroundingTool]:
     """Create search tools with specified search type."""
     # Azure AI Search tool
-    search_conn = project_client.connections.get(name="agentsearcher", include_credentials=True)
+    search_conn = project_client.connections.get(name=AI_SEARCH_CONNECTION_NAME, include_credentials=True)
 
     if search_type == "SEMANTIC":
         search_tool = AzureAISearchTool(
