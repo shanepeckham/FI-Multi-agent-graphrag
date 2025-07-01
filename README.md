@@ -73,7 +73,7 @@ AI_SEARCH_INDEX_NAME=your_search_index_name
 RAW_INPUT_PATH=/path/to/your/raw/data
 OUTPUT_PATH=/path/to/your/processed/data
 GRAPH_OUTPUT_PATH=/path/to/your/graph/output
-INPUT_DIR=./apple/output
+INPUT_DIR=./data/output
 ```
 
 ### 2. Prepare GraphRAG Data
@@ -91,7 +91,7 @@ graphrag init --root ./data
 graphrag index --root ./data
 ```
 
-Place the generated GraphRAG output files in the `apple/output/` directory (or update `INPUT_DIR` in your `.env`).
+Place the generated GraphRAG output files in the `data/output/` directory (or update `INPUT_DIR` in your `.env`).
 
 ### 3. Run with Docker
 
@@ -236,7 +236,7 @@ The application uses environment variables for configuration. Copy `app/env_samp
 | `GRAPH_QUERY_TYPE` | GraphRAG query method | `local` |
 | `AI_SEARCH_INDEX_NAME` | Azure AI Search index name | `apple_report_agent` |
 | `AI_SEARCH_CONNECTION_NAME` | Azure AI Search Connection Name in AI Foundry | `agentbing` |
-| `INPUT_DIR` | Directory with GraphRAG output files | `./apple/output` |
+| `INPUT_DIR` | Directory with GraphRAG output files | `./data/output` |
 | `RAW_INPUT_PATH` | Path to raw input documents | `/path/to/raw/data` |
 | `OUTPUT_PATH` | Path for processed documents | `/path/to/processed/data` |
 | `GRAPH_OUTPUT_PATH` | Path for graph output | `/path/to/graph/output` |
