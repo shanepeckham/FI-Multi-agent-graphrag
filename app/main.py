@@ -330,16 +330,15 @@ _load_environment_variables()
 # ==============================================================================
 
 # File paths and directories
-RAW_INPUT_PATH = os.getenv("RAW_INPUT_PATH", "/Users/shanepeckham/sources/data/apple/extracted_text")
-OUTPUT_PATH = os.getenv("OUTPUT_PATH", "/Users/shanepeckham/sources/data/apple/processed_text")
+RAW_INPUT_PATH = os.getenv("RAW_INPUT_PATH", "/Users/shanepeckham/sources/data//extracted_text")
+OUTPUT_PATH = os.getenv("OUTPUT_PATH", "/Users/shanepeckham/sources/data/data/processed_text")
 INPUT_PATH = OUTPUT_PATH
-GRAPH_OUTPUT_PATH = os.getenv("GRAPH_OUTPUT_PATH", "/Users/shanepeckham/sources/data/apple/graph_output/")
-CONFIG_PATH = os.getenv("CONFIG_PATH", "./config.json")
-INPUT_DIR = os.getenv("INPUT_DIR", "./apple/output")
+GRAPH_OUTPUT_PATH = os.getenv("GRAPH_OUTPUT_PATH", "/Users/shanepeckham/sources/data/data/graph_output/")
+INPUT_DIR = os.getenv("INPUT_DIR", "./data/output")
 LANCEDB_URI = f"{INPUT_DIR}/lancedb"
 
 # Dataset and API configuration
-DATASET_DESCRIPTION = "Apple_Report"
+DATASET_DESCRIPTION = "Report"
 API_VERSION = "2024-02-15-preview"
 
 # GraphRAG table names
@@ -362,7 +361,7 @@ REASONING_MODEL_DEPLOYMENT_NAME = os.getenv("REASONING_MODEL_DEPLOYMENT_NAME", "
 AI_SEARCH_TYPE = os.getenv("AI_SEARCH_TYPE", "SIMPLE")
 AI_SEARCH_CONNECTION_NAME = os.getenv("AI_SEARCH_CONNECTION_NAME", "agentsearcher")
 GRAPH_QUERY_TYPE = os.getenv("GRAPH_QUERY_TYPE", "local")
-AI_SEARCH_INDEX_NAME = os.getenv("AI_SEARCH_INDEX_NAME", "apple_report_agent")
+AI_SEARCH_INDEX_NAME = os.getenv("AI_SEARCH_INDEX_NAME", "report_agent")
 
 # Sample questions for testing
 SAMPLE_QUESTIONS = [
@@ -389,15 +388,20 @@ REASON_CURRENT_QUESTION = (
 # API SECURITY CONFIGURATION
 # ==============================================================================
 
-# Generate a secure API key (in production, store this in environment variables)
-# You should set this in your .env file: API_KEY=your_secure_key_here
-DEFAULT_API_KEY = "graphrag_" + secrets.token_urlsafe(32)
+# Load API key from environment first
+API_KEY = os.getenv("API_KEY")
 
-# Load API key from environment or use generated default
-API_KEY = os.getenv("API_KEY", DEFAULT_API_KEY)
+# Generate a secure API key only if not provided in environment
+if not API_KEY:
+    API_KEY = "graphrag_" + secrets.token_urlsafe(32)
+    print(f"🔑 No API_KEY found in environment. Generated new API key: {API_KEY}")
+    print("💡 To use a fixed API key, set API_KEY in your environment variables")
+else:
+    print(f"🔑 API_KEY loaded from environment: {API_KEY[:20]}...{API_KEY[-4:]}")
 
 # Hash the API key for secure comparison
 API_KEY_HASH = hashlib.sha256(API_KEY.encode()).hexdigest()
+print(f"🔒 API key hash: {API_KEY_HASH[:16]}...")
 
 # Security scheme for FastAPI
 security = HTTPBearer()

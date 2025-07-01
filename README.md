@@ -237,7 +237,7 @@ The application uses environment variables for configuration. Copy `app/env_samp
 | `REASONING_MODEL_DEPLOYMENT_NAME` | Reasoning model deployment | `o3-mini` |
 | `AI_SEARCH_TYPE` | Search type for document queries | `SIMPLE` |
 | `GRAPH_QUERY_TYPE` | GraphRAG query method | `local` |
-| `AI_SEARCH_INDEX_NAME` | Azure AI Search index name | `apple_report_agent` |
+| `AI_SEARCH_INDEX_NAME` | Azure AI Search index name | `report_agent` |
 | `AI_SEARCH_CONNECTION_NAME` | Azure AI Search Connection Name in AI Foundry | `agentbing` |
 | `INPUT_DIR` | Directory with GraphRAG output files | `./data/output` |
 | `RAW_INPUT_PATH` | Path to raw input documents | `/path/to/raw/data` |
