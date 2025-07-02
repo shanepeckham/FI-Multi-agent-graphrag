@@ -83,7 +83,7 @@ AZURE_OPENAI_API_KEY=your_azure_openai_key
 # API Security (optional - will be auto-generated if not provided)
 API_KEY=your_secure_api_key
 
-# Other configuration...
+# Other configuration
 ```
 
 ### Generated API Key Example

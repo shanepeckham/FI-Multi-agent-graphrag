@@ -226,9 +226,7 @@ async def lifespan(app: FastAPI):
 
 class QueryResponse(BaseModel):
     model_config = {"arbitrary_types_allowed": True}
-    
     response: Union[str, Dict[str, Any], List[Dict[str, Any]]]
-
     query: str
 
 class QueryRequest(BaseModel):
@@ -1106,10 +1104,9 @@ async def root():
         "message": "GraphRAG API",
         "version": "1.0.0",
         "documentation": "/docs",
-        "authentication": "Bearer token required for /query_team endpoint",
         "endpoints": {
             "querying": {
-                "/query_team": "POST - Query the agent team (requires API key)",
+                "/query_team": "POST - Query the agent team",
             },
             "utilities": {
                 "/health": "GET - Health check",
