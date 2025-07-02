@@ -36,6 +36,7 @@ The following variables are supported in the .env file:
 
 REQUIRED VARIABLES:
 - AZURE_OPENAI_API_KEY: Azure OpenAI API key for language models
+- API_KEY: API key for securing FastAPI endpoints (auto-generated if not provided)
 
 OPTIONAL VARIABLES:
 - ENV_FILE_PATH: Path to .env file (default: "/Users/shanepeckham/sources/graphrag/apple/.env")
@@ -382,6 +383,61 @@ REASON_CURRENT_QUESTION = (
         "What is your overall assessment of the company's financial health? Would you invest in this company? "
         "Why or why not?"
     )
+
+# ==============================================================================
+# API SECURITY CONFIGURATION
+# ==============================================================================
+
+# Load API key from environment first
+API_KEY = os.getenv("API_KEY")
+
+# Generate a secure API key only if not provided in environment
+if not API_KEY:
+    API_KEY = "graphrag_" + secrets.token_urlsafe(32)
+    print(f"🔑 No API_KEY found in environment. Generated new API key: {API_KEY}")
+    print("💡 To use a fixed API key, set API_KEY in your environment variables")
+else:
+    print(f"🔑 API_KEY loaded from environment: {API_KEY[:20]}...{API_KEY[-4:]}")
+
+# Hash the API key for secure comparison
+API_KEY_HASH = hashlib.sha256(API_KEY.encode()).hexdigest()
+print(f"🔒 API key hash: {API_KEY_HASH[:16]}...")
+
+# Security scheme for FastAPI
+security = HTTPBearer()
+
+def verify_api_key(credentials: HTTPAuthorizationCredentials = Depends(security)) -> bool:
+    """
+    Verify the provided API key against the stored hash.
+    
+    Args:
+        credentials: The Bearer token credentials from the request header
+        
+    Returns:
+        bool: True if the API key is valid
+        
+    Raises:
+        HTTPException: If the API key is invalid or missing
+    """
+    if not credentials:
+        raise HTTPException(
+            status_code=401,
+            detail="Missing API key",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
+    # Hash the provided token for comparison
+    provided_hash = hashlib.sha256(credentials.credentials.encode()).hexdigest()
+    
+    # Compare hashes to prevent timing attacks
+    if not secrets.compare_digest(API_KEY_HASH, provided_hash):
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid API key",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
+    return True
 
 # ==============================================================================
 # AZURE AI CLIENT INITIALIZATION
@@ -921,16 +977,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         # Create agent team without using 'with' statement to avoid closing the client
         agent_team = AgentTeam("cr_team", agents_client=agents_client)
 
-        # Get the directory of the current script to ensure we find the config file
-        script_dir = Path(__file__).parent
-        config_file_path = script_dir / "agent_team_config.yaml"
-        
-        print(f"📁 Script directory: {script_dir}")
-        print(f"📁 Current working directory: {os.getcwd()}")
-        print(f"📁 Looking for config file at: {config_file_path}")
-        print(f"📁 Config file exists: {config_file_path.exists()}")
-        
-        with open(config_file_path, "r") as config_file:
+        with open("agent_team_config.yaml", "r") as config_file:
             config = yaml.safe_load(config_file)
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS"].strip()
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS"].strip()
@@ -1079,7 +1126,7 @@ async def health_check():
 
 
 @app.post("/query_team", response_model=QueryResponse)
-def query_team_endpoint(request: QueryRequest) -> QueryResponse:
+def query_team_endpoint(request: QueryRequest, _: bool = Depends(verify_api_key)) -> QueryResponse:
     """
     Query the agent team for financial analysis.
     
@@ -1088,7 +1135,8 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
     This endpoint uses pre-loaded resources from application startup
     to provide fast responses without reloading data.
     
-
+    Headers:
+        Authorization: Bearer <your_api_key>
     """
     try:
         # Use global variables loaded at startup
