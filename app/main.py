@@ -47,6 +47,7 @@ OPTIONAL VARIABLES:
 - AI_SEARCH_TYPE: Search type (default: "SIMPLE")
 - GRAPH_QUERY_TYPE: Graph query type (default: "local")
 - AI_SEARCH_INDEX_NAME: AI Search index name (default: "apple_report_agent")
+- BING_CONNECTION_NAME: Bing Search connection name (default: "agentbing")
 - RAW_INPUT_PATH: Raw input data path
 - OUTPUT_PATH: Output data path
 - GRAPH_OUTPUT_PATH: Graph output data path
@@ -360,6 +361,7 @@ AI_SEARCH_TYPE = os.getenv("AI_SEARCH_TYPE", "SIMPLE")
 AI_SEARCH_CONNECTION_NAME = os.getenv("AI_SEARCH_CONNECTION_NAME", "agentsearcher")
 GRAPH_QUERY_TYPE = os.getenv("GRAPH_QUERY_TYPE", "local")
 AI_SEARCH_INDEX_NAME = os.getenv("AI_SEARCH_INDEX_NAME", "report_agent")
+BING_CONNECTION_NAME = os.getenv("BING_CONNECTION_NAME", "agentbing")
 
 # Sample questions for testing
 SAMPLE_QUESTIONS = [
@@ -975,7 +977,16 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         # Create agent team without using 'with' statement to avoid closing the client
         agent_team = AgentTeam("cr_team", agents_client=agents_client)
 
-        with open("agent_team_config.yaml", "r") as config_file:
+        # Get the directory of the current script to ensure we find the config file
+        script_dir = Path(__file__).parent
+        config_file_path = script_dir / "agent_team_config.yaml"
+        
+        print(f"📁 Script directory: {script_dir}")
+        print(f"📁 Current working directory: {os.getcwd()}")
+        print(f"📁 Looking for config file at: {config_file_path}")
+        print(f"📁 Config file exists: {config_file_path.exists()}")
+        
+        with open(config_file_path, "r") as config_file:
             config = yaml.safe_load(config_file)
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS"].strip()
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS"].strip()
@@ -1090,7 +1101,7 @@ def _create_search_tools_with_type(project_client: AIProjectClient, search_type:
         )
 
     # Bing Search tool
-    bing_conn = project_client.connections.get(name="agentbing", include_credentials=True)
+    bing_conn = project_client.connections.get(name=BING_CONNECTION_NAME, include_credentials=True)
     bing_tool = BingGroundingTool(connection_id=bing_conn.id)
     
     return search_tool, bing_tool

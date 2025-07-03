@@ -10,6 +10,7 @@ MODEL_DEPLOYMENT_NAME=gpt-4.1
 REASONING_MODEL_DEPLOYMENT_NAME=o3-mini
 AI_SEARCH_TYPE=SIMPLE
 AI_SEARCH_CONNECTION_NAME=agentsearcher
+BING_CONNECTION_NAME=agentbing
 GRAPH_QUERY_TYPE=local
 AI_SEARCH_INDEX_NAME=apple_report_agent
 RAW_INPUT_PATH=/Users/shanepeckham/sources/data/apple/extracted_text
