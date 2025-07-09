@@ -78,7 +78,6 @@ import warnings
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Optional, Union
 
-import uvicorn
 import yaml
 
 # Python 3.9+ type annotations
@@ -168,10 +167,21 @@ from pathlib import Path
 from agent_team import AgentTeam, AgentTask
 from agent_trace_configurator import AgentTraceConfigurator
 
+# Conditional import for WebSocket manager
+try:
+    from websocket_manager import websocket_manager
+    WEBSOCKET_AVAILABLE = True
+except ImportError as e:
+    print(f"WebSocket manager not available: {e}")
+    websocket_manager = None
+    WEBSOCKET_AVAILABLE = False
+
 # FastAPI imports
-from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Security
+from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Security, WebSocket, WebSocketDisconnect
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from opentelemetry import trace
@@ -1134,17 +1144,12 @@ async def health_check():
 
 
 @app.post("/query_team", response_model=QueryResponse)
-def query_team_endpoint(request: QueryRequest, _: bool = Depends(verify_api_key)) -> QueryResponse:
+def query_team_endpoint(request: QueryRequest) -> QueryResponse:
     """
     Query the agent team for financial analysis.
     
-    Requires Bearer token authentication in the Authorization header.
-    
     This endpoint uses pre-loaded resources from application startup
-    to provide fast responses without reloading data.
-    
-    Headers:
-        Authorization: Bearer <your_api_key>
+    to provide fast responses without reloading data. No authentication required.
     """
     try:
         # Use global variables loaded at startup
@@ -1172,6 +1177,37 @@ def query_team_endpoint(request: QueryRequest, _: bool = Depends(verify_api_key)
 
 
 # ==============================================================================
+# WEBSOCKET ENDPOINTS FOR REAL-TIME VISUALIZATION
+# ==============================================================================
+
+@app.websocket("/ws/{session_id}")
+async def websocket_endpoint(websocket: WebSocket, session_id: str):
+    """WebSocket endpoint for real-time agent team visualization"""
+    if not WEBSOCKET_AVAILABLE or not websocket_manager:
+        await websocket.close(code=1011, reason="WebSocket not available")
+        return
+        
+    await websocket_manager.connect(websocket, session_id)
+    try:
+        while True:
+            # Keep the connection alive and listen for messages
+            data = await websocket.receive_text()
+            # Echo back or handle specific messages if needed
+            await websocket.send_text(f"Message received: {data}")
+    except WebSocketDisconnect:
+        websocket_manager.disconnect(websocket, session_id)
+
+
+@app.get("/dashboard")
+async def get_dashboard():
+    """Serve the real-time dashboard"""
+    dashboard_path = Path(__file__).parent.parent / "UI" / "realtime_dashboard.html"
+    if not dashboard_path.exists():
+        raise HTTPException(status_code=404, detail="Dashboard not found")
+    return FileResponse(dashboard_path)
+
+
+# ==============================================================================
 # MAIN APPLICATION ENTRY POINT
 # ==============================================================================
 
@@ -1182,6 +1218,7 @@ def main() -> None:
     This function initializes and runs the multi-agent financial analysis system.
     """
     try:
+        import uvicorn
         logging.info("Starting Financial Analysis Agent Team with GraphRAG...")
         uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
     except Exception as e:

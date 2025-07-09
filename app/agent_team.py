@@ -12,6 +12,15 @@ from typing import Any, Dict, Optional, Set, List
 from azure.ai.agents import AgentsClient
 from azure.ai.agents.models import FunctionTool, ToolSet, Tool, ToolResources, MessageRole, Agent, AgentThread, AzureAISearchQueryType, AzureAISearchTool, ListSortOrder, MessageRole
 
+# Import WebSocket event emitter conditionally
+try:
+    from websocket_events import event_emitter
+    WEBSOCKET_EVENTS_AVAILABLE = True
+except ImportError:
+    print("WebSocket events not available")
+    event_emitter = None
+    WEBSOCKET_EVENTS_AVAILABLE = False
+
 tracer = trace.get_tracer(__name__)
 
 
@@ -203,6 +212,15 @@ class AgentTeam:
             instructions=self._team_leader.instructions,
             toolset=self._team_leader.toolset,
         )
+        
+        # Emit agent created event
+        if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+            event_emitter.emit_sync("agent_created", "agent", {
+                "agent_name": self._team_leader.name,
+                "model": self._team_leader.model,
+                "instructions": self._team_leader.instructions[:200] + "..." if len(self._team_leader.instructions) > 200 else self._team_leader.instructions,
+                "agent_type": "team_leader"
+            })
 
     def _set_default_team_leader(self):
         """
@@ -261,6 +279,16 @@ class AgentTeam:
             member.agent_instance = self._agents_client.create_agent(
                 model=member.model, name=member.name, instructions=extended_instructions, toolset=member.toolset, tools=member.tools, tool_resources=member.tool_resources
             )
+            
+            # Emit agent created event
+            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                event_emitter.emit_sync("agent_created", "agent", {
+                    "agent_name": member.name,
+                    "model": member.model,
+                    "instructions": member.instructions[:200] + "..." if len(member.instructions) > 200 else member.instructions,
+                    "agent_type": "team_member",
+                    "can_delegate": member.can_delegate
+                })
 
     def dismantle_team(self) -> None:
         """
@@ -308,6 +336,15 @@ class AgentTeam:
             self._current_request_span = current_request_span
             if self._current_request_span is not None:
                 self._current_request_span.set_attribute("agent_team.name", self.team_name)
+            
+            # Emit team processing started event
+            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                event_emitter.emit_sync("processing_started", "team", {
+                    "team_name": self.team_name,
+                    "request": request,
+                    "thread_id": self._agent_thread.id if self._agent_thread else None
+                })
+            
             team_leader_request = self.TEAM_LEADER_INITIAL_REQUEST.format(original_request=request)
             _create_task(
                 team_name=self.team_name,
@@ -329,6 +366,32 @@ class AgentTeam:
                         f"Requestor: '{task.requestor}'. "
                         f"Task description: '{task.task_description}'."
                     )
+                    
+                    # Emit task started event
+                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                        event_emitter.emit_sync("task_started", "task", {
+                            "recipient": task.recipient,
+                            "requestor": task.requestor,
+                            "task_description": task.task_description,
+                            "task_id": f"{task.recipient}_{len(agent_responses)}"
+                        })
+                    
+                    # Emit agent started task event
+                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                        event_emitter.emit_sync("agent_started_task", "agent", {
+                            "agent_name": task.recipient,
+                            "task_description": task.task_description
+                        })
+                    
+                    # Emit message sent event
+                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                        event_emitter.emit_sync("message_sent", "task", {
+                            "from": task.requestor,
+                            "to": task.recipient,
+                            "message": task.task_description,
+                            "message_id": f"msg_{task.recipient}_{len(agent_responses)}"
+                        })
+                    
                     message = self._agents_client.messages.create(
                         thread_id=self._agent_thread.id,
                         role="user",
@@ -347,6 +410,31 @@ class AgentTeam:
                         if text_message and text_message.text:
                             agent_response_text = text_message.text.value
                             print(f"Agent '{agent.name}' completed task. Outcome: {agent_response_text}")
+                            
+                            # Emit response generated event
+                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                                event_emitter.emit_sync("response_generated", "task", {
+                                    "agent": agent.name,
+                                    "response": agent_response_text,
+                                    "original_message": task.task_description,
+                                    "message_id": f"resp_{task.recipient}_{len(agent_responses)}"
+                                })
+                            
+                            # Emit task completed event
+                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                                event_emitter.emit_sync("task_completed", "task", {
+                                    "recipient": task.recipient,
+                                    "task_description": task.task_description,
+                                    "result": agent_response_text[:500] + "..." if len(agent_response_text) > 500 else agent_response_text,
+                                    "task_id": f"{task.recipient}_{len(agent_responses)}"
+                                })
+                            
+                            # Emit agent completed task event
+                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                                event_emitter.emit_sync("agent_completed_task", "agent", {
+                                    "agent_name": agent.name,
+                                    "task_result": agent_response_text[:200] + "..." if len(agent_response_text) > 200 else agent_response_text
+                                })
                             
                             # Collect agent response for markdown formatting
                             agent_responses.append({
@@ -374,6 +462,19 @@ class AgentTeam:
             # Format and return structured markdown response
             thread_id = self._agent_thread.id if self._agent_thread else "Unknown"
             markdown_response = self._format_markdown_response(request, agent_responses, thread_id)
+            
+            # Emit team processing completed event
+            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                event_emitter.emit_sync("processing_completed", "team", {
+                    "team_name": self.team_name,
+                    "request": request,
+                    "final_result": markdown_response,
+                    "result": markdown_response,
+                    "response_length": len(markdown_response),
+                    "agents_involved": len(agent_responses),
+                    "thread_id": thread_id,
+                    "summary": f"Completed analysis with {len(agent_responses)} agent responses"
+                })
             
             # Print the formatted markdown to console
             print("\n" + "="*80)
@@ -429,6 +530,15 @@ class AgentTeam:
                         f"Task description: '{task.task_description}'."
                     )
                     
+                    # Emit message processing event
+                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                        event_emitter.emit_sync("message_processing", "task", {
+                            "agent": task.recipient,
+                            "message": task.task_description,
+                            "requestor": task.requestor,
+                            "status": "processing"
+                        })
+                    
                     # Add task info to conversation
                     conversation_messages.append({
                         "role": "user",
@@ -437,6 +547,15 @@ class AgentTeam:
                         "content": task.task_description,
                         "message_type": "task_assignment"
                     })
+                    
+                    # Emit message sent event  
+                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                        event_emitter.emit_sync("message_sent", "task", {
+                            "from": task.requestor,
+                            "to": task.recipient,
+                            "message": task.task_description,
+                            "message_id": f"msg_simple_{task.recipient}_{len(conversation_messages)}"
+                        })
                     
                     message = self._agents_client.messages.create(
                         thread_id=self._agent_thread.id,
@@ -457,6 +576,15 @@ class AgentTeam:
                         if text_message and text_message.text:
                             agent_response = text_message.text.value
                             print(f"Agent '{agent.name}' completed task. Outcome: {agent_response}")
+                            
+                            # Emit response generated event
+                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                                event_emitter.emit_sync("response_generated", "task", {
+                                    "agent": agent.name,
+                                    "response": agent_response,
+                                    "original_message": task.task_description,
+                                    "message_id": f"resp_simple_{task.recipient}_{len(conversation_messages)}"
+                                })
                             
                             # Add agent response to conversation
                             conversation_messages.append({
@@ -491,6 +619,18 @@ class AgentTeam:
             agent_responses = [msg for msg in conversation_messages if msg["message_type"] == "agent_response"]
             if agent_responses:
                 final_response = agent_responses[-1]["content"]
+                
+                # Emit final result for simple processing
+                if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                    event_emitter.emit_sync("processing_completed", "team", {
+                        "team_name": self.team_name,
+                        "final_result": final_response,
+                        "result": final_response,
+                        "response_length": len(final_response),
+                        "agents_involved": len(agent_responses),
+                        "thread_id": self._agent_thread.id if self._agent_thread else "Unknown",
+                        "summary": f"Simple processing completed with {len(agent_responses)} agent responses"
+                    })
 
         #return {
         #    "response": final_response,
