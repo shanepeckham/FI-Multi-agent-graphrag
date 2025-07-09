@@ -164,7 +164,7 @@ from graphrag.vector_stores.lancedb import LanceDBVectorStore
 import sys
 from pathlib import Path
 
-from agent_team import AgentTeam, AgentTask
+from agent_team_dashboard import AgentTeam, AgentTask
 from agent_trace_configurator import AgentTraceConfigurator
 
 # Conditional import for WebSocket manager
