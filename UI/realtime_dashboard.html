@@ -243,6 +243,233 @@
         .scrollable::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+
+        /* Query Interface Styles */
+        .query-panel {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #e1e8ed;
+        }
+
+        .query-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-row.options-row {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .form-row label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9em;
+        }
+
+        .form-row input[type="text"],
+        .form-row input[type="password"],
+        .form-row input[type="number"],
+        .form-row textarea,
+        .form-row select {
+            padding: 10px;
+            border: 2px solid #e1e8ed;
+            border-radius: 6px;
+            font-size: 0.9em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-row input:focus,
+        .form-row textarea:focus,
+        .form-row select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-row textarea {
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 5px;
+        }
+
+        .form-row:has(.form-group) {
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin: 0;
+        }
+
+        .submit-btn, .cancel-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn {
+            background: #27ae60;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background: #2ecc71;
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .cancel-btn {
+            background: #e74c3c;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .cancel-btn:hover {
+            background: #c0392b;
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 6px;
+            background: #ecf0f1;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            animation: progress-animation 2s infinite;
+        }
+
+        @keyframes progress-animation {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-text {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            white-space: nowrap;
+        }
+
+        /* Query Response Section */
+        .query-response-panel {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #e1e8ed;
+            min-height: 300px;
+        }
+
+        .response-content {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border: 1px solid #e9ecef;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .response-content h1, .response-content h2, .response-content h3 {
+            color: #2c3e50;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .response-content h1 { font-size: 1.5em; }
+        .response-content h2 { font-size: 1.3em; }
+        .response-content h3 { font-size: 1.1em; }
+
+        .response-content strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .response-content em {
+            color: #5d6d7e;
+            font-style: italic;
+        }
+
+        .response-content code {
+            background: #f1c40f;
+            color: #2c3e50;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .response-content pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .response-content ul, .response-content ol {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+
+        .response-content li {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -253,6 +480,79 @@
                 <div class="status-indicator" id="connectionStatus"></div>
                 <span id="connectionText">Connecting...</span>
                 <span id="sessionInfo"></span>
+            </div>
+        </div>
+
+        <!-- Query Interface Panel -->
+        <div class="query-panel">
+            <h3>📝 Query Interface</h3>
+            <form id="queryForm" class="query-form">
+                <div class="form-row">
+                    <label for="endpoint">API Endpoint:</label>
+                    <input type="text" id="endpoint" value="http://0.0.0.0:8000/query_team" placeholder="API endpoint URL">
+                </div>
+                
+                <div class="form-row">
+                    <label for="bearerToken">Bearer Token:</label>
+                    <input type="password" id="bearerToken" placeholder="Optional authentication token">
+                </div>
+                
+                <div class="form-row">
+                    <label for="queryText">Query:</label>
+                    <textarea id="queryText" rows="3" placeholder="Enter your query here...">What will the revenue in 2030 be?</textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="graphQueryType">Graph Query Type:</label>
+                        <select id="graphQueryType">
+                            <option value="local" selected>Local</option>
+                            <option value="drift">Drift</option>
+                            <option value="global">Global</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="searchQueryType">Search Query Type:</label>
+                        <select id="searchQueryType">
+                            <option value="SIMPLE" selected>Simple</option>
+                            <option value="SEMANTIC">Semantic</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeoutMinutes">Timeout (min):</label>
+                        <input type="number" id="timeoutMinutes" value="10" min="1" max="60">
+                    </div>
+                </div>
+                
+                <div class="form-row options-row">
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="useSearch" checked> Use Search</label>
+                        <label><input type="checkbox" id="useGraph" checked> Use Graph</label>
+                        <label><input type="checkbox" id="useWeb"> Use Web</label>
+                        <label><input type="checkbox" id="useReasoning"> Use Reasoning</label>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <button type="submit" id="submitQuery" class="submit-btn">Submit Query</button>
+                    <button type="button" id="cancelQuery" class="cancel-btn" style="display: none;">Cancel</button>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar" style="display: none;"></div>
+                        <span class="progress-text" id="progressText"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Query Response Panel -->
+        <div class="query-response-panel">
+            <h3>📋 Query Response</h3>
+            <div class="response-content" id="queryResponse">
+                <div style="text-align: center; color: #666; padding: 40px;">
+                    No query submitted yet. Use the form above to start a query and see real-time progress below.
+                </div>
             </div>
         </div>
 
@@ -306,6 +606,9 @@
                 this.tasks = new Map();
                 this.activityLog = [];
                 this.finalOutputs = [];
+                this.currentRequest = null;
+                this.requestCancelled = false;
+                this.requestStartTime = null;
                 this.metrics = {
                     activeAgents: 0,
                     completedTasks: 0,
@@ -314,6 +617,7 @@
                 
                 this.connect();
                 this.setupUI();
+                this.setupQueryInterface();
             }
 
             generateSessionId() {
@@ -757,6 +1061,255 @@
                 this.updateTasksList();
                 this.updateFinalOutputSection();
                 this.updateMetrics();
+            }
+
+            setupQueryInterface() {
+                const queryForm = document.getElementById('queryForm');
+                const submitBtn = document.getElementById('submitQuery');
+                const cancelBtn = document.getElementById('cancelQuery');
+                
+                queryForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.submitQuery();
+                });
+                
+                cancelBtn.addEventListener('click', () => {
+                    this.cancelQuery();
+                });
+            }
+
+            async submitQuery() {
+                const endpoint = document.getElementById('endpoint').value.trim();
+                const bearerToken = document.getElementById('bearerToken').value.trim();
+                const queryText = document.getElementById('queryText').value.trim();
+                const graphQueryType = document.getElementById('graphQueryType').value;
+                const searchQueryType = document.getElementById('searchQueryType').value;
+                const timeoutMinutes = parseInt(document.getElementById('timeoutMinutes').value);
+                const useSearch = document.getElementById('useSearch').checked;
+                const useGraph = document.getElementById('useGraph').checked;
+                const useWeb = document.getElementById('useWeb').checked;
+                const useReasoning = document.getElementById('useReasoning').checked;
+
+                // Validation
+                if (!endpoint) {
+                    alert('Please enter an API endpoint');
+                    return;
+                }
+
+                if (!queryText) {
+                    alert('Please enter a query');
+                    return;
+                }
+
+                if (timeoutMinutes <= 0) {
+                    alert('Please enter a valid timeout value');
+                    return;
+                }
+
+                // Clear previous results
+                this.clearQueryResponse();
+                this.clearVisualizationData();
+
+                // Update UI state
+                this.setQueryInProgress(true);
+                this.requestCancelled = false;
+                this.requestStartTime = Date.now();
+                this.updateProgressTimer();
+
+                try {
+                    // Prepare request data
+                    const requestData = {
+                        query: queryText,
+                        graph_query_type: graphQueryType,
+                        search_query_type: searchQueryType,
+                        use_search: useSearch,
+                        use_graph: useGraph,
+                        use_web: useWeb,
+                        use_reasoning: useReasoning
+                    };
+
+                    // Prepare headers
+                    const headers = {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    };
+
+                    if (bearerToken) {
+                        headers['Authorization'] = `Bearer ${bearerToken}`;
+                    }
+
+                    // Make the request
+                    const controller = new AbortController();
+                    this.currentRequest = controller;
+
+                    const timeoutMs = timeoutMinutes * 60 * 1000;
+                    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify(requestData),
+                        signal: controller.signal
+                    });
+
+                    clearTimeout(timeoutId);
+
+                    if (this.requestCancelled) {
+                        return;
+                    }
+
+                    await this.handleQueryResponse(response);
+
+                } catch (error) {
+                    if (!this.requestCancelled) {
+                        if (error.name === 'AbortError') {
+                            this.handleQueryError('Request timed out or was cancelled');
+                        } else {
+                            this.handleQueryError(`Request failed: ${error.message}`);
+                        }
+                    }
+                } finally {
+                    this.setQueryInProgress(false);
+                    this.currentRequest = null;
+                }
+            }
+
+            async handleQueryResponse(response) {
+                try {
+                    if (response.ok) {
+                        const contentType = response.headers.get('content-type');
+                        
+                        if (contentType && contentType.includes('application/json')) {
+                            const data = await response.json();
+                            this.displayQueryResponse(data);
+                        } else {
+                            const text = await response.text();
+                            this.displayQueryResponse(text);
+                        }
+                    } else {
+                        const errorText = await response.text();
+                        this.handleQueryError(`Server error ${response.status}: ${errorText}`);
+                    }
+                } catch (error) {
+                    this.handleQueryError(`Failed to process response: ${error.message}`);
+                }
+            }
+
+            displayQueryResponse(data) {
+                const responseContainer = document.getElementById('queryResponse');
+                
+                if (typeof data === 'string') {
+                    // Handle markdown/text response
+                    responseContainer.innerHTML = this.renderMarkdown(data);
+                } else if (typeof data === 'object') {
+                    // Handle JSON response
+                    if (data.content || data.response || data.message || data.text) {
+                        const content = data.content || data.response || data.message || data.text;
+                        responseContainer.innerHTML = this.renderMarkdown(content);
+                    } else {
+                        // Display formatted JSON
+                        responseContainer.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                    }
+                } else {
+                    responseContainer.innerHTML = `<pre>${String(data)}</pre>`;
+                }
+            }
+
+            renderMarkdown(text) {
+                // Simple markdown renderer for HTML
+                return text
+                    .replace(/### (.*)/g, '<h3>$1</h3>')
+                    .replace(/## (.*)/g, '<h2>$1</h2>')
+                    .replace(/# (.*)/g, '<h1>$1</h1>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/`(.*?)`/g, '<code>$1</code>')
+                    .replace(/```([\s\S]*?)```/g, '<pre>$1</pre>')
+                    .replace(/^\- (.*)/gm, '<li>$1</li>')
+                    .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+                    .replace(/^\d+\. (.*)/gm, '<li>$1</li>')
+                    .replace(/\n/g, '<br>');
+            }
+
+            handleQueryError(errorMessage) {
+                const responseContainer = document.getElementById('queryResponse');
+                responseContainer.innerHTML = `
+                    <div style="color: #e74c3c; padding: 20px; background: #fdf2f2; border-radius: 6px; border: 1px solid #f5c6cb;">
+                        <strong>Error:</strong> ${errorMessage}
+                    </div>
+                `;
+            }
+
+            cancelQuery() {
+                this.requestCancelled = true;
+                if (this.currentRequest) {
+                    this.currentRequest.abort();
+                }
+                this.setQueryInProgress(false);
+                this.handleQueryError('Request was cancelled by user');
+            }
+
+            setQueryInProgress(inProgress) {
+                const submitBtn = document.getElementById('submitQuery');
+                const cancelBtn = document.getElementById('cancelQuery');
+                const progressBar = document.getElementById('progressBar');
+
+                if (inProgress) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Processing...';
+                    cancelBtn.style.display = 'inline-block';
+                    progressBar.style.display = 'block';
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Query';
+                    cancelBtn.style.display = 'none';
+                    progressBar.style.display = 'none';
+                    document.getElementById('progressText').textContent = '';
+                }
+            }
+
+            updateProgressTimer() {
+                if (!this.requestStartTime || this.requestCancelled) {
+                    return;
+                }
+
+                const elapsed = Date.now() - this.requestStartTime;
+                const seconds = Math.floor(elapsed / 1000);
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = seconds % 60;
+
+                const timeStr = minutes > 0 ? `${minutes}m ${remainingSeconds}s` : `${remainingSeconds}s`;
+                document.getElementById('progressText').textContent = `Elapsed: ${timeStr}`;
+
+                if (!this.requestCancelled && this.currentRequest) {
+                    setTimeout(() => this.updateProgressTimer(), 1000);
+                }
+            }
+
+            clearQueryResponse() {
+                const responseContainer = document.getElementById('queryResponse');
+                responseContainer.innerHTML = `
+                    <div style="text-align: center; color: #666; padding: 40px;">
+                        Processing query... Watch the real-time progress below.
+                    </div>
+                `;
+            }
+
+            clearVisualizationData() {
+                // Clear previous visualization data when new query starts
+                this.agents.clear();
+                this.tasks.clear();
+                this.finalOutputs = [];
+                this.activityLog = [];
+                
+                // Update all sections
+                this.updateAgentsList();
+                this.updateTasksList();
+                this.updateFinalOutputSection();
+                this.updateMetrics();
+                
+                // Clear activity log
+                document.getElementById('activityLog').innerHTML = '';
             }
         }
 

@@ -400,16 +400,41 @@ class AgentTeam:
                     print(f"Created message with ID: {message.id} for task in thread {self._agent_thread.id}")
                     agent = self._get_member_by_name(task.recipient)
                     if agent and agent.agent_instance:
+                        print(f"Starting run for agent '{agent.name}' with timeout handling...")
+                        
+                        # Create and process run with extended timeout for complex queries
                         run = self._agents_client.runs.create_and_process(
-                            thread_id=self._agent_thread.id, agent_id=agent.agent_instance.id
+                            thread_id=self._agent_thread.id, 
+                            agent_id=agent.agent_instance.id,
+                            # Add timeout parameters if supported
                         )
                         print(f"Created and processed run for agent '{agent.name}', run ID: {run.id}")
-                        text_message = self._agents_client.messages.get_last_message_text_by_role(
-                            thread_id=self._agent_thread.id, role=MessageRole.AGENT
-                        )
+                        
+                        # Wait a bit to ensure the run has fully completed
+                        import time
+                        time.sleep(2)  # Give the system time to finalize the response
+                        
+                        # Retry mechanism to get the response
+                        max_retries = 5
+                        retry_count = 0
+                        text_message = None
+                        
+                        while retry_count < max_retries:
+                            text_message = self._agents_client.messages.get_last_message_text_by_role(
+                                thread_id=self._agent_thread.id, role=MessageRole.AGENT
+                            )
+                            
+                            if text_message and text_message.text and len(text_message.text.value.strip()) > 10:
+                                break
+                            
+                            retry_count += 1
+                            print(f"Retry {retry_count}/{max_retries} - waiting for complete response from agent '{agent.name}'...")
+                            time.sleep(3)  # Wait 3 seconds before retry
+                        
                         if text_message and text_message.text:
                             agent_response_text = text_message.text.value
-                            print(f"Agent '{agent.name}' completed task. Outcome: {agent_response_text}")
+                            print(f"Agent '{agent.name}' completed task. Response length: {len(agent_response_text)} characters")
+                            print(f"Agent '{agent.name}' response preview: {agent_response_text[:200]}...")
                             
                             # Emit response generated event
                             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
@@ -445,6 +470,20 @@ class AgentTeam:
                             
                             if self._current_task_span is not None:
                                 self._add_task_completion_event(self._current_task_span, result=agent_response_text)
+                        else:
+                            print(f"⚠️  Warning: No response received from agent '{agent.name}' after {max_retries} retries")
+                            # Create a fallback response
+                            agent_response_text = f"Agent {agent.name} did not provide a complete response. Please try again."
+                            
+                            # Still emit events for tracking
+                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                                event_emitter.emit_sync("task_completed", "task", {
+                                    "recipient": task.recipient,
+                                    "task_description": task.task_description,
+                                    "result": agent_response_text,
+                                    "task_id": f"{task.recipient}_{len(agent_responses)}",
+                                    "status": "incomplete"
+                                })
 
                     # If no tasks remain AND the recipient is not the TeamLeader,
                     # let the TeamLeader see if more delegation is needed.
@@ -566,16 +605,37 @@ class AgentTeam:
                     
                     agent = self._get_member_by_name(task.recipient)
                     if agent and agent.agent_instance:
+                        print(f"Starting simple run for agent '{agent.name}' with timeout handling...")
+                        
                         run = self._agents_client.runs.create_and_process(
                             thread_id=self._agent_thread.id, agent_id=agent.agent_instance.id
                         )
                         print(f"Created and processed run for agent '{agent.name}', run ID: {run.id}")
-                        text_message = self._agents_client.messages.get_last_message_text_by_role(
-                            thread_id=self._agent_thread.id, role=MessageRole.AGENT
-                        )
+                        
+                        # Wait a bit to ensure the run has fully completed
+                        import time
+                        time.sleep(2)
+                        
+                        # Retry mechanism to get the response
+                        max_retries = 5
+                        retry_count = 0
+                        text_message = None
+                        
+                        while retry_count < max_retries:
+                            text_message = self._agents_client.messages.get_last_message_text_by_role(
+                                thread_id=self._agent_thread.id, role=MessageRole.AGENT
+                            )
+                            
+                            if text_message and text_message.text and len(text_message.text.value.strip()) > 10:
+                                break
+                            
+                            retry_count += 1
+                            print(f"Simple retry {retry_count}/{max_retries} - waiting for complete response from agent '{agent.name}'...")
+                            time.sleep(3)
+                        
                         if text_message and text_message.text:
                             agent_response = text_message.text.value
-                            print(f"Agent '{agent.name}' completed task. Outcome: {agent_response}")
+                            print(f"Agent '{agent.name}' completed simple task. Response length: {len(agent_response)} characters")
                             
                             # Emit response generated event
                             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:

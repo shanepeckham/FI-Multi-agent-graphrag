@@ -908,27 +908,58 @@ def query_graph(question: str, search_type: str = "local") -> str:
     print(f"Using search type: {search_type}")
     search_func = search_functions[search_type]
     
-    # Handle async execution in sync context
+    # Handle async execution in sync context with proper waiting
     try:
-        loop = asyncio.get_running_loop()
-        # We're in an event loop, so we need to run in a thread
-        def run_in_thread():
-            # Create a new event loop for this thread
-            new_loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(new_loop)
-            try:
-                return new_loop.run_until_complete(search_func(question))
-            finally:
-                new_loop.close()
-        
-        # Run in a separate thread
-        with ThreadPoolExecutor() as executor:
-            future = executor.submit(run_in_thread)
-            return future.result()
+        # Check if we're already in an event loop
+        try:
+            loop = asyncio.get_running_loop()
+            print("Found existing event loop, running in thread pool")
             
-    except RuntimeError:
-        # No event loop running, we can use asyncio.run directly
-        return asyncio.run(search_func(question))
+            # We're in an event loop, so we need to run in a thread to avoid blocking
+            def run_async_in_new_loop():
+                # Create a completely new event loop for this thread
+                new_loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(new_loop)
+                try:
+                    print(f"Starting {search_type} search in new thread...")
+                    result = new_loop.run_until_complete(search_func(question))
+                    print(f"Completed {search_type} search in thread")
+                    return result
+                except Exception as e:
+                    print(f"Error in thread execution: {e}")
+                    raise
+                finally:
+                    new_loop.close()
+            
+            # Use ThreadPoolExecutor with proper timeout and error handling
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                print("Submitting task to thread pool...")
+                future = executor.submit(run_async_in_new_loop)
+                
+                # Wait for completion with a reasonable timeout (5 minutes)
+                try:
+                    result = future.result(timeout=300)  # 5 minutes timeout
+                    print("Thread pool task completed successfully")
+                    return result
+                except TimeoutError:
+                    print("GraphRAG query timed out after 5 minutes")
+                    raise Exception("GraphRAG query timed out")
+                except Exception as e:
+                    print(f"Thread pool execution failed: {e}")
+                    raise
+                    
+        except RuntimeError as e:
+            # No event loop running, we can use asyncio.run directly
+            print("No existing event loop found, running directly")
+            print(f"Starting {search_type} search...")
+            result = asyncio.run(search_func(question))
+            print(f"Completed {search_type} search")
+            return result
+            
+    except Exception as e:
+        print(f"Error in query_graph: {e}")
+        print(f"Traceback: {traceback.format_exc()}")
+        raise Exception(f"GraphRAG query failed: {str(e)}")
 
 
 # ==============================================================================
@@ -1083,8 +1114,27 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
             )
         
         # Assemble and run the team
+        print("🔧 Assembling agent team...")
         agent_team.assemble_team()
-        return agent_team.process_request(request=question)
+        
+        print(f"🚀 Starting agent team processing for question: {question}")
+        print(f"📊 Team configuration:")
+        print(f"   - Use Search: {use_search}")
+        print(f"   - Use Graph: {use_graph} (type: {graph_query_type})")
+        print(f"   - Use Web: {use_web}")
+        print(f"   - Use Reasoning: {use_reasoning}")
+        
+        # Process the request and ensure we wait for completion
+        result = agent_team.process_request(request=question)
+        
+        print(f"✅ Agent team processing completed")
+        print(f"📝 Result length: {len(result) if result else 0} characters")
+        
+        if not result or len(result.strip()) < 10:
+            print("⚠️  Warning: Received empty or very short result from agent team")
+            return "Error: Agent team returned empty or incomplete response. Please try again."
+        
+        return result
     
     return "Error: MODEL_DEPLOYMENT_NAME is not set"
 
