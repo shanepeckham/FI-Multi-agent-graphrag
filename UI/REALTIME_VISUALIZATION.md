@@ -2,6 +2,8 @@
 
 This system provides **real-time visualization** of your GraphRAG Multi-Agent Team collaboration using WebSockets and a modern web dashboard.
 
+![Realtime Dashboard](./media/Realtimedashboard.png)
+
 ## 🌟 Features
 
 ### 📊 **Real-time Dashboard**

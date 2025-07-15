@@ -121,6 +121,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000
 - **API Documentation**: http://localhost:8000/docs
 - **Health Check**: http://localhost:8000/health
 - **Query Endpoint**: POST http://localhost:8000/query_team
+- **Real-time Dashboard**: http://localhost:8000/dashboard
 
 #### Example API Request
 
@@ -137,6 +138,28 @@ curl -X POST "http://localhost:8000/query_team" \
     "use_reasoning": false
   }'
 ```
+
+## 📊 Real-time Dashboard
+
+Monitor your agent team collaboration in real-time with the interactive dashboard:
+
+![Realtime Dashboard](./UI/media/Realtimedashboard.png)
+
+### Dashboard Features
+
+- **Live Agent Status**: See which agents are active, working, or idle
+- **Task Flow Visualization**: Track tasks as they move through the team
+- **Activity Timeline**: Real-time log of all agent activities
+- **Performance Metrics**: Live counters for active agents and completed tasks
+- **WebSocket Integration**: Instant updates without refreshing
+
+### Access the Dashboard
+
+1. Start your application: `uvicorn main:app --host 0.0.0.0 --port 8000`
+2. Open your browser to: http://localhost:8000/dashboard
+3. Send API requests to see real-time updates
+
+For detailed dashboard documentation, see [UI/REALTIME_VISUALIZATION.md](./UI/REALTIME_VISUALIZATION.md)
 
 ## 🔗 API Usage
 
