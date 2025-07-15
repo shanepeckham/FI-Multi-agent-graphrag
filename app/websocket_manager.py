@@ -113,6 +113,16 @@ class WebSocketManager:
         }
         await self.broadcast(message)
     
+    async def send_run_event(self, event_type: str, data: Dict[str, Any]):
+        """Send run-related events to all clients"""
+        message = {
+            "type": "run",
+            "event_type": event_type,
+            "data": data,
+            "timestamp": datetime.now().isoformat()
+        }
+        await self.broadcast(message)
+    
     async def send_progress_update(self, session_id: str, progress_data: Dict[str, Any]):
         """Send progress updates for a specific session"""
         message = {

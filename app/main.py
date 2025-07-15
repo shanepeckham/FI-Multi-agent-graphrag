@@ -133,7 +133,7 @@ from dotenv import load_dotenv
 # Azure AI and Identity imports
 from azure.ai.agents.models import (
     FunctionTool, ToolSet, AsyncFunctionTool, AsyncToolSet,
-    AzureAISearchQueryType, AzureAISearchTool, BingGroundingTool, BingGroundingSearchConfiguration
+    AzureAISearchQueryType, AzureAISearchTool, BingGroundingTool, BingGroundingSearchConfiguration, BingCustomSearchTool
 )
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
@@ -372,6 +372,7 @@ AI_SEARCH_CONNECTION_NAME = os.getenv("AI_SEARCH_CONNECTION_NAME", "agentsearche
 GRAPH_QUERY_TYPE = os.getenv("GRAPH_QUERY_TYPE", "local")
 AI_SEARCH_INDEX_NAME = os.getenv("AI_SEARCH_INDEX_NAME", "report_agent")
 BING_CONNECTION_NAME = os.getenv("BING_CONNECTION_NAME", "agentbing")
+BING_CONFIGURATION = os.getenv("BING_CONFIGURATION", "sky")
 
 # Sample questions for testing
 SAMPLE_QUESTIONS = [
@@ -1109,7 +1110,9 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                 model=MODEL_DEPLOYMENT_NAME,
                 name="Bing-agent-multi",
                 instructions=(BING_AGENT_INSTRUCTIONS),
-                toolset=bing_toolset,
+                #toolset=bing_toolset.definitions,
+                tools=bing_tool.definitions,
+                tool_resources=bing_tool.resources,
                 can_delegate=False
             )
         
@@ -1138,7 +1141,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
     
     return "Error: MODEL_DEPLOYMENT_NAME is not set"
 
-def _create_search_tools_with_type(project_client: AIProjectClient, search_type: str) -> Tuple[AzureAISearchTool, BingGroundingTool]:
+def _create_search_tools_with_type(project_client: AIProjectClient, search_type: str) -> Tuple[AzureAISearchTool, BingCustomSearchTool]:
     """Create search tools with specified search type."""
     # Azure AI Search tool
     search_conn = project_client.connections.get(name=AI_SEARCH_CONNECTION_NAME, include_credentials=True)
@@ -1162,8 +1165,8 @@ def _create_search_tools_with_type(project_client: AIProjectClient, search_type:
 
     # Bing Search tool
     bing_conn = project_client.connections.get(name=BING_CONNECTION_NAME, include_credentials=True)
-    bing_tool = BingGroundingTool(connection_id=bing_conn.id)
-    
+    bing_tool = BingCustomSearchTool(connection_id=bing_conn.id, instance_name=BING_CONFIGURATION)
+
     return search_tool, bing_tool
 
 

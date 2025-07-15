@@ -46,6 +46,14 @@ class WebSocketEventEmitter:
             except Exception as e:
                 print(f"Error emitting team event: {e}")
     
+    async def emit_run_event(self, event_type: str, data: Dict[str, Any]):
+        """Emit run-related events"""
+        if self.websocket_manager:
+            try:
+                await self.websocket_manager.send_run_event(event_type, data)
+            except Exception as e:
+                print(f"Error emitting run event: {e}")
+    
     def emit_sync(self, event_type: str, category: str, data: Dict[str, Any]):
         """Synchronous wrapper for emitting events"""
         try:
@@ -59,6 +67,8 @@ class WebSocketEventEmitter:
                     loop.create_task(self.emit_task_event(event_type, data))
                 elif category == "team":
                     loop.create_task(self.emit_team_event(event_type, data))
+                elif category == "run":
+                    loop.create_task(self.emit_run_event(event_type, data))
             except RuntimeError:
                 # No running event loop, try to create a new one
                 try:
@@ -68,6 +78,8 @@ class WebSocketEventEmitter:
                         asyncio.run(self.emit_task_event(event_type, data))
                     elif category == "team":
                         asyncio.run(self.emit_team_event(event_type, data))
+                    elif category == "run":
+                        asyncio.run(self.emit_run_event(event_type, data))
                 except Exception as e:
                     print(f"Could not run async event in new loop: {e}")
         except Exception as e:

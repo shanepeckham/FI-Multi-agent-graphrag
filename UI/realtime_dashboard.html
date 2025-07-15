@@ -156,8 +156,9 @@
             padding: 10px;
             border-bottom: 1px solid #eee;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .log-entry:last-child {
@@ -168,6 +169,15 @@
             font-size: 0.8em;
             color: #7f8c8d;
             min-width: 80px;
+            flex-shrink: 0;
+        }
+
+        .log-message {
+            flex: 1;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: pre-wrap;
+            line-height: 1.4;
         }
 
         .log-type {
@@ -190,6 +200,11 @@
 
         .log-type.team {
             background: #27ae60;
+            color: white;
+        }
+
+        .log-type.run {
+            background: #e67e22;
             color: white;
         }
 
@@ -686,6 +701,9 @@
                     case 'team_event':
                         this.handleTeamEvent(message);
                         break;
+                    case 'run':
+                        this.handleRunEvent(message);
+                        break;
                     case 'progress':
                         this.handleProgress(message);
                         break;
@@ -839,6 +857,15 @@
                         this.updateFinalOutputSection();
                         break;
                 }
+            }
+
+            handleRunEvent(message) {
+                const { event_type, data } = message;
+                console.log('Run event:', event_type, data);
+                
+                // Run events are primarily for logging and tracking
+                // They don't need to update any UI components beyond the activity log
+                // The actual processing will be handled by task_event or agent_event types
             }
 
             handleProgress(message) {
@@ -1016,7 +1043,7 @@
                 logEntry.innerHTML = `
                     <span class="log-timestamp">${timestamp}</span>
                     <span class="log-type ${message.type.split('_')[0]}">${logType}</span>
-                    <span>${this.formatLogMessage(message)}</span>
+                    <span class="log-message">${this.formatLogMessage(message)}</span>
                 `;
                 
                 const activityLog = document.getElementById('activityLog');
@@ -1037,9 +1064,9 @@
                             case 'agent_created':
                                 return `Agent created: ${data.agent_name} (${data.model || 'Unknown model'})`;
                             case 'agent_started_task':
-                                return `${data.agent_name} started: "${(data.task_description || '').substring(0, 100)}..."`;
+                                return `${data.agent_name} started: "${data.task_description || ''}"`;
                             case 'agent_completed_task':
-                                return `${data.agent_name} completed task${data.result ? ': "' + data.result.substring(0, 100) + '..."' : ''}`;
+                                return `${data.agent_name} completed task${data.result ? ': "' + data.result + '"' : ''}`;
                             default:
                                 return `${message.event_type}: ${data.agent_name || 'Unknown Agent'}`;
                         }
@@ -1047,23 +1074,30 @@
                         switch (message.event_type) {
                             case 'task_created':
                             case 'message_sent':
-                                return `📤 ${data.requestor || data.from || 'Unknown'} → ${data.recipient || data.to || 'Unknown'}: "${(data.message || data.task_description || '').substring(0, 150)}..."`;
+                                return `📤 ${data.requestor || data.from || 'Unknown'} → ${data.recipient || data.to || 'Unknown'}: "${data.message || data.task_description || ''}"`;
                             case 'task_started':
                             case 'message_processing':
-                                return `⚡ Processing: "${(data.message || data.task_description || '').substring(0, 100)}..."`;
+                                return `⚡ Processing: "${data.message || data.task_description || ''}"`;
                             case 'task_completed':
                             case 'response_generated':
-                                return `✅ Response: "${(data.result || data.response || data.output || '').substring(0, 150)}..."`;
+                                return `✅ Response: "${data.result || data.response || data.output || ''}"`;
                             default:
                                 return `${message.event_type}: ${data.recipient || 'Unknown'}`;
                         }
                     case 'team_event':
-                        return `Team ${message.event_type}: ${data.team_name || 'Agent Team'}${data.message ? ' - ' + data.message.substring(0, 100) : ''}`;
+                        return `Team ${message.event_type}: ${data.team_name || 'Agent Team'}${data.message ? ' - ' + data.message : ''}`;
+                    case 'run':
+                        // Handle run events - the event_type is in the main message, not nested
+                        if (message.event_type === 'run_started') {
+                            return `🚀 Run Started: ${data.from || 'Unknown'} → ${data.to || 'Unknown'} | Tool: ${data.message || 'Unknown'} | Usage: ${data.usage || 'N/A'}`;
+                        } else {
+                            return `🏃 Run ${message.event_type || 'event'}: ${data.from || 'Unknown'} → ${data.to || 'Unknown'}`;
+                        }
                     case 'connection':
                         return `Connected to session ${message.session_id}`;
                     default:
                         // Show full data for debugging
-                        return `${message.type}: ${JSON.stringify(data).substring(0, 200)}${JSON.stringify(data).length > 200 ? '...' : ''}`;
+                        return `${message.type}: ${JSON.stringify(data)}`;
                 }
             }
 
