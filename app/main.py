@@ -374,6 +374,10 @@ AI_SEARCH_INDEX_NAME = os.getenv("AI_SEARCH_INDEX_NAME", "report_agent")
 BING_CONNECTION_NAME = os.getenv("BING_CONNECTION_NAME", "agentbing")
 BING_CONFIGURATION = os.getenv("BING_CONFIGURATION", "sky")
 
+# TEAM configuration
+TEAM_NAME = os.getenv("TEAM_NAME", "cr_team")
+TEAM_DESCRIPTION = "A team of agents specialized in financial analysis and reporting."
+
 # Sample questions for testing
 SAMPLE_QUESTIONS = [
     "Are there any mine safety disclosures?",
@@ -382,6 +386,7 @@ SAMPLE_QUESTIONS = [
     "What would be the five-year cumulative total shareholder return if $100 was invested on September 2019 on the S&P 500 index?",
     "Given only the information provided to you, with no public record searches, evaluate the financial health of the company. What are the key indicators of financial health? What are the key risks to financial health? What are the key opportunities for financial health? What is your overall assessment of the company's financial health? Would you invest in this company? Why or why not?"
     "Are there any drops in revenue? If yes, what are the reasons for the drop? Which services/products are affected? What is the percentage drop in revenue? ",
+    "How many shareholders were present in 18 October 2024?"
 ]
 
 # Current question being processed
@@ -472,7 +477,7 @@ def _create_azure_project_client() -> AIProjectClient:
 # AGENT TASK MANAGEMENT FUNCTIONS
 # ==============================================================================
 @tracer.start_as_current_span("create_task")  # type: ignore
-def create_task(team_name: str, recipient: str, request: str, requestor: str) -> str:
+def create_task(recipient: str, request: str, requestor: str) -> str:
     """
     Request another agent in the team to complete a task.
 
@@ -496,7 +501,7 @@ def create_task(team_name: str, recipient: str, request: str, requestor: str) ->
     team: Optional[AgentTeam] = None
     
     try:
-        team = AgentTeam.get_team(team_name)
+        team = AgentTeam.get_team(TEAM_NAME)
     except Exception:
         # Log the exception if needed, but continue gracefully
         pass
@@ -1017,7 +1022,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         AgentTraceConfigurator(agents_client=agents_client).setup_tracing()
         
         # Create agent team without using 'with' statement to avoid closing the client
-        agent_team = AgentTeam("cr_team", agents_client=agents_client)
+        agent_team = AgentTeam(TEAM_NAME, agents_client=agents_client)
 
         # Get the directory of the current script to ensure we find the config file
         script_dir = Path(__file__).parent
@@ -1129,6 +1134,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         
         # Process the request and ensure we wait for completion
         result = agent_team.process_request(request=question)
+        agent_team.dismantle_team()
         
         print(f"✅ Agent team processing completed")
         print(f"📝 Result length: {len(result) if result else 0} characters")

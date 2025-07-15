@@ -4,7 +4,6 @@
 # Licensed under the MIT License.
 # ------------------------------------
 import os
-from pyexpat.errors import messages
 import yaml  # type: ignore
 import time
 
@@ -82,7 +81,6 @@ class AgentTeam:
     _team_leader: Optional[_AgentTeamMember] = None
     _members: List[_AgentTeamMember] = []
     _tasks: List[AgentTask] = []
-    _team_name: str = ""
     _current_request_span: Optional[Span] = None
     _current_task_span: Optional[Span] = None
 
@@ -231,7 +229,7 @@ class AgentTeam:
         """
         toolset = ToolSet()
         toolset.add(default_function_tool)
-        instructions = self.TEAM_LEADER_INSTRUCTIONS.format(agent_name="TeamLeader", team_name=self.team_name) + "\n"
+        instructions = self.TEAM_LEADER_INSTRUCTIONS.format(agent_name="TeamLeader", TEAM_NAME=self.team_name) + "\n"
         # List all agents (will be empty at this moment if you haven't added any, or you can append after they're added)
         for member in self._members:
             instructions += f"- {member.name}: {member.instructions}\n"
@@ -268,14 +266,14 @@ class AgentTeam:
             if member.can_delegate:
                 extended_instructions = self.TEAM_MEMBER_CAN_DELEGATE_INSTRUCTIONS.format(
                     name=member.name,
-                    team_name=self._team_name,
+                    TEAM_NAME=self.team_name,
                     original_instructions=member.instructions,
                     team_description=team_description,
                 )
             else:
                 extended_instructions = self.TEAM_MEMBER_NO_DELEGATE_INSTRUCTIONS.format(
                     name=member.name,
-                    team_name=self._team_name,
+                    TEAM_NAME=self.team_name,
                     original_instructions=member.instructions,
                     team_description=team_description,
                 )
