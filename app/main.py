@@ -78,7 +78,6 @@ import warnings
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Optional, Union
 
-import uvicorn
 import yaml
 
 # Python 3.9+ type annotations
@@ -134,7 +133,7 @@ from dotenv import load_dotenv
 # Azure AI and Identity imports
 from azure.ai.agents.models import (
     FunctionTool, ToolSet, AsyncFunctionTool, AsyncToolSet,
-    AzureAISearchQueryType, AzureAISearchTool, BingGroundingTool, BingGroundingSearchConfiguration
+    AzureAISearchQueryType, AzureAISearchTool, BingGroundingTool, BingGroundingSearchConfiguration, BingCustomSearchTool
 )
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
@@ -165,13 +164,24 @@ from graphrag.vector_stores.lancedb import LanceDBVectorStore
 import sys
 from pathlib import Path
 
-from agent_team import AgentTeam, AgentTask
+from agent_team_dashboard import AgentTeam, AgentTask
 from agent_trace_configurator import AgentTraceConfigurator
 
+# Conditional import for WebSocket manager
+try:
+    from websocket_manager import websocket_manager
+    WEBSOCKET_AVAILABLE = True
+except ImportError as e:
+    print(f"WebSocket manager not available: {e}")
+    websocket_manager = None
+    WEBSOCKET_AVAILABLE = False
+
 # FastAPI imports
-from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Security
+from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Security, WebSocket, WebSocketDisconnect
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from opentelemetry import trace
@@ -362,6 +372,11 @@ AI_SEARCH_CONNECTION_NAME = os.getenv("AI_SEARCH_CONNECTION_NAME", "agentsearche
 GRAPH_QUERY_TYPE = os.getenv("GRAPH_QUERY_TYPE", "local")
 AI_SEARCH_INDEX_NAME = os.getenv("AI_SEARCH_INDEX_NAME", "report_agent")
 BING_CONNECTION_NAME = os.getenv("BING_CONNECTION_NAME", "agentbing")
+BING_CONFIGURATION = os.getenv("BING_CONFIGURATION", "sky")
+
+# TEAM configuration
+TEAM_NAME = os.getenv("TEAM_NAME", "cr_team")
+TEAM_DESCRIPTION = "A team of agents specialized in financial analysis and reporting."
 
 # Sample questions for testing
 SAMPLE_QUESTIONS = [
@@ -371,6 +386,7 @@ SAMPLE_QUESTIONS = [
     "What would be the five-year cumulative total shareholder return if $100 was invested on September 2019 on the S&P 500 index?",
     "Given only the information provided to you, with no public record searches, evaluate the financial health of the company. What are the key indicators of financial health? What are the key risks to financial health? What are the key opportunities for financial health? What is your overall assessment of the company's financial health? Would you invest in this company? Why or why not?"
     "Are there any drops in revenue? If yes, what are the reasons for the drop? Which services/products are affected? What is the percentage drop in revenue? ",
+    "How many shareholders were present in 18 October 2024?"
 ]
 
 # Current question being processed
@@ -461,7 +477,7 @@ def _create_azure_project_client() -> AIProjectClient:
 # AGENT TASK MANAGEMENT FUNCTIONS
 # ==============================================================================
 @tracer.start_as_current_span("create_task")  # type: ignore
-def create_task(team_name: str, recipient: str, request: str, requestor: str) -> str:
+def create_task(recipient: str, request: str, requestor: str) -> str:
     """
     Request another agent in the team to complete a task.
 
@@ -485,7 +501,7 @@ def create_task(team_name: str, recipient: str, request: str, requestor: str) ->
     team: Optional[AgentTeam] = None
     
     try:
-        team = AgentTeam.get_team(team_name)
+        team = AgentTeam.get_team(TEAM_NAME)
     except Exception:
         # Log the exception if needed, but continue gracefully
         pass
@@ -898,27 +914,58 @@ def query_graph(question: str, search_type: str = "local") -> str:
     print(f"Using search type: {search_type}")
     search_func = search_functions[search_type]
     
-    # Handle async execution in sync context
+    # Handle async execution in sync context with proper waiting
     try:
-        loop = asyncio.get_running_loop()
-        # We're in an event loop, so we need to run in a thread
-        def run_in_thread():
-            # Create a new event loop for this thread
-            new_loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(new_loop)
-            try:
-                return new_loop.run_until_complete(search_func(question))
-            finally:
-                new_loop.close()
-        
-        # Run in a separate thread
-        with ThreadPoolExecutor() as executor:
-            future = executor.submit(run_in_thread)
-            return future.result()
+        # Check if we're already in an event loop
+        try:
+            loop = asyncio.get_running_loop()
+            print("Found existing event loop, running in thread pool")
             
-    except RuntimeError:
-        # No event loop running, we can use asyncio.run directly
-        return asyncio.run(search_func(question))
+            # We're in an event loop, so we need to run in a thread to avoid blocking
+            def run_async_in_new_loop():
+                # Create a completely new event loop for this thread
+                new_loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(new_loop)
+                try:
+                    print(f"Starting {search_type} search in new thread...")
+                    result = new_loop.run_until_complete(search_func(question))
+                    print(f"Completed {search_type} search in thread")
+                    return result
+                except Exception as e:
+                    print(f"Error in thread execution: {e}")
+                    raise
+                finally:
+                    new_loop.close()
+            
+            # Use ThreadPoolExecutor with proper timeout and error handling
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                print("Submitting task to thread pool...")
+                future = executor.submit(run_async_in_new_loop)
+                
+                # Wait for completion with a reasonable timeout (5 minutes)
+                try:
+                    result = future.result(timeout=300)  # 5 minutes timeout
+                    print("Thread pool task completed successfully")
+                    return result
+                except TimeoutError:
+                    print("GraphRAG query timed out after 5 minutes")
+                    raise Exception("GraphRAG query timed out")
+                except Exception as e:
+                    print(f"Thread pool execution failed: {e}")
+                    raise
+                    
+        except RuntimeError as e:
+            # No event loop running, we can use asyncio.run directly
+            print("No existing event loop found, running directly")
+            print(f"Starting {search_type} search...")
+            result = asyncio.run(search_func(question))
+            print(f"Completed {search_type} search")
+            return result
+            
+    except Exception as e:
+        print(f"Error in query_graph: {e}")
+        print(f"Traceback: {traceback.format_exc()}")
+        raise Exception(f"GraphRAG query failed: {str(e)}")
 
 
 # ==============================================================================
@@ -975,7 +1022,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         AgentTraceConfigurator(agents_client=agents_client).setup_tracing()
         
         # Create agent team without using 'with' statement to avoid closing the client
-        agent_team = AgentTeam("cr_team", agents_client=agents_client)
+        agent_team = AgentTeam(TEAM_NAME, agents_client=agents_client)
 
         # Get the directory of the current script to ensure we find the config file
         script_dir = Path(__file__).parent
@@ -1068,17 +1115,39 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                 model=MODEL_DEPLOYMENT_NAME,
                 name="Bing-agent-multi",
                 instructions=(BING_AGENT_INSTRUCTIONS),
-                toolset=bing_toolset,
+                #toolset=bing_toolset.definitions,
+                tools=bing_tool.definitions,
+                tool_resources=bing_tool.resources,
                 can_delegate=False
             )
         
         # Assemble and run the team
+        print("🔧 Assembling agent team...")
         agent_team.assemble_team()
-        return agent_team.process_request(request=question)
+        
+        print(f"🚀 Starting agent team processing for question: {question}")
+        print(f"📊 Team configuration:")
+        print(f"   - Use Search: {use_search}")
+        print(f"   - Use Graph: {use_graph} (type: {graph_query_type})")
+        print(f"   - Use Web: {use_web}")
+        print(f"   - Use Reasoning: {use_reasoning}")
+        
+        # Process the request and ensure we wait for completion
+        result = agent_team.process_request(request=question)
+        agent_team.dismantle_team()
+        
+        print(f"✅ Agent team processing completed")
+        print(f"📝 Result length: {len(result) if result else 0} characters")
+        
+        if not result or len(result.strip()) < 10:
+            print("⚠️  Warning: Received empty or very short result from agent team")
+            return "Error: Agent team returned empty or incomplete response. Please try again."
+        
+        return result
     
     return "Error: MODEL_DEPLOYMENT_NAME is not set"
 
-def _create_search_tools_with_type(project_client: AIProjectClient, search_type: str) -> Tuple[AzureAISearchTool, BingGroundingTool]:
+def _create_search_tools_with_type(project_client: AIProjectClient, search_type: str) -> Tuple[AzureAISearchTool, BingCustomSearchTool]:
     """Create search tools with specified search type."""
     # Azure AI Search tool
     search_conn = project_client.connections.get(name=AI_SEARCH_CONNECTION_NAME, include_credentials=True)
@@ -1102,8 +1171,8 @@ def _create_search_tools_with_type(project_client: AIProjectClient, search_type:
 
     # Bing Search tool
     bing_conn = project_client.connections.get(name=BING_CONNECTION_NAME, include_credentials=True)
-    bing_tool = BingGroundingTool(connection_id=bing_conn.id)
-    
+    bing_tool = BingCustomSearchTool(connection_id=bing_conn.id, instance_name=BING_CONFIGURATION)
+
     return search_tool, bing_tool
 
 
@@ -1134,17 +1203,12 @@ async def health_check():
 
 
 @app.post("/query_team", response_model=QueryResponse)
-def query_team_endpoint(request: QueryRequest, _: bool = Depends(verify_api_key)) -> QueryResponse:
+def query_team_endpoint(request: QueryRequest) -> QueryResponse:
     """
     Query the agent team for financial analysis.
     
-    Requires Bearer token authentication in the Authorization header.
-    
     This endpoint uses pre-loaded resources from application startup
-    to provide fast responses without reloading data.
-    
-    Headers:
-        Authorization: Bearer <your_api_key>
+    to provide fast responses without reloading data. No authentication required.
     """
     try:
         # Use global variables loaded at startup
@@ -1172,6 +1236,37 @@ def query_team_endpoint(request: QueryRequest, _: bool = Depends(verify_api_key)
 
 
 # ==============================================================================
+# WEBSOCKET ENDPOINTS FOR REAL-TIME VISUALIZATION
+# ==============================================================================
+
+@app.websocket("/ws/{session_id}")
+async def websocket_endpoint(websocket: WebSocket, session_id: str):
+    """WebSocket endpoint for real-time agent team visualization"""
+    if not WEBSOCKET_AVAILABLE or not websocket_manager:
+        await websocket.close(code=1011, reason="WebSocket not available")
+        return
+        
+    await websocket_manager.connect(websocket, session_id)
+    try:
+        while True:
+            # Keep the connection alive and listen for messages
+            data = await websocket.receive_text()
+            # Echo back or handle specific messages if needed
+            await websocket.send_text(f"Message received: {data}")
+    except WebSocketDisconnect:
+        websocket_manager.disconnect(websocket, session_id)
+
+
+@app.get("/dashboard")
+async def get_dashboard():
+    """Serve the real-time dashboard"""
+    dashboard_path = Path(__file__).parent.parent / "UI" / "realtime_dashboard.html"
+    if not dashboard_path.exists():
+        raise HTTPException(status_code=404, detail="Dashboard not found")
+    return FileResponse(dashboard_path)
+
+
+# ==============================================================================
 # MAIN APPLICATION ENTRY POINT
 # ==============================================================================
 
@@ -1182,6 +1277,7 @@ def main() -> None:
     This function initializes and runs the multi-agent financial analysis system.
     """
     try:
+        import uvicorn
         logging.info("Starting Financial Analysis Agent Team with GraphRAG...")
         uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
     except Exception as e:

@@ -5,12 +5,14 @@
 # ------------------------------------
 import os
 import yaml  # type: ignore
+import time
 
 from opentelemetry import trace
 from opentelemetry.trace import Span  # noqa: F401 # pylint: disable=unused-import
 from typing import Any, Dict, Optional, Set, List
 from azure.ai.agents import AgentsClient
-from azure.ai.agents.models import FunctionTool, ToolSet, Tool, ToolResources, MessageRole, Agent, AgentThread, AzureAISearchQueryType, AzureAISearchTool, ListSortOrder, MessageRole
+from azure.ai.agents.models import FunctionTool, ToolSet, Tool, ToolResources, MessageRole, Agent, AgentThread, AzureAISearchQueryType, AzureAISearchTool, ListSortOrder, MessageRole, BingCustomSearchTool
+
 
 # Import WebSocket event emitter conditionally
 try:
@@ -79,7 +81,6 @@ class AgentTeam:
     _team_leader: Optional[_AgentTeamMember] = None
     _members: List[_AgentTeamMember] = []
     _tasks: List[AgentTask] = []
-    _team_name: str = ""
     _current_request_span: Optional[Span] = None
     _current_task_span: Optional[Span] = None
 
@@ -228,7 +229,7 @@ class AgentTeam:
         """
         toolset = ToolSet()
         toolset.add(default_function_tool)
-        instructions = self.TEAM_LEADER_INSTRUCTIONS.format(agent_name="TeamLeader", team_name=self.team_name) + "\n"
+        instructions = self.TEAM_LEADER_INSTRUCTIONS.format(agent_name="TeamLeader", TEAM_NAME=self.team_name) + "\n"
         # List all agents (will be empty at this moment if you haven't added any, or you can append after they're added)
         for member in self._members:
             instructions += f"- {member.name}: {member.instructions}\n"
@@ -265,14 +266,14 @@ class AgentTeam:
             if member.can_delegate:
                 extended_instructions = self.TEAM_MEMBER_CAN_DELEGATE_INSTRUCTIONS.format(
                     name=member.name,
-                    team_name=self._team_name,
+                    TEAM_NAME=self.team_name,
                     original_instructions=member.instructions,
                     team_description=team_description,
                 )
             else:
                 extended_instructions = self.TEAM_MEMBER_NO_DELEGATE_INSTRUCTIONS.format(
                     name=member.name,
-                    team_name=self._team_name,
+                    TEAM_NAME=self.team_name,
                     original_instructions=member.instructions,
                     team_description=team_description,
                 )
@@ -401,17 +402,63 @@ class AgentTeam:
                     agent = self._get_member_by_name(task.recipient)
                     if agent and agent.agent_instance:
                         print(f"Starting run for agent '{agent.name}' with timeout handling...")
-                        
-                        # Create and process run with extended timeout for complex queries
-                        run = self._agents_client.runs.create_and_process(
-                            thread_id=self._agent_thread.id, 
-                            agent_id=agent.agent_instance.id,
-                            # Add timeout parameters if supported
-                        )
+
+                        # TEMP code remove
+                        if agent.name == "Bing-agent-multi":
+                           
+                            # Create and process run with extended timeout for complex queries
+                            run = self._agents_client.runs.create_and_process(
+                                thread_id=self._agent_thread.id, 
+                                agent_id=agent.agent_instance.id,
+                                temperature = 0.1,
+                                tool_choice="auto"
+                                # Add timeout parameters if supported
+                            )
+                        else:
+                             # Create and process run with extended timeout for complex queries
+                            run = self._agents_client.runs.create_and_process(
+                                thread_id=self._agent_thread.id, 
+                                agent_id=agent.agent_instance.id,
+
+                                # Add timeout parameters if supported
+                            )
+
                         print(f"Created and processed run for agent '{agent.name}', run ID: {run.id}")
+
+                        if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                            # Get run details safely
+                            run_tools = "Unknown"
+                            run_usage = "N/A"
+                            
+                            try:
+                                # Safely access run properties
+                                if hasattr(run, 'tools') and run.tools:
+                                    run_tools = str(run.tools[0]) if len(run.tools) > 0 else "No tools"
+                                else:
+                                    run_tools = "No tools"
+                                    
+                                if hasattr(run, 'usage') and run.usage:
+                                    completion_tokens = getattr(run.usage, 'completion_tokens', 0)
+                                    prompt_tokens = getattr(run.usage, 'prompt_tokens', 0)
+                                    run_usage = f"{completion_tokens} completion, {prompt_tokens} prompt tokens"
+                                else:
+                                    run_usage = "Usage data unavailable"
+                            except Exception as e:
+                                print(f"Error accessing run properties: {e}")
+                                run_tools = "Error accessing tools"
+                                run_usage = "Error accessing usage"
+                            
+                            event_emitter.emit_sync("run_started", "run", {
+                                "from": task.requestor,
+                                "to": task.recipient,
+                                "message": run_tools,
+                                "instructions": getattr(run, 'instructions', 'No instructions available'),
+                                "usage": run_usage,
+                                "run_id": run.id,
+                                "agent_id": agent.agent_instance.id
+                            })
                         
                         # Wait a bit to ensure the run has fully completed
-                        import time
                         time.sleep(2)  # Give the system time to finalize the response
                         
                         # Retry mechanism to get the response
@@ -423,6 +470,16 @@ class AgentTeam:
                             text_message = self._agents_client.messages.get_last_message_text_by_role(
                                 thread_id=self._agent_thread.id, role=MessageRole.AGENT
                             )
+
+                            # TODO REMOVE
+                            if agent.name == "Bing-agent-multi":
+                                messages = self._agents_client.messages.list(thread_id=self._agent_thread.id)
+                                for msg in messages:
+                                    if msg.text_messages:
+                                        for text_message in msg.text_messages:
+                                            print(f"Agent response: {text_message.text.value}")
+                                        for annotation in msg.url_citation_annotations:
+                                            print(f"URL Citation: [{annotation.url_citation.title}]({annotation.url_citation.url})")
                             
                             if text_message and text_message.text and len(text_message.text.value.strip()) > 10:
                                 break
@@ -484,6 +541,183 @@ class AgentTeam:
                                     "task_id": f"{task.recipient}_{len(agent_responses)}",
                                     "status": "incomplete"
                                 })
+
+                    # If no tasks remain AND the recipient is not the TeamLeader,
+                    # let the TeamLeader see if more delegation is needed.
+                    if not self._tasks and not task.recipient == "TeamLeader":
+                        team_leader_request = self.TEAM_LEADER_TASK_COMPLETENESS_CHECK_INSTRUCTIONS
+                        _create_task(
+                            team_name=self.team_name,
+                            recipient=self._team_leader.name,
+                            request=team_leader_request,
+                            requestor="user",
+                        )
+                    self._current_task_span = None
+            self._current_request_span = None
+            
+            # Format and return structured markdown response
+            thread_id = self._agent_thread.id if self._agent_thread else "Unknown"
+            markdown_response = self._format_markdown_response(request, agent_responses, thread_id)
+            
+            # Emit team processing completed event
+            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                event_emitter.emit_sync("processing_completed", "team", {
+                    "team_name": self.team_name,
+                    "request": request,
+                    "final_result": markdown_response,
+                    "result": markdown_response,
+                    "response_length": len(markdown_response),
+                    "agents_involved": len(agent_responses),
+                    "thread_id": thread_id,
+                    "summary": f"Completed analysis with {len(agent_responses)} agent responses"
+                })
+            
+            # Print the formatted markdown to console
+            print("\n" + "="*80)
+            print("AGENT TEAM MARKDOWN RESPONSE:")
+            print("="*80)
+            print(markdown_response)
+            print("="*80 + "\n")
+            
+            return markdown_response
+
+    def process_request_old(self, request: str) -> str:
+        """
+        Handle a user's request by creating a team and delegating tasks to
+        the team leader. The team leader may generate additional tasks.
+
+        :param request: The user's request or question.
+        :return: Structured markdown response from the agent team
+        """
+        assert self._agents_client is not None, "project client must not be None"
+        assert self._team_leader is not None, "team leader must not be None"
+
+        agent_responses = []
+
+        if self._agent_thread is None:
+            self._agent_thread = self._agents_client.threads.create()
+            print(f"Created thread with ID: {self._agent_thread.id}")
+
+        with tracer.start_as_current_span("agent_team_request") as current_request_span:
+            self._current_request_span = current_request_span
+            if self._current_request_span is not None:
+                self._current_request_span.set_attribute("agent_team.name", self.team_name)
+            
+            # Emit team processing started event
+            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                event_emitter.emit_sync("processing_started", "team", {
+                    "team_name": self.team_name,
+                    "request": request,
+                    "thread_id": self._agent_thread.id if self._agent_thread else None
+                })
+            
+            team_leader_request = self.TEAM_LEADER_INITIAL_REQUEST.format(original_request=request)
+            _create_task(
+                team_name=self.team_name,
+                recipient=self._team_leader.name,
+                request=team_leader_request,
+                requestor="user",
+            )
+            while self._tasks:
+                task = self._tasks.pop(0)
+                with tracer.start_as_current_span("agent_team_task") as current_task_span:
+                    self._current_task_span = current_task_span
+                    if self._current_task_span is not None:
+                        self._current_task_span.set_attribute("agent_team.name", self.team_name)
+                        self._current_task_span.set_attribute("agent_team.task.recipient", task.recipient)
+                        self._current_task_span.set_attribute("agent_team.task.requestor", task.requestor)
+                        self._current_task_span.set_attribute("agent_team.task.description", task.task_description)
+                    print(
+                        f"Starting task for agent '{task.recipient}'. "
+                        f"Requestor: '{task.requestor}'. "
+                        f"Task description: '{task.task_description}'."
+                    )
+                    
+                    # Emit task started event
+                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                        event_emitter.emit_sync("task_started", "task", {
+                            "recipient": task.recipient,
+                            "requestor": task.requestor,
+                            "task_description": task.task_description,
+                            "task_id": f"{task.recipient}_{len(agent_responses)}"
+                        })
+                    
+                    # Emit agent started task event
+                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                        event_emitter.emit_sync("agent_started_task", "agent", {
+                            "agent_name": task.recipient,
+                            "task_description": task.task_description
+                        })
+                    
+                    # Emit message sent event
+                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                        event_emitter.emit_sync("message_sent", "task", {
+                            "from": task.requestor,
+                            "to": task.recipient,
+                            "message": task.task_description,
+                            "message_id": f"msg_{task.recipient}_{len(agent_responses)}"
+                        })
+                    
+                    message = self._agents_client.messages.create(
+                        thread_id=self._agent_thread.id,
+                        role="user",
+                        content=task.task_description,
+                    )
+                    print(f"Created message with ID: {message.id} for task in thread {self._agent_thread.id}")
+                    agent = self._get_member_by_name(task.recipient)
+                    if agent and agent.agent_instance:
+                        print(f"Starting run for agent '{agent.name}' with timeout handling...")
+                        
+                        # Create and process run with extended timeout for complex queries
+                        run = self._agents_client.runs.create_and_process(
+                            thread_id=self._agent_thread.id, 
+                            agent_id=agent.agent_instance.id,
+                            # Add timeout parameters if supported
+                        )
+                        print(f"Created and processed run for agent '{agent.name}', run ID: {run.id}")
+
+                        text_message = self._agents_client.messages.get_last_message_text_by_role(
+                            thread_id=self._agent_thread.id, role=MessageRole.AGENT
+                        )
+                        if text_message and text_message.text:
+                            agent_response_text = text_message.text.value
+                            print(f"Agent '{agent.name}' completed task. Response length: {len(agent_response_text)} characters")
+                            print(f"Agent '{agent.name}' response preview: {agent_response_text[:200]}...")
+                            
+                            # Emit response generated event
+                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                                event_emitter.emit_sync("response_generated", "task", {
+                                    "agent": agent.name,
+                                    "response": agent_response_text,
+                                    "original_message": task.task_description,
+                                    "message_id": f"resp_{task.recipient}_{len(agent_responses)}"
+                                })
+                            
+                            # Emit task completed event
+                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                                event_emitter.emit_sync("task_completed", "task", {
+                                    "recipient": task.recipient,
+                                    "task_description": task.task_description,
+                                    "result": agent_response_text[:500] + "..." if len(agent_response_text) > 500 else agent_response_text,
+                                    "task_id": f"{task.recipient}_{len(agent_responses)}"
+                                })
+                            
+                            # Emit agent completed task event
+                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+                                event_emitter.emit_sync("agent_completed_task", "agent", {
+                                    "agent_name": agent.name,
+                                    "task_result": agent_response_text[:200] + "..." if len(agent_response_text) > 200 else agent_response_text
+                                })
+                            
+                            # Collect agent response for markdown formatting
+                            agent_responses.append({
+                                "agent": agent.name,
+                                "response": agent_response_text,
+                                "task": task.task_description
+                            })
+                            
+                            if self._current_task_span is not None:
+                                self._add_task_completion_event(self._current_task_span, result=agent_response_text)
 
                     # If no tasks remain AND the recipient is not the TeamLeader,
                     # let the TeamLeader see if more delegation is needed.

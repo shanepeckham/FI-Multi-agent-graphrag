@@ -11,13 +11,22 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     git \
+    ca-certificates \
+    lsb-release \
+    gnupg \
     && rm -rf /var/lib/apt/lists/*
+
+# Install Azure CLI
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 # Copy FastAPI application files
 COPY . /app/api
 
 # Install FastAPI application dependencies
 RUN pip install -r requirements.txt
+
+# Install pre-release Azure AI Projects package
+RUN pip install --pre azure-ai-projects
 
 # Create directories for data
 RUN mkdir -p /app/data/input /app/data/output

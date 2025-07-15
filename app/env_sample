@@ -17,4 +17,16 @@ RAW_INPUT_PATH=/Users/shanepeckham/sources/data/apple/extracted_text
 OUTPUT_PATH=/Users/shanepeckham/sources/data/apple/processed_text
 GRAPH_OUTPUT_PATH=/Users/shanepeckham/sources/data/apple/graph_output/
 INPUT_DIR=./apple/output
+TEAM_NAME=cr_team
+
+# Azure CLI Authentication (Optional - choose one method)
+# Method 1: Service Principal (recommended for non-Azure environments)
+# AZURE_CLIENT_ID=your_service_principal_client_id
+# AZURE_CLIENT_SECRET=your_service_principal_client_secret
+# AZURE_TENANT_ID=your_azure_tenant_id
+
+# Method 2: Access Token (temporary authentication)
+# AZURE_ACCESS_TOKEN=your_azure_access_token
+
+# Method 3: Managed Identity (automatic in Azure deployments - no config needed)
 
