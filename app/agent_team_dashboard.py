@@ -40,7 +40,7 @@ class _AgentTeamMember:
 
     def __init__(
         self, model: str, name: str, instructions: str, toolset: Optional[ToolSet] = None, tool_resources: Optional[ToolResources] = None,
-            tools: Optional[Tool] = None, can_delegate: bool = True
+            tools: Optional[Tool] = None, can_delegate: bool = True, has_responded: bool = False
     ) -> None:
         self.tool_resources: Optional[ToolResources] = tool_resources
         self.tools: Optional[Tool] = tools
@@ -50,6 +50,7 @@ class _AgentTeamMember:
         self.agent_instance: Optional[Agent] = None
         self.toolset: Optional[ToolSet] = toolset
         self.can_delegate = can_delegate
+        self.has_responded = has_responded
 
 
 class AgentTask:
@@ -404,17 +405,8 @@ class AgentTeam:
                         print(f"Starting run for agent '{agent.name}' with timeout handling...")
 
                         # TEMP code remove
-                        if agent.name == "Bing-agent-multi":
-                           
-                            # Create and process run with extended timeout for complex queries
-                            run = self._agents_client.runs.create_and_process(
-                                thread_id=self._agent_thread.id, 
-                                agent_id=agent.agent_instance.id,
-                                temperature = 0.1,
-                                tool_choice="auto"
-                                # Add timeout parameters if supported
-                            )
-                        else:
+                        if not agent.has_responded:
+
                              # Create and process run with extended timeout for complex queries
                             run = self._agents_client.runs.create_and_process(
                                 thread_id=self._agent_thread.id, 
@@ -492,7 +484,10 @@ class AgentTeam:
                             agent_response_text = text_message.text.value
                             print(f"Agent '{agent.name}' completed task. Response length: {len(agent_response_text)} characters")
                             print(f"Agent '{agent.name}' response preview: {agent_response_text[:200]}...")
-                            
+                            # Let's specify the agent has responded
+                            if agent.name != "TeamLeader":
+                                agent.has_responded = True
+
                             # Emit response generated event
                             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                                 event_emitter.emit_sync("response_generated", "task", {
