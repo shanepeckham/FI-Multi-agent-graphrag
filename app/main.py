@@ -239,6 +239,9 @@ class QueryResponse(BaseModel):
     model_config = {"arbitrary_types_allowed": True}
     response: Union[str, Dict[str, Any], List[Dict[str, Any]]]
     query: str
+    context: str
+    thread_id: str
+    run_id: str  # Used in evaluation mode to track a single agent
 
 class QueryRequest(BaseModel):
     query: str = Field(..., description="Query string")
@@ -259,6 +262,10 @@ class QueryRequest(BaseModel):
     use_reasoning: bool = Field(
         default=False,
         description="Whether to use reasoning capabilities for complex queries"
+    )
+    evaluation_mode: bool = Field(
+        default=False,
+        description="Whether to run in evaluation mode (no WebSocket updates)"
     )
 
 # FastAPI app initialization
@@ -399,7 +406,7 @@ REASON_CURRENT_QUESTION = (
         "What is your overall assessment of the company's financial health? Would you invest in this company? "
         "Why or why not?"
     )
-
+EVALUATION_MODE = False
 # ==============================================================================
 # API SECURITY CONFIGURATION
 # ==============================================================================
@@ -996,7 +1003,7 @@ def _create_agent_toolsets() -> Tuple[ToolSet, AsyncToolSet]:
     
     return sync_toolset, async_toolset
 
-def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_query_type: str, use_search: bool, use_graph: bool, use_web: bool, use_reasoning: bool) -> str:
+def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_query_type: str, use_search: bool, use_graph: bool, use_web: bool, use_reasoning: bool, evaluation_mode: bool) -> str:
     """
     Set up and run the agent team using pre-loaded global resources.
     
@@ -1006,6 +1013,11 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
     
     if not _project_client:
         return "Error: Azure project client not initialized"
+    
+    if evaluation_mode:
+        print("Running in evaluation mode, no WebSocket updates will be sent")
+        EVALUATION_MODE = True
+        WEBSOCKET_EVENTS_ENABLED = False
     
     # Use the shared agents client without 'with' statement to keep it open
     agents_client = _project_client.agents
@@ -1115,7 +1127,6 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                 model=MODEL_DEPLOYMENT_NAME,
                 name="Bing-agent-multi",
                 instructions=(BING_AGENT_INSTRUCTIONS),
-                #toolset=bing_toolset.definitions,
                 tools=bing_tool.definitions,
                 tool_resources=bing_tool.resources,
                 can_delegate=False
@@ -1131,16 +1142,17 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         print(f"   - Use Graph: {use_graph} (type: {graph_query_type})")
         print(f"   - Use Web: {use_web}")
         print(f"   - Use Reasoning: {use_reasoning}")
+        print(f"   - Evaluation: {evaluation_mode}")
         
         # Process the request and ensure we wait for completion
-        result = agent_team.process_request(request=question)
+        result = agent_team.process_request(request=question, evaluation_mode=evaluation_mode)
         agent_team.dismantle_team()
         
         print(f"✅ Agent team processing completed")
         print(f"📝 Result length: {len(result) if result else 0} characters")
         
-        if not result or len(result.strip()) < 10:
-            print("⚠️  Warning: Received empty or very short result from agent team")
+        if not result:
+            print("⚠️  Error: Agent team returned empty or incomplete response. Please try again.")
             return "Error: Agent team returned empty or incomplete response. Please try again."
         
         return result
@@ -1191,6 +1203,16 @@ async def root():
             "utilities": {
                 "/health": "GET - Health check",
             }
+        },
+        "query_parameters": {
+            "query": "string - The question to ask",
+            "search_query_type": "string - SIMPLE or SEMANTIC",
+            "graph_query_type": "string - global, local, drift, or basic",
+            "use_search": "boolean - Enable Azure AI Search",
+            "use_graph": "boolean - Enable GraphRAG",
+            "use_web": "boolean - Enable Bing Search",
+            "use_reasoning": "boolean - Enable reasoning mode",
+            "evaluation_mode": "boolean - Disable WebSocket updates for evaluation"
         }
     }
 
@@ -1222,11 +1244,15 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
             raise HTTPException(status_code=400, detail="Query is required")
         
         # Run the agent team with the question using pre-loaded resources
-        markdown_response = _setup_agent_team_with_globals(question, request.search_query_type, request.graph_query_type, use_search=request.use_search, use_graph=request.use_graph, use_web=request.use_web, use_reasoning=request.use_reasoning)
+        markdown_response, context, thread_id, run_id = _setup_agent_team_with_globals(question, request.search_query_type, request.graph_query_type, use_search=request.use_search,
+                                                           use_graph=request.use_graph, use_web=request.use_web, use_reasoning=request.use_reasoning, evaluation_mode=request.evaluation_mode)
         
         return QueryResponse(
             response=markdown_response,
-            query=question
+            query=question,
+            context=context,
+            thread_id=thread_id,
+            run_id=run_id
         )
         
     except HTTPException:

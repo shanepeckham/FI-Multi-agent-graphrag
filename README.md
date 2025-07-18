@@ -135,7 +135,8 @@ curl -X POST "http://localhost:8000/query_team" \
     "use_search": true,
     "use_graph": true,
     "use_web": false,
-    "use_reasoning": false
+    "use_reasoning": false,
+    "evaluation_mode": false
   }'
 ```
 
@@ -194,6 +195,7 @@ Send financial queries to the agent team. The system will automatically route yo
 - `use_graph`: Enable GraphRAG knowledge graph queries (default: `true`)
 - `use_web`: Enable Bing Search for external data (default: `false`)
 - `use_reasoning`: Enable reasoning capabilities for complex queries (default: `false`)
+- `evaluation_mode`: Disable WebSocket updates for evaluation/testing (default: `false`)
 
 #### Response
 
