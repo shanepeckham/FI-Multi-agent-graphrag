@@ -40,7 +40,7 @@ class _AgentTeamMember:
 
     def __init__(
         self, model: str, name: str, instructions: str, toolset: Optional[ToolSet] = None, tool_resources: Optional[ToolResources] = None,
-            tools: Optional[Tool] = None, can_delegate: bool = True, has_responded: bool = False
+            tools: Optional[Tool] = None, can_delegate: bool = True, has_responded: bool = False, run_id: Optional[str] = None
     ) -> None:
         self.tool_resources: Optional[ToolResources] = tool_resources
         self.tools: Optional[Tool] = tools
@@ -51,6 +51,7 @@ class _AgentTeamMember:
         self.toolset: Optional[ToolSet] = toolset
         self.can_delegate = can_delegate
         self.has_responded = has_responded
+        self.run_id = run_id  # Run ID for tracking runs
 
 
 class AgentTask:
@@ -317,7 +318,7 @@ class AgentTeam:
         attributes["agent_team.task.result"] = result
         span.add_event(name=f"agent_team.task_completed", attributes=attributes)
 
-    def process_request(self, request: str) -> str:
+    def process_request(self, request: str, evaluation_mode: bool) -> str:
         """
         Handle a user's request by creating a team and delegating tasks to
         the team leader. The team leader may generate additional tasks.
@@ -329,6 +330,7 @@ class AgentTeam:
         assert self._team_leader is not None, "team leader must not be None"
 
         agent_responses = []
+        context = ""
 
         if self._agent_thread is None:
             self._agent_thread = self._agents_client.threads.create()
@@ -404,7 +406,7 @@ class AgentTeam:
                     if agent and agent.agent_instance:
                         print(f"Starting run for agent '{agent.name}' with timeout handling...")
 
-                        # TEMP code remove
+
                         if not agent.has_responded:
 
                              # Create and process run with extended timeout for complex queries
@@ -414,8 +416,8 @@ class AgentTeam:
 
                                 # Add timeout parameters if supported
                             )
-
-                        print(f"Created and processed run for agent '{agent.name}', run ID: {run.id}")
+                            agent.run_id = run.id  # Store the run ID for tracking
+                            print(f"Created and processed run for agent '{agent.name}', run ID: {run.id}")
 
                         if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                             # Get run details safely
@@ -483,7 +485,7 @@ class AgentTeam:
                         if text_message and text_message.text:
                             agent_response_text = text_message.text.value
                             print(f"Agent '{agent.name}' completed task. Response length: {len(agent_response_text)} characters")
-                            print(f"Agent '{agent.name}' response preview: {agent_response_text[:200]}...")
+                            print(f"Agent '{agent.name}' response preview: {agent_response_text}...")
                             # Let's specify the agent has responded
                             if agent.name != "TeamLeader":
                                 agent.has_responded = True
@@ -502,7 +504,7 @@ class AgentTeam:
                                 event_emitter.emit_sync("task_completed", "task", {
                                     "recipient": task.recipient,
                                     "task_description": task.task_description,
-                                    "result": agent_response_text[:500] + "..." if len(agent_response_text) > 500 else agent_response_text,
+                                    "result": agent_response_text,
                                     "task_id": f"{task.recipient}_{len(agent_responses)}"
                                 })
                             
@@ -510,7 +512,7 @@ class AgentTeam:
                             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                                 event_emitter.emit_sync("agent_completed_task", "agent", {
                                     "agent_name": agent.name,
-                                    "task_result": agent_response_text[:200] + "..." if len(agent_response_text) > 200 else agent_response_text
+                                    "task_result": agent_response_text 
                                 })
                             
                             # Collect agent response for markdown formatting
@@ -548,12 +550,37 @@ class AgentTeam:
                             requestor="user",
                         )
                     self._current_task_span = None
+
+                # If there are no tasks left, let the TeamLeader know
+                for tasks in self._tasks:
+                    agent_name = tasks.recipient
+                    if self._get_member_by_name(agent_name).has_responded:
+                        self._tasks.remove(tasks)
             self._current_request_span = None
             
             # Format and return structured markdown response
             thread_id = self._agent_thread.id if self._agent_thread else "Unknown"
-            markdown_response = self._format_markdown_response(request, agent_responses, thread_id)
-            
+            run_id = None
+            if not evaluation_mode:
+                markdown_response = self._format_markdown_response(request, agent_responses, thread_id)
+            else:
+                # In evaluation mode, we return a simple summary without formatting
+                markdown_response = agent_responses
+                for response in markdown_response:
+                    # We should eval a single agent only if not the TeamLeader
+                    if response['agent'] != "TeamLeader":
+                        agent = self._get_member_by_name(response['agent'])
+                        run_id = agent.run_id if agent.run_id else None
+                        context = response['response']
+                        index = context.find("Conclusion:")
+                        if index != -1:
+                            conclusion = context[index + len("Conclusion:"):].strip()
+                            context = context[:index].strip()
+                        else:
+                            conclusion = context.strip()
+                markdown_response = conclusion      
+
+
             # Emit team processing completed event
             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                 event_emitter.emit_sync("processing_completed", "team", {
@@ -573,185 +600,10 @@ class AgentTeam:
             print("="*80)
             print(markdown_response)
             print("="*80 + "\n")
-            
-            return markdown_response
 
-    def process_request_old(self, request: str) -> str:
-        """
-        Handle a user's request by creating a team and delegating tasks to
-        the team leader. The team leader may generate additional tasks.
+            return markdown_response, context, thread_id, run_id
 
-        :param request: The user's request or question.
-        :return: Structured markdown response from the agent team
-        """
-        assert self._agents_client is not None, "project client must not be None"
-        assert self._team_leader is not None, "team leader must not be None"
-
-        agent_responses = []
-
-        if self._agent_thread is None:
-            self._agent_thread = self._agents_client.threads.create()
-            print(f"Created thread with ID: {self._agent_thread.id}")
-
-        with tracer.start_as_current_span("agent_team_request") as current_request_span:
-            self._current_request_span = current_request_span
-            if self._current_request_span is not None:
-                self._current_request_span.set_attribute("agent_team.name", self.team_name)
-            
-            # Emit team processing started event
-            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
-                event_emitter.emit_sync("processing_started", "team", {
-                    "team_name": self.team_name,
-                    "request": request,
-                    "thread_id": self._agent_thread.id if self._agent_thread else None
-                })
-            
-            team_leader_request = self.TEAM_LEADER_INITIAL_REQUEST.format(original_request=request)
-            _create_task(
-                team_name=self.team_name,
-                recipient=self._team_leader.name,
-                request=team_leader_request,
-                requestor="user",
-            )
-            while self._tasks:
-                task = self._tasks.pop(0)
-                with tracer.start_as_current_span("agent_team_task") as current_task_span:
-                    self._current_task_span = current_task_span
-                    if self._current_task_span is not None:
-                        self._current_task_span.set_attribute("agent_team.name", self.team_name)
-                        self._current_task_span.set_attribute("agent_team.task.recipient", task.recipient)
-                        self._current_task_span.set_attribute("agent_team.task.requestor", task.requestor)
-                        self._current_task_span.set_attribute("agent_team.task.description", task.task_description)
-                    print(
-                        f"Starting task for agent '{task.recipient}'. "
-                        f"Requestor: '{task.requestor}'. "
-                        f"Task description: '{task.task_description}'."
-                    )
-                    
-                    # Emit task started event
-                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
-                        event_emitter.emit_sync("task_started", "task", {
-                            "recipient": task.recipient,
-                            "requestor": task.requestor,
-                            "task_description": task.task_description,
-                            "task_id": f"{task.recipient}_{len(agent_responses)}"
-                        })
-                    
-                    # Emit agent started task event
-                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
-                        event_emitter.emit_sync("agent_started_task", "agent", {
-                            "agent_name": task.recipient,
-                            "task_description": task.task_description
-                        })
-                    
-                    # Emit message sent event
-                    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
-                        event_emitter.emit_sync("message_sent", "task", {
-                            "from": task.requestor,
-                            "to": task.recipient,
-                            "message": task.task_description,
-                            "message_id": f"msg_{task.recipient}_{len(agent_responses)}"
-                        })
-                    
-                    message = self._agents_client.messages.create(
-                        thread_id=self._agent_thread.id,
-                        role="user",
-                        content=task.task_description,
-                    )
-                    print(f"Created message with ID: {message.id} for task in thread {self._agent_thread.id}")
-                    agent = self._get_member_by_name(task.recipient)
-                    if agent and agent.agent_instance:
-                        print(f"Starting run for agent '{agent.name}' with timeout handling...")
-                        
-                        # Create and process run with extended timeout for complex queries
-                        run = self._agents_client.runs.create_and_process(
-                            thread_id=self._agent_thread.id, 
-                            agent_id=agent.agent_instance.id,
-                            # Add timeout parameters if supported
-                        )
-                        print(f"Created and processed run for agent '{agent.name}', run ID: {run.id}")
-
-                        text_message = self._agents_client.messages.get_last_message_text_by_role(
-                            thread_id=self._agent_thread.id, role=MessageRole.AGENT
-                        )
-                        if text_message and text_message.text:
-                            agent_response_text = text_message.text.value
-                            print(f"Agent '{agent.name}' completed task. Response length: {len(agent_response_text)} characters")
-                            print(f"Agent '{agent.name}' response preview: {agent_response_text[:200]}...")
-                            
-                            # Emit response generated event
-                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
-                                event_emitter.emit_sync("response_generated", "task", {
-                                    "agent": agent.name,
-                                    "response": agent_response_text,
-                                    "original_message": task.task_description,
-                                    "message_id": f"resp_{task.recipient}_{len(agent_responses)}"
-                                })
-                            
-                            # Emit task completed event
-                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
-                                event_emitter.emit_sync("task_completed", "task", {
-                                    "recipient": task.recipient,
-                                    "task_description": task.task_description,
-                                    "result": agent_response_text[:500] + "..." if len(agent_response_text) > 500 else agent_response_text,
-                                    "task_id": f"{task.recipient}_{len(agent_responses)}"
-                                })
-                            
-                            # Emit agent completed task event
-                            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
-                                event_emitter.emit_sync("agent_completed_task", "agent", {
-                                    "agent_name": agent.name,
-                                    "task_result": agent_response_text[:200] + "..." if len(agent_response_text) > 200 else agent_response_text
-                                })
-                            
-                            # Collect agent response for markdown formatting
-                            agent_responses.append({
-                                "agent": agent.name,
-                                "response": agent_response_text,
-                                "task": task.task_description
-                            })
-                            
-                            if self._current_task_span is not None:
-                                self._add_task_completion_event(self._current_task_span, result=agent_response_text)
-
-                    # If no tasks remain AND the recipient is not the TeamLeader,
-                    # let the TeamLeader see if more delegation is needed.
-                    if not self._tasks and not task.recipient == "TeamLeader":
-                        team_leader_request = self.TEAM_LEADER_TASK_COMPLETENESS_CHECK_INSTRUCTIONS
-                        _create_task(
-                            team_name=self.team_name,
-                            recipient=self._team_leader.name,
-                            request=team_leader_request,
-                            requestor="user",
-                        )
-                    self._current_task_span = None
-            self._current_request_span = None
-            
-            # Format and return structured markdown response
-            thread_id = self._agent_thread.id if self._agent_thread else "Unknown"
-            markdown_response = self._format_markdown_response(request, agent_responses, thread_id)
-            
-            # Emit team processing completed event
-            if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
-                event_emitter.emit_sync("processing_completed", "team", {
-                    "team_name": self.team_name,
-                    "request": request,
-                    "final_result": markdown_response,
-                    "result": markdown_response,
-                    "response_length": len(markdown_response),
-                    "agents_involved": len(agent_responses),
-                    "thread_id": thread_id,
-                    "summary": f"Completed analysis with {len(agent_responses)} agent responses"
-                })
-            
-            # Print the formatted markdown to console
-            print("\n" + "="*80)
-            print("AGENT TEAM MARKDOWN RESPONSE:")
-            print("="*80)
-            print(markdown_response)
-            print("="*80 + "\n")
-            
-            return markdown_response
+    
 
     def process_request_with_results(self, request: str) -> Dict[str, Any]:
         """
