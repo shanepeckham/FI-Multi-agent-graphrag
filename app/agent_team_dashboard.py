@@ -560,7 +560,7 @@ class AgentTeam:
             
             # Format and return structured markdown response
             thread_id = self._agent_thread.id if self._agent_thread else "Unknown"
-            run_id = None
+            run_id = agent.run_id if agent.run_id else "Unknown"
             if not evaluation_mode:
                 markdown_response = self._format_markdown_response(request, agent_responses, thread_id)
             else:
