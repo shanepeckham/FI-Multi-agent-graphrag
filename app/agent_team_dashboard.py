@@ -172,6 +172,7 @@ class AgentTeam:
             tools=tools,
             tool_resources=tool_resources,
             can_delegate=can_delegate,
+            has_responded=False,
         )
         self._members.append(member)
 
@@ -307,6 +308,7 @@ class AgentTeam:
                 print(f"Deleting agent '{member.name}'")
                 self._agents_client.delete_agent(member.agent_instance.id)
         AgentTeam._remove_team(self.team_name)
+        self._members.clear()
 
     def _add_task_completion_event(
         self,
