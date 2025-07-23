@@ -455,7 +455,7 @@ class AgentTeam:
                             })
                         
                         # Wait a bit to ensure the run has fully completed
-                        time.sleep(2)  # Give the system time to finalize the response
+                        time.sleep(5)  # Give the system time to finalize the response
                         
                         # Retry mechanism to get the response
                         max_retries = 5
