@@ -325,8 +325,7 @@ def _load_environment_variables() -> None:
     # Get the directory where this script is located
     script_dir = Path(__file__).parent
     env_file_path = os.getenv("ENV_FILE_PATH", str(script_dir / ".env"))
-    
-    
+
     # Check if the .env file exists
     if not os.path.exists(env_file_path):
         raise FileNotFoundError(f"Environment file not found: {env_file_path}")
