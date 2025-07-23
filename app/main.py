@@ -177,11 +177,11 @@ except ImportError as e:
     WEBSOCKET_AVAILABLE = False
 
 # FastAPI imports
-from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Security, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Security, WebSocket, WebSocketDisconnect, Request
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel, Field
 
 from opentelemetry import trace
@@ -1175,6 +1175,14 @@ def _create_search_tools_with_type(project_client: AIProjectClient, search_type:
             top_k=3,
             filter=""
         )
+    elif search_type == "HYBRID":
+        search_tool = AzureAISearchTool(
+            index_connection_id=search_conn.id,
+            index_name=AI_SEARCH_INDEX_NAME,
+            query_type=AzureAISearchQueryType.VECTOR_SEMANTIC_HYBRID,  # Use semantic for hybrid (combines vector + keyword)
+            top_k=5,  # Increase results for hybrid
+            filter=""
+        )
     else:  # Default to SIMPLE
         search_tool = AzureAISearchTool(
             index_connection_id=search_conn.id,
@@ -1224,6 +1232,64 @@ async def root():
 async def health_check():
     """Health check endpoint."""
     return {"status": "healthy", "service": "GraphRAG API"}
+
+@app.get("/api/config/agent_team_config.yaml")
+async def get_agent_config():
+    """Get the agent team configuration YAML file."""
+    try:
+        config_file_path = Path(__file__).parent / "agent_team_config.yaml"
+        
+        if not config_file_path.exists():
+            raise HTTPException(status_code=404, detail="Configuration file not found")
+        
+        with open(config_file_path, 'r', encoding='utf-8') as file:
+            config_content = file.read()
+        
+        return Response(
+            content=config_content,
+            media_type="text/plain",
+            headers={"Content-Disposition": "inline; filename=agent_team_config.yaml"}
+        )
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Configuration file not found")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error reading configuration: {str(e)}")
+
+@app.post("/api/config/agent_team_config.yaml")
+async def save_agent_config(request: Request):
+    """Save the agent team configuration YAML file."""
+    try:
+        config_file_path = Path(__file__).parent / "agent_team_config.yaml"
+        
+        # Read the request body as text
+        config_content = await request.body()
+        config_text = config_content.decode('utf-8')
+        
+        if not config_text.strip():
+            raise HTTPException(status_code=400, detail="Configuration content cannot be empty")
+        
+        # Validate YAML syntax
+        try:
+            yaml.safe_load(config_text)
+        except yaml.YAMLError as e:
+            raise HTTPException(status_code=400, detail=f"Invalid YAML syntax: {str(e)}")
+        
+        # Create backup of existing file
+        if config_file_path.exists():
+            backup_path = config_file_path.with_suffix(f".yaml.backup.{int(time.time())}")
+            config_file_path.rename(backup_path)
+            print(f"Created backup: {backup_path}")
+        
+        # Write new configuration
+        with open(config_file_path, 'w', encoding='utf-8') as file:
+            file.write(config_text)
+        
+        return {"message": "Configuration saved successfully", "path": str(config_file_path)}
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error saving configuration: {str(e)}")
 
 
 
