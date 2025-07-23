@@ -907,6 +907,9 @@ def query_graph(question: str, search_type: str = "local") -> str:
         >>> response = query_graph("What are the main revenue streams?")
         >>> print(response)
     """
+    # We set this from the global as the LLM function call sometimes loses this arg
+    search_type = _request.graph_query_type
+
     # Map search types to their corresponding async functions
     search_functions = {
         "local": _query_graph_async_local,
@@ -1010,7 +1013,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
     This function uses resources loaded at startup to avoid reloading heavy data.
     """
     global _graphrag_data, _language_models, _project_client
-    
+
     if not _project_client:
         return "Error: Azure project client not initialized"
     
@@ -1108,7 +1111,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                 instructions=(RAG_AGENT_INSTRUCTIONS),
                 tools=search_tool.definitions,
                 tool_resources=search_tool.resources,
-                can_delegate=False
+                can_delegate=False,
             )
         if use_graph:
             agent_team.add_agent(
@@ -1234,8 +1237,9 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
     """
     try:
         # Use global variables loaded at startup
-        global _graphrag_data, _language_models, _project_client
-        
+        global _graphrag_data, _language_models, _project_client, _request
+        _request = request
+
         if not all([_graphrag_data, _language_models, _project_client]):
             raise HTTPException(status_code=503, detail="Application not fully initialized")
         
