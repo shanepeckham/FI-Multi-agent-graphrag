@@ -319,12 +319,20 @@ def _load_environment_variables() -> None:
     Load environment variables from .env file and verify required keys.
     
     Raises:
+        FileNotFoundError: If the .env file is not found
         ValueError: If required environment variables are missing
     """
-    # Load environment variables from .env file
-    env_file_path = os.getenv("ENV_FILE_PATH", "/Users/shanepeckham/sources/graphrag/app/.env")
-    load_dotenv(env_file_path)
+    # Get the directory where this script is located
+    script_dir = Path(__file__).parent
+    env_file_path = os.getenv("ENV_FILE_PATH", str(script_dir / ".env"))
     
+    # Check if the .env file exists
+    if not os.path.exists(env_file_path):
+        raise FileNotFoundError(f"Environment file not found: {env_file_path}")
+    
+    # Load environment variables from .env file
+    load_dotenv(env_file_path)
+
     # Verify critical environment variables
     required_vars = ["AZURE_OPENAI_API_KEY"]
     missing_vars = [var for var in required_vars if not os.getenv(var)]
