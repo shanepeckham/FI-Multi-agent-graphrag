@@ -5,12 +5,18 @@ This directory contains evaluation scripts for testing the Agent Team's performa
 ## Files
 
 - `johnson.jsonl` - Contains financial analysis questions from the FinanceBench dataset
+- `evaluate_data_api.py` - Evaluation script that calls the `/query_team` API endpoint and runs response evaluation locally
 - `evaluate_johnson_api.py` - Evaluation script that calls the `/query_team` API endpoint
 - `evaluate_johnson.py` - Direct evaluation script that imports agent modules (may need setup)
 - `test_setup.py` - Test script to verify the evaluation setup
 - `test_single_question.py` - Quick test script to run a single question
 - `requirements.txt` - Python dependencies for the evaluation scripts
 - `evaluation_results.json` - Output file containing evaluation results (generated after running)
+
+#### Output files generated after running `evaluate_data_api.py`
+- `response_results.jsonl` - Agent team response for each qeury
+- `evaluation_results.jsonl` - Agent team response along with the evaluation metrics
+- `agent_converted_data.json` - Agent team conversation threads converted to evaluation-ready format
 
 ## Setup
 
@@ -19,7 +25,7 @@ This directory contains evaluation scripts for testing the Agent Team's performa
 pip install -r requirements.txt
 ```
 
-2. Ensure your environment variables are set up in `../apple/.env`:
+2. Ensure your environment variables are set up in `../app/.env`:
 ```
 AZURE_OPENAI_API_KEY=your_api_key_here
 API_KEY=your_api_key_here  # For API authentication
@@ -56,7 +62,7 @@ python main.py
 
 Then run the evaluation:
 ```bash
-python evaluate_johnson_api.py
+python evaluate_data_api.py
 ```
 
 ### Method 2: Direct Module Evaluation
@@ -70,13 +76,13 @@ python evaluate_johnson.py
 The evaluation script will:
 1. Load questions from `johnson.jsonl`
 2. Process each question through the agent team
-3. Save results to `evaluation_results.json`
+3. Generate and save results to output files `response_results.jsonl`, `evaluation_results.jsonl`, `agent_converted_data.json`
 4. Print a summary of the evaluation
 
 ## Sample Output
 
 ```
-Starting Johnson & Johnson Financial Analysis Evaluation
+Starting Financial Analysis Evaluation
 ================================================================================
 API Base URL: http://localhost:8000
 API Key configured: Yes
@@ -108,6 +114,15 @@ Successful Responses: 9
 Failed Responses: 1
 Success Rate: 90.0%
 Average Response Time: 42.15 seconds
+
+🪙 TOKEN USAGE SUMMARY:
+Total Questions with Token Data: 9
+Total Tokens Used: 22,635
+Total Prompt Tokens: 20,793
+Total Completion Tokens: 1,842
+Average Tokens per Question: 7545.0
+Average Prompt Tokens per Question: 6931.0
+Average Completion Tokens per Question: 614.0
 ================================================================================
 ```
 
@@ -125,6 +140,8 @@ The `johnson.jsonl` file contains questions in the following format:
   "question_type": "domain-relevant"
 }
 ```
+
+Questions in this format from other companies in the FinanceBench dataset are also suitable
 
 ## Evaluation Mode
 
@@ -150,10 +167,59 @@ Example API request with evaluation mode:
 
 ## Results Analysis
 
-The evaluation results include:
-- Response accuracy compared to expected answers
-- Response time performance
-- Error analysis for failed queries
-- Success rate metrics
+The `evaluate_data_api.py` script performs comprehensive evaluation and generates three main output files:
 
-Use the generated `evaluation_results.json` file to analyze the agent team's performance on financial analysis tasks.
+### Output Files
+
+1. **`response_results.jsonl`** - Raw agent responses for each query including:
+   - Agent response text
+   - Response time
+   - Token usage statistics
+   - Thread and run IDs
+   - Context information
+
+2. **`evaluation_results.jsonl`** - Detailed evaluation metrics for each response including:
+   - All Azure AI evaluation scores (see metrics below)
+   - Ground truth comparison
+   - Question metadata (company, financebench_id)
+   - Performance metrics (token usage, response times)
+
+3. **`agent_converted_data.json`** - Agent conversation threads converted to evaluation-ready format
+
+### Evaluation Metrics
+
+The script uses Azure AI evaluation framework with the following evaluators:
+
+#### Quality Metrics (with Reasoning Model Support)
+- **IntentResolutionEvaluator** - Measures how well the response addresses the user's intent
+- **TaskAdherenceEvaluator** - Evaluates adherence to the specific financial analysis task
+
+#### Quality Metrics (Standard Model)
+- **CoherenceEvaluator** - Assesses logical flow and consistency of the response
+- **FluencyEvaluator** - Measures language quality and readability
+- **RelevanceEvaluator** - Evaluates relevance to the financial question asked
+- **GroundednessEvaluator** - Checks if response is grounded in provided context
+- **SimilarityEvaluator** - Measures semantic similarity to expected answer
+
+#### Accuracy Metrics
+- **F1ScoreEvaluator** - Calculates F1 score against ground truth
+- **MeteorScoreEvaluator** - Computes METEOR score for text similarity
+
+### Performance Metrics
+
+The evaluation also tracks:
+- **Response Time** - Time taken to generate each response
+- **Success Rate** - Percentage of successful API calls
+- **Token Usage** - Detailed breakdown of prompt, completion, and total tokens
+- **Error Analysis** - Categorization and tracking of failed queries
+
+### Summary Statistics
+
+The script provides comprehensive statistics including:
+- Total questions processed
+- Success/failure rates
+- Average response times
+- Token usage averages per question
+- Cost implications based on token consumption
+
+Use the generated `evaluation_results.jsonl` file to analyze individual question performance and the summary statistics to understand overall agent team effectiveness on financial analysis tasks.

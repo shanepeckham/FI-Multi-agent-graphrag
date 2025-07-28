@@ -302,8 +302,8 @@ def main():
         # Add a small delay between questions to avoid rate limiting
         if i < len(questions):
             time.sleep(10)  # 10 second delay between requests
-        if i == 3:   # For testing, limit to first 3 questions
-            break
+        # if i == 3:   # For testing, limit to first 3 questions
+        #     break
         # break    #remove this break to evaluate all questions
     # Save results
     save_results(results, RESULTS_FILE_PATH)
