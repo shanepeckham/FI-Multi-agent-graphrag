@@ -334,6 +334,12 @@ class AgentTeam:
 
         agent_responses = []
         context = ""
+        token_usage = {
+            "total_prompt_tokens": 0,
+            "total_completion_tokens": 0,
+            "total_tokens": 0,
+            "agents": {}
+        }
 
         if self._agent_thread is None:
             self._agent_thread = self._agents_client.threads.create()
@@ -422,6 +428,26 @@ class AgentTeam:
                             agent.run_id = run.id  # Store the run ID for tracking
                             print(f"Created and processed run for agent '{agent.name}', run ID: {run.id}")
 
+                            # Collect token usage from the run
+                            if hasattr(run, 'usage') and run.usage:
+                                completion_tokens = getattr(run.usage, 'completion_tokens', 0)
+                                prompt_tokens = getattr(run.usage, 'prompt_tokens', 0)
+                                total_tokens = completion_tokens + prompt_tokens
+                                
+                                # Add to total usage
+                                token_usage["total_prompt_tokens"] += prompt_tokens
+                                token_usage["total_completion_tokens"] += completion_tokens
+                                token_usage["total_tokens"] += total_tokens
+                                
+                                # Add agent-specific usage
+                                token_usage["agents"][agent.name] = {
+                                    "prompt_tokens": prompt_tokens,
+                                    "completion_tokens": completion_tokens,
+                                    "total_tokens": total_tokens,
+                                    "run_id": run.id
+                                }
+                                
+                                print(f"Agent '{agent.name}' token usage: {prompt_tokens} prompt + {completion_tokens} completion = {total_tokens} total")        
                         if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                             # Get run details safely
                             run_tools = "Unknown"
@@ -610,7 +636,7 @@ class AgentTeam:
             print(markdown_response)
             print("="*80 + "\n")
 
-            return markdown_response, context, thread_id, run_id
+            return markdown_response, context, thread_id, run_id, token_usage
 
     
 
