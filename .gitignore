@@ -56,3 +56,9 @@ docsite/
 
 # Jupyter notebook
 .ipynb_checkpoints/
+
+# graphrag
+.lance
+.txn
+.manifest
+.parquet
