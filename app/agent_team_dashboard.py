@@ -85,6 +85,7 @@ class AgentTeam:
     _tasks: List[AgentTask] = []
     _current_request_span: Optional[Span] = None
     _current_task_span: Optional[Span] = None
+    _kg_sources: Optional[Dict[str, Any]] = None
 
     def __init__(self, team_name: str, agents_client: AgentsClient):
         """
@@ -556,8 +557,9 @@ class AgentTeam:
                 # If there are no tasks left, let the TeamLeader know
                 for tasks in self._tasks:
                     agent_name = tasks.recipient
-                    if self._get_member_by_name(agent_name).has_responded:
-                        self._tasks.remove(tasks)
+                    if agent_name != 'user':
+                        if self._get_member_by_name(agent_name).has_responded:
+                            self._tasks.remove(tasks)
             self._current_request_span = None
             
             # Format and return structured markdown response
@@ -565,6 +567,7 @@ class AgentTeam:
             run_id = agent.run_id if agent.run_id else "Unknown"
             conclusion = ""
             context = ""
+            sources = ""
             if not evaluation_mode:
                 markdown_response = self._format_markdown_response(request, agent_responses, thread_id)
             else:
@@ -582,6 +585,8 @@ class AgentTeam:
                             context = context[:index].strip()
                         else:
                             conclusion = context.strip()
+
+
                 markdown_response = conclusion      
 
 
@@ -938,3 +943,33 @@ agent_team_default_functions: Set = {
 }
 
 default_function_tool = FunctionTool(functions=agent_team_default_functions)
+
+
+def emit_kg_sources_update(kg_metadata: Dict[str, Any]) -> None:
+    """
+    Emit a WebSocket update for KG sources metadata to the dashboard.
+    
+    Args:
+        kg_metadata: Dictionary containing Sources, Entities, Relationships data and source texts
+                    Format: {
+                        "Sources": [119], 
+                        "Entities": [5135, 1555], 
+                        "Relationships": [54421, 35035],
+                        "source_texts": {id: [text1, text2], ...}
+                    }
+    """
+    if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
+        try:
+            event_emitter.emit_sync("kg_sources_update", "team", {
+                "sources": kg_metadata.get("Sources", []),
+                "entities": kg_metadata.get("Entities", []),
+                "relationships": kg_metadata.get("Relationships", []),
+                "source_texts": kg_metadata.get("source_texts", {}),
+                "timestamp": time.time(),
+                "update_type": "graphrag_metadata"
+            })
+            print(f"🕸️ Emitted KG sources update with {len(kg_metadata.get('source_texts', {}))} source texts")
+        except Exception as e:
+            print(f"❌ Error emitting KG sources update: {e}")
+    else:
+        print("⚠️ WebSocket events not available for KG sources update")

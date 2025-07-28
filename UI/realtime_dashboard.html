@@ -19,11 +19,11 @@
         }
 
         .container {
-            max-width: 1800px;
+            max-width: 2200px;
             margin: 0 auto;
             padding: 20px;
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-columns: 1fr 2fr 1fr 1fr;
             grid-template-rows: auto 1fr auto auto;
             gap: 25px;
             min-height: 100vh;
@@ -60,6 +60,19 @@
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.18);
             height: fit-content;
+        }
+
+        .kg-sources-panel {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            min-width: 300px;
         }
 
         .visualization-panel {
@@ -696,7 +709,7 @@
             </div>
         </div>
 
-        <!-- Status Panel (Right Column) -->
+        <!-- Status Panel (Third Column) -->
         <div class="status-panel">
             <h3>📊 Team Status</h3>
             <div id="teamMetrics" class="metrics">
@@ -719,6 +732,25 @@
 
             <h3 style="margin-top: 25px;">📋 Current Tasks</h3>
             <div id="tasksList" class="scrollable"></div>
+        </div>
+
+        <!-- KG Sources Panel (Fourth Column) -->
+        <div class="kg-sources-panel">
+            <h3>🕸️ KG Sources</h3>
+            
+            <h3 style="margin-top: 15px;">📊 Latest Response</h3>
+            <div id="kgSourcesDetails" class="scrollable" style="max-height: 200px; background-color: #f8f9fa; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 0.9em; overflow-y: auto;">
+                <div style="text-align: center; color: #666; padding: 10px;">
+                    No KG metadata yet
+                </div>
+            </div>
+
+            <h3 style="margin-top: 15px;">� Source Texts</h3>
+            <div id="kgSourceTexts" class="scrollable" style="max-height: 400px; background-color: #f8f9fa; padding: 10px; border-radius: 8px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 0.85em; overflow-y: auto; line-height: 1.4;">
+                <div style="text-align: center; color: #666; padding: 10px;">
+                    No source texts yet
+                </div>
+            </div>
         </div>
 
         <div class="final-output-panel">
@@ -969,6 +1001,10 @@
                         this.finalOutputs = [];
                         this.updateFinalOutputSection();
                         break;
+                    case 'kg_sources_update':
+                        // Handle KG sources metadata update
+                        this.updateKGSources(data);
+                        break;
                 }
             }
 
@@ -1144,6 +1180,94 @@
                     
                     finalOutputSection.appendChild(outputCard);
                 }
+            }
+
+            updateKGSources(data) {
+                console.log('Updating KG Sources:', data);
+                
+                // Update details section with counts
+                const detailsSection = document.getElementById('kgSourcesDetails');
+                const timestamp = new Date().toLocaleTimeString();
+                
+                const sourcesCount = Array.isArray(data.sources) ? data.sources.length : 0;
+                const entitiesCount = Array.isArray(data.entities) ? data.entities.length : 0;
+                const relationshipsCount = Array.isArray(data.relationships) ? data.relationships.length : 0;
+                
+                detailsSection.innerHTML = `
+                    <div style="margin-bottom: 10px; color: #666; font-size: 0.8em;">
+                        Last updated: ${timestamp}
+                    </div>
+                    <div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 8px;">
+                        <strong>Sources:</strong> ${sourcesCount} found
+                    </div>
+                    <div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 8px;">
+                        <strong>Entities:</strong> ${entitiesCount} found
+                    </div>
+                    <div style="background: #fff; padding: 8px; border-radius: 4px;">
+                        <strong>Relationships:</strong> ${relationshipsCount} found
+                    </div>
+                `;
+                
+                // Update source texts
+                this.updateKGSourceTexts(data.source_texts || {}, timestamp);
+            }
+
+            updateKGSourceTexts(sourceTexts, timestamp) {
+                const sourceTextsSection = document.getElementById('kgSourceTexts');
+                
+                if (!sourceTexts || Object.keys(sourceTexts).length === 0) {
+                    sourceTextsSection.innerHTML = `
+                        <div style="text-align: center; color: #666; padding: 10px;">
+                            No source texts available
+                        </div>
+                    `;
+                    return;
+                }
+                
+                let content = `
+                    <div style="margin-bottom: 15px; color: #666; font-size: 0.8em; font-weight: bold;">
+                        Updated: ${timestamp} | ${Object.keys(sourceTexts).length} sources
+                    </div>
+                `;
+                
+                // Iterate through each source ID and its texts
+                Object.entries(sourceTexts).forEach(([sourceId, texts]) => {
+                    if (Array.isArray(texts) && texts.length > 0) {
+                        content += `
+                            <div style="margin-bottom: 15px; border: 1px solid #ddd; border-radius: 6px; overflow: hidden;">
+                                <div style="background: #e9ecef; padding: 8px; font-weight: bold; color: #495057; font-size: 0.9em;">
+                                    📄 Source ID: ${sourceId}
+                                </div>
+                                <div style="padding: 10px; background: #fff;">
+                        `;
+                        
+                        texts.forEach((text, index) => {
+                            // Truncate very long texts for display
+                            const displayText = text.length > 500 ? text.substring(0, 500) + '...' : text;
+                            content += `
+                                <div style="margin-bottom: ${index < texts.length - 1 ? '10px' : '0'}; padding: 8px; background: #f8f9fa; border-left: 3px solid #007bff; border-radius: 3px;">
+                                    <div style="font-size: 0.8em; color: #6c757d; margin-bottom: 4px;">Text ${index + 1}:</div>
+                                    <div style="white-space: pre-wrap; word-wrap: break-word;">${displayText}</div>
+                                </div>
+                            `;
+                        });
+                        
+                        content += `
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+                
+                sourceTextsSection.innerHTML = content;
+                
+                // Scroll to top of the new content
+                sourceTextsSection.scrollTop = 0;
+            }
+
+            updateKGSourcesHistory(data, timestamp) {
+                // This method is no longer used since we removed the history section
+                // Keeping it for compatibility but it does nothing
             }
 
             addToActivityLog(message) {

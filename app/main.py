@@ -164,7 +164,7 @@ from graphrag.vector_stores.lancedb import LanceDBVectorStore
 import sys
 from pathlib import Path
 
-from agent_team_dashboard import AgentTeam, AgentTask
+from agent_team_dashboard import AgentTeam, AgentTask, emit_kg_sources_update
 from agent_trace_configurator import AgentTraceConfigurator
 
 # Conditional import for WebSocket manager
@@ -735,6 +735,7 @@ async def _query_graph_async_drift(question: str) -> str:
 
     result = await search.search(question)
     print(result.response)
+    _kg_sources = parse_graphrag_metadata(result.response)
     return str(result.response)
 
 async def _query_graph_async_global(question: str) -> str:
@@ -810,6 +811,7 @@ async def _query_graph_async_global(question: str) -> str:
     
     result = await search_engine.search(question)
     print(result.response)
+    _kg_sources = parse_graphrag_metadata(result.response)
     return str(result.response)
 
 async def _query_graph_async_local(question: str) -> str:
@@ -828,7 +830,7 @@ async def _query_graph_async_local(question: str) -> str:
     Raises:
         Exception: If the search operation fails
     """
-    global _graphrag_data, _language_models
+    global _graphrag_data, _language_models 
     
     if not _graphrag_data or not _language_models:
         raise RuntimeError("GraphRAG data or language models not initialized")
@@ -881,7 +883,125 @@ async def _query_graph_async_local(question: str) -> str:
     
     result = await search_engine.search(question)
     print(result.response)
+    _kg_sources = parse_graphrag_metadata(result.response)
+
     return str(result.response)
+
+def parse_graphrag_metadata(response: str) -> dict:
+    """
+    Parse GraphRAG response to extract metadata about sources, entities, and relationships.
+    
+    Searches for patterns like:
+    - [Data: Sources (119)]
+    - [Entities: 5135, 1555]
+    - [Relationships: 54421, 35035]
+    - Combined: [Data: Sources (119) ([Entities: 5135, 1555]; [Relationships: 54421, 35035])
+    
+    Args:
+        response: The GraphRAG response string
+        
+    Returns:
+        dict: Parsed metadata with keys 'Sources', 'Entities', 'Relationships'
+              Example: {Sources:[119], Entities:[5135, 1555], Relationships: [54421, 35035]}
+    """
+    import re
+    
+    # Initialize result dictionary
+    result = {
+        "Sources": [],
+        "Entities": [],
+        "Relationships": []
+    }
+    
+    try:
+        # Pattern 1: Sources - matches "[Data: Sources (2305, 2603)]"
+        sources_pattern = r'Data:\s*Sources\s*\(([^)]+)\)'
+        sources_match = re.search(sources_pattern, response)
+        if sources_match:
+            sources_str = sources_match.group(1).strip()
+            # Extract all numbers from the sources
+            sources = [int(x.strip()) for x in sources_str.split(',') if x.strip().isdigit()]
+            result["Sources"] = sources
+            print(f"🔍 Found Sources: {sources}")
+        
+        # Pattern 2: Entities - matches "[Data: Entities (4264, 661, 760)]"
+        entities_pattern = r'Data:\s*Entities\s*\(([^)]+)\)'
+        entities_match = re.search(entities_pattern, response)
+        if entities_match:
+            entities_str = entities_match.group(1).strip()
+            # Extract all numbers from the entities (ignore non-numeric parts)
+            entities = [int(x.strip()) for x in entities_str.split(',') if x.strip().isdigit()]
+            result["Entities"] = entities
+            print(f"🔍 Found Entities: {entities}")
+        
+        # Pattern 3: Relationships - matches "[Data: Relationships (55392, 84934, 75511, +more)]"
+        relationships_pattern = r'Relationships\s*\(([^)]+)\)'
+        relationships_match = re.search(relationships_pattern, response)
+        if relationships_match:
+            relationships_str = relationships_match.group(1).strip()
+            # Extract all numbers from relationships (ignore "+more" and other non-numeric parts)
+            relationships = [int(x.strip()) for x in relationships_str.split(',') if x.strip().isdigit()]
+            result["Relationships"] = relationships
+            print(f"🔍 Found Relationships: {relationships}")
+        
+        # Summary
+        found_items = [key for key, value in result.items() if value]
+        
+
+        def get_text_units(text_units: list) -> list:
+            """
+            Helper function to get text units from the text_units list.
+            """
+            texts = []
+            for id in text_units:
+                for v in _graphrag_data[3]: # Text Units
+                    if v.id == str(id):
+                        texts.append(v.text)
+            return texts
+
+        sources = {}
+        for key, value in result.items():
+            if key == "Entities":
+                for id in value:
+                    for v in _graphrag_data[0]: # Entities
+                        if v.short_id == str(id):
+                            texts = get_text_units(v.text_unit_ids)
+                            sources[id] = texts
+
+            if key == "Relationships":
+                for id in value:
+                    for v in _graphrag_data[1]: # Relationships
+                        if v.short_id == str(id):
+                            texts = get_text_units(v.text_unit_ids)
+                            sources[id] = texts
+            
+            if key == "Sources":
+                for id in value:
+                    for i in range(len(_graphrag_data)):
+                        try:
+                            for v in _graphrag_data[3]: # Text Units
+                                if v.short_id == str(id):
+                                    sources[id] = [v.text]
+
+                        except Exception as e:
+                            continue
+
+        if found_items:
+            print(f"📊 Parsed GraphRAG metadata: {result}")
+            # Emit WebSocket update for the dashboard with source texts
+            emit_kg_sources_update({
+                "Sources": result.get("Sources", []),
+                "Entities": result.get("Entities", []),
+                "Relationships": result.get("Relationships", []),
+                "source_texts": sources  # Include the actual source texts
+            })
+        else:
+            print("⚠️  No GraphRAG metadata found in response")
+
+    except Exception as e:
+        print(f"❌ Error parsing GraphRAG metadata: {e}")
+    
+    return sources
 
 @tracer.start_as_current_span("query_graph")  # type: ignore
 def query_graph(question: str, search_type: str = "local") -> str:
@@ -1180,7 +1300,7 @@ def _create_search_tools_with_type(project_client: AIProjectClient, search_type:
             index_connection_id=search_conn.id,
             index_name=AI_SEARCH_INDEX_NAME,
             query_type=AzureAISearchQueryType.VECTOR_SEMANTIC_HYBRID,  # Use semantic for hybrid (combines vector + keyword)
-            top_k=5,  # Increase results for hybrid
+            top_k=3,  
             filter=""
         )
     else:  # Default to SIMPLE
