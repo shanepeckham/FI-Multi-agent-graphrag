@@ -223,3 +223,74 @@ The script provides comprehensive statistics including:
 - Cost implications based on token consumption
 
 Use the generated `evaluation_results.jsonl` file to analyze individual question performance and the summary statistics to understand overall agent team effectiveness on financial analysis tasks.
+
+## Generate Analysis Report
+
+The `generate_report.py` script processes evaluation results JSONL files and generates comprehensive markdown reports with charts and statistical analysis.
+
+### Usage
+
+```bash
+# Basic usage - generates report.md in current directory
+python generate_report.py eval_data/*_evaluation_results.jsonl
+
+# Specify output file and output directory
+python generate_report.py eval_data/*_evaluation_results.jsonl --output my_report.md --output-dir outputs/
+
+# Process specific files
+python generate_report.py \
+    eval_data/kg_drift_evaluation_results.jsonl \
+    eval_data/kg_global_evaluation_results.jsonl \
+    eval_data/rag_hybrid_evaluation_results.jsonl \
+    --output analysis_report.md
+```
+
+### Required Dependencies
+
+Make sure you have the following Python packages installed:
+- pandas
+- numpy
+- matplotlib
+
+### Output
+
+The script generates:
+1. A markdown report file (default: `evaluation_report.md`)
+2. Agent evaluation summary CSV (`agent_evaluation_summary.csv`)
+3. Response time chart (`response_time_chart.png`)
+4. Overall score chart (`overall_score_chart.png`)
+
+#### CSV File Structure
+
+The `agent_evaluation_summary.csv` contains the following columns:
+- **Agent_Type**: Name of the agent type
+- **Average_Response_Time_Seconds**: Average response time in seconds
+- **Overall_Average_Score**: Overall score averaged across all evaluation metrics
+- **Intent_Resolution_Score**: Score for intent resolution (1-5 scale)
+- **Task_Adherence_Score**: Score for task adherence (1-5 scale)
+- **Coherence_Score**: Score for coherence (1-5 scale)
+- **Fluency_Score**: Score for fluency (1-5 scale)
+- **Relevance_Score**: Score for relevance (1-5 scale)
+- **Groundedness_Score**: Score for groundedness (1-5 scale)
+- **Similarity_Score**: Score for similarity (1-5 scale)
+- **F1_Score**: F1 score (0-1 scale)
+- **Meteor_Score**: Meteor score (0-1 scale)
+- **Total_Records**: Number of evaluation records for the agent
+
+#### Report Sections
+
+The generated report includes:
+
+##### Section 1: Average Response Time Analysis
+- Response time summary table
+- Response time bar chart
+- Performance categories (High-speed, Medium-speed, Slower tier)
+- Key insights
+
+##### Section 2: Overall Evaluation Metrics Analysis
+- Overall score summary table with rankings
+- Overall score bar chart
+- Evaluation metrics breakdown
+- Quality vs Speed trade-off analysis
+- Individual metric performance table
+- Top performers by metric
