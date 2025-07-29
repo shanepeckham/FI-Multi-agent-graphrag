@@ -242,6 +242,7 @@ class QueryResponse(BaseModel):
     context: str
     thread_id: str
     run_id: str  # Used in evaluation mode to track a single agent
+    token_usage: Optional[Dict[str, Any]] = Field(default=None, description="Token usage statistics for all agents")
 
 class QueryRequest(BaseModel):
     query: str = Field(..., description="Query string")
@@ -319,10 +320,18 @@ def _load_environment_variables() -> None:
     Load environment variables from .env file and verify required keys.
     
     Raises:
+        FileNotFoundError: If .env file is not found in the script directory
         ValueError: If required environment variables are missing
     """
+    # Get the directory where main.py is located
+    script_dir = Path(__file__).parent
+    env_file_path = script_dir / ".env"
+    
+    # Check if .env file exists
+    if not env_file_path.exists():
+        raise FileNotFoundError(f".env file not found at {env_file_path}. Please create a .env file in the same directory as main.py")
+    
     # Load environment variables from .env file
-    env_file_path = os.getenv("ENV_FILE_PATH", "/Users/shanepeckham/sources/graphrag/app/.env")
     load_dotenv(env_file_path)
     
     # Verify critical environment variables
@@ -1434,7 +1443,7 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
             raise HTTPException(status_code=400, detail="Query is required")
         
         # Run the agent team with the question using pre-loaded resources
-        markdown_response, context, thread_id, run_id = _setup_agent_team_with_globals(question, request.search_query_type, request.graph_query_type, use_search=request.use_search,
+        markdown_response, context, thread_id, run_id, token_usage = _setup_agent_team_with_globals(question, request.search_query_type, request.graph_query_type, use_search=request.use_search,
                                                            use_graph=request.use_graph, use_web=request.use_web, use_reasoning=request.use_reasoning, evaluation_mode=request.evaluation_mode)
         
         return QueryResponse(
@@ -1442,7 +1451,8 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
             query=question,
             context=context,
             thread_id=thread_id,
-            run_id=run_id
+            run_id=run_id,
+            token_usage=token_usage,
         )
         
     except HTTPException:

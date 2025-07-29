@@ -42,6 +42,8 @@ To learn more about GraphRAG and how it can be used to enhance your LLM's abilit
 - Azure OpenAI API access
 - Docker (for containerized deployment)
 
+For a more detailed guide for setting up the necessary Azure services, see [AZURE_SETUP_GUIDE.md](./AZURE_SETUP_GUIDE.md)
+
 ### 1. Setup Environment Variables
 
 Copy the environment template and populate with your Azure credentials:
