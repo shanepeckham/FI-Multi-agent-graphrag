@@ -2,7 +2,7 @@
 """
 Generate evaluation analysis markdown report from JSONL files
 
-This script processes GraphRAG agent evaluation results from JSONL files and generates
+This script processes agent evaluation results from JSONL files and generates
 a comprehensive markdown report with sections on response time analysis and evaluation
 metrics analysis.
 
@@ -255,7 +255,7 @@ def generate_markdown_report(agent_stats: Dict[str, Dict[str, Any]], output_path
 
 ## Overview
 
-This report presents a comprehensive analysis of the performance evaluation results for different GraphRAG agent types. The analysis covers evaluation metrics, response times, and overall performance comparisons across all evaluated companies.
+This report presents a comprehensive analysis of the performance evaluation results for different agent types. The analysis covers evaluation metrics, response times, and overall performance comparisons across all evaluated companies.
 
 ## Data Sources
 
@@ -304,7 +304,7 @@ The following table shows the average response time for each agent type:
 
 Based on response times, the agents can be categorized into three performance tiers:
 
-1. **High-Speed Tier (< 50s)**: RAG-based agents
+1. **High-Speed Tier (< 50s)**:
 """
     
     high_speed = [agent for agent, stats in sorted_agents_by_time if stats['avg_response_time'] < 50]
@@ -312,12 +312,12 @@ Based on response times, the agents can be categorized into three performance ti
         if stats['avg_response_time'] < 50:
             markdown_content += f"   - {agent_name}: {stats['avg_response_time']:.1f}s\n"
     
-    markdown_content += "\n2. **Medium-Speed Tier (50s - 200s)**: Local knowledge graph\n"
+    markdown_content += "\n2. **Medium-Speed Tier (50s - 200s)**:\n"
     for agent_name, stats in sorted_agents_by_time:
         if 50 <= stats['avg_response_time'] <= 200:
             markdown_content += f"   - {agent_name}: {stats['avg_response_time']:.1f}s\n"
     
-    markdown_content += "\n3. **Slower Tier (> 200s)**: Global and drift-based knowledge graph agents\n"
+    markdown_content += "\n3. **Slower Tier (> 200s)**:\n"
     for agent_name, stats in sorted_agents_by_time:
         if stats['avg_response_time'] > 200:
             markdown_content += f"   - {agent_name}: {stats['avg_response_time']:.1f}s\n"
