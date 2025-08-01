@@ -30,6 +30,10 @@ __pycache__
 
 .pipeline
 
+# Graphrag data areas
+app/data
+
+
 # Azurite
 temp_azurite/
 __azurite*.json

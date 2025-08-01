@@ -115,12 +115,12 @@ try:
             def _type_is_workaround(x):
                 return x
             TypeIs = _type_is_workaround
-    
+
     # Force import of the correct version
     if not pydantic.__version__.startswith("2."):
         msg = f"Wrong Pydantic version: {pydantic.__version__}"
         raise ImportError(msg)
-        
+
 except ImportError as e:
     logging.error(f"Import error: {e}")
     logging.error("Please install: pip install 'pydantic>=2.5.0' 'typing-extensions>=4.9.0'")
@@ -133,7 +133,7 @@ from dotenv import load_dotenv
 # Azure AI and Identity imports
 from azure.ai.agents.models import (
     FunctionTool, ToolSet, AsyncFunctionTool, AsyncToolSet,
-    AzureAISearchQueryType, AzureAISearchTool, BingGroundingTool, BingGroundingSearchConfiguration, BingCustomSearchTool
+    AzureAISearchQueryType, AzureAISearchTool, BingGroundingTool, BingGroundingSearchConfiguration
 )
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
@@ -199,36 +199,36 @@ async def lifespan(app: FastAPI):
     """Manage application lifespan - startup and shutdown events."""
     # Startup
     print("🚀 Starting Financial Analysis Agent Team...")
-    
+
     # Load all heavy resources once
     global _graphrag_data, _language_models, _project_client
-    
+
     try:
         # Initialize configuration once
         _setup_tiktoken_for_gpt41()
         _setup_logging()
         _load_environment_variables()
-        
+
         # Initialize language models once
         print("📚 Initializing language models...")
         _language_models = _initialize_language_models()
-        
+
         # Initialize Azure project client once
         print("☁️ Initializing Azure client...")
         _project_client = _create_azure_project_client()
-        
+
         # Load GraphRAG data once
         print("🔍 Loading GraphRAG data...")
         _graphrag_data = _load_graphrag_data()
-        
+
         print("✅ Application startup complete!")
-        
+
     except Exception as e:
         print(f"❌ Startup failed: {e}")
         raise
-    
+
     yield  # Application runs here
-    
+
     # Shutdown
     print("🛑 Shutting down application...")
     if _project_client:
@@ -296,7 +296,7 @@ app.add_middleware(
 def _setup_tiktoken_for_gpt41() -> None:
     """
     Register the tokenizer for GPT-4.1 to fix tokenization errors.
-    
+
     GPT-4.1 is not natively supported by tiktoken, so we register it
     to use the cl100k_base encoding which is compatible.
     """
@@ -310,7 +310,7 @@ def _setup_tiktoken_for_gpt41() -> None:
 def _setup_logging() -> None:
     """Configure logging for the application."""
     logging.basicConfig(level=logging.ERROR)
-    
+
     # Configure Azure resource logger
     logger = logging.getLogger('azure.mgmt.resource')
     logger.setLevel(logging.ERROR)
@@ -318,7 +318,7 @@ def _setup_logging() -> None:
 def _load_environment_variables() -> None:
     """
     Load environment variables from .env file and verify required keys.
-    
+
     Raises:
         FileNotFoundError: If .env file is not found in the script directory
         ValueError: If required environment variables are missing
@@ -326,21 +326,21 @@ def _load_environment_variables() -> None:
     # Get the directory where main.py is located
     script_dir = Path(__file__).parent
     env_file_path = script_dir / ".env"
-    
+
     # Check if .env file exists
     if not env_file_path.exists():
         raise FileNotFoundError(f".env file not found at {env_file_path}. Please create a .env file in the same directory as main.py")
-    
+
     # Load environment variables from .env file
     load_dotenv(env_file_path)
-    
+
     # Verify critical environment variables
     required_vars = ["AZURE_OPENAI_API_KEY"]
     missing_vars = [var for var in required_vars if not os.getenv(var)]
-    
+
     if missing_vars:
         raise ValueError(f"Missing required environment variables: {missing_vars}")
-    
+
     print(f"AZURE_OPENAI_API_KEY present: {bool(os.getenv('AZURE_OPENAI_API_KEY'))}")
     print(f"PROJECT_ENDPOINT present: {bool(os.getenv('PROJECT_ENDPOINT'))}")
     print(f"AZURE_OPENAI_ENDPOINT present: {bool(os.getenv('AZURE_OPENAI_ENDPOINT'))}")
@@ -441,13 +441,13 @@ security = HTTPBearer()
 def verify_api_key(credentials: HTTPAuthorizationCredentials = Depends(security)) -> bool:
     """
     Verify the provided API key against the stored hash.
-    
+
     Args:
         credentials: The Bearer token credentials from the request header
-        
+
     Returns:
         bool: True if the API key is valid
-        
+
     Raises:
         HTTPException: If the API key is invalid or missing
     """
@@ -457,10 +457,10 @@ def verify_api_key(credentials: HTTPAuthorizationCredentials = Depends(security)
             detail="Missing API key",
             headers={"WWW-Authenticate": "Bearer"},
         )
-    
+
     # Hash the provided token for comparison
     provided_hash = hashlib.sha256(credentials.credentials.encode()).hexdigest()
-    
+
     # Compare hashes to prevent timing attacks
     if not secrets.compare_digest(API_KEY_HASH, provided_hash):
         raise HTTPException(
@@ -468,7 +468,7 @@ def verify_api_key(credentials: HTTPAuthorizationCredentials = Depends(security)
             detail="Invalid API key",
             headers={"WWW-Authenticate": "Bearer"},
         )
-    
+
     return True
 
 # ==============================================================================
@@ -478,7 +478,7 @@ def verify_api_key(credentials: HTTPAuthorizationCredentials = Depends(security)
 def _create_azure_project_client() -> AIProjectClient:
     """
     Create and return an Azure AI Project client.
-    
+
     Returns:
         AIProjectClient: Configured Azure AI Project client
     """
@@ -515,13 +515,13 @@ def create_task(recipient: str, request: str, requestor: str) -> str:
     """
     task = AgentTask(recipient=recipient, task_description=request, requestor=requestor)
     team: Optional[AgentTeam] = None
-    
+
     try:
         team = AgentTeam.get_team(TEAM_NAME)
     except Exception:
         # Log the exception if needed, but continue gracefully
         pass
-    
+
     if team is not None:
         team.add_task(task)
         return "True"
@@ -534,7 +534,7 @@ def create_task(recipient: str, request: str, requestor: str) -> str:
 def _create_chat_model_config() -> LanguageModelConfig:
     """
     Create configuration for the chat language model.
-    
+
     Returns:
         LanguageModelConfig: Configuration for GPT-4.1 chat model
     """
@@ -551,7 +551,7 @@ def _create_chat_model_config() -> LanguageModelConfig:
 def _create_embedding_model_config() -> LanguageModelConfig:
     """
     Create configuration for the embedding model.
-    
+
     Returns:
         LanguageModelConfig: Configuration for text-embedding-ada-002 model
     """
@@ -568,32 +568,32 @@ def _create_embedding_model_config() -> LanguageModelConfig:
 def _initialize_language_models() -> Tuple[Any, Any, Any]:
     """
     Initialize chat model, embedding model, and tokenizer.
-    
+
     Returns:
         Tuple[Any, Any, Any]: (chat_model, text_embedder, encoder)
     """
     # Create model configurations
     chat_config = _create_chat_model_config()
     embedding_config = _create_embedding_model_config()
-    
+
     # Initialize models through ModelManager
     model_manager = ModelManager()
-    
+
     chat_model = model_manager.get_or_create_chat_model(
         name="search",
         model_type=ModelType.AzureOpenAIChat,
         config=chat_config,
     )
-    
+
     text_embedder = model_manager.get_or_create_embedding_model(
         name="search_embedding",
         model_type=ModelType.AzureOpenAIEmbedding,
         config=embedding_config,
     )
-    
+
     # Initialize tokenizer - using o200k_base for GPT-4 models
     encoder = tiktoken.get_encoding("o200k_base")
-    
+
     return chat_model, text_embedder, encoder
 
 # Note: Language models and GraphRAG data are now initialized in the lifespan function
@@ -606,9 +606,9 @@ def _initialize_language_models() -> Tuple[Any, Any, Any]:
 def _load_graphrag_data() -> Tuple[Any, Any, Any, Any, Any, Any, Any, Any]:
     """
     Load all required GraphRAG data from parquet files.
-    
+
     Returns:
-        Tuple containing: (entities, relationships, reports, text_units, 
+        Tuple containing: (entities, relationships, reports, text_units,
                           communities, description_embedding_store, full_content_embedding_store,
                           covariates)
 
@@ -623,7 +623,7 @@ def _load_graphrag_data() -> Tuple[Any, Any, Any, Any, Any, Any, Any, Any]:
         relationship_df = pd.read_parquet(f"{INPUT_DIR}/{RELATIONSHIP_TABLE}.parquet")
         report_df = pd.read_parquet(f"{INPUT_DIR}/{COMMUNITY_REPORT_TABLE}.parquet")
         text_unit_df = pd.read_parquet(f"{INPUT_DIR}/{TEXT_UNIT_TABLE}.parquet")
-        
+
         # Process data using GraphRAG indexer adapters
         entities = read_indexer_entities(entity_df, community_df, COMMUNITY_LEVEL)
         relationships = read_indexer_relationships(relationship_df)
@@ -646,39 +646,39 @@ def _load_graphrag_data() -> Tuple[Any, Any, Any, Any, Any, Any, Any, Any]:
             COMMUNITY_LEVEL,
             content_embedding_col="full_content_embeddings",
         )
-        
+
         # Initialize vector stores for embeddings
         description_embedding_store = LanceDBVectorStore(
             collection_name="default-entity-description",
         )
         description_embedding_store.connect(db_uri=LANCEDB_URI)
-        
+
         full_content_embedding_store = LanceDBVectorStore(
             collection_name="default-community-full_content",
         )
         full_content_embedding_store.connect(db_uri=LANCEDB_URI)
-        
+
         # Load report embeddings into vector store
         read_indexer_report_embeddings(reports, full_content_embedding_store)
-        
+
         return (entities, relationships, reports, text_units, communities,
                 description_embedding_store, full_content_embedding_store, covariates)
-        
+
     except Exception as e:
         print(f"Error loading GraphRAG data: {e}")
-        
+
 
 def read_community_reports(input_dir: str, community_report_table: str = COMMUNITY_REPORT_TABLE) -> pd.DataFrame:
     """
     Read community reports from parquet file.
-    
+
     Args:
         input_dir: Directory containing the parquet files
         community_report_table: Name of the community report table
-        
+
     Returns:
         pd.DataFrame: Community reports dataframe
-        
+
     Raises:
         FileNotFoundError: If the parquet file doesn't exist
     """
@@ -695,28 +695,28 @@ def read_community_reports(input_dir: str, community_report_table: str = COMMUNI
 async def _query_graph_async_drift(question: str) -> str:
     """
     Execute a DRIFT search query against the knowledge graph.
-    
+
     DRIFT (Dynamic Retrieval and Information Focused Targeting) search provides
     advanced query capabilities with multiple levels of analysis.
-    
+
     Args:
         question: The question to search for in the knowledge graph
-        
+
     Returns:
         str: The search response
-        
+
     Raises:
         Exception: If the search operation fails
     """
     global _graphrag_data, _language_models
-    
+
     if not _graphrag_data or not _language_models:
         raise RuntimeError("GraphRAG data or language models not initialized")
-    
+
     chat_model, text_embedder, encoder = _language_models
     (entities, relationships, reports, text_units, communities,
      description_embedding_store, full_content_embedding_store, covariates) = _graphrag_data
-    
+
     print(f"GRAPH: Using drift search with question: {question}")
     drift_params = DRIFTSearchConfig(
         primer_folds=1,
@@ -737,8 +737,8 @@ async def _query_graph_async_drift(question: str) -> str:
     )
 
     search = DRIFTSearch(
-        model=chat_model, 
-        context_builder=context_builder, 
+        model=chat_model,
+        context_builder=context_builder,
         token_encoder=encoder
     )
 
@@ -750,28 +750,28 @@ async def _query_graph_async_drift(question: str) -> str:
 async def _query_graph_async_global(question: str) -> str:
     """
     Execute a global search query against the knowledge graph.
-    
+
     Global search analyzes community reports and provides high-level insights
     across the entire knowledge graph using map-reduce methodology.
-    
+
     Args:
         question: The question to search for in the knowledge graph
-        
+
     Returns:
         str: The search response
-        
+
     Raises:
         Exception: If the search operation fails
     """
     global _graphrag_data, _language_models
-    
+
     if not _graphrag_data or not _language_models:
         raise RuntimeError("GraphRAG data or language models not initialized")
-    
+
     chat_model, text_embedder, encoder = _language_models
     (entities, relationships, reports, text_units, communities,
      description_embedding_store, full_content_embedding_store, covariates) = _graphrag_data
-    
+
     print(f"GRAPH: Using global search with question: {question}")
     context_builder = GlobalCommunityContext(
         community_reports=reports,
@@ -779,7 +779,7 @@ async def _query_graph_async_global(question: str) -> str:
         entities=entities,
         token_encoder=encoder,
     )
-    
+
     context_builder_params = {
         "use_community_summary": False,  # Use full community reports
         "shuffle_data": True,
@@ -817,7 +817,7 @@ async def _query_graph_async_global(question: str) -> str:
         concurrent_coroutines=32,
         response_type="multiple paragraphs",
     )
-    
+
     result = await search_engine.search(question)
     print(result.response)
     _kg_sources = parse_graphrag_metadata(result.response)
@@ -826,28 +826,28 @@ async def _query_graph_async_global(question: str) -> str:
 async def _query_graph_async_local(question: str) -> str:
     """
     Execute a local search query against the knowledge graph.
-    
+
     Local search focuses on specific entities and their immediate relationships,
     providing detailed information about particular aspects of the data.
-    
+
     Args:
         question: The question to search for in the knowledge graph
-        
+
     Returns:
         str: The search response
-        
+
     Raises:
         Exception: If the search operation fails
     """
-    global _graphrag_data, _language_models 
-    
+    global _graphrag_data, _language_models
+
     if not _graphrag_data or not _language_models:
         raise RuntimeError("GraphRAG data or language models not initialized")
-    
+
     chat_model, text_embedder, encoder = _language_models
     (entities, relationships, reports, text_units, communities,
      description_embedding_store, full_content_embedding_store, covariates) = _graphrag_data
- 
+
     print(f"GRAPH: Using local search with question: {question}")
     context_builder = LocalSearchMixedContext(
         community_reports=reports,
@@ -889,7 +889,7 @@ async def _query_graph_async_local(question: str) -> str:
         context_builder_params=local_context_params,
         response_type="multiple paragraphs",
     )
-    
+
     result = await search_engine.search(question)
     print(result.response)
     _kg_sources = parse_graphrag_metadata(result.response)
@@ -899,29 +899,29 @@ async def _query_graph_async_local(question: str) -> str:
 def parse_graphrag_metadata(response: str) -> dict:
     """
     Parse GraphRAG response to extract metadata about sources, entities, and relationships.
-    
+
     Searches for patterns like:
     - [Data: Sources (119)]
     - [Entities: 5135, 1555]
     - [Relationships: 54421, 35035]
     - Combined: [Data: Sources (119) ([Entities: 5135, 1555]; [Relationships: 54421, 35035])
-    
+
     Args:
         response: The GraphRAG response string
-        
+
     Returns:
         dict: Parsed metadata with keys 'Sources', 'Entities', 'Relationships'
               Example: {Sources:[119], Entities:[5135, 1555], Relationships: [54421, 35035]}
     """
     import re
-    
+
     # Initialize result dictionary
     result = {
         "Sources": [],
         "Entities": [],
         "Relationships": []
     }
-    
+
     try:
         # Pattern 1: Sources - matches "[Data: Sources (2305, 2603)]"
         sources_pattern = r'Data:\s*Sources\s*\(([^)]+)\)'
@@ -932,7 +932,7 @@ def parse_graphrag_metadata(response: str) -> dict:
             sources = [int(x.strip()) for x in sources_str.split(',') if x.strip().isdigit()]
             result["Sources"] = sources
             print(f"🔍 Found Sources: {sources}")
-        
+
         # Pattern 2: Entities - matches "[Data: Entities (4264, 661, 760)]"
         entities_pattern = r'Data:\s*Entities\s*\(([^)]+)\)'
         entities_match = re.search(entities_pattern, response)
@@ -942,7 +942,7 @@ def parse_graphrag_metadata(response: str) -> dict:
             entities = [int(x.strip()) for x in entities_str.split(',') if x.strip().isdigit()]
             result["Entities"] = entities
             print(f"🔍 Found Entities: {entities}")
-        
+
         # Pattern 3: Relationships - matches "[Data: Relationships (55392, 84934, 75511, +more)]"
         relationships_pattern = r'Relationships\s*\(([^)]+)\)'
         relationships_match = re.search(relationships_pattern, response)
@@ -952,10 +952,10 @@ def parse_graphrag_metadata(response: str) -> dict:
             relationships = [int(x.strip()) for x in relationships_str.split(',') if x.strip().isdigit()]
             result["Relationships"] = relationships
             print(f"🔍 Found Relationships: {relationships}")
-        
+
         # Summary
         found_items = [key for key, value in result.items() if value]
-        
+
 
         def get_text_units(text_units: list) -> list:
             """
@@ -983,7 +983,7 @@ def parse_graphrag_metadata(response: str) -> dict:
                         if v.short_id == str(id):
                             texts = get_text_units(v.text_unit_ids)
                             sources[id] = texts
-            
+
             if key == "Sources":
                 for id in value:
                     for i in range(len(_graphrag_data)):
@@ -1009,29 +1009,29 @@ def parse_graphrag_metadata(response: str) -> dict:
 
     except Exception as e:
         print(f"❌ Error parsing GraphRAG metadata: {e}")
-    
+
     return sources
 
 @tracer.start_as_current_span("query_graph")  # type: ignore
 def query_graph(question: str, search_type: str = "local") -> str:
     """
     Query the GraphRAG knowledge graph with thread-safe async execution.
-    
+
     This function provides a synchronous interface to the async GraphRAG search
     capabilities, handling event loop management to work properly within the
     Azure AI Agents framework.
-    
+
     Args:
         question: The question to search for in the knowledge graph
         search_type: Type of search to perform ("local", "global", or "drift")
-        
+
     Returns:
         str: The search response from GraphRAG
-        
+
     Raises:
         ValueError: If an invalid search_type is provided
         Exception: If the search operation fails
-        
+
     Example:
         >>> response = query_graph("What are the main revenue streams?")
         >>> print(response)
@@ -1052,14 +1052,14 @@ def query_graph(question: str, search_type: str = "local") -> str:
     # Validate search type
     print(f"Using search type: {search_type}")
     search_func = search_functions[search_type]
-    
+
     # Handle async execution in sync context with proper waiting
     try:
         # Check if we're already in an event loop
         try:
             loop = asyncio.get_running_loop()
             print("Found existing event loop, running in thread pool")
-            
+
             # We're in an event loop, so we need to run in a thread to avoid blocking
             def run_async_in_new_loop():
                 # Create a completely new event loop for this thread
@@ -1075,12 +1075,12 @@ def query_graph(question: str, search_type: str = "local") -> str:
                     raise
                 finally:
                     new_loop.close()
-            
+
             # Use ThreadPoolExecutor with proper timeout and error handling
             with ThreadPoolExecutor(max_workers=1) as executor:
                 print("Submitting task to thread pool...")
                 future = executor.submit(run_async_in_new_loop)
-                
+
                 # Wait for completion with a reasonable timeout (5 minutes)
                 try:
                     result = future.result(timeout=300)  # 5 minutes timeout
@@ -1092,7 +1092,7 @@ def query_graph(question: str, search_type: str = "local") -> str:
                 except Exception as e:
                     print(f"Thread pool execution failed: {e}")
                     raise
-                    
+
         except RuntimeError as e:
             # No event loop running, we can use asyncio.run directly
             print("No existing event loop found, running directly")
@@ -1100,7 +1100,7 @@ def query_graph(question: str, search_type: str = "local") -> str:
             result = asyncio.run(search_func(question))
             print(f"Completed {search_type} search")
             return result
-            
+
     except Exception as e:
         print(f"Error in query_graph: {e}")
         print(f"Traceback: {traceback.format_exc()}")
@@ -1114,7 +1114,7 @@ def query_graph(question: str, search_type: str = "local") -> str:
 def _create_agent_toolsets() -> Tuple[ToolSet, AsyncToolSet]:
     """
     Create toolsets for sync and async functions.
-    
+
     Returns:
         Tuple[ToolSet, AsyncToolSet]: (sync_toolset, async_toolset)
     """
@@ -1122,61 +1122,61 @@ def _create_agent_toolsets() -> Tuple[ToolSet, AsyncToolSet]:
     agent_team_default_functions: set = {
         create_task,
     }
-    
+
     # Create sync and async toolsets
     sync_functions = FunctionTool(functions=agent_team_default_functions)
     async_functions = AsyncFunctionTool(functions={query_graph})
 
     sync_toolset = ToolSet()
     sync_toolset.add(sync_functions)
-    
+
     async_toolset = AsyncToolSet()
     async_toolset.add(async_functions)
-    
+
     return sync_toolset, async_toolset
 
 def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_query_type: str, use_search: bool, use_graph: bool, use_web: bool, use_reasoning: bool, evaluation_mode: bool) -> str:
     """
     Set up and run the agent team using pre-loaded global resources.
-    
+
     This function uses resources loaded at startup to avoid reloading heavy data.
     """
     global _graphrag_data, _language_models, _project_client
 
     if not _project_client:
         return "Error: Azure project client not initialized"
-    
+
     if evaluation_mode:
         print("Running in evaluation mode, no WebSocket updates will be sent")
         EVALUATION_MODE = True
         WEBSOCKET_EVENTS_ENABLED = False
-    
+
     # Use the shared agents client without 'with' statement to keep it open
     agents_client = _project_client.agents
-    
+
     # Create tools and toolsets using pre-loaded data
     search_tool, bing_tool = _create_search_tools_with_type(_project_client, search_query_type)
     sync_toolset, async_toolset = _create_agent_toolsets()
-    
+
     # Register all agent functions
     agents_client.enable_auto_function_calls({create_task, query_graph})
-    
+
     if MODEL_DEPLOYMENT_NAME is not None:
         # Setup tracing for debugging
         AgentTraceConfigurator(agents_client=agents_client).setup_tracing()
-        
+
         # Create agent team without using 'with' statement to avoid closing the client
         agent_team = AgentTeam(TEAM_NAME, agents_client=agents_client)
 
         # Get the directory of the current script to ensure we find the config file
         script_dir = Path(__file__).parent
         config_file_path = script_dir / "agent_team_config.yaml"
-        
+
         print(f"📁 Script directory: {script_dir}")
         print(f"📁 Current working directory: {os.getcwd()}")
         print(f"📁 Looking for config file at: {config_file_path}")
         print(f"📁 Config file exists: {config_file_path.exists()}")
-        
+
         with open(config_file_path, "r") as config_file:
             config = yaml.safe_load(config_file)
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS"].strip()
@@ -1228,7 +1228,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                 instructions=(TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS),
                 toolset=sync_toolset,
             )
-        
+
         # Configure agents with proper toolsets
         if use_search:
             # RAG agent gets search tool
@@ -1263,11 +1263,11 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                 tool_resources=bing_tool.resources,
                 can_delegate=False
             )
-        
+
         # Assemble and run the team
         print("🔧 Assembling agent team...")
         agent_team.assemble_team()
-        
+
         print(f"🚀 Starting agent team processing for question: {question}")
         print(f"📊 Team configuration:")
         print(f"   - Use Search: {use_search}")
@@ -1275,23 +1275,23 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         print(f"   - Use Web: {use_web}")
         print(f"   - Use Reasoning: {use_reasoning}")
         print(f"   - Evaluation: {evaluation_mode}")
-        
+
         # Process the request and ensure we wait for completion
         result = agent_team.process_request(request=question, evaluation_mode=evaluation_mode)
         agent_team.dismantle_team()
-        
+
         print(f"✅ Agent team processing completed")
         print(f"📝 Result length: {len(result) if result else 0} characters")
-        
+
         if not result:
             print("⚠️  Error: Agent team returned empty or incomplete response. Please try again.")
             return "Error: Agent team returned empty or incomplete response. Please try again."
-        
+
         return result
-    
+
     return "Error: MODEL_DEPLOYMENT_NAME is not set"
 
-def _create_search_tools_with_type(project_client: AIProjectClient, search_type: str) -> Tuple[AzureAISearchTool, BingCustomSearchTool]:
+def _create_search_tools_with_type(project_client: AIProjectClient, search_type: str) -> Tuple[AzureAISearchTool, BingGroundingTool]:
     """Create search tools with specified search type."""
     # Azure AI Search tool
     search_conn = project_client.connections.get(name=AI_SEARCH_CONNECTION_NAME, include_credentials=True)
@@ -1309,7 +1309,7 @@ def _create_search_tools_with_type(project_client: AIProjectClient, search_type:
             index_connection_id=search_conn.id,
             index_name=AI_SEARCH_INDEX_NAME,
             query_type=AzureAISearchQueryType.VECTOR_SEMANTIC_HYBRID,  # Use semantic for hybrid (combines vector + keyword)
-            top_k=3,  
+            top_k=3,
             filter=""
         )
     else:  # Default to SIMPLE
@@ -1323,7 +1323,7 @@ def _create_search_tools_with_type(project_client: AIProjectClient, search_type:
 
     # Bing Search tool
     bing_conn = project_client.connections.get(name=BING_CONNECTION_NAME, include_credentials=True)
-    bing_tool = BingCustomSearchTool(connection_id=bing_conn.id, instance_name=BING_CONFIGURATION)
+    bing_tool = BingGroundingTool(connection_id=bing_conn.id)
 
     return search_tool, bing_tool
 
@@ -1367,13 +1367,13 @@ async def get_agent_config():
     """Get the agent team configuration YAML file."""
     try:
         config_file_path = Path(__file__).parent / "agent_team_config.yaml"
-        
+
         if not config_file_path.exists():
             raise HTTPException(status_code=404, detail="Configuration file not found")
-        
+
         with open(config_file_path, 'r', encoding='utf-8') as file:
             config_content = file.read()
-        
+
         return Response(
             content=config_content,
             media_type="text/plain",
@@ -1389,32 +1389,32 @@ async def save_agent_config(request: Request):
     """Save the agent team configuration YAML file."""
     try:
         config_file_path = Path(__file__).parent / "agent_team_config.yaml"
-        
+
         # Read the request body as text
         config_content = await request.body()
         config_text = config_content.decode('utf-8')
-        
+
         if not config_text.strip():
             raise HTTPException(status_code=400, detail="Configuration content cannot be empty")
-        
+
         # Validate YAML syntax
         try:
             yaml.safe_load(config_text)
         except yaml.YAMLError as e:
             raise HTTPException(status_code=400, detail=f"Invalid YAML syntax: {str(e)}")
-        
+
         # Create backup of existing file
         if config_file_path.exists():
             backup_path = config_file_path.with_suffix(f".yaml.backup.{int(time.time())}")
             config_file_path.rename(backup_path)
             print(f"Created backup: {backup_path}")
-        
+
         # Write new configuration
         with open(config_file_path, 'w', encoding='utf-8') as file:
             file.write(config_text)
-        
+
         return {"message": "Configuration saved successfully", "path": str(config_file_path)}
-        
+
     except HTTPException:
         raise
     except Exception as e:
@@ -1426,7 +1426,7 @@ async def save_agent_config(request: Request):
 def query_team_endpoint(request: QueryRequest) -> QueryResponse:
     """
     Query the agent team for financial analysis.
-    
+
     This endpoint uses pre-loaded resources from application startup
     to provide fast responses without reloading data. No authentication required.
     """
@@ -1437,15 +1437,15 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
 
         if not all([_graphrag_data, _language_models, _project_client]):
             raise HTTPException(status_code=503, detail="Application not fully initialized")
-        
+
         question = request.query
         if not question or not question.strip():
             raise HTTPException(status_code=400, detail="Query is required")
-        
+
         # Run the agent team with the question using pre-loaded resources
         markdown_response, context, thread_id, run_id, token_usage = _setup_agent_team_with_globals(question, request.search_query_type, request.graph_query_type, use_search=request.use_search,
                                                            use_graph=request.use_graph, use_web=request.use_web, use_reasoning=request.use_reasoning, evaluation_mode=request.evaluation_mode)
-        
+
         return QueryResponse(
             response=markdown_response,
             query=question,
@@ -1454,7 +1454,7 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
             run_id=run_id,
             token_usage=token_usage,
         )
-        
+
     except HTTPException:
         raise
     except Exception as e:
@@ -1471,7 +1471,7 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
     if not WEBSOCKET_AVAILABLE or not websocket_manager:
         await websocket.close(code=1011, reason="WebSocket not available")
         return
-        
+
     await websocket_manager.connect(websocket, session_id)
     try:
         while True:
@@ -1499,7 +1499,7 @@ async def get_dashboard():
 def main() -> None:
     """
     Run the GraphRAG Agent Team application.
-    
+
     This function initializes and runs the multi-agent financial analysis system.
     """
     try:

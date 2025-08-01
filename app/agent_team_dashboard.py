@@ -11,7 +11,7 @@ from opentelemetry import trace
 from opentelemetry.trace import Span  # noqa: F401 # pylint: disable=unused-import
 from typing import Any, Dict, Optional, Set, List
 from azure.ai.agents import AgentsClient
-from azure.ai.agents.models import FunctionTool, ToolSet, Tool, ToolResources, MessageRole, Agent, AgentThread, AzureAISearchQueryType, AzureAISearchTool, ListSortOrder, MessageRole, BingCustomSearchTool
+from azure.ai.agents.models import FunctionTool, ToolSet, Tool, ToolResources, MessageRole, Agent, AgentThread, AzureAISearchQueryType, AzureAISearchTool, ListSortOrder, MessageRole, BingGroundingTool
 
 
 # Import WebSocket event emitter conditionally
@@ -217,7 +217,7 @@ class AgentTeam:
             instructions=self._team_leader.instructions,
             toolset=self._team_leader.toolset,
         )
-        
+
         # Emit agent created event
         if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
             event_emitter.emit_sync("agent_created", "agent", {
@@ -284,7 +284,7 @@ class AgentTeam:
             member.agent_instance = self._agents_client.create_agent(
                 model=member.model, name=member.name, instructions=extended_instructions, toolset=member.toolset, tools=member.tools, tool_resources=member.tool_resources
             )
-            
+
             # Emit agent created event
             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                 event_emitter.emit_sync("agent_created", "agent", {
@@ -349,7 +349,7 @@ class AgentTeam:
             self._current_request_span = current_request_span
             if self._current_request_span is not None:
                 self._current_request_span.set_attribute("agent_team.name", self.team_name)
-            
+
             # Emit team processing started event
             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                 event_emitter.emit_sync("processing_started", "team", {
@@ -357,7 +357,7 @@ class AgentTeam:
                     "request": request,
                     "thread_id": self._agent_thread.id if self._agent_thread else None
                 })
-            
+
             team_leader_request = self.TEAM_LEADER_INITIAL_REQUEST.format(original_request=request)
             _create_task(
                 team_name=self.team_name,
@@ -379,7 +379,7 @@ class AgentTeam:
                         f"Requestor: '{task.requestor}'. "
                         f"Task description: '{task.task_description}'."
                     )
-                    
+
                     # Emit task started event
                     if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                         event_emitter.emit_sync("task_started", "task", {
@@ -388,14 +388,14 @@ class AgentTeam:
                             "task_description": task.task_description,
                             "task_id": f"{task.recipient}_{len(agent_responses)}"
                         })
-                    
+
                     # Emit agent started task event
                     if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                         event_emitter.emit_sync("agent_started_task", "agent", {
                             "agent_name": task.recipient,
                             "task_description": task.task_description
                         })
-                    
+
                     # Emit message sent event
                     if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                         event_emitter.emit_sync("message_sent", "task", {
@@ -404,7 +404,7 @@ class AgentTeam:
                             "message": task.task_description,
                             "message_id": f"msg_{task.recipient}_{len(agent_responses)}"
                         })
-                    
+
                     message = self._agents_client.messages.create(
                         thread_id=self._agent_thread.id,
                         role="user",
@@ -420,7 +420,7 @@ class AgentTeam:
 
                              # Create and process run with extended timeout for complex queries
                             run = self._agents_client.runs.create_and_process(
-                                thread_id=self._agent_thread.id, 
+                                thread_id=self._agent_thread.id,
                                 agent_id=agent.agent_instance.id,
 
                                 # Add timeout parameters if supported
@@ -433,12 +433,12 @@ class AgentTeam:
                                 completion_tokens = getattr(run.usage, 'completion_tokens', 0)
                                 prompt_tokens = getattr(run.usage, 'prompt_tokens', 0)
                                 total_tokens = completion_tokens + prompt_tokens
-                                
+
                                 # Add to total usage
                                 token_usage["total_prompt_tokens"] += prompt_tokens
                                 token_usage["total_completion_tokens"] += completion_tokens
                                 token_usage["total_tokens"] += total_tokens
-                                
+
                                 # Add agent-specific usage
                                 token_usage["agents"][agent.name] = {
                                     "prompt_tokens": prompt_tokens,
@@ -446,20 +446,20 @@ class AgentTeam:
                                     "total_tokens": total_tokens,
                                     "run_id": run.id
                                 }
-                                
-                                print(f"Agent '{agent.name}' token usage: {prompt_tokens} prompt + {completion_tokens} completion = {total_tokens} total")        
+
+                                print(f"Agent '{agent.name}' token usage: {prompt_tokens} prompt + {completion_tokens} completion = {total_tokens} total")
                         if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                             # Get run details safely
                             run_tools = "Unknown"
                             run_usage = "N/A"
-                            
+
                             try:
                                 # Safely access run properties
                                 if hasattr(run, 'tools') and run.tools:
                                     run_tools = str(run.tools[0]) if len(run.tools) > 0 else "No tools"
                                 else:
                                     run_tools = "No tools"
-                                    
+
                                 if hasattr(run, 'usage') and run.usage:
                                     completion_tokens = getattr(run.usage, 'completion_tokens', 0)
                                     prompt_tokens = getattr(run.usage, 'prompt_tokens', 0)
@@ -470,7 +470,7 @@ class AgentTeam:
                                 print(f"Error accessing run properties: {e}")
                                 run_tools = "Error accessing tools"
                                 run_usage = "Error accessing usage"
-                            
+
                             event_emitter.emit_sync("run_started", "run", {
                                 "from": task.requestor,
                                 "to": task.recipient,
@@ -480,15 +480,15 @@ class AgentTeam:
                                 "run_id": run.id,
                                 "agent_id": agent.agent_instance.id
                             })
-                        
+
                         # Wait a bit to ensure the run has fully completed
                         time.sleep(5)  # Give the system time to finalize the response
-                        
+
                         # Retry mechanism to get the response
                         max_retries = 5
                         retry_count = 0
                         text_message = None
-                        
+
                         while retry_count < max_retries:
                             text_message = self._agents_client.messages.get_last_message_text_by_role(
                                 thread_id=self._agent_thread.id, role=MessageRole.AGENT
@@ -503,14 +503,14 @@ class AgentTeam:
                                             print(f"Agent response: {text_message.text.value}")
                                         for annotation in msg.url_citation_annotations:
                                             print(f"URL Citation: [{annotation.url_citation.title}]({annotation.url_citation.url})")
-                            
+
                             if text_message and text_message.text and len(text_message.text.value.strip()) > 10:
                                 break
-                            
+
                             retry_count += 1
                             print(f"Retry {retry_count}/{max_retries} - waiting for complete response from agent '{agent.name}'...")
                             time.sleep(3)  # Wait 3 seconds before retry
-                        
+
                         if text_message and text_message.text:
                             agent_response_text = text_message.text.value
                             print(f"Agent '{agent.name}' completed task. Response length: {len(agent_response_text)} characters")
@@ -527,7 +527,7 @@ class AgentTeam:
                                     "original_message": task.task_description,
                                     "message_id": f"resp_{task.recipient}_{len(agent_responses)}"
                                 })
-                            
+
                             # Emit task completed event
                             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                                 event_emitter.emit_sync("task_completed", "task", {
@@ -536,28 +536,28 @@ class AgentTeam:
                                     "result": agent_response_text,
                                     "task_id": f"{task.recipient}_{len(agent_responses)}"
                                 })
-                            
+
                             # Emit agent completed task event
                             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                                 event_emitter.emit_sync("agent_completed_task", "agent", {
                                     "agent_name": agent.name,
-                                    "task_result": agent_response_text 
+                                    "task_result": agent_response_text
                                 })
-                            
+
                             # Collect agent response for markdown formatting
                             agent_responses.append({
                                 "agent": agent.name,
                                 "response": agent_response_text,
                                 "task": task.task_description
                             })
-                            
+
                             if self._current_task_span is not None:
                                 self._add_task_completion_event(self._current_task_span, result=agent_response_text)
                         else:
                             print(f"⚠️  Warning: No response received from agent '{agent.name}' after {max_retries} retries")
                             # Create a fallback response
                             agent_response_text = f"Agent {agent.name} did not provide a complete response. Please try again."
-                            
+
                             # Still emit events for tracking
                             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                                 event_emitter.emit_sync("task_completed", "task", {
@@ -587,7 +587,7 @@ class AgentTeam:
                         if self._get_member_by_name(agent_name).has_responded:
                             self._tasks.remove(tasks)
             self._current_request_span = None
-            
+
             # Format and return structured markdown response
             thread_id = self._agent_thread.id if self._agent_thread else "Unknown"
             run_id = agent.run_id if agent.run_id else "Unknown"
@@ -613,7 +613,7 @@ class AgentTeam:
                             conclusion = context.strip()
 
 
-                markdown_response = conclusion      
+                markdown_response = conclusion
 
 
             # Emit team processing completed event
@@ -628,7 +628,7 @@ class AgentTeam:
                     "thread_id": thread_id,
                     "summary": f"Completed analysis with {len(agent_responses)} agent responses"
                 })
-            
+
             # Print the formatted markdown to console
             print("\n" + "="*80)
             print("AGENT TEAM MARKDOWN RESPONSE:")
@@ -638,7 +638,7 @@ class AgentTeam:
 
             return markdown_response, context, thread_id, run_id, token_usage
 
-    
+
 
     def process_request_with_results(self, request: str) -> Dict[str, Any]:
         """
@@ -655,12 +655,12 @@ class AgentTeam:
             print(f"Created thread with ID: {self._agent_thread.id}")
 
         conversation_messages = []
-        
+
         with tracer.start_as_current_span("agent_team_request") as current_request_span:
             self._current_request_span = current_request_span
             if self._current_request_span is not None:
                 self._current_request_span.set_attribute("agent_team.name", self.team_name)
-            
+
             team_leader_request = self.TEAM_LEADER_INITIAL_REQUEST.format(original_request=request)
             _create_task(
                 team_name=self.team_name,
@@ -668,7 +668,7 @@ class AgentTeam:
                 request=team_leader_request,
                 requestor="user",
             )
-            
+
             while self._tasks:
                 task = self._tasks.pop(0)
                 with tracer.start_as_current_span("agent_team_task") as current_task_span:
@@ -678,13 +678,13 @@ class AgentTeam:
                         self._current_task_span.set_attribute("agent_team.task.recipient", task.recipient)
                         self._current_task_span.set_attribute("agent_team.task.requestor", task.requestor)
                         self._current_task_span.set_attribute("agent_team.task.description", task.task_description)
-                    
+
                     print(
                         f"Starting task for agent '{task.recipient}'. "
                         f"Requestor: '{task.requestor}'. "
                         f"Task description: '{task.task_description}'."
                     )
-                    
+
                     # Emit message processing event
                     if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                         event_emitter.emit_sync("message_processing", "task", {
@@ -693,7 +693,7 @@ class AgentTeam:
                             "requestor": task.requestor,
                             "status": "processing"
                         })
-                    
+
                     # Add task info to conversation
                     conversation_messages.append({
                         "role": "user",
@@ -702,8 +702,8 @@ class AgentTeam:
                         "content": task.task_description,
                         "message_type": "task_assignment"
                     })
-                    
-                    # Emit message sent event  
+
+                    # Emit message sent event
                     if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                         event_emitter.emit_sync("message_sent", "task", {
                             "from": task.requestor,
@@ -711,48 +711,48 @@ class AgentTeam:
                             "message": task.task_description,
                             "message_id": f"msg_simple_{task.recipient}_{len(conversation_messages)}"
                         })
-                    
+
                     message = self._agents_client.messages.create(
                         thread_id=self._agent_thread.id,
                         role="user",
                         content=task.task_description,
                     )
                     print(f"Created message with ID: {message.id} for task in thread {self._agent_thread.id}")
-                    
+
                     agent = self._get_member_by_name(task.recipient)
                     if agent and agent.agent_instance:
                         print(f"Starting simple run for agent '{agent.name}' with timeout handling...")
-                        
+
                         run = self._agents_client.runs.create_and_process(
                             thread_id=self._agent_thread.id, agent_id=agent.agent_instance.id
                         )
                         print(f"Created and processed run for agent '{agent.name}', run ID: {run.id}")
-                        
+
                         # Wait a bit to ensure the run has fully completed
                         import time
                         time.sleep(2)
-                        
+
                         # Retry mechanism to get the response
                         max_retries = 5
                         retry_count = 0
                         text_message = None
-                        
+
                         while retry_count < max_retries:
                             text_message = self._agents_client.messages.get_last_message_text_by_role(
                                 thread_id=self._agent_thread.id, role=MessageRole.AGENT
                             )
-                            
+
                             if text_message and text_message.text and len(text_message.text.value.strip()) > 10:
                                 break
-                            
+
                             retry_count += 1
                             print(f"Simple retry {retry_count}/{max_retries} - waiting for complete response from agent '{agent.name}'...")
                             time.sleep(3)
-                        
+
                         if text_message and text_message.text:
                             agent_response = text_message.text.value
                             print(f"Agent '{agent.name}' completed simple task. Response length: {len(agent_response)} characters")
-                            
+
                             # Emit response generated event
                             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                                 event_emitter.emit_sync("response_generated", "task", {
@@ -761,7 +761,7 @@ class AgentTeam:
                                     "original_message": task.task_description,
                                     "message_id": f"resp_simple_{task.recipient}_{len(conversation_messages)}"
                                 })
-                            
+
                             # Add agent response to conversation
                             conversation_messages.append({
                                 "role": "agent",
@@ -769,7 +769,7 @@ class AgentTeam:
                                 "content": agent_response,
                                 "message_type": "agent_response"
                             })
-                            
+
                             if self._current_task_span is not None:
                                 self._add_task_completion_event(self._current_task_span, result=agent_response)
 
@@ -783,9 +783,9 @@ class AgentTeam:
                             request=team_leader_request,
                             requestor="user",
                         )
-                    
+
                     self._current_task_span = None
-            
+
             self._current_request_span = None
 
         # Get the final conversation state
@@ -795,7 +795,7 @@ class AgentTeam:
             agent_responses = [msg for msg in conversation_messages if msg["message_type"] == "agent_response"]
             if agent_responses:
                 final_response = agent_responses[-1]["content"]
-                
+
                 # Emit final result for simple processing
                 if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
                     event_emitter.emit_sync("processing_completed", "team", {
@@ -832,17 +832,17 @@ class AgentTeam:
     def _format_markdown_response(self, request: str, agent_responses: list, thread_id: str) -> str:
         """
         Format agent responses as structured markdown.
-        
+
         Args:
             request: The original user request
             agent_responses: List of agent response dictionaries
             thread_id: The conversation thread ID
-            
+
         Returns:
             str: Formatted markdown response
         """
         from datetime import datetime
-        
+
         # Start with header
         markdown = f"""# Agent Team Analysis Report
 
@@ -856,12 +856,12 @@ class AgentTeam:
 
 ## 🤖 Agent Collaboration
 """
-        
+
         # Add each agent's contribution
         for i, response_data in enumerate(agent_responses, 1):
             agent_name = response_data.get('agent', 'Unknown Agent')
             response_text = response_data.get('response', 'No response')
-            
+
             # Determine agent emoji based on name
             emoji = "🔍"  # Default
             if "RAG" in agent_name or "Search" in agent_name:
@@ -872,7 +872,7 @@ class AgentTeam:
                 emoji = "🌐"
             elif "Leader" in agent_name:
                 emoji = "👨‍💼"
-            
+
             markdown += f"""
 ### {emoji} {agent_name} (Step {i})
 
@@ -882,7 +882,7 @@ class AgentTeam:
 
 ---
 """
-        
+
         # Add summary section if we have responses
         if agent_responses:
             final_response = agent_responses[-1].get('response', '')
@@ -898,7 +898,7 @@ class AgentTeam:
 - **Processing Steps:** {len(agent_responses)}
 - **Team Coordination:** Multi-agent collaboration completed successfully
 """
-        
+
         return markdown
 
     """
@@ -974,12 +974,12 @@ default_function_tool = FunctionTool(functions=agent_team_default_functions)
 def emit_kg_sources_update(kg_metadata: Dict[str, Any]) -> None:
     """
     Emit a WebSocket update for KG sources metadata to the dashboard.
-    
+
     Args:
         kg_metadata: Dictionary containing Sources, Entities, Relationships data and source texts
                     Format: {
-                        "Sources": [119], 
-                        "Entities": [5135, 1555], 
+                        "Sources": [119],
+                        "Entities": [5135, 1555],
                         "Relationships": [54421, 35035],
                         "source_texts": {id: [text1, text2], ...}
                     }
