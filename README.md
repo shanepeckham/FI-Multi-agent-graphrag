@@ -25,7 +25,7 @@
 This repository demonstrates a **Multi-Agent Financial Analysis System** that leverages GraphRAG as one of its core agent tools. The system combines multiple specialized AI agents to provide comprehensive financial analysis capabilities:
 
 - **GraphRAG Agent (KG-agent)**: Uses knowledge graphs for precise financial data extraction
-- **Document Search Agent (RAG-agent)**: Searches indexed financial documents using Azure AI Search  
+- **Document Search Agent (RAG-agent)**: Searches indexed financial documents using Azure AI Search
 - **Web Search Agent (Bing-agent)**: Retrieves external market data and financial news
 - **Team Leader Agent**: Orchestrates tasks between specialized agents
 
@@ -44,7 +44,12 @@ To learn more about GraphRAG and how it can be used to enhance your LLM's abilit
 
 For a more detailed guide for setting up the necessary Azure services, see [AZURE_SETUP_GUIDE.md](./AZURE_SETUP_GUIDE.md)
 
-### 1. Setup Environment Variables
+### 1. Setup Environment Variables and login
+Login via Azure CLI:
+```
+az login
+```
+
 
 Copy the environment template and populate with your Azure credentials:
 
@@ -83,14 +88,17 @@ INPUT_DIR=./data/output
 Before running the multi-agent system, you need to index your documents using GraphRAG:
 
 ```bash
-# Install GraphRAG
+# Install GraphRAG - NOT REQUIRED IF USING DEVCONTAINER
 pip install graphrag
 
-# Initialize GraphRAG configuration
-graphrag init --root ./data
 
-# Index your documents (this creates the knowledge graph)
-graphrag index --root ./data
+# Initialize GraphRAG configuration and  Index your documents (this creates the knowledge graph)
+./app/re-index-graphrag.sh
+```
+
+Once this is done, you can test that this has worked by issuing a query to Graphrag:
+```bash
+graphrag query --root ./data --method global -q "{your-query}"
 ```
 
 Place the generated GraphRAG output files in the `data/output/` directory (or update `INPUT_DIR` in your `.env`).
@@ -180,7 +188,7 @@ Send financial queries to the agent team. The system will automatically route yo
 {
   "query": "What were the revenue trends for Q4 2024?",
   "graph_query_type": "global",
-  "search_query_type": "SEMANTIC", 
+  "search_query_type": "SEMANTIC",
   "use_search": true,
   "use_graph": true,
   "use_web": false,
@@ -285,32 +293,32 @@ The system consists of four specialized agents working together in a coordinated
 graph TB
     User[� User] --> UserProxy[User Proxy Agent]
     UserProxy <--> Coordinator[CoordinatorAgent]
-    
+
     Memory[(Memory<br/>history of work)] --> Coordinator
-    
+
     Coordinator --> KG[Knowledge Graph Agent<br/>LLM]
-    Coordinator --> Retrieval[Retrieval Agent<br/>LLM] 
+    Coordinator --> Retrieval[Retrieval Agent<br/>LLM]
     Coordinator --> Web[Web Agent<br/>LLM]
-    
+
     KG --> KnowledgeGraph[(Knowledge Graph)]
     Retrieval --> Search1[(Search)]
     Web --> Search2[(Search)]
-    
+
     KG -.->|input| KnowledgeGraph
     KG -.->|output| KnowledgeGraph
-    
+
     Retrieval -.->|query| Search1
     Retrieval -.->|data| Search1
-    
-    Web -.->|query| Search2  
+
+    Web -.->|query| Search2
     Web -.->|data| Search2
-    
+
     UserProxy -.->|conversation| User
-    
+
     classDef agent fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff
     classDef storage fill:#3b82f6,stroke:#2563eb,stroke-width:2px,color:#fff
     classDef user fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
-    
+
     class UserProxy,Coordinator,KG,Retrieval,Web agent
     class Memory,KnowledgeGraph,Search1,Search2 storage
     class User user
