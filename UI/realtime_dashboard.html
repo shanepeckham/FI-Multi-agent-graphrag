@@ -745,10 +745,29 @@
                 </div>
             </div>
 
-            <h3 style="margin-top: 15px;">� Source Texts</h3>
+            <h3 style="margin-top: 15px;">📄 Source Texts</h3>
             <div id="kgSourceTexts" class="scrollable" style="max-height: 400px; background-color: #f8f9fa; padding: 10px; border-radius: 8px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 0.85em; overflow-y: auto; line-height: 1.4;">
                 <div style="text-align: center; color: #666; padding: 10px;">
                     No source texts yet
+                </div>
+            </div>
+
+            <!-- Search Sources Panel -->
+            <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 15px;">
+                <h3>🔍 Search Sources</h3>
+                
+                <h4 style="margin-top: 15px;">📊 Latest Response</h4>
+                <div id="searchSourcesDetails" class="scrollable" style="max-height: 200px; background-color: #f8f9fa; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 0.9em; overflow-y: auto;">
+                    <div style="text-align: center; color: #666; padding: 10px;">
+                        No search metadata yet
+                    </div>
+                </div>
+
+                <h4 style="margin-top: 15px;">📄 Source Texts</h4>
+                <div id="searchSourceTexts" class="scrollable" style="max-height: 400px; background-color: #f8f9fa; padding: 10px; border-radius: 8px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 0.85em; overflow-y: auto; line-height: 1.4;">
+                    <div style="text-align: center; color: #666; padding: 10px;">
+                        No search source texts yet
+                    </div>
                 </div>
             </div>
         </div>
@@ -1004,6 +1023,10 @@
                     case 'kg_sources_update':
                         // Handle KG sources metadata update
                         this.updateKGSources(data);
+                        break;
+                    case 'search_sources_update':
+                        // Handle search sources metadata update
+                        this.updateSearchSources(data);
                         break;
                 }
             }
@@ -1268,6 +1291,83 @@
             updateKGSourcesHistory(data, timestamp) {
                 // This method is no longer used since we removed the history section
                 // Keeping it for compatibility but it does nothing
+            }
+
+            updateSearchSources(data) {
+                console.log('Updating Search Sources:', data);
+                
+                // Update details section with search metadata
+                const detailsSection = document.getElementById('searchSourcesDetails');
+                const timestamp = new Date().toLocaleTimeString();
+                
+                const chunkIds = Array.isArray(data.chunk_id) ? data.chunk_id.length : 0;
+                const parentIds = Array.isArray(data.parent_id) ? data.parent_id.length : 0;
+                const chunks = Array.isArray(data.chunk) ? data.chunk.length : 0;
+                
+                detailsSection.innerHTML = `
+                    <div style="margin-bottom: 10px; color: #666; font-size: 0.8em;">
+                        Last updated: ${timestamp}
+                    </div>
+                    <div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 8px;">
+                        <strong>Chunk IDs:</strong> ${chunkIds} found
+                    </div>
+                    <div style="background: #fff; padding: 8px; border-radius: 4px; margin-bottom: 8px;">
+                        <strong>Parent IDs:</strong> ${parentIds} found
+                    </div>
+                    <div style="background: #fff; padding: 8px; border-radius: 4px;">
+                        <strong>Chunks:</strong> ${chunks} found
+                    </div>
+                `;
+                
+                // Update search source texts
+                this.updateSearchSourceTexts(data, timestamp);
+            }
+
+            updateSearchSourceTexts(searchData, timestamp) {
+                const sourceTextsSection = document.getElementById('searchSourceTexts');
+                
+                if (!searchData || !searchData.chunk_id || searchData.chunk_id.length === 0) {
+                    sourceTextsSection.innerHTML = `
+                        <div style="text-align: center; color: #666; padding: 10px;">
+                            No search source texts available
+                        </div>
+                    `;
+                    return;
+                }
+                
+                let content = `
+                    <div style="margin-bottom: 15px; color: #666; font-size: 0.8em; font-weight: bold;">
+                        Updated: ${timestamp} | ${searchData.chunk_id.length} chunks
+                    </div>
+                `;
+                
+                // Iterate through each chunk
+                for (let i = 0; i < searchData.chunk_id.length; i++) {
+                    const chunkId = searchData.chunk_id[i] || 'Unknown';
+                    const parentId = searchData.parent_id[i] || 'Unknown';
+                    const chunkText = searchData.chunk[i] || 'No content';
+                    
+                    content += `
+                        <div style="background: #fff; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 12px; padding: 12px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <div style="font-weight: bold; color: #2c3e50; font-size: 0.9em;">
+                                    Chunk ID: ${chunkId}
+                                </div>
+                                <div style="font-size: 0.8em; color: #666; background: #f8f9fa; padding: 2px 6px; border-radius: 3px;">
+                                    Parent: ${parentId}
+                                </div>
+                            </div>
+                            <div style="color: #34495e; line-height: 1.5; font-size: 0.85em; border-left: 3px solid #3498db; padding-left: 10px; background: #f8f9fa; padding: 8px; border-radius: 4px;">
+                                ${chunkText}
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                sourceTextsSection.innerHTML = content;
+                
+                // Scroll to top of the new content
+                sourceTextsSection.scrollTop = 0;
             }
 
             addToActivityLog(message) {
