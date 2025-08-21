@@ -95,6 +95,7 @@ pip install graphrag
 # Initialize GraphRAG configuration and  Index your documents (this creates the knowledge graph)
 ./app/re-index-graphrag.sh
 ```
+Note: If running `./app/re-index-graphrag.sh` returns a 401 authentication error, set up secrets and config first by following the [GraphRAG Indexing Guide](#graphrag-indexing-guide) — ensure `app/data/.env` contains valid keys (at minimum `GRAPHRAG_API_KEY`) and that `app/data/settings.yaml` matches the provider you are using.
 
 Once this is done, you can test that this has worked by issuing a query to Graphrag:
 ```bash
@@ -403,14 +404,16 @@ To get started with the GraphRAG indexing system we recommend trying the [Soluti
    graphrag init --root ./data
    ```
 
-3. **Configure Settings**: Edit the generated `settings.yaml` file with your LLM and embedding model settings.
+3. **Configure Settings**: Edit the generated `settings.yaml` file with your LLM and embedding model settings. Also ensure `app/data/.env` contains your credentials (at minimum `GRAPHRAG_API_KEY`).
 
-4. **Index Your Documents**:
+4. **Prepare input files**: GraphRAG expects text files under `app/data/input/` matching `*.txt`. Create at least one file before indexing.
+
+5. **Index Your Documents**:
    ```bash
    graphrag index --root ./data
    ```
 
-5. **Query Your Data** (for testing):
+6. **Query Your Data** (for testing):
    ```bash
    graphrag query --root ./data --method global "What are the main themes in this data?"
    ```
