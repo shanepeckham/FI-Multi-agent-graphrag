@@ -50,6 +50,7 @@ Login via Azure CLI:
 az login
 ```
 
+Note: If you get a PermissionDenied error about `listSecrets` when the app tries to read AI Project connection secrets, ensure your Azure identity has the **Azure AI Developer** or **Cognitive Services User** role (or use a service principal with equivalent permissions). See https://aka.ms/FoundryPermissions for details.
 
 Copy the environment template and populate with your Azure credentials:
 
@@ -274,7 +275,8 @@ The application uses environment variables for configuration. Copy `app/env_samp
 | `AI_SEARCH_TYPE` | Search type for document queries | `SIMPLE` |
 | `GRAPH_QUERY_TYPE` | GraphRAG query method | `local` |
 | `AI_SEARCH_INDEX_NAME` | Azure AI Search index name | `report_agent` |
-| `AI_SEARCH_CONNECTION_NAME` | Azure AI Search Connection Name in AI Foundry | `agentbing` |
+| `AI_SEARCH_CONNECTION_NAME` | Azure AI Search Connection Name in AI Foundry | `agentsearcher` |
+| `BING_CONNECTION_NAME` | Bing Grounding Connection Name in AI Foundry | `agentbing` |
 | `INPUT_DIR` | Directory with GraphRAG output files | `./data/output` |
 | `RAW_INPUT_PATH` | Path to raw input documents | `/path/to/raw/data` |
 | `OUTPUT_PATH` | Path for processed documents | `/path/to/processed/data` |
