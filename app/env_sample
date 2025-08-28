@@ -16,7 +16,7 @@ AI_SEARCH_INDEX_NAME=apple_report_agent
 RAW_INPUT_PATH=/Users/shanepeckham/sources/data/apple/extracted_text
 OUTPUT_PATH=/Users/shanepeckham/sources/data/apple/processed_text
 GRAPH_OUTPUT_PATH=/Users/shanepeckham/sources/data/apple/graph_output/
-INPUT_DIR=./apple/output
+INPUT_DIR=./data/output
 TEAM_NAME=cr_team
 
 # Azure CLI Authentication (Optional - choose one method)
