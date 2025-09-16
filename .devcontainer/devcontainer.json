@@ -34,9 +34,9 @@
         }
     },
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        //"ghcr.io/devcontainers/features/docker-in-docker:2": {},
         "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
-        "ghcr.io/devcontainers/features/azure-cli:1.2.5": {}
+        "ghcr.io/devcontainers/features/azure-cli:1.2.7": {}
 
 
     },
