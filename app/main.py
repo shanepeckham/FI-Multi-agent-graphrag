@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
+import json
 """
 Azure AI Agent Team for GraphRAG Financial Analysis
 
@@ -673,7 +674,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
     sync_toolset, async_toolset = _create_agent_toolsets()
 
     # Register all agent functions
-    agents_client.enable_auto_function_calls({create_task})
+    agents_client.enable_auto_function_calls({create_task, fetch_weather})
 
     if MODEL_DEPLOYMENT_NAME is not None:
         # Setup tracing for debugging
@@ -701,6 +702,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
             RAG_AGENT_DESCRIPTION = config["RAG_AGENT_DESCRIPTION"].strip()
             KG_AGENT_DESCRIPTION = config["KG_AGENT_DESCRIPTION"].strip()
             BING_AGENT_DESCRIPTION = config["BING_AGENT_DESCRIPTION"].strip()
+            WEATHER_AGENT_DESCRIPTION = config["WEATHER_AGENT_DESCRIPTION"].strip()
 
             if not use_reasoning:
                 if use_search:
@@ -714,6 +716,8 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                 if use_web:
                     print(f"Using web type: {BING_AGENT_DESCRIPTION}")
                     TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{BING_AGENT_DESCRIPTION}"
+
+                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
             else:
                 # Reasoning agent uses different instructions
                 if use_search:
@@ -725,6 +729,8 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                 # If no question is provided, use the reasoning current question
                 if question == "":
                     question = REASON_CURRENT_QUESTION
+
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
 
         # Configure Team Leader (simplified configuration)
         if not use_reasoning:
@@ -778,6 +784,19 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                 can_delegate=False
             )
 
+        fetch_weather_tool = FunctionTool(functions={fetch_weather})
+        user_toolset = ToolSet()
+        user_toolset.add(fetch_weather_tool)
+        agent_team.add_agent(
+            model=MODEL_DEPLOYMENT_NAME,
+            name="Weather-agent-multi",
+            instructions=("You are a weather specialist named Weather-agent-multi. You provide weather information. Use the fetch_weather function to get current weather data for a specified location."),
+            #toolset=user_toolset,
+            tools=user_toolset.definitions,
+            #tool_resources=user_toolset.resources,
+            can_delegate=False
+        )
+
         # Assemble and run the team
         print("🔧 Assembling agent team...")
         agent_team.assemble_team()
@@ -804,6 +823,23 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         return result
 
     return "Error: MODEL_DEPLOYMENT_NAME is not set"
+
+
+def fetch_weather(location: str) -> str:
+    """
+    Fetches the weather information for the specified location.
+
+    :param location: The location to fetch weather for.
+    :return: Weather information as a JSON string.
+    """
+    # Mock weather data for demonstration purposes
+    mock_weather_data = {"New York": "Sunny, 25°C", "London": "Cloudy, 18°C", "Tokyo": "Rainy, 22°C"}
+    weather = mock_weather_data.get(location, "Weather data not available for this location.")
+    response = {
+        "text": weather,
+    }
+    return weather
+
 
 def _create_search_tools_with_type(project_client: AIProjectClient, search_type: str) -> Tuple[AzureAISearchTool, BingGroundingTool]:
     """Create search tools with specified search type."""
