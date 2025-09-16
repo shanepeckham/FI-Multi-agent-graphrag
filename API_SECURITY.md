@@ -23,7 +23,7 @@ The GraphRAG API now requires Bearer token authentication for secure access to t
 #### Using curl:
 ```bash
 curl -X POST "http://localhost:8000/query_team" \
-  -H "Authorization: Bearer your_api_key_here" \
+  -H "Authorization: Bearer graphrag_XiPgihghW1boTsLZWG4-2EI7Ou4FaS5qOOxDSthjhDE" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "What are the main revenue streams?",
@@ -70,7 +70,7 @@ print(response.json())
 ### Endpoints
 
 - `GET /` - Public endpoint (no authentication required)
-- `GET /health` - Public health check (no authentication required) 
+- `GET /health` - Public health check (no authentication required)
 - `POST /query_team` - **Requires Bearer token authentication**
 
 ### Environment Variables

@@ -201,7 +201,7 @@ async def lifespan(app: FastAPI):
     print("🚀 Starting Financial Analysis Agent Team...")
 
     # Load all heavy resources once
-    global _graphrag_data, _language_models, _project_client
+    global _language_models, _project_client
 
     try:
         # Initialize configuration once
@@ -218,8 +218,8 @@ async def lifespan(app: FastAPI):
         _project_client = _create_azure_project_client()
 
         # Load GraphRAG data once
-        print("🔍 Loading GraphRAG data...")
-        _graphrag_data = _load_graphrag_data()
+        #print("🔍 Loading GraphRAG data...")
+        #_graphrag_data = _load_graphrag_data()
 
         print("✅ Application startup complete!")
 
@@ -603,70 +603,6 @@ def _initialize_language_models() -> Tuple[Any, Any, Any]:
 # GRAPHRAG DATA LOADING AND INITIALIZATION
 # ==============================================================================
 
-def _load_graphrag_data() -> Tuple[Any, Any, Any, Any, Any, Any, Any, Any]:
-    """
-    Load all required GraphRAG data from parquet files.
-
-    Returns:
-        Tuple containing: (entities, relationships, reports, text_units,
-                          communities, description_embedding_store, full_content_embedding_store,
-                          covariates)
-
-    Raises:
-        FileNotFoundError: If required parquet files are missing
-        Exception: If data loading fails
-    """
-    try:
-        # Load dataframes from parquet files
-        entity_df = pd.read_parquet(f"{INPUT_DIR}/{ENTITY_TABLE}.parquet")
-        community_df = pd.read_parquet(f"{INPUT_DIR}/{COMMUNITY_TABLE}.parquet")
-        relationship_df = pd.read_parquet(f"{INPUT_DIR}/{RELATIONSHIP_TABLE}.parquet")
-        report_df = pd.read_parquet(f"{INPUT_DIR}/{COMMUNITY_REPORT_TABLE}.parquet")
-        text_unit_df = pd.read_parquet(f"{INPUT_DIR}/{TEXT_UNIT_TABLE}.parquet")
-
-        # Process data using GraphRAG indexer adapters
-        entities = read_indexer_entities(entity_df, community_df, COMMUNITY_LEVEL)
-        relationships = read_indexer_relationships(relationship_df)
-        text_units = read_indexer_text_units(text_unit_df)
-        communities = read_indexer_communities(community_df, report_df)
-        # Load covariates if available
-        try:
-            covariate_df = pd.read_parquet(f"{INPUT_DIR}/{COVARIATE_TABLE}.parquet")
-            claims = read_indexer_covariates(covariate_df)
-            covariates = {"claims": claims}
-            print(f"Loading covariates from {COVARIATE_TABLE}.parquet in {INPUT_DIR}")
-        except FileNotFoundError:
-            print(f"No covariates found in {COVARIATE_TABLE}.parquet in {INPUT_DIR}")
-            covariates = None
-
-        # Process reports with embeddings
-        reports = read_indexer_reports(
-            report_df,
-            community_df,
-            COMMUNITY_LEVEL,
-            content_embedding_col="full_content_embeddings",
-        )
-
-        # Initialize vector stores for embeddings
-        description_embedding_store = LanceDBVectorStore(
-            collection_name="default-entity-description",
-        )
-        description_embedding_store.connect(db_uri=LANCEDB_URI)
-
-        full_content_embedding_store = LanceDBVectorStore(
-            collection_name="default-community-full_content",
-        )
-        full_content_embedding_store.connect(db_uri=LANCEDB_URI)
-
-        # Load report embeddings into vector store
-        read_indexer_report_embeddings(reports, full_content_embedding_store)
-
-        return (entities, relationships, reports, text_units, communities,
-                description_embedding_store, full_content_embedding_store, covariates)
-
-    except Exception as e:
-        print(f"Error loading GraphRAG data: {e}")
-
 
 def read_community_reports(input_dir: str, community_report_table: str = COMMUNITY_REPORT_TABLE) -> pd.DataFrame:
     """
@@ -684,428 +620,6 @@ def read_community_reports(input_dir: str, community_report_table: str = COMMUNI
     """
     input_path = Path(input_dir) / f"{community_report_table}.parquet"
     return pd.read_parquet(input_path)
-
-# Load GraphRAG data
-# Note: This will be initialized in the lifespan function, not at module level
-
-# ==============================================================================
-# GRAPHRAG SEARCH IMPLEMENTATIONS
-# ==============================================================================
-
-async def _query_graph_async_drift(question: str) -> str:
-    """
-    Execute a DRIFT search query against the knowledge graph.
-
-    DRIFT (Dynamic Retrieval and Information Focused Targeting) search provides
-    advanced query capabilities with multiple levels of analysis.
-
-    Args:
-        question: The question to search for in the knowledge graph
-
-    Returns:
-        str: The search response
-
-    Raises:
-        Exception: If the search operation fails
-    """
-    global _graphrag_data, _language_models
-
-    if not _graphrag_data or not _language_models:
-        raise RuntimeError("GraphRAG data or language models not initialized")
-
-    chat_model, text_embedder, encoder = _language_models
-    (entities, relationships, reports, text_units, communities,
-     description_embedding_store, full_content_embedding_store, covariates) = _graphrag_data
-
-    print(f"GRAPH: Using drift search with question: {question}")
-    drift_params = DRIFTSearchConfig(
-        primer_folds=1,
-        drift_k_followups=3,
-        n_depth=3,
-    )
-
-    context_builder = DRIFTSearchContextBuilder(
-        model=chat_model,
-        text_embedder=text_embedder,
-        entities=entities,
-        relationships=relationships,
-        reports=reports,
-        entity_text_embeddings=description_embedding_store,
-        text_units=text_units,
-        token_encoder=encoder,
-        config=drift_params,
-    )
-
-    search = DRIFTSearch(
-        model=chat_model,
-        context_builder=context_builder,
-        token_encoder=encoder
-    )
-
-    result = await search.search(question)
-    print(result.response)
-    _kg_sources = parse_graphrag_metadata(result.response)
-    return str(result.response)
-
-async def _query_graph_async_global(question: str) -> str:
-    """
-    Execute a global search query against the knowledge graph.
-
-    Global search analyzes community reports and provides high-level insights
-    across the entire knowledge graph using map-reduce methodology.
-
-    Args:
-        question: The question to search for in the knowledge graph
-
-    Returns:
-        str: The search response
-
-    Raises:
-        Exception: If the search operation fails
-    """
-    global _graphrag_data, _language_models
-
-    if not _graphrag_data or not _language_models:
-        raise RuntimeError("GraphRAG data or language models not initialized")
-
-    chat_model, text_embedder, encoder = _language_models
-    (entities, relationships, reports, text_units, communities,
-     description_embedding_store, full_content_embedding_store, covariates) = _graphrag_data
-
-    print(f"GRAPH: Using global search with question: {question}")
-    context_builder = GlobalCommunityContext(
-        community_reports=reports,
-        communities=communities,
-        entities=entities,
-        token_encoder=encoder,
-    )
-
-    context_builder_params = {
-        "use_community_summary": False,  # Use full community reports
-        "shuffle_data": True,
-        "include_community_rank": True,
-        "min_community_rank": 0,
-        "community_rank_name": "rank",
-        "include_community_weight": True,
-        "community_weight_name": "occurrence weight",
-        "normalize_community_weight": True,
-        "max_tokens": 12_000,
-        "context_name": "Reports",
-    }
-
-    map_llm_params = {
-        "max_tokens": 1000,
-        "temperature": 0.0,
-        "response_format": {"type": "json_object"},
-    }
-
-    reduce_llm_params = {
-        "max_tokens": 2000,
-        "temperature": 0.0,
-    }
-
-    search_engine = GlobalSearch(
-        model=chat_model,
-        context_builder=context_builder,
-        token_encoder=encoder,
-        max_data_tokens=12_000,
-        map_llm_params=map_llm_params,
-        reduce_llm_params=reduce_llm_params,
-        allow_general_knowledge=False,
-        json_mode=True,
-        context_builder_params=context_builder_params,
-        concurrent_coroutines=32,
-        response_type="multiple paragraphs",
-    )
-
-    result = await search_engine.search(question)
-    print(result.response)
-    _kg_sources = parse_graphrag_metadata(result.response)
-    return str(result.response)
-
-async def _query_graph_async_local(question: str) -> str:
-    """
-    Execute a local search query against the knowledge graph.
-
-    Local search focuses on specific entities and their immediate relationships,
-    providing detailed information about particular aspects of the data.
-
-    Args:
-        question: The question to search for in the knowledge graph
-
-    Returns:
-        str: The search response
-
-    Raises:
-        Exception: If the search operation fails
-    """
-    global _graphrag_data, _language_models
-
-    if not _graphrag_data or not _language_models:
-        raise RuntimeError("GraphRAG data or language models not initialized")
-
-    chat_model, text_embedder, encoder = _language_models
-    (entities, relationships, reports, text_units, communities,
-     description_embedding_store, full_content_embedding_store, covariates) = _graphrag_data
-
-    print(f"GRAPH: Using local search with question: {question}")
-    context_builder = LocalSearchMixedContext(
-        community_reports=reports,
-        text_units=text_units,
-        entities=entities,
-        relationships=relationships,
-        covariates=covariates,  # Set to None if covariates weren't generated during indexing
-        entity_text_embeddings=description_embedding_store,
-        embedding_vectorstore_key=EntityVectorStoreKey.ID,
-        text_embedder=text_embedder,
-        token_encoder=encoder,
-    )
-
-    local_context_params = {
-        "text_unit_prop": 0.5,
-        "community_prop": 0.1,
-        "conversation_history_max_turns": 5,
-        "conversation_history_user_turns_only": True,
-        "top_k_mapped_entities": 10,
-        "top_k_relationships": 10,
-        "include_entity_rank": True,
-        "include_relationship_weight": True,
-        "include_community_rank": False,
-        "return_candidate_context": False,
-        "embedding_vectorstore_key": EntityVectorStoreKey.ID,
-        "max_tokens": 12_000,
-    }
-
-    model_params = {
-        "max_tokens": 2_000,
-        "temperature": 0.0,
-    }
-
-    search_engine = LocalSearch(
-        model=chat_model,
-        context_builder=context_builder,
-        token_encoder=encoder,
-        model_params=model_params,
-        context_builder_params=local_context_params,
-        response_type="multiple paragraphs",
-    )
-
-    result = await search_engine.search(question)
-    print(result.response)
-    _kg_sources = parse_graphrag_metadata(result.response)
-
-    return str(result.response)
-
-def parse_graphrag_metadata(response: str) -> dict:
-    """
-    Parse GraphRAG response to extract metadata about sources, entities, and relationships.
-
-    Searches for patterns like:
-    - [Data: Sources (119)]
-    - [Entities: 5135, 1555]
-    - [Relationships: 54421, 35035]
-    - Combined: [Data: Sources (119) ([Entities: 5135, 1555]; [Relationships: 54421, 35035])
-
-    Args:
-        response: The GraphRAG response string
-
-    Returns:
-        dict: Parsed metadata with keys 'Sources', 'Entities', 'Relationships'
-              Example: {Sources:[119], Entities:[5135, 1555], Relationships: [54421, 35035]}
-    """
-    import re
-
-    # Initialize result dictionary
-    result = {
-        "Sources": [],
-        "Entities": [],
-        "Relationships": []
-    }
-
-    try:
-        # Pattern 1: Sources - matches "[Data: Sources (2305, 2603)]"
-        sources_pattern = r'Data:\s*Sources\s*\(([^)]+)\)'
-        sources_match = re.search(sources_pattern, response)
-        if sources_match:
-            sources_str = sources_match.group(1).strip()
-            # Extract all numbers from the sources
-            sources = [int(x.strip()) for x in sources_str.split(',') if x.strip().isdigit()]
-            result["Sources"] = sources
-            print(f"🔍 Found Sources: {sources}")
-
-        # Pattern 2: Entities - matches "[Data: Entities (4264, 661, 760)]"
-        entities_pattern = r'Data:\s*Entities\s*\(([^)]+)\)'
-        entities_match = re.search(entities_pattern, response)
-        if entities_match:
-            entities_str = entities_match.group(1).strip()
-            # Extract all numbers from the entities (ignore non-numeric parts)
-            entities = [int(x.strip()) for x in entities_str.split(',') if x.strip().isdigit()]
-            result["Entities"] = entities
-            print(f"🔍 Found Entities: {entities}")
-
-        # Pattern 3: Relationships - matches "[Data: Relationships (55392, 84934, 75511, +more)]"
-        relationships_pattern = r'Relationships\s*\(([^)]+)\)'
-        relationships_match = re.search(relationships_pattern, response)
-        if relationships_match:
-            relationships_str = relationships_match.group(1).strip()
-            # Extract all numbers from relationships (ignore "+more" and other non-numeric parts)
-            relationships = [int(x.strip()) for x in relationships_str.split(',') if x.strip().isdigit()]
-            result["Relationships"] = relationships
-            print(f"🔍 Found Relationships: {relationships}")
-
-        # Summary
-        found_items = [key for key, value in result.items() if value]
-
-
-        def get_text_units(text_units: list) -> list:
-            """
-            Helper function to get text units from the text_units list.
-            """
-            texts = []
-            for id in text_units:
-                for v in _graphrag_data[3]: # Text Units
-                    if v.id == str(id):
-                        texts.append(v.text)
-            return texts
-
-        sources = {}
-        for key, value in result.items():
-            if key == "Entities":
-                for id in value:
-                    for v in _graphrag_data[0]: # Entities
-                        if v.short_id == str(id):
-                            texts = get_text_units(v.text_unit_ids)
-                            sources[id] = texts
-
-            if key == "Relationships":
-                for id in value:
-                    for v in _graphrag_data[1]: # Relationships
-                        if v.short_id == str(id):
-                            texts = get_text_units(v.text_unit_ids)
-                            sources[id] = texts
-
-            if key == "Sources":
-                for id in value:
-                    for i in range(len(_graphrag_data)):
-                        try:
-                            for v in _graphrag_data[3]: # Text Units
-                                if v.short_id == str(id):
-                                    sources[id] = [v.text]
-
-                        except Exception as e:
-                            continue
-
-        if found_items:
-            print(f"📊 Parsed GraphRAG metadata: {result}")
-            # Emit WebSocket update for the dashboard with source texts
-            emit_kg_sources_update({
-                "Sources": result.get("Sources", []),
-                "Entities": result.get("Entities", []),
-                "Relationships": result.get("Relationships", []),
-                "source_texts": sources  # Include the actual source texts
-            })
-        else:
-            print("⚠️  No GraphRAG metadata found in response")
-
-    except Exception as e:
-        print(f"❌ Error parsing GraphRAG metadata: {e}")
-
-    return sources
-
-@tracer.start_as_current_span("query_graph")  # type: ignore
-def query_graph(question: str, search_type: str = "local") -> str:
-    """
-    Query the GraphRAG knowledge graph with thread-safe async execution.
-
-    This function provides a synchronous interface to the async GraphRAG search
-    capabilities, handling event loop management to work properly within the
-    Azure AI Agents framework.
-
-    Args:
-        question: The question to search for in the knowledge graph
-        search_type: Type of search to perform ("local", "global", or "drift")
-
-    Returns:
-        str: The search response from GraphRAG
-
-    Raises:
-        ValueError: If an invalid search_type is provided
-        Exception: If the search operation fails
-
-    Example:
-        >>> response = query_graph("What are the main revenue streams?")
-        >>> print(response)
-    """
-    # We set this from the global as the LLM function call sometimes loses this arg
-    search_type = _request.graph_query_type
-
-    # Map search types to their corresponding async functions
-    search_functions = {
-        "local": _query_graph_async_local,
-        "global": _query_graph_async_global,
-        "drift": _query_graph_async_drift,
-    }
-
-    if search_type not in search_functions:
-        search_type = "local"  # Default to local search if invalid type provided
-
-    # Validate search type
-    print(f"Using search type: {search_type}")
-    search_func = search_functions[search_type]
-
-    # Handle async execution in sync context with proper waiting
-    try:
-        # Check if we're already in an event loop
-        try:
-            loop = asyncio.get_running_loop()
-            print("Found existing event loop, running in thread pool")
-
-            # We're in an event loop, so we need to run in a thread to avoid blocking
-            def run_async_in_new_loop():
-                # Create a completely new event loop for this thread
-                new_loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(new_loop)
-                try:
-                    print(f"Starting {search_type} search in new thread...")
-                    result = new_loop.run_until_complete(search_func(question))
-                    print(f"Completed {search_type} search in thread")
-                    return result
-                except Exception as e:
-                    print(f"Error in thread execution: {e}")
-                    raise
-                finally:
-                    new_loop.close()
-
-            # Use ThreadPoolExecutor with proper timeout and error handling
-            with ThreadPoolExecutor(max_workers=1) as executor:
-                print("Submitting task to thread pool...")
-                future = executor.submit(run_async_in_new_loop)
-
-                # Wait for completion with a reasonable timeout (5 minutes)
-                try:
-                    result = future.result(timeout=300)  # 5 minutes timeout
-                    print("Thread pool task completed successfully")
-                    return result
-                except TimeoutError:
-                    print("GraphRAG query timed out after 5 minutes")
-                    raise Exception("GraphRAG query timed out")
-                except Exception as e:
-                    print(f"Thread pool execution failed: {e}")
-                    raise
-
-        except RuntimeError as e:
-            # No event loop running, we can use asyncio.run directly
-            print("No existing event loop found, running directly")
-            print(f"Starting {search_type} search...")
-            result = asyncio.run(search_func(question))
-            print(f"Completed {search_type} search")
-            return result
-
-    except Exception as e:
-        print(f"Error in query_graph: {e}")
-        print(f"Traceback: {traceback.format_exc()}")
-        raise Exception(f"GraphRAG query failed: {str(e)}")
-
 
 # ==============================================================================
 # AGENT TEAM CONFIGURATION AND MAIN EXECUTION
@@ -1125,15 +639,15 @@ def _create_agent_toolsets() -> Tuple[ToolSet, AsyncToolSet]:
 
     # Create sync and async toolsets
     sync_functions = FunctionTool(functions=agent_team_default_functions)
-    async_functions = AsyncFunctionTool(functions={query_graph})
+    #async_functions = AsyncFunctionTool()
 
     sync_toolset = ToolSet()
     sync_toolset.add(sync_functions)
 
     async_toolset = AsyncToolSet()
-    async_toolset.add(async_functions)
+    #async_toolset.add(async_functions)
 
-    return sync_toolset, async_toolset
+    return sync_toolset, None
 
 def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_query_type: str, use_search: bool, use_graph: bool, use_web: bool, use_reasoning: bool, evaluation_mode: bool) -> str:
     """
@@ -1141,7 +655,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
 
     This function uses resources loaded at startup to avoid reloading heavy data.
     """
-    global _graphrag_data, _language_models, _project_client
+    global _language_models, _project_client
 
     if not _project_client:
         return "Error: Azure project client not initialized"
@@ -1159,7 +673,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
     sync_toolset, async_toolset = _create_agent_toolsets()
 
     # Register all agent functions
-    agents_client.enable_auto_function_calls({create_task, query_graph})
+    agents_client.enable_auto_function_calls({create_task})
 
     if MODEL_DEPLOYMENT_NAME is not None:
         # Setup tracing for debugging
@@ -1432,10 +946,10 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
     """
     try:
         # Use global variables loaded at startup
-        global _graphrag_data, _language_models, _project_client, _request
+        global _language_models, _project_client, _request
         _request = request
 
-        if not all([_graphrag_data, _language_models, _project_client]):
+        if not all([_language_models, _project_client]):
             raise HTTPException(status_code=503, detail="Application not fully initialized")
 
         question = request.query
@@ -1444,7 +958,7 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
 
         # Run the agent team with the question using pre-loaded resources
         markdown_response, context, thread_id, run_id, token_usage = _setup_agent_team_with_globals(question, request.search_query_type, request.graph_query_type, use_search=request.use_search,
-                                                           use_graph=request.use_graph, use_web=request.use_web, use_reasoning=request.use_reasoning, evaluation_mode=request.evaluation_mode)
+                                                           use_graph=False, use_web=request.use_web, use_reasoning=request.use_reasoning, evaluation_mode=request.evaluation_mode)
 
         return QueryResponse(
             response=markdown_response,
