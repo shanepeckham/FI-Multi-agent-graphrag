@@ -670,8 +670,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
     agents_client = _project_client.agents
 
     # Create tools and toolsets using pre-loaded data
-    search_tool, bing_tool = _create_search_tools_with_type(_project_client, search_query_type)
-    sync_toolset, async_toolset = _create_agent_toolsets()
+    sync_toolset, _ = _create_agent_toolsets()
 
     # Register all agent functions
     agents_client.enable_auto_function_calls({create_task, fetch_weather})
@@ -696,41 +695,21 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
             config = yaml.safe_load(config_file)
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS"].strip()
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS"].strip()
-            RAG_AGENT_INSTRUCTIONS = config["RAG_AGENT_INSTRUCTIONS"].strip()
-            KG_AGENT_INSTRUCTIONS = config["KG_AGENT_INSTRUCTIONS"].strip()
-            BING_AGENT_INSTRUCTIONS = config["BING_AGENT_INSTRUCTIONS"].strip()
-            RAG_AGENT_DESCRIPTION = config["RAG_AGENT_DESCRIPTION"].strip()
-            KG_AGENT_DESCRIPTION = config["KG_AGENT_DESCRIPTION"].strip()
-            BING_AGENT_DESCRIPTION = config["BING_AGENT_DESCRIPTION"].strip()
             WEATHER_AGENT_DESCRIPTION = config["WEATHER_AGENT_DESCRIPTION"].strip()
+            WEATHER_AGENT_INSTRUCTIONS = config["WEATHER_AGENT_INSTRUCTIONS"].strip()
+            CLASSIFIER_AGENT_DESCRIPTION = config["CLASSIFIER_AGENT_DESCRIPTION"].strip()
+            CLASSIFIER_AGENT_INSTRUCTIONS = config["CLASSIFIER_AGENT_INSTRUCTIONS"].strip()
 
             if not use_reasoning:
-                if use_search:
-                    print(f"Using search type: {search_query_type}")
-                    TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{RAG_AGENT_DESCRIPTION}"
-
-                if use_graph:
-                    print(f"Using graph type: {graph_query_type}")
-                    TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{KG_AGENT_DESCRIPTION}"
-
-                if use_web:
-                    print(f"Using web type: {BING_AGENT_DESCRIPTION}")
-                    TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{BING_AGENT_DESCRIPTION}"
-
                 TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
             else:
-                # Reasoning agent uses different instructions
-                if use_search:
-                    TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{RAG_AGENT_DESCRIPTION}"
-                if use_graph:
-                    TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{KG_AGENT_DESCRIPTION}"
-                if use_web:
-                    TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{BING_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
+
                 # If no question is provided, use the reasoning current question
                 if question == "":
                     question = REASON_CURRENT_QUESTION
-
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
 
         # Configure Team Leader (simplified configuration)
         if not use_reasoning:
@@ -750,50 +729,21 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
             )
 
         # Configure agents with proper toolsets
-        if use_search:
-            # RAG agent gets search tool
-            search_toolset = ToolSet()
-            search_toolset.add(search_tool)
-            agent_team.add_agent(
-                model=MODEL_DEPLOYMENT_NAME,
-                name="RAG-agent-multi",
-                instructions=(RAG_AGENT_INSTRUCTIONS),
-                tools=search_tool.definitions,
-                tool_resources=search_tool.resources,
-                can_delegate=False,
-            )
-        if use_graph:
-            agent_team.add_agent(
-                model=MODEL_DEPLOYMENT_NAME,
-                name="KG-agent-multi",
-                instructions=(KG_AGENT_INSTRUCTIONS),
-                can_delegate=False,
-                tools=async_toolset.definitions,
-                # Note: GraphRAG queries are handled via the registered functions
-            )
-        if use_web:
-            # Bing agent gets bing tool
-            bing_toolset = ToolSet()
-            bing_toolset.add(bing_tool)
-            agent_team.add_agent(
-                model=MODEL_DEPLOYMENT_NAME,
-                name="Bing-agent-multi",
-                instructions=(BING_AGENT_INSTRUCTIONS),
-                tools=bing_tool.definitions,
-                tool_resources=bing_tool.resources,
-                can_delegate=False
-            )
-
         fetch_weather_tool = FunctionTool(functions={fetch_weather})
         user_toolset = ToolSet()
         user_toolset.add(fetch_weather_tool)
         agent_team.add_agent(
             model=MODEL_DEPLOYMENT_NAME,
             name="Weather-agent-multi",
-            instructions=("You are a weather specialist named Weather-agent-multi. You provide weather information. Use the fetch_weather function to get current weather data for a specified location."),
-            #toolset=user_toolset,
+            instructions=(WEATHER_AGENT_INSTRUCTIONS),
             tools=user_toolset.definitions,
-            #tool_resources=user_toolset.resources,
+            can_delegate=False
+        )
+
+        agent_team.add_agent(
+            model=MODEL_DEPLOYMENT_NAME,
+            name="Classifier-agent-multi",
+            instructions=(CLASSIFIER_AGENT_INSTRUCTIONS),
             can_delegate=False
         )
 
