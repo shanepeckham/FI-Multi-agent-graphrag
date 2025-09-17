@@ -1,0 +1,49 @@
+[
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "str",
+      "time": "str"
+    }
+  },
+  {
+    "task_type": "update_kyc_total_assets",
+    "parameters": {}
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "str",
+      "details": "str",
+      "corroboration_or_evidence": "list"
+    }
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "str",
+      "details": "str"
+    }
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "str",
+      "contact_note": "str",
+      "channel": "str",
+      "duration_minutes": "int"
+    }
+  },
+  {
+    "task_type": "update_contact_info_non_postal",
+    "parameters": {}
+  },
+  {
+    "task_type": "update_kyc_activity",
+    "parameters": {}
+  },
+  {
+    "task_type": "update_contact_info_postal_address",
+    "parameters": {}
+  }
+]

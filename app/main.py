@@ -66,9 +66,10 @@ import time
 import traceback
 import warnings
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Optional, Union
+from typing import TYPE_CHECKING, Any, Optional, Union, Annotated
 
 import yaml
+from jinja2 import Template
 
 # Python 3.9+ type annotations
 if TYPE_CHECKING:
@@ -155,6 +156,7 @@ from contextlib import asynccontextmanager
 
 # Import action agent methods
 from action_agents import ActionAgents
+from data_loader import get_action_types, get_action_parameters, get_all_action_parameters
 
 # Global variables to store loaded data
 _project_client = None
@@ -446,6 +448,15 @@ def create_task(recipient: str, request: str, requestor: str) -> str:
         return "True"
     return "False"
 
+# OUTPUT FORMAT FOR TASKS
+class ActionMetadata(BaseModel):
+    action_name: str
+    metadata: str
+
+class ClassificationResult(BaseModel):
+    actions: Annotated[List[ActionMetadata], "List of actions with related metadata extracted from the input text"]
+
+
 # ==============================================================================
 # AGENT TEAM CONFIGURATION AND MAIN EXECUTION
 # ==============================================================================
@@ -474,7 +485,6 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
     # Register all agent functions
     agents_client.enable_auto_function_calls({
         create_task,
-        fetch_weather,
         action_agents.schedule_meeting,
         action_agents.update_kyc_total_assets,
         action_agents.update_kyc_origin_of_assets,
@@ -505,8 +515,6 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
         config = yaml.safe_load(config_file)
         TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS"].strip()
         TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS"].strip()
-        WEATHER_AGENT_DESCRIPTION = config["WEATHER_AGENT_DESCRIPTION"].strip()
-        WEATHER_AGENT_INSTRUCTIONS = config["WEATHER_AGENT_INSTRUCTIONS"].strip()
         CLASSIFIER_AGENT_DESCRIPTION = config["CLASSIFIER_AGENT_DESCRIPTION"].strip()
         CLASSIFIER_AGENT_INSTRUCTIONS = config["CLASSIFIER_AGENT_INSTRUCTIONS"].strip()
 
@@ -531,7 +539,6 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
         UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS = config["UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS"].strip()
 
         if not use_reasoning:
-            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
@@ -542,7 +549,6 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION}"
         else:
-            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
@@ -561,6 +567,7 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
     team_leader_tool = FunctionTool(functions={create_task})
     team_leader_toolset = ToolSet()
     team_leader_toolset.add(team_leader_tool)
+
     if not use_reasoning:
         agent_team.set_team_leader(
             model=MODEL_DEPLOYMENT_NAME,
@@ -578,23 +585,21 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
         )
 
     # Configure agents with proper toolsets
-    fetch_weather_tool = FunctionTool(functions={fetch_weather})
-    user_toolset = ToolSet()
-    user_toolset.add(fetch_weather_tool)
-    agent_team.add_agent(
-        model=MODEL_DEPLOYMENT_NAME,
-        name="Weather-agent-multi",
-        instructions=(WEATHER_AGENT_INSTRUCTIONS),
-        tools=user_toolset.definitions,
-        can_delegate=False
+    action_types = get_action_types()
+    all_action_parameters = get_all_action_parameters()
+
+    # Render the classifier instructions template with actual action data
+    classifier_template = Template(CLASSIFIER_AGENT_INSTRUCTIONS)
+    rendered_classifier_instructions = classifier_template.render(
+        action_types=action_types,
+        action_parameters=all_action_parameters
     )
 
-    # Classifier agent
     classifier_model = MODEL_DEPLOYMENT_NAME if classifier_type == "LLM" else SLM_MODEL_DEPLOYMENT_NAME
     agent_team.add_agent(
         model=classifier_model,
         name="Classifier-agent-multi",
-        instructions=(CLASSIFIER_AGENT_INSTRUCTIONS),
+        instructions=rendered_classifier_instructions,
         can_delegate=False
     )
 
