@@ -190,6 +190,9 @@ tracer = trace.get_tracer(__name__)
 
 from contextlib import asynccontextmanager
 
+# Import action agent methods
+from action_agents import ActionAgents
+
 # Global variables to store loaded data
 _graphrag_data = None
 _language_models = None
@@ -672,8 +675,20 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
     # Create tools and toolsets using pre-loaded data
     sync_toolset, _ = _create_agent_toolsets()
 
+    action_agents = ActionAgents()
     # Register all agent functions
-    agents_client.enable_auto_function_calls({create_task, fetch_weather})
+    agents_client.enable_auto_function_calls({
+        create_task,
+        fetch_weather,
+        action_agents.schedule_meeting,
+        action_agents.update_kyc_total_assets,
+        action_agents.update_kyc_origin_of_assets,
+        action_agents.update_kyc_purpose_of_businessrelation,
+        action_agents.plan_contact,
+        action_agents.update_contact_info_non_postal,
+        action_agents.update_kyc_activity,
+        action_agents.update_contact_info_postal_address
+    })
 
     if MODEL_DEPLOYMENT_NAME is not None:
         # Setup tracing for debugging
@@ -691,6 +706,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
         print(f"📁 Looking for config file at: {config_file_path}")
         print(f"📁 Config file exists: {config_file_path.exists()}")
 
+
         with open(config_file_path, "r") as config_file:
             config = yaml.safe_load(config_file)
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS"].strip()
@@ -700,12 +716,48 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
             CLASSIFIER_AGENT_DESCRIPTION = config["CLASSIFIER_AGENT_DESCRIPTION"].strip()
             CLASSIFIER_AGENT_INSTRUCTIONS = config["CLASSIFIER_AGENT_INSTRUCTIONS"].strip()
 
+            # Action Agent Descriptions
+            SCHEDULE_MEETING_AGENT_DESCRIPTION = config["SCHEDULE_MEETING_AGENT_DESCRIPTION"].strip()
+            UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION = config["UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION"].strip()
+            UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION = config["UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION"].strip()
+            UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION = config["UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION"].strip()
+            PLAN_CONTACT_AGENT_DESCRIPTION = config["PLAN_CONTACT_AGENT_DESCRIPTION"].strip()
+            UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION = config["UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION"].strip()
+            UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION = config["UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION"].strip()
+            UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION = config["UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION"].strip()
+
+            # Action Agent Instructions
+            SCHEDULE_MEETING_AGENT_INSTRUCTIONS = config["SCHEDULE_MEETING_AGENT_INSTRUCTIONS"].strip()
+            UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS = config["UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS"].strip()
+            UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS = config["UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS"].strip()
+            UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS = config["UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS"].strip()
+            PLAN_CONTACT_AGENT_INSTRUCTIONS = config["PLAN_CONTACT_AGENT_INSTRUCTIONS"].strip()
+            UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS = config["UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS"].strip()
+            UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS = config["UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS"].strip()
+            UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS = config["UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS"].strip()
+
             if not use_reasoning:
                 TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
                 TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{PLAN_CONTACT_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION}"
             else:
                 TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
                 TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{PLAN_CONTACT_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION}"
+                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION}"
 
                 # If no question is provided, use the reasoning current question
                 if question == "":
@@ -744,6 +796,88 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
             model=MODEL_DEPLOYMENT_NAME,
             name="Classifier-agent-multi",
             instructions=(CLASSIFIER_AGENT_INSTRUCTIONS),
+            can_delegate=False
+        )
+
+        # Action Agents
+        # ScheduleMeeting-agent
+        schedule_meeting_tool = ToolSet()
+        schedule_meeting_tool.add(FunctionTool(functions={action_agents.schedule_meeting}))
+        agent_team.add_agent(
+            model=MODEL_DEPLOYMENT_NAME,
+            name="ScheduleMeeting-agent-multi",
+            instructions=(SCHEDULE_MEETING_AGENT_INSTRUCTIONS),
+            tools=schedule_meeting_tool.definitions,
+            can_delegate=False
+        )
+        # UpdateKYCTotalAssets-agent
+        update_kyc_total_assets_tool = ToolSet()
+        update_kyc_total_assets_tool.add(FunctionTool(functions={action_agents.update_kyc_total_assets}))
+        agent_team.add_agent(
+            model=MODEL_DEPLOYMENT_NAME,
+            name="UpdateKYCTotalAssets-agent-multi",
+            instructions=(UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS),
+            tools=update_kyc_total_assets_tool.definitions,
+            can_delegate=False
+        )
+        # UpdateKYCOriginOfAssets-agent
+        update_kyc_origin_of_assets_tool = ToolSet()
+        update_kyc_origin_of_assets_tool.add(FunctionTool(functions={action_agents.update_kyc_origin_of_assets}))
+        agent_team.add_agent(
+            model=MODEL_DEPLOYMENT_NAME,
+            name="UpdateKYCOriginOfAssets-agent-multi",
+            instructions=(UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS),
+            tools=update_kyc_origin_of_assets_tool.definitions,
+            can_delegate=False
+        )
+        # UpdateKYCPurposeOfBusinessRelation-agent
+        update_kyc_purpose_of_businessrelation_tool = ToolSet()
+        update_kyc_purpose_of_businessrelation_tool.add(FunctionTool(functions={action_agents.update_kyc_purpose_of_businessrelation}))
+        agent_team.add_agent(
+            model=MODEL_DEPLOYMENT_NAME,
+            name="UpdateKYCPurposeOfBusinessRelation-agent-multi",
+            instructions=(UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS),
+            tools=update_kyc_purpose_of_businessrelation_tool.definitions,
+            can_delegate=False
+        )
+        # PlanContact-agent
+        plan_contact_tool = ToolSet()
+        plan_contact_tool.add(FunctionTool(functions={action_agents.plan_contact}))
+        agent_team.add_agent(
+            model=MODEL_DEPLOYMENT_NAME,
+            name="PlanContact-agent-multi",
+            instructions=(PLAN_CONTACT_AGENT_INSTRUCTIONS),
+            tools=plan_contact_tool.definitions,
+            can_delegate=False
+        )
+        # UpdateContactInfoNonPostal-agent
+        update_contact_info_non_postal_tool = ToolSet()
+        update_contact_info_non_postal_tool.add(FunctionTool(functions={action_agents.update_contact_info_non_postal}))
+        agent_team.add_agent(
+            model=MODEL_DEPLOYMENT_NAME,
+            name="UpdateContactInfoNonPostal-agent-multi",
+            instructions=(UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS),
+            tools=update_contact_info_non_postal_tool.definitions,
+            can_delegate=False
+        )
+        # UpdateKYCActivity-agent
+        update_kyc_activity_tool = ToolSet()
+        update_kyc_activity_tool.add(FunctionTool(functions={action_agents.update_kyc_activity}))
+        agent_team.add_agent(
+            model=MODEL_DEPLOYMENT_NAME,
+            name="UpdateKYCActivity-agent-multi",
+            instructions=(UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS),
+            tools=update_kyc_activity_tool.definitions,
+            can_delegate=False
+        )
+        # UpdateContactInfoPostalAddress-agent
+        update_contact_info_postal_address_tool = ToolSet()
+        update_contact_info_postal_address_tool.add(FunctionTool(functions={action_agents.update_contact_info_postal_address}))
+        agent_team.add_agent(
+            model=MODEL_DEPLOYMENT_NAME,
+            name="UpdateContactInfoPostalAddress-agent-multi",
+            instructions=(UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS),
+            tools=update_contact_info_postal_address_tool.definitions,
             can_delegate=False
         )
 
