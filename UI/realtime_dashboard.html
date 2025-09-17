@@ -641,53 +641,32 @@
             <form id="queryForm" class="query-form">
                 <div class="form-row">
                     <label for="endpoint">API Endpoint:</label>
-                    <input type="text" id="endpoint" value="http://0.0.0.0:8000/query_team" placeholder="API endpoint URL">
+                    <input type="text" id="endpoint" value="http://127.0.0.1:8000/query_team" placeholder="API endpoint URL">
                 </div>
-                
+
                 <div class="form-row">
                     <label for="bearerToken">Bearer Token:</label>
                     <input type="password" id="bearerToken" placeholder="Optional authentication token">
                 </div>
-                
+
                 <div class="form-row">
                     <label for="queryText">Query:</label>
                     <textarea id="queryText" rows="5" placeholder="Enter your query here...">What will the revenue in 2030 be?</textarea>
                 </div>
-                
+
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="graphQueryType">Graph Query Type:</label>
-                        <select id="graphQueryType">
-                            <option value="local" selected>Local</option>
-                            <option value="drift">Drift</option>
-                            <option value="global">Global</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="searchQueryType">Search Query Type:</label>
-                        <select id="searchQueryType">
-                            <option value="SIMPLE" selected>Simple</option>
-                            <option value="SEMANTIC">Semantic</option>
-                            <option value="HYBRID">Hybrid</option>
-                        </select>
-                    </div>
-                    
                     <div class="form-group">
                         <label for="timeoutMinutes">Timeout (min):</label>
                         <input type="number" id="timeoutMinutes" value="10" min="1" max="60">
                     </div>
                 </div>
-                
+
                 <div class="form-row options-row">
                     <div class="checkbox-group">
-                        <label><input type="checkbox" id="useSearch" checked> Use Search</label>
-                        <label><input type="checkbox" id="useGraph" checked> Use Graph</label>
-                        <label><input type="checkbox" id="useWeb"> Use Web</label>
                         <label><input type="checkbox" id="useReasoning"> Use Reasoning</label>
                     </div>
                 </div>
-                
+
                 <div class="form-row">
                     <button type="submit" id="submitQuery" class="submit-btn">Submit Query</button>
                     <button type="button" id="cancelQuery" class="cancel-btn" style="display: none;">Cancel</button>
@@ -737,7 +716,7 @@
         <!-- KG Sources Panel (Fourth Column) -->
         <div class="kg-sources-panel">
             <h3>🕸️ KG Sources</h3>
-            
+
             <h3 style="margin-top: 15px;">📊 Latest Response</h3>
             <div id="kgSourcesDetails" class="scrollable" style="max-height: 200px; background-color: #f8f9fa; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 0.9em; overflow-y: auto;">
                 <div style="text-align: center; color: #666; padding: 10px;">
@@ -755,7 +734,7 @@
             <!-- Search Sources Panel -->
             <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 15px;">
                 <h3>🔍 Search Sources</h3>
-                
+
                 <h4 style="margin-top: 15px;">📊 Latest Response</h4>
                 <div id="searchSourcesDetails" class="scrollable" style="max-height: 200px; background-color: #f8f9fa; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 0.9em; overflow-y: auto;">
                     <div style="text-align: center; color: #666; padding: 10px;">
@@ -804,7 +783,7 @@
                     completedTasks: 0,
                     pendingTasks: 0
                 };
-                
+
                 this.connect();
                 this.setupUI();
                 this.setupQueryInterface();
@@ -818,23 +797,23 @@
             connect() {
                 const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
                 const wsUrl = `${protocol}//${window.location.host}/ws/${this.sessionId}`;
-                
+
                 this.socket = new WebSocket(wsUrl);
-                
+
                 this.socket.onopen = () => {
                     console.log('WebSocket connected');
                     this.updateConnectionStatus(true);
                 };
-                
+
                 this.socket.onmessage = (event) => {
                     const message = JSON.parse(event.data);
                     this.handleMessage(message);
                 };
-                
+
                 this.socket.onclose = () => {
                     console.log('WebSocket disconnected');
                     this.updateConnectionStatus(false);
-                    
+
                     // Attempt to reconnect after 3 seconds
                     setTimeout(() => {
                         if (this.socket.readyState === WebSocket.CLOSED) {
@@ -842,7 +821,7 @@
                         }
                     }, 3000);
                 };
-                
+
                 this.socket.onerror = (error) => {
                     console.error('WebSocket error:', error);
                     this.updateConnectionStatus(false);
@@ -851,7 +830,7 @@
 
             handleMessage(message) {
                 console.log('Received message:', message);
-                
+
                 switch (message.type) {
                     case 'connection':
                         this.handleConnection(message);
@@ -872,7 +851,7 @@
                         this.handleProgress(message);
                         break;
                 }
-                
+
                 this.addToActivityLog(message);
                 this.updateMetrics();
             }
@@ -883,7 +862,7 @@
 
             handleAgentEvent(message) {
                 const { event_type, data } = message;
-                
+
                 switch (event_type) {
                     case 'agent_created':
                         this.agents.set(data.agent_name, {
@@ -907,13 +886,13 @@
                         }
                         break;
                 }
-                
+
                 this.updateAgentsList();
             }
 
             handleTaskEvent(message) {
                 const { event_type, data } = message;
-                
+
                 switch (event_type) {
                     case 'task_created':
                     case 'message_sent':
@@ -952,7 +931,7 @@
                     case 'response_generated':
                         const completedTaskId = data.task_id || data.message_id || this.findTaskByDescription(data.task_description || data.message);
                         const responseContent = data.result || data.response || data.output;
-                        
+
                         if (this.tasks.has(completedTaskId)) {
                             this.tasks.get(completedTaskId).status = 'completed';
                             this.tasks.get(completedTaskId).result = responseContent;
@@ -970,15 +949,15 @@
                                 full_content: data
                             });
                         }
-                        
+
                         // Check if this looks like a comprehensive final output
-                        if (responseContent && responseContent.length > 500 && 
-                            (data.agent === 'TeamLeader' || 
+                        if (responseContent && responseContent.length > 500 &&
+                            (data.agent === 'TeamLeader' ||
                              responseContent.toLowerCase().includes('recommendation') ||
                              responseContent.toLowerCase().includes('analysis') ||
                              responseContent.toLowerCase().includes('conclusion') ||
                              responseContent.toLowerCase().includes('summary'))) {
-                            
+
                             // Add as potential final output
                             this.finalOutputs.push({
                                 id: Date.now(),
@@ -992,14 +971,14 @@
                         }
                         break;
                 }
-                
+
                 this.updateTasksList();
             }
 
             handleTeamEvent(message) {
                 const { event_type, data } = message;
                 console.log('Team event:', event_type, data);
-                
+
                 switch (event_type) {
                     case 'processing_completed':
                     case 'team_completed':
@@ -1034,7 +1013,7 @@
             handleRunEvent(message) {
                 const { event_type, data } = message;
                 console.log('Run event:', event_type, data);
-                
+
                 // Run events are primarily for logging and tracking
                 // They don't need to update any UI components beyond the activity log
                 // The actual processing will be handled by task_event or agent_event types
@@ -1057,7 +1036,7 @@
             updateConnectionStatus(connected) {
                 const statusIndicator = document.getElementById('connectionStatus');
                 const connectionText = document.getElementById('connectionText');
-                
+
                 if (connected) {
                     statusIndicator.classList.add('connected');
                     connectionText.textContent = 'Connected';
@@ -1070,14 +1049,14 @@
             updateAgentsList() {
                 const agentsList = document.getElementById('agentsList');
                 agentsList.innerHTML = '';
-                
+
                 for (const [name, agent] of this.agents) {
                     const agentCard = document.createElement('div');
                     agentCard.className = `agent-card ${agent.status}`;
-                    
-                    const statusEmoji = agent.status === 'working' ? '⚡' : 
+
+                    const statusEmoji = agent.status === 'working' ? '⚡' :
                                       agent.status === 'idle' ? '💤' : '🤖';
-                    
+
                     agentCard.innerHTML = `
                         <strong>${statusEmoji} ${agent.name}</strong>
                         <div style="font-size: 0.9em; color: #666; margin-top: 5px;">
@@ -1089,7 +1068,7 @@
                             </div>
                         ` : ''}
                     `;
-                    
+
                     agentsList.appendChild(agentCard);
                 }
             }
@@ -1097,24 +1076,24 @@
             updateTasksList() {
                 const tasksList = document.getElementById('tasksList');
                 tasksList.innerHTML = '';
-                
+
                 // Show only pending and in-progress tasks
                 const activeTasks = Array.from(this.tasks.values())
                     .filter(task => task.status === 'pending' || task.status === 'in-progress')
                     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-                
+
                 if (activeTasks.length === 0) {
                     tasksList.innerHTML = '<div style="text-align: center; color: #666; padding: 20px;">No active tasks</div>';
                     return;
                 }
-                
+
                 for (const task of activeTasks) {
                     const taskItem = document.createElement('div');
                     taskItem.className = `task-item ${task.status}`;
-                    
+
                     const statusEmoji = task.status === 'completed' ? '✅' :
                                        task.status === 'in-progress' ? '⏳' : '⏸️';
-                    
+
                     taskItem.innerHTML = `
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <strong>${statusEmoji} ${task.recipient || 'Unknown Agent'}</strong>
@@ -1134,7 +1113,7 @@
                             </div>
                         ` : ''}
                     `;
-                    
+
                     tasksList.appendChild(taskItem);
                 }
             }
@@ -1142,13 +1121,13 @@
             updateMetrics() {
                 this.metrics.activeAgents = Array.from(this.agents.values())
                     .filter(agent => agent.status === 'working').length;
-                
+
                 this.metrics.completedTasks = Array.from(this.tasks.values())
                     .filter(task => task.status === 'completed').length;
-                
+
                 this.metrics.pendingTasks = Array.from(this.tasks.values())
                     .filter(task => task.status === 'pending').length;
-                
+
                 document.getElementById('activeAgents').textContent = this.metrics.activeAgents;
                 document.getElementById('completedTasks').textContent = this.metrics.completedTasks;
                 document.getElementById('pendingTasks').textContent = this.metrics.pendingTasks;
@@ -1156,17 +1135,17 @@
 
             updateFinalOutputSection() {
                 const finalOutputSection = document.getElementById('finalOutputSection');
-                
+
                 if (this.finalOutputs.length === 0) {
                     finalOutputSection.innerHTML = '<div style="text-align: center; color: #666; padding: 20px;">No final output yet</div>';
                     return;
                 }
 
                 finalOutputSection.innerHTML = '';
-                
+
                 // Show most recent output first
                 const sortedOutputs = [...this.finalOutputs].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-                
+
                 for (const output of sortedOutputs) {
                     const outputCard = document.createElement('div');
                     outputCard.className = 'output-card';
@@ -1178,9 +1157,9 @@
                         margin-bottom: 15px;
                         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
                     `;
-                    
+
                     const timestamp = new Date(output.timestamp).toLocaleString();
-                    
+
                     outputCard.innerHTML = `
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                             <strong style="color: #28a745;">🎯 ${output.team_name} - Final Result</strong>
@@ -1200,22 +1179,22 @@
                             </small>
                         </div>
                     `;
-                    
+
                     finalOutputSection.appendChild(outputCard);
                 }
             }
 
             updateKGSources(data) {
                 console.log('Updating KG Sources:', data);
-                
+
                 // Update details section with counts
                 const detailsSection = document.getElementById('kgSourcesDetails');
                 const timestamp = new Date().toLocaleTimeString();
-                
+
                 const sourcesCount = Array.isArray(data.sources) ? data.sources.length : 0;
                 const entitiesCount = Array.isArray(data.entities) ? data.entities.length : 0;
                 const relationshipsCount = Array.isArray(data.relationships) ? data.relationships.length : 0;
-                
+
                 detailsSection.innerHTML = `
                     <div style="margin-bottom: 10px; color: #666; font-size: 0.8em;">
                         Last updated: ${timestamp}
@@ -1230,14 +1209,14 @@
                         <strong>Relationships:</strong> ${relationshipsCount} found
                     </div>
                 `;
-                
+
                 // Update source texts
                 this.updateKGSourceTexts(data.source_texts || {}, timestamp);
             }
 
             updateKGSourceTexts(sourceTexts, timestamp) {
                 const sourceTextsSection = document.getElementById('kgSourceTexts');
-                
+
                 if (!sourceTexts || Object.keys(sourceTexts).length === 0) {
                     sourceTextsSection.innerHTML = `
                         <div style="text-align: center; color: #666; padding: 10px;">
@@ -1246,13 +1225,13 @@
                     `;
                     return;
                 }
-                
+
                 let content = `
                     <div style="margin-bottom: 15px; color: #666; font-size: 0.8em; font-weight: bold;">
                         Updated: ${timestamp} | ${Object.keys(sourceTexts).length} sources
                     </div>
                 `;
-                
+
                 // Iterate through each source ID and its texts
                 Object.entries(sourceTexts).forEach(([sourceId, texts]) => {
                     if (Array.isArray(texts) && texts.length > 0) {
@@ -1263,7 +1242,7 @@
                                 </div>
                                 <div style="padding: 10px; background: #fff;">
                         `;
-                        
+
                         texts.forEach((text, index) => {
                             // Truncate very long texts for display
                             const displayText = text.length > 500 ? text.substring(0, 500) + '...' : text;
@@ -1274,16 +1253,16 @@
                                 </div>
                             `;
                         });
-                        
+
                         content += `
                                 </div>
                             </div>
                         `;
                     }
                 });
-                
+
                 sourceTextsSection.innerHTML = content;
-                
+
                 // Scroll to top of the new content
                 sourceTextsSection.scrollTop = 0;
             }
@@ -1295,15 +1274,15 @@
 
             updateSearchSources(data) {
                 console.log('Updating Search Sources:', data);
-                
+
                 // Update details section with search metadata
                 const detailsSection = document.getElementById('searchSourcesDetails');
                 const timestamp = new Date().toLocaleTimeString();
-                
+
                 const chunkIds = Array.isArray(data.chunk_id) ? data.chunk_id.length : 0;
                 const parentIds = Array.isArray(data.parent_id) ? data.parent_id.length : 0;
                 const chunks = Array.isArray(data.chunk) ? data.chunk.length : 0;
-                
+
                 detailsSection.innerHTML = `
                     <div style="margin-bottom: 10px; color: #666; font-size: 0.8em;">
                         Last updated: ${timestamp}
@@ -1318,14 +1297,14 @@
                         <strong>Chunks:</strong> ${chunks} found
                     </div>
                 `;
-                
+
                 // Update search source texts
                 this.updateSearchSourceTexts(data, timestamp);
             }
 
             updateSearchSourceTexts(searchData, timestamp) {
                 const sourceTextsSection = document.getElementById('searchSourceTexts');
-                
+
                 if (!searchData || !searchData.chunk_id || searchData.chunk_id.length === 0) {
                     sourceTextsSection.innerHTML = `
                         <div style="text-align: center; color: #666; padding: 10px;">
@@ -1334,19 +1313,19 @@
                     `;
                     return;
                 }
-                
+
                 let content = `
                     <div style="margin-bottom: 15px; color: #666; font-size: 0.8em; font-weight: bold;">
                         Updated: ${timestamp} | ${searchData.chunk_id.length} chunks
                     </div>
                 `;
-                
+
                 // Iterate through each chunk
                 for (let i = 0; i < searchData.chunk_id.length; i++) {
                     const chunkId = searchData.chunk_id[i] || 'Unknown';
                     const parentId = searchData.parent_id[i] || 'Unknown';
                     const chunkText = searchData.chunk[i] || 'No content';
-                    
+
                     content += `
                         <div style="background: #fff; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 12px; padding: 12px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
@@ -1363,9 +1342,9 @@
                         </div>
                     `;
                 }
-                
+
                 sourceTextsSection.innerHTML = content;
-                
+
                 // Scroll to top of the new content
                 sourceTextsSection.scrollTop = 0;
             }
@@ -1373,19 +1352,19 @@
             addToActivityLog(message) {
                 const logEntry = document.createElement('div');
                 logEntry.className = 'log-entry';
-                
+
                 const timestamp = new Date(message.timestamp).toLocaleTimeString();
                 const logType = message.type.replace('_', ' ');
-                
+
                 logEntry.innerHTML = `
                     <span class="log-timestamp">${timestamp}</span>
                     <span class="log-type ${message.type.split('_')[0]}">${logType}</span>
                     <span class="log-message">${this.formatLogMessage(message)}</span>
                 `;
-                
+
                 const activityLog = document.getElementById('activityLog');
                 activityLog.insertBefore(logEntry, activityLog.firstChild);
-                
+
                 // Keep only last 50 entries
                 while (activityLog.children.length > 50) {
                     activityLog.removeChild(activityLog.lastChild);
@@ -1394,7 +1373,7 @@
 
             formatLogMessage(message) {
                 const data = message.data || {};
-                
+
                 switch (message.type) {
                     case 'agent_event':
                         switch (message.event_type) {
@@ -1450,12 +1429,12 @@
                 const queryForm = document.getElementById('queryForm');
                 const submitBtn = document.getElementById('submitQuery');
                 const cancelBtn = document.getElementById('cancelQuery');
-                
+
                 queryForm.addEventListener('submit', (e) => {
                     e.preventDefault();
                     this.submitQuery();
                 });
-                
+
                 cancelBtn.addEventListener('click', () => {
                     this.cancelQuery();
                 });
@@ -1465,12 +1444,7 @@
                 const endpoint = document.getElementById('endpoint').value.trim();
                 const bearerToken = document.getElementById('bearerToken').value.trim();
                 const queryText = document.getElementById('queryText').value.trim();
-                const graphQueryType = document.getElementById('graphQueryType').value;
-                const searchQueryType = document.getElementById('searchQueryType').value;
                 const timeoutMinutes = parseInt(document.getElementById('timeoutMinutes').value);
-                const useSearch = document.getElementById('useSearch').checked;
-                const useGraph = document.getElementById('useGraph').checked;
-                const useWeb = document.getElementById('useWeb').checked;
                 const useReasoning = document.getElementById('useReasoning').checked;
 
                 // Validation
@@ -1503,11 +1477,6 @@
                     // Prepare request data
                     const requestData = {
                         query: queryText,
-                        graph_query_type: graphQueryType,
-                        search_query_type: searchQueryType,
-                        use_search: useSearch,
-                        use_graph: useGraph,
-                        use_web: useWeb,
                         use_reasoning: useReasoning
                     };
 
@@ -1561,7 +1530,7 @@
                 try {
                     if (response.ok) {
                         const contentType = response.headers.get('content-type');
-                        
+
                         if (contentType && contentType.includes('application/json')) {
                             const data = await response.json();
                             this.displayQueryResponse(data);
@@ -1580,7 +1549,7 @@
 
             displayQueryResponse(data) {
                 const responseContainer = document.getElementById('queryResponse');
-                
+
                 if (typeof data === 'string') {
                     // Handle markdown/text response
                     responseContainer.innerHTML = this.renderMarkdown(data);
@@ -1684,13 +1653,13 @@
                 this.tasks.clear();
                 this.finalOutputs = [];
                 this.activityLog = [];
-                
+
                 // Update all sections
                 this.updateAgentsList();
                 this.updateTasksList();
                 this.updateFinalOutputSection();
                 this.updateMetrics();
-                
+
                 // Clear activity log
                 document.getElementById('activityLog').innerHTML = '';
             }
@@ -1698,11 +1667,11 @@
             setupConfigPanel() {
                 const saveBtn = document.getElementById('saveConfig');
                 const reloadBtn = document.getElementById('reloadConfig');
-                
+
                 saveBtn.addEventListener('click', () => {
                     this.saveConfiguration();
                 });
-                
+
                 reloadBtn.addEventListener('click', () => {
                     this.loadConfiguration();
                 });
@@ -1714,9 +1683,9 @@
             async loadConfiguration() {
                 try {
                     this.showConfigStatus('Loading configuration...', 'info');
-                    
+
                     const response = await fetch('/api/config/agent_team_config.yaml');
-                    
+
                     if (response.ok) {
                         const configText = await response.text();
                         document.getElementById('configEditor').value = configText;
@@ -1727,7 +1696,7 @@
                 } catch (error) {
                     console.error('Failed to load configuration:', error);
                     this.showConfigStatus(`Failed to load configuration: ${error.message}`, 'error');
-                    
+
                     // If API endpoint doesn't exist, show helpful message
                     if (error.message.includes('404') || error.message.includes('Failed to fetch')) {
                         document.getElementById('configEditor').value = `# Configuration API endpoint not available
@@ -1745,14 +1714,14 @@
             async saveConfiguration() {
                 try {
                     const configText = document.getElementById('configEditor').value;
-                    
+
                     if (!configText.trim()) {
                         this.showConfigStatus('Configuration cannot be empty', 'error');
                         return;
                     }
 
                     this.showConfigStatus('Saving configuration...', 'info');
-                    
+
                     const response = await fetch('/api/config/agent_team_config.yaml', {
                         method: 'POST',
                         headers: {
@@ -1760,7 +1729,7 @@
                         },
                         body: configText
                     });
-                    
+
                     if (response.ok) {
                         this.showConfigStatus('Configuration saved successfully', 'success');
                     } else {
@@ -1770,7 +1739,7 @@
                 } catch (error) {
                     console.error('Failed to save configuration:', error);
                     this.showConfigStatus(`Failed to save configuration: ${error.message}`, 'error');
-                    
+
                     // If API endpoint doesn't exist, show helpful message
                     if (error.message.includes('404') || error.message.includes('Failed to fetch')) {
                         this.showConfigStatus('Configuration API not available - implement POST /api/config/agent_team_config.yaml', 'error');
@@ -1783,7 +1752,7 @@
                 statusElement.textContent = message;
                 statusElement.className = `config-status ${type}`;
                 statusElement.style.display = 'block';
-                
+
                 // Auto-hide success messages after 3 seconds
                 if (type === 'success') {
                     setTimeout(() => {
