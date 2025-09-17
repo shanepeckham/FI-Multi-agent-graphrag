@@ -656,6 +656,14 @@
 
                 <div class="form-row">
                     <div class="form-group">
+                        <label for="classifierType">Search Query Type:</label>
+                        <select id="classifierType">
+                            <option value="LLM" selected>LLM</option>
+                            <option value="SLM">SLM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="timeoutMinutes">Timeout (min):</label>
                         <input type="number" id="timeoutMinutes" value="10" min="1" max="60">
                     </div>
@@ -1444,6 +1452,7 @@
                 const endpoint = document.getElementById('endpoint').value.trim();
                 const bearerToken = document.getElementById('bearerToken').value.trim();
                 const queryText = document.getElementById('queryText').value.trim();
+                const classifierType = document.getElementById('classifierType').value;
                 const timeoutMinutes = parseInt(document.getElementById('timeoutMinutes').value);
                 const useReasoning = document.getElementById('useReasoning').checked;
 
@@ -1477,6 +1486,7 @@
                     // Prepare request data
                     const requestData = {
                         query: queryText,
+                        classifier_type: classifierType,
                         use_reasoning: useReasoning
                     };
 

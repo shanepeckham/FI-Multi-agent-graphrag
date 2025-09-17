@@ -206,6 +206,7 @@ class QueryResponse(BaseModel):
 
 class QueryRequest(BaseModel):
     query: str = Field(..., description="Query string")
+    classifier_type: str = Field(..., description="Classifier type: LLM, SLM")
     use_reasoning: bool = Field(
         default=False,
         description="Whether to use reasoning capabilities for complex queries"
@@ -306,6 +307,7 @@ PROJECT_ENDPOINT = os.getenv("PROJECT_ENDPOINT", "https://fiagent-resource.servi
 AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT", "https://fiagent-resource.cognitiveservices.azure.com/")
 REASONING_MODEL_DEPLOYMENT_NAME = os.getenv("REASONING_MODEL_DEPLOYMENT_NAME", "o3-mini")
+SLM_MODEL_DEPLOYMENT_NAME = os.getenv("SLM_MODEL_DEPLOYMENT_NAME", "gpt-4.1")
 
 # TEAM configuration
 TEAM_NAME = os.getenv("TEAM_NAME", "cr_team")
@@ -448,7 +450,7 @@ def create_task(recipient: str, request: str, requestor: str) -> str:
 # AGENT TEAM CONFIGURATION AND MAIN EXECUTION
 # ==============================================================================
 
-def _setup_agent_team_with_globals(question: str, use_reasoning: bool, evaluation_mode: bool) -> str:
+def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reasoning: bool, evaluation_mode: bool) -> str:
     """
     Set up and run the agent team using pre-loaded global resources.
 
@@ -483,223 +485,223 @@ def _setup_agent_team_with_globals(question: str, use_reasoning: bool, evaluatio
         action_agents.update_contact_info_postal_address
     })
 
-    if MODEL_DEPLOYMENT_NAME is not None:
-        # Setup tracing for debugging
-        AgentTraceConfigurator(agents_client=agents_client).setup_tracing()
+    # Setup tracing for debugging
+    AgentTraceConfigurator(agents_client=agents_client).setup_tracing()
 
-        # Create agent team without using 'with' statement to avoid closing the client
-        agent_team = AgentTeam(TEAM_NAME, agents_client=agents_client)
+    # Create agent team without using 'with' statement to avoid closing the client
+    agent_team = AgentTeam(TEAM_NAME, agents_client=agents_client)
 
-        # Get the directory of the current script to ensure we find the config file
-        script_dir = Path(__file__).parent
-        config_file_path = script_dir / "agent_team_config.yaml"
+    # Get the directory of the current script to ensure we find the config file
+    script_dir = Path(__file__).parent
+    config_file_path = script_dir / "agent_team_config.yaml"
 
-        print(f"📁 Script directory: {script_dir}")
-        print(f"📁 Current working directory: {os.getcwd()}")
-        print(f"📁 Looking for config file at: {config_file_path}")
-        print(f"📁 Config file exists: {config_file_path.exists()}")
+    print(f"📁 Script directory: {script_dir}")
+    print(f"📁 Current working directory: {os.getcwd()}")
+    print(f"📁 Looking for config file at: {config_file_path}")
+    print(f"📁 Config file exists: {config_file_path.exists()}")
 
 
-        with open(config_file_path, "r") as config_file:
-            config = yaml.safe_load(config_file)
-            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS"].strip()
-            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS"].strip()
-            WEATHER_AGENT_DESCRIPTION = config["WEATHER_AGENT_DESCRIPTION"].strip()
-            WEATHER_AGENT_INSTRUCTIONS = config["WEATHER_AGENT_INSTRUCTIONS"].strip()
-            CLASSIFIER_AGENT_DESCRIPTION = config["CLASSIFIER_AGENT_DESCRIPTION"].strip()
-            CLASSIFIER_AGENT_INSTRUCTIONS = config["CLASSIFIER_AGENT_INSTRUCTIONS"].strip()
+    with open(config_file_path, "r") as config_file:
+        config = yaml.safe_load(config_file)
+        TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS"].strip()
+        TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS"].strip()
+        WEATHER_AGENT_DESCRIPTION = config["WEATHER_AGENT_DESCRIPTION"].strip()
+        WEATHER_AGENT_INSTRUCTIONS = config["WEATHER_AGENT_INSTRUCTIONS"].strip()
+        CLASSIFIER_AGENT_DESCRIPTION = config["CLASSIFIER_AGENT_DESCRIPTION"].strip()
+        CLASSIFIER_AGENT_INSTRUCTIONS = config["CLASSIFIER_AGENT_INSTRUCTIONS"].strip()
 
-            # Action Agent Descriptions
-            SCHEDULE_MEETING_AGENT_DESCRIPTION = config["SCHEDULE_MEETING_AGENT_DESCRIPTION"].strip()
-            UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION = config["UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION"].strip()
-            UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION = config["UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION"].strip()
-            UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION = config["UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION"].strip()
-            PLAN_CONTACT_AGENT_DESCRIPTION = config["PLAN_CONTACT_AGENT_DESCRIPTION"].strip()
-            UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION = config["UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION"].strip()
-            UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION = config["UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION"].strip()
-            UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION = config["UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION"].strip()
+        # Action Agent Descriptions
+        SCHEDULE_MEETING_AGENT_DESCRIPTION = config["SCHEDULE_MEETING_AGENT_DESCRIPTION"].strip()
+        UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION = config["UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION"].strip()
+        UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION = config["UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION"].strip()
+        UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION = config["UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION"].strip()
+        PLAN_CONTACT_AGENT_DESCRIPTION = config["PLAN_CONTACT_AGENT_DESCRIPTION"].strip()
+        UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION = config["UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION"].strip()
+        UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION = config["UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION"].strip()
+        UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION = config["UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION"].strip()
 
-            # Action Agent Instructions
-            SCHEDULE_MEETING_AGENT_INSTRUCTIONS = config["SCHEDULE_MEETING_AGENT_INSTRUCTIONS"].strip()
-            UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS = config["UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS"].strip()
-            UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS = config["UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS"].strip()
-            UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS = config["UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS"].strip()
-            PLAN_CONTACT_AGENT_INSTRUCTIONS = config["PLAN_CONTACT_AGENT_INSTRUCTIONS"].strip()
-            UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS = config["UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS"].strip()
-            UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS = config["UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS"].strip()
-            UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS = config["UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS"].strip()
+        # Action Agent Instructions
+        SCHEDULE_MEETING_AGENT_INSTRUCTIONS = config["SCHEDULE_MEETING_AGENT_INSTRUCTIONS"].strip()
+        UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS = config["UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS"].strip()
+        UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS = config["UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS"].strip()
+        UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS = config["UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS"].strip()
+        PLAN_CONTACT_AGENT_INSTRUCTIONS = config["PLAN_CONTACT_AGENT_INSTRUCTIONS"].strip()
+        UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS = config["UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS"].strip()
+        UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS = config["UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS"].strip()
+        UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS = config["UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS"].strip()
 
-            if not use_reasoning:
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{PLAN_CONTACT_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION}"
-            else:
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{PLAN_CONTACT_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION}"
-                TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION}"
-
-                # If no question is provided, use the reasoning current question
-                if question == "":
-                    question = REASON_CURRENT_QUESTION
-
-        # Configure Team Leader (simplified configuration)
-        team_leader_tool = FunctionTool(functions={create_task})
-        team_leader_toolset = ToolSet()
-        team_leader_toolset.add(team_leader_tool)
         if not use_reasoning:
-            agent_team.set_team_leader(
-                model=MODEL_DEPLOYMENT_NAME,
-                name="TeamLeader",
-                instructions=(TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS),
-                toolset=team_leader_toolset,
-            )
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{PLAN_CONTACT_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION}"
         else:
-            # Reasoning agent uses a different model
-            agent_team.set_team_leader(
-                model=REASONING_MODEL_DEPLOYMENT_NAME,
-                name="TeamLeader",
-                instructions=(TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS),
-                toolset=team_leader_toolset,
-            )
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{WEATHER_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{PLAN_CONTACT_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION}"
 
-        # Configure agents with proper toolsets
-        fetch_weather_tool = FunctionTool(functions={fetch_weather})
-        user_toolset = ToolSet()
-        user_toolset.add(fetch_weather_tool)
-        agent_team.add_agent(
+            # If no question is provided, use the reasoning current question
+            if question == "":
+                question = REASON_CURRENT_QUESTION
+
+    # Configure Team Leader (simplified configuration)
+    team_leader_tool = FunctionTool(functions={create_task})
+    team_leader_toolset = ToolSet()
+    team_leader_toolset.add(team_leader_tool)
+    if not use_reasoning:
+        agent_team.set_team_leader(
             model=MODEL_DEPLOYMENT_NAME,
-            name="Weather-agent-multi",
-            instructions=(WEATHER_AGENT_INSTRUCTIONS),
-            tools=user_toolset.definitions,
-            can_delegate=False
+            name="TeamLeader",
+            instructions=(TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS),
+            toolset=team_leader_toolset,
+        )
+    else:
+        # Reasoning agent uses a different model
+        agent_team.set_team_leader(
+            model=REASONING_MODEL_DEPLOYMENT_NAME,
+            name="TeamLeader",
+            instructions=(TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS),
+            toolset=team_leader_toolset,
         )
 
-        agent_team.add_agent(
-            model=MODEL_DEPLOYMENT_NAME,
-            name="Classifier-agent-multi",
-            instructions=(CLASSIFIER_AGENT_INSTRUCTIONS),
-            can_delegate=False
-        )
+    # Configure agents with proper toolsets
+    fetch_weather_tool = FunctionTool(functions={fetch_weather})
+    user_toolset = ToolSet()
+    user_toolset.add(fetch_weather_tool)
+    agent_team.add_agent(
+        model=MODEL_DEPLOYMENT_NAME,
+        name="Weather-agent-multi",
+        instructions=(WEATHER_AGENT_INSTRUCTIONS),
+        tools=user_toolset.definitions,
+        can_delegate=False
+    )
 
-        # Action Agents
-        # ScheduleMeeting-agent
-        schedule_meeting_tool = ToolSet()
-        schedule_meeting_tool.add(FunctionTool(functions={action_agents.schedule_meeting}))
-        agent_team.add_agent(
-            model=MODEL_DEPLOYMENT_NAME,
-            name="ScheduleMeeting-agent-multi",
-            instructions=(SCHEDULE_MEETING_AGENT_INSTRUCTIONS),
-            tools=schedule_meeting_tool.definitions,
-            can_delegate=False
-        )
-        # UpdateKYCTotalAssets-agent
-        update_kyc_total_assets_tool = ToolSet()
-        update_kyc_total_assets_tool.add(FunctionTool(functions={action_agents.update_kyc_total_assets}))
-        agent_team.add_agent(
-            model=MODEL_DEPLOYMENT_NAME,
-            name="UpdateKYCTotalAssets-agent-multi",
-            instructions=(UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS),
-            tools=update_kyc_total_assets_tool.definitions,
-            can_delegate=False
-        )
-        # UpdateKYCOriginOfAssets-agent
-        update_kyc_origin_of_assets_tool = ToolSet()
-        update_kyc_origin_of_assets_tool.add(FunctionTool(functions={action_agents.update_kyc_origin_of_assets}))
-        agent_team.add_agent(
-            model=MODEL_DEPLOYMENT_NAME,
-            name="UpdateKYCOriginOfAssets-agent-multi",
-            instructions=(UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS),
-            tools=update_kyc_origin_of_assets_tool.definitions,
-            can_delegate=False
-        )
-        # UpdateKYCPurposeOfBusinessRelation-agent
-        update_kyc_purpose_of_businessrelation_tool = ToolSet()
-        update_kyc_purpose_of_businessrelation_tool.add(FunctionTool(functions={action_agents.update_kyc_purpose_of_businessrelation}))
-        agent_team.add_agent(
-            model=MODEL_DEPLOYMENT_NAME,
-            name="UpdateKYCPurposeOfBusinessRelation-agent-multi",
-            instructions=(UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS),
-            tools=update_kyc_purpose_of_businessrelation_tool.definitions,
-            can_delegate=False
-        )
-        # PlanContact-agent
-        plan_contact_tool = ToolSet()
-        plan_contact_tool.add(FunctionTool(functions={action_agents.plan_contact}))
-        agent_team.add_agent(
-            model=MODEL_DEPLOYMENT_NAME,
-            name="PlanContact-agent-multi",
-            instructions=(PLAN_CONTACT_AGENT_INSTRUCTIONS),
-            tools=plan_contact_tool.definitions,
-            can_delegate=False
-        )
-        # UpdateContactInfoNonPostal-agent
-        update_contact_info_non_postal_tool = ToolSet()
-        update_contact_info_non_postal_tool.add(FunctionTool(functions={action_agents.update_contact_info_non_postal}))
-        agent_team.add_agent(
-            model=MODEL_DEPLOYMENT_NAME,
-            name="UpdateContactInfoNonPostal-agent-multi",
-            instructions=(UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS),
-            tools=update_contact_info_non_postal_tool.definitions,
-            can_delegate=False
-        )
-        # UpdateKYCActivity-agent
-        update_kyc_activity_tool = ToolSet()
-        update_kyc_activity_tool.add(FunctionTool(functions={action_agents.update_kyc_activity}))
-        agent_team.add_agent(
-            model=MODEL_DEPLOYMENT_NAME,
-            name="UpdateKYCActivity-agent-multi",
-            instructions=(UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS),
-            tools=update_kyc_activity_tool.definitions,
-            can_delegate=False
-        )
-        # UpdateContactInfoPostalAddress-agent
-        update_contact_info_postal_address_tool = ToolSet()
-        update_contact_info_postal_address_tool.add(FunctionTool(functions={action_agents.update_contact_info_postal_address}))
-        agent_team.add_agent(
-            model=MODEL_DEPLOYMENT_NAME,
-            name="UpdateContactInfoPostalAddress-agent-multi",
-            instructions=(UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS),
-            tools=update_contact_info_postal_address_tool.definitions,
-            can_delegate=False
-        )
+    # Classifier agent
+    classifier_model = MODEL_DEPLOYMENT_NAME if classifier_type == "LLM" else SLM_MODEL_DEPLOYMENT_NAME
+    agent_team.add_agent(
+        model=classifier_model,
+        name="Classifier-agent-multi",
+        instructions=(CLASSIFIER_AGENT_INSTRUCTIONS),
+        can_delegate=False
+    )
 
-        # Assemble and run the team
-        print("🔧 Assembling agent team...")
-        agent_team.assemble_team()
+    # Action Agents
+    # ScheduleMeeting-agent
+    schedule_meeting_tool = ToolSet()
+    schedule_meeting_tool.add(FunctionTool(functions={action_agents.schedule_meeting}))
+    agent_team.add_agent(
+        model=MODEL_DEPLOYMENT_NAME,
+        name="ScheduleMeeting-agent-multi",
+        instructions=(SCHEDULE_MEETING_AGENT_INSTRUCTIONS),
+        tools=schedule_meeting_tool.definitions,
+        can_delegate=False
+    )
+    # UpdateKYCTotalAssets-agent
+    update_kyc_total_assets_tool = ToolSet()
+    update_kyc_total_assets_tool.add(FunctionTool(functions={action_agents.update_kyc_total_assets}))
+    agent_team.add_agent(
+        model=MODEL_DEPLOYMENT_NAME,
+        name="UpdateKYCTotalAssets-agent-multi",
+        instructions=(UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS),
+        tools=update_kyc_total_assets_tool.definitions,
+        can_delegate=False
+    )
+    # UpdateKYCOriginOfAssets-agent
+    update_kyc_origin_of_assets_tool = ToolSet()
+    update_kyc_origin_of_assets_tool.add(FunctionTool(functions={action_agents.update_kyc_origin_of_assets}))
+    agent_team.add_agent(
+        model=MODEL_DEPLOYMENT_NAME,
+        name="UpdateKYCOriginOfAssets-agent-multi",
+        instructions=(UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS),
+        tools=update_kyc_origin_of_assets_tool.definitions,
+        can_delegate=False
+    )
+    # UpdateKYCPurposeOfBusinessRelation-agent
+    update_kyc_purpose_of_businessrelation_tool = ToolSet()
+    update_kyc_purpose_of_businessrelation_tool.add(FunctionTool(functions={action_agents.update_kyc_purpose_of_businessrelation}))
+    agent_team.add_agent(
+        model=MODEL_DEPLOYMENT_NAME,
+        name="UpdateKYCPurposeOfBusinessRelation-agent-multi",
+        instructions=(UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS),
+        tools=update_kyc_purpose_of_businessrelation_tool.definitions,
+        can_delegate=False
+    )
+    # PlanContact-agent
+    plan_contact_tool = ToolSet()
+    plan_contact_tool.add(FunctionTool(functions={action_agents.plan_contact}))
+    agent_team.add_agent(
+        model=MODEL_DEPLOYMENT_NAME,
+        name="PlanContact-agent-multi",
+        instructions=(PLAN_CONTACT_AGENT_INSTRUCTIONS),
+        tools=plan_contact_tool.definitions,
+        can_delegate=False
+    )
+    # UpdateContactInfoNonPostal-agent
+    update_contact_info_non_postal_tool = ToolSet()
+    update_contact_info_non_postal_tool.add(FunctionTool(functions={action_agents.update_contact_info_non_postal}))
+    agent_team.add_agent(
+        model=MODEL_DEPLOYMENT_NAME,
+        name="UpdateContactInfoNonPostal-agent-multi",
+        instructions=(UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS),
+        tools=update_contact_info_non_postal_tool.definitions,
+        can_delegate=False
+    )
+    # UpdateKYCActivity-agent
+    update_kyc_activity_tool = ToolSet()
+    update_kyc_activity_tool.add(FunctionTool(functions={action_agents.update_kyc_activity}))
+    agent_team.add_agent(
+        model=MODEL_DEPLOYMENT_NAME,
+        name="UpdateKYCActivity-agent-multi",
+        instructions=(UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS),
+        tools=update_kyc_activity_tool.definitions,
+        can_delegate=False
+    )
+    # UpdateContactInfoPostalAddress-agent
+    update_contact_info_postal_address_tool = ToolSet()
+    update_contact_info_postal_address_tool.add(FunctionTool(functions={action_agents.update_contact_info_postal_address}))
+    agent_team.add_agent(
+        model=MODEL_DEPLOYMENT_NAME,
+        name="UpdateContactInfoPostalAddress-agent-multi",
+        instructions=(UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS),
+        tools=update_contact_info_postal_address_tool.definitions,
+        can_delegate=False
+    )
 
-        print(f"🚀 Starting agent team processing for question: {question}")
-        print(f"📊 Team configuration:")
-        print(f"   - Use Reasoning: {use_reasoning}")
-        print(f"   - Evaluation: {evaluation_mode}")
+    # Assemble and run the team
+    print("🔧 Assembling agent team...")
+    agent_team.assemble_team()
 
-        # Process the request and ensure we wait for completion
-        result = agent_team.process_request(request=question, evaluation_mode=evaluation_mode)
-        agent_team.dismantle_team()
+    print(f"🚀 Starting agent team processing for question: {question}")
+    print(f"📊 Team configuration:")
+    print(f"   - Classifier Type: {classifier_type}")
+    print(f"   - Use Reasoning: {use_reasoning}")
+    print(f"   - Evaluation: {evaluation_mode}")
 
-        print(f"✅ Agent team processing completed")
-        print(f"📝 Result length: {len(result) if result else 0} characters")
+    # Process the request and ensure we wait for completion
+    result = agent_team.process_request(request=question, evaluation_mode=evaluation_mode)
+    agent_team.dismantle_team()
 
-        if not result:
-            print("⚠️  Error: Agent team returned empty or incomplete response. Please try again.")
-            return "Error: Agent team returned empty or incomplete response. Please try again."
+    print(f"✅ Agent team processing completed")
+    print(f"📝 Result length: {len(result) if result else 0} characters")
 
-        return result
+    if not result:
+        print("⚠️  Error: Agent team returned empty or incomplete response. Please try again.")
+        return "Error: Agent team returned empty or incomplete response. Please try again."
 
-    return "Error: MODEL_DEPLOYMENT_NAME is not set"
+    return result
 
 
 def fetch_weather(location: str) -> str:
@@ -735,6 +737,7 @@ async def root():
         },
         "query_parameters": {
             "query": "string - The question to ask",
+            "classifier_type": "string - Classifier type: LLM, SLM",
             "use_reasoning": "boolean - Enable reasoning mode",
             "evaluation_mode": "boolean - Disable WebSocket updates for evaluation"
         }
@@ -828,7 +831,7 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
 
         # Run the agent team with the question using pre-loaded resources
         markdown_response, context, thread_id, run_id, token_usage = _setup_agent_team_with_globals(question,
-            use_reasoning=request.use_reasoning, evaluation_mode=request.evaluation_mode)
+            classifier_type=request.classifier_type, use_reasoning=request.use_reasoning, evaluation_mode=request.evaluation_mode)
 
         return QueryResponse(
             response=markdown_response,
