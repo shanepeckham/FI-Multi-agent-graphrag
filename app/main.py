@@ -45,14 +45,6 @@ OPTIONAL VARIABLES:
 - AZURE_OPENAI_ENDPOINT: Azure OpenAI endpoint (default: Azure fiagent cognitive services)
 - MODEL_DEPLOYMENT_NAME: Main model deployment name (default: "gpt-4.1")
 - REASONING_MODEL_DEPLOYMENT_NAME: Reasoning model deployment name (default: "o3-mini")
-- AI_SEARCH_TYPE: Search type (default: "SIMPLE")
-- GRAPH_QUERY_TYPE: Graph query type (default: "local")
-- AI_SEARCH_INDEX_NAME: AI Search index name (default: "apple_report_agent")
-- BING_CONNECTION_NAME: Bing Search connection name (default: "agentbing")
-- RAW_INPUT_PATH: Raw input data path
-- OUTPUT_PATH: Output data path
-- GRAPH_OUTPUT_PATH: Graph output data path
-- INPUT_DIR: Input directory for GraphRAG (default: "./apple/output")
 
 
 """
@@ -66,13 +58,10 @@ OPTIONAL VARIABLES:
 
 
 # Core imports
-import asyncio
 import logging
 import hashlib
 import os
 import secrets
-import sys
-import threading
 import time
 import traceback
 import warnings
@@ -127,45 +116,20 @@ except ImportError as e:
     logging.error("Please install: pip install 'pydantic>=2.5.0' 'typing-extensions>=4.9.0'")
     raise
 
-import pandas as pd
 import tiktoken
 from dotenv import load_dotenv
 
 # Azure AI and Identity imports
 from azure.ai.agents.models import (
-    FunctionTool, ToolSet, AsyncFunctionTool, AsyncToolSet,
-    AzureAISearchQueryType, AzureAISearchTool, BingGroundingTool, BingGroundingSearchConfiguration
+    FunctionTool, ToolSet
 )
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
 
-# GraphRAG imports
-import graphrag.api as api
-from graphrag.cli.query import _resolve_output_files
-from graphrag.config.enums import ModelType
-from graphrag.config.load_config import load_config
-from graphrag.config.models.drift_search_config import DRIFTSearchConfig
-from graphrag.config.models.language_model_config import LanguageModelConfig
-from graphrag.language_model.manager import ModelManager
-from graphrag.query.context_builder.entity_extraction import EntityVectorStoreKey
-from graphrag.query.indexer_adapters import (
-    read_indexer_covariates, read_indexer_entities, read_indexer_relationships,
-    read_indexer_reports, read_indexer_text_units, read_indexer_communities,
-    read_indexer_report_embeddings
-)
-from graphrag.query.structured_search.drift_search.drift_context import DRIFTSearchContextBuilder
-from graphrag.query.structured_search.drift_search.search import DRIFTSearch
-from graphrag.query.structured_search.global_search.community_context import GlobalCommunityContext
-from graphrag.query.structured_search.global_search.search import GlobalSearch
-from graphrag.query.structured_search.local_search.mixed_context import LocalSearchMixedContext
-from graphrag.query.structured_search.local_search.search import LocalSearch
-from graphrag.vector_stores.lancedb import LanceDBVectorStore
-
 # Local utility imports
-import sys
 from pathlib import Path
 
-from agent_team_dashboard import AgentTeam, AgentTask, emit_kg_sources_update
+from agent_team_dashboard import AgentTeam, AgentTask
 from agent_trace_configurator import AgentTraceConfigurator
 
 # Conditional import for WebSocket manager
@@ -178,10 +142,9 @@ except ImportError as e:
     WEBSOCKET_AVAILABLE = False
 
 # FastAPI imports
-from fastapi import FastAPI, HTTPException, BackgroundTasks, Depends, Security, WebSocket, WebSocketDisconnect, Request
+from fastapi import FastAPI, HTTPException, Depends, WebSocket, WebSocketDisconnect, Request
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel, Field
 
@@ -191,8 +154,6 @@ tracer = trace.get_tracer(__name__)
 from contextlib import asynccontextmanager
 
 # Global variables to store loaded data
-_graphrag_data = None
-_language_models = None
 _project_client = None
 
 @asynccontextmanager
@@ -202,7 +163,7 @@ async def lifespan(app: FastAPI):
     print("🚀 Starting Financial Analysis Agent Team...")
 
     # Load all heavy resources once
-    global _language_models, _project_client
+    global _project_client
 
     try:
         # Initialize configuration once
@@ -212,15 +173,10 @@ async def lifespan(app: FastAPI):
 
         # Initialize language models once
         print("📚 Initializing language models...")
-        _language_models = _initialize_language_models()
 
         # Initialize Azure project client once
         print("☁️ Initializing Azure client...")
         _project_client = _create_azure_project_client()
-
-        # Load GraphRAG data once
-        #print("🔍 Loading GraphRAG data...")
-        #_graphrag_data = _load_graphrag_data()
 
         print("✅ Application startup complete!")
 
@@ -247,20 +203,6 @@ class QueryResponse(BaseModel):
 
 class QueryRequest(BaseModel):
     query: str = Field(..., description="Query string")
-    graph_query_type: str = Field(..., description="Query method: global, local, drift, basic")
-    search_query_type: str = Field(..., description="Search type: SIMPLE, SEMANTIC")
-    use_search: bool = Field(
-        default=True,
-        description="Whether to use Azure AI Search for document retrieval"
-    )
-    use_graph: bool = Field(
-        default=True,
-        description="Whether to use GraphRAG for knowledge graph queries"
-    )
-    use_web: bool = Field(
-        default=False,
-        description="Whether to use Bing Search for external information grounding"
-    )
     use_reasoning: bool = Field(
         default=False,
         description="Whether to use reasoning capabilities for complex queries"
@@ -272,8 +214,8 @@ class QueryRequest(BaseModel):
 
 # FastAPI app initialization
 app = FastAPI(
-    title="FI-Multi-Agent Team with GraphRAG",
-    description="REST API for FI-Multi-Agent Team with GraphRAG",
+    title="FI-Multi-Agent Team",
+    description="REST API for FI-Multi-Agent Team",
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
@@ -355,41 +297,12 @@ _load_environment_variables()
 # CONSTANTS AND CONFIGURATION
 # ==============================================================================
 
-# File paths and directories
-RAW_INPUT_PATH = os.getenv("RAW_INPUT_PATH", "/Users/shanepeckham/sources/data//extracted_text")
-OUTPUT_PATH = os.getenv("OUTPUT_PATH", "/Users/shanepeckham/sources/data/data/processed_text")
-INPUT_PATH = OUTPUT_PATH
-GRAPH_OUTPUT_PATH = os.getenv("GRAPH_OUTPUT_PATH", "/Users/shanepeckham/sources/data/data/graph_output/")
-INPUT_DIR = os.getenv("INPUT_DIR", "./data/output")
-LANCEDB_URI = f"{INPUT_DIR}/lancedb"
-
-# Dataset and API configuration
-DATASET_DESCRIPTION = "Report"
-API_VERSION = "2024-02-15-preview"
-
-# GraphRAG table names
-COMMUNITY_REPORT_TABLE = "community_reports"
-ENTITY_TABLE = "entities"
-COMMUNITY_TABLE = "communities"
-RELATIONSHIP_TABLE = "relationships"
-COVARIATE_TABLE = "covariates"
-TEXT_UNIT_TABLE = "text_units"
-COMMUNITY_LEVEL = 2
-
 # Azure AI configuration
 MODEL_DEPLOYMENT_NAME = os.getenv("MODEL_DEPLOYMENT_NAME", "gpt-4.1")
 PROJECT_ENDPOINT = os.getenv("PROJECT_ENDPOINT", "https://fiagent-resource.services.ai.azure.com/api/projects/fiagent/")
 AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT", "https://fiagent-resource.cognitiveservices.azure.com/")
 REASONING_MODEL_DEPLOYMENT_NAME = os.getenv("REASONING_MODEL_DEPLOYMENT_NAME", "o3-mini")
-
-# Query configuration
-AI_SEARCH_TYPE = os.getenv("AI_SEARCH_TYPE", "SIMPLE")
-AI_SEARCH_CONNECTION_NAME = os.getenv("AI_SEARCH_CONNECTION_NAME", "agentsearcher")
-GRAPH_QUERY_TYPE = os.getenv("GRAPH_QUERY_TYPE", "local")
-AI_SEARCH_INDEX_NAME = os.getenv("AI_SEARCH_INDEX_NAME", "report_agent")
-BING_CONNECTION_NAME = os.getenv("BING_CONNECTION_NAME", "agentbing")
-BING_CONFIGURATION = os.getenv("BING_CONFIGURATION", "sky")
 
 # TEAM configuration
 TEAM_NAME = os.getenv("TEAM_NAME", "cr_team")
@@ -529,134 +442,16 @@ def create_task(recipient: str, request: str, requestor: str) -> str:
     return "False"
 
 # ==============================================================================
-# LANGUAGE MODEL CONFIGURATION
-# ==============================================================================
-
-def _create_chat_model_config() -> LanguageModelConfig:
-    """
-    Create configuration for the chat language model.
-
-    Returns:
-        LanguageModelConfig: Configuration for GPT-4.1 chat model
-    """
-    return LanguageModelConfig(
-        api_key=AZURE_OPENAI_API_KEY,
-        type=ModelType.AzureOpenAIChat,
-        deployment_name=MODEL_DEPLOYMENT_NAME,
-        api_version="2025-01-01-preview",
-        model=MODEL_DEPLOYMENT_NAME,
-        max_retries=20,
-        api_base=AZURE_OPENAI_ENDPOINT,
-    )
-
-def _create_embedding_model_config() -> LanguageModelConfig:
-    """
-    Create configuration for the embedding model.
-
-    Returns:
-        LanguageModelConfig: Configuration for text-embedding-ada-002 model
-    """
-    return LanguageModelConfig(
-        api_key=AZURE_OPENAI_API_KEY,
-        type=ModelType.AzureOpenAIEmbedding,
-        api_version="2023-05-15",
-        deployment_name="text-embedding-ada-002",
-        model="text-embedding-ada-002",
-        api_base=AZURE_OPENAI_ENDPOINT,
-        max_retries=20,
-    )
-
-def _initialize_language_models() -> Tuple[Any, Any, Any]:
-    """
-    Initialize chat model, embedding model, and tokenizer.
-
-    Returns:
-        Tuple[Any, Any, Any]: (chat_model, text_embedder, encoder)
-    """
-    # Create model configurations
-    chat_config = _create_chat_model_config()
-    embedding_config = _create_embedding_model_config()
-
-    # Initialize models through ModelManager
-    model_manager = ModelManager()
-
-    chat_model = model_manager.get_or_create_chat_model(
-        name="search",
-        model_type=ModelType.AzureOpenAIChat,
-        config=chat_config,
-    )
-
-    text_embedder = model_manager.get_or_create_embedding_model(
-        name="search_embedding",
-        model_type=ModelType.AzureOpenAIEmbedding,
-        config=embedding_config,
-    )
-
-    # Initialize tokenizer - using o200k_base for GPT-4 models
-    encoder = tiktoken.get_encoding("o200k_base")
-
-    return chat_model, text_embedder, encoder
-
-# Note: Language models and GraphRAG data are now initialized in the lifespan function
-# Global variables will hold the initialized resources
-
-# ==============================================================================
-# GRAPHRAG DATA LOADING AND INITIALIZATION
-# ==============================================================================
-
-
-def read_community_reports(input_dir: str, community_report_table: str = COMMUNITY_REPORT_TABLE) -> pd.DataFrame:
-    """
-    Read community reports from parquet file.
-
-    Args:
-        input_dir: Directory containing the parquet files
-        community_report_table: Name of the community report table
-
-    Returns:
-        pd.DataFrame: Community reports dataframe
-
-    Raises:
-        FileNotFoundError: If the parquet file doesn't exist
-    """
-    input_path = Path(input_dir) / f"{community_report_table}.parquet"
-    return pd.read_parquet(input_path)
-
-# ==============================================================================
 # AGENT TEAM CONFIGURATION AND MAIN EXECUTION
 # ==============================================================================
 
-def _create_agent_toolsets() -> Tuple[ToolSet, AsyncToolSet]:
-    """
-    Create toolsets for sync and async functions.
-
-    Returns:
-        Tuple[ToolSet, AsyncToolSet]: (sync_toolset, async_toolset)
-    """
-    # Define functions available to agents
-    agent_team_default_functions: set = {
-        create_task,
-    }
-
-    # Create sync and async toolsets
-    sync_functions = FunctionTool(functions=agent_team_default_functions)
-    #async_functions = AsyncFunctionTool()
-
-    sync_toolset = ToolSet()
-    sync_toolset.add(sync_functions)
-
-    async_toolset = AsyncToolSet()
-    #async_toolset.add(async_functions)
-
-    return sync_toolset, None
-
-def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_query_type: str, use_search: bool, use_graph: bool, use_web: bool, use_reasoning: bool, evaluation_mode: bool) -> str:
+def _setup_agent_team_with_globals(question: str, use_reasoning: bool, evaluation_mode: bool) -> str:
     """
     Set up and run the agent team using pre-loaded global resources.
 
     This function uses resources loaded at startup to avoid reloading heavy data.
     """
-    global _language_models, _project_client
+    global _project_client
 
     if not _project_client:
         return "Error: Azure project client not initialized"
@@ -668,9 +463,6 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
 
     # Use the shared agents client without 'with' statement to keep it open
     agents_client = _project_client.agents
-
-    # Create tools and toolsets using pre-loaded data
-    sync_toolset, _ = _create_agent_toolsets()
 
     # Register all agent functions
     agents_client.enable_auto_function_calls({create_task, fetch_weather})
@@ -712,12 +504,15 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                     question = REASON_CURRENT_QUESTION
 
         # Configure Team Leader (simplified configuration)
+        team_leader_tool = FunctionTool(functions={create_task})
+        team_leader_toolset = ToolSet()
+        team_leader_toolset.add(team_leader_tool)
         if not use_reasoning:
             agent_team.set_team_leader(
                 model=MODEL_DEPLOYMENT_NAME,
                 name="TeamLeader",
                 instructions=(TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS),
-                toolset=sync_toolset,
+                toolset=team_leader_toolset,
             )
         else:
             # Reasoning agent uses a different model
@@ -725,7 +520,7 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
                 model=REASONING_MODEL_DEPLOYMENT_NAME,
                 name="TeamLeader",
                 instructions=(TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS),
-                toolset=sync_toolset,
+                toolset=team_leader_toolset,
             )
 
         # Configure agents with proper toolsets
@@ -753,9 +548,6 @@ def _setup_agent_team_with_globals(question: str, search_query_type: str, graph_
 
         print(f"🚀 Starting agent team processing for question: {question}")
         print(f"📊 Team configuration:")
-        print(f"   - Use Search: {use_search}")
-        print(f"   - Use Graph: {use_graph} (type: {graph_query_type})")
-        print(f"   - Use Web: {use_web}")
         print(f"   - Use Reasoning: {use_reasoning}")
         print(f"   - Evaluation: {evaluation_mode}")
 
@@ -791,44 +583,6 @@ def fetch_weather(location: str) -> str:
     return weather
 
 
-def _create_search_tools_with_type(project_client: AIProjectClient, search_type: str) -> Tuple[AzureAISearchTool, BingGroundingTool]:
-    """Create search tools with specified search type."""
-    # Azure AI Search tool
-    search_conn = project_client.connections.get(name=AI_SEARCH_CONNECTION_NAME, include_credentials=True)
-
-    if search_type == "SEMANTIC":
-        search_tool = AzureAISearchTool(
-            index_connection_id=search_conn.id,
-            index_name=AI_SEARCH_INDEX_NAME,
-            query_type=AzureAISearchQueryType.SEMANTIC,
-            top_k=3,
-            filter=""
-        )
-    elif search_type == "HYBRID":
-        search_tool = AzureAISearchTool(
-            index_connection_id=search_conn.id,
-            index_name=AI_SEARCH_INDEX_NAME,
-            query_type=AzureAISearchQueryType.VECTOR_SEMANTIC_HYBRID,  # Use semantic for hybrid (combines vector + keyword)
-            top_k=3,
-            filter=""
-        )
-    else:  # Default to SIMPLE
-        search_tool = AzureAISearchTool(
-            index_connection_id=search_conn.id,
-            index_name=AI_SEARCH_INDEX_NAME,
-            query_type=AzureAISearchQueryType.SIMPLE,
-            top_k=3,
-            filter=""
-        )
-
-    # Bing Search tool
-    bing_conn = project_client.connections.get(name=BING_CONNECTION_NAME, include_credentials=True)
-    bing_tool = BingGroundingTool(connection_id=bing_conn.id)
-
-    return search_tool, bing_tool
-
-
-
 @app.get("/")
 async def root():
     """Root endpoint with API information (no authentication required)."""
@@ -846,11 +600,6 @@ async def root():
         },
         "query_parameters": {
             "query": "string - The question to ask",
-            "search_query_type": "string - SIMPLE or SEMANTIC",
-            "graph_query_type": "string - global, local, drift, or basic",
-            "use_search": "boolean - Enable Azure AI Search",
-            "use_graph": "boolean - Enable GraphRAG",
-            "use_web": "boolean - Enable Bing Search",
             "use_reasoning": "boolean - Enable reasoning mode",
             "evaluation_mode": "boolean - Disable WebSocket updates for evaluation"
         }
@@ -932,10 +681,10 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
     """
     try:
         # Use global variables loaded at startup
-        global _language_models, _project_client, _request
+        global _project_client, _request
         _request = request
 
-        if not all([_language_models, _project_client]):
+        if not _project_client:
             raise HTTPException(status_code=503, detail="Application not fully initialized")
 
         question = request.query
@@ -943,8 +692,8 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
             raise HTTPException(status_code=400, detail="Query is required")
 
         # Run the agent team with the question using pre-loaded resources
-        markdown_response, context, thread_id, run_id, token_usage = _setup_agent_team_with_globals(question, request.search_query_type, request.graph_query_type, use_search=request.use_search,
-                                                           use_graph=False, use_web=request.use_web, use_reasoning=request.use_reasoning, evaluation_mode=request.evaluation_mode)
+        markdown_response, context, thread_id, run_id, token_usage = _setup_agent_team_with_globals(question,
+            use_reasoning=request.use_reasoning, evaluation_mode=request.evaluation_mode)
 
         return QueryResponse(
             response=markdown_response,
