@@ -152,6 +152,7 @@ def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
             }
         else:
             agent_response = api_response.get("response", "No response received")
+            received_tasks = parse_tasks_from_response(agent_response)
             token_usage = api_response.get("token_usage", {})
             print(f"\nAgent Response:\n{agent_response}")
             print(f"\nResponse Time: {response_time:.2f} seconds")
@@ -163,6 +164,7 @@ def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
                 "expected_tasks": expected_tasks,
                 "context": api_response.get("context"),
                 "response": agent_response,
+                "received_tasks": received_tasks,
                 "thread_id": api_response.get("thread_id"),
                 "run_id": api_response.get("run_id"),
                 "response_time": response_time,
@@ -180,10 +182,10 @@ def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
         print(f"\nError processing question: {str(e)}")
 
         result = {
-            "financebench_id": financebench_id,
-            "company": company,
-            "query": question,
-            "ground_truth": expected_answer,
+            # "financebench_id": financebench_id,
+            # "company": company,
+            # "query": question,
+            # "ground_truth": expected_answer,
             "response": f"Error: {str(e)}",
             "response_time": response_time,
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
@@ -193,6 +195,33 @@ def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
         }
 
         return result
+
+def parse_tasks_from_response(response: str) -> Any:
+    """Parse tasks from the agent's response."""
+    import re
+
+    # Check if the response contains "json" (case insensitive)
+    if "json" not in response.lower():
+        return None
+
+    # trim whitespace and \n characters
+    response = response.strip()
+    response = response.replace('\\n', '')
+
+    # Look for JSON array pattern within markdown code blocks
+    json_pattern = 'json\\n([{\[].*[\]}])'
+    match = re.search(json_pattern, response, re.DOTALL)
+
+    if match:
+        json_str = match.group(1)
+        try:
+            tasks = json.loads(json_str)
+            return tasks
+        except json.JSONDecodeError as e:
+            print(f"Error parsing JSON: {e}")
+            return None
+
+    return None
 
 def save_results(results: List[Dict[str, Any]], file_path: Path):
     """Save evaluation results to JSONL file."""
