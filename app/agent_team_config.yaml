@@ -178,40 +178,7 @@ TEAM_LEADER_TASK_COMPLETENESS_CHECK_INSTRUCTIONS: |
     Then use the _create_task function to create the final task to report the answer.
     Do not ever ask user confirmation for creating a task.
     If the request is completely processed, you do not have to create any more tasks.
-    Remember your final response MUST must be a valid JSON object that follows this base structure:
-    ```json
-    {
-        "response": "string",
-        "sub_agent_response":
-        [{
-            "task_type": "string",
-            "parameters":
-            {
-
-            }
-        },
-        {
-            "task_type": "string",
-            "parameters":
-            {
-
-            }
-        }]
-    }
-    ```
-    Where the parameters will come from the action_parameters that match the task_type.
-    For example:
-    ```json
-    {
-        "task_type": "update_kyc_origin_of_assets",
-        "parameters": {
-            "origin": "str",
-            "details": "str",
-            "corroboration_or_evidence": "list"
-        }
-    }
-    ```
-    .
+    Your final response must be in the original language of the transcript.
 
 TEAM_MEMBER_CAN_DELEGATE_INSTRUCTIONS: |
     You are an agent named '{name}'. You are a member in a team of agents. The name of your team is '{TEAM_NAME}'.
