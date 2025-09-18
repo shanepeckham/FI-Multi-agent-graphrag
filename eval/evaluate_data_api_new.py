@@ -423,18 +423,18 @@ def main():
 
             # Combine all evaluation results into a single dictionary
             final_eval_result = {
-                "question_id": question_id,
+                "transcript_path": transcript_path,
+                "transcript": result['transcript'],
+                "expected_tasks_path": result['expected_tasks_path'],
+                "expected_tasks": result['expected_tasks'],
                 "thread_id": thread_id,
                 "run_id": run_id,
                 "response_time": result['response_time'],
                 "timestamp": result['timestamp'],
                 "status": result['status'],
                 "evaluations": all_eval_results,
-                "ground_truth": result['ground_truth'],
                 "response": result['response'],
                 "context": result['context'] if 'context' in result else None,
-                "company": result['company'],
-                "query": result['query'] if 'query' in result else None,
                 "token_usage": result.get('token_usage', None)
             }
             # Save evaluation results to JSONL file
