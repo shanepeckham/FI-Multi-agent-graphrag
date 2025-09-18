@@ -75,8 +75,8 @@ CLASSIFIER_AGENT_INSTRUCTIONS: |
     You MUST return your response as a valid JSON object that follows this base structure:
     ```json
     {
-        "name": "string",
-        "args":
+        "task_type": "string",
+        "parameters":
         {
 
         }
@@ -86,8 +86,8 @@ CLASSIFIER_AGENT_INSTRUCTIONS: |
     For example:
     ```json
     {
-        "names": "update_kyc_origin_of_assets",
-        "args": {
+        "task_type": "update_kyc_origin_of_assets",
+        "parameters": {
             "origin": "str",
             "details": "str",
             "corroboration_or_evidence": "list"
