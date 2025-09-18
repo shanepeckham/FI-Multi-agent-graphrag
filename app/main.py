@@ -709,22 +709,6 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
     return result
 
 
-def fetch_weather(location: str) -> str:
-    """
-    Fetches the weather information for the specified location.
-
-    :param location: The location to fetch weather for.
-    :return: Weather information as a JSON string.
-    """
-    # Mock weather data for demonstration purposes
-    mock_weather_data = {"New York": "Sunny, 25°C", "London": "Cloudy, 18°C", "Tokyo": "Rainy, 22°C"}
-    weather = mock_weather_data.get(location, "Weather data not available for this location.")
-    response = {
-        "text": weather,
-    }
-    return weather
-
-
 @app.get("/")
 async def root():
     """Root endpoint with API information (no authentication required)."""
