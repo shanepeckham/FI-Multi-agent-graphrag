@@ -157,9 +157,7 @@ def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
             print(f"\nResponse Time: {response_time:.2f} seconds")
 
             result = {
-                "transcript_path": transcript_path,
                 "transcript": transcript,
-                "expected_tasks_path": expected_tasks_path,
                 "expected_tasks": expected_tasks,
                 "context": api_response.get("context"),
                 "response": agent_response,
