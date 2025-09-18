@@ -156,7 +156,7 @@ from contextlib import asynccontextmanager
 
 # Import action agent methods
 from action_agents import ActionAgents
-from data_loader import get_action_types, get_action_parameters, get_all_action_parameters
+from data_loader import get_action_types, get_languages, get_action_parameters, get_all_action_parameters
 
 # Global variables to store loaded data
 _project_client = None
@@ -517,6 +517,8 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
         TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS"].strip()
         CLASSIFIER_AGENT_DESCRIPTION = config["CLASSIFIER_AGENT_DESCRIPTION"].strip()
         CLASSIFIER_AGENT_INSTRUCTIONS = config["CLASSIFIER_AGENT_INSTRUCTIONS"].strip()
+        LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION = config["LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION"].strip()
+        LANGUAGE_CLASSIFIER_AGENT_INSTRUCTIONS = config["LANGUAGE_CLASSIFIER_AGENT_INSTRUCTIONS"].strip()
 
         # Action Agent Descriptions
         SCHEDULE_MEETING_AGENT_DESCRIPTION = config["SCHEDULE_MEETING_AGENT_DESCRIPTION"].strip()
@@ -540,6 +542,7 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
 
         if not use_reasoning:
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION}"
@@ -550,6 +553,7 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION}"
         else:
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION}"
@@ -587,6 +591,7 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
     # Configure agents with proper toolsets
     action_types = get_action_types()
     all_action_parameters = get_all_action_parameters()
+    languages = get_languages()
 
     # Render the classifier instructions template with actual action data
     classifier_template = Template(CLASSIFIER_AGENT_INSTRUCTIONS)
@@ -600,6 +605,20 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
         model=classifier_model,
         name="Classifier-agent-multi",
         instructions=rendered_classifier_instructions,
+        can_delegate=False
+    )
+
+    # Render the classifier instructions template with actual action data
+    language_classifier_template = Template(LANGUAGE_CLASSIFIER_AGENT_INSTRUCTIONS)
+    rendered_language_classifier_instructions = language_classifier_template.render(
+        languages=languages
+    )
+
+    language_classifier_model = MODEL_DEPLOYMENT_NAME if classifier_type == "LLM" else SLM_MODEL_DEPLOYMENT_NAME
+    agent_team.add_agent(
+        model=language_classifier_model,
+        name="Language-classifier-agent-multi",
+        instructions=rendered_language_classifier_instructions,
         can_delegate=False
     )
 
