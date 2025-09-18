@@ -335,7 +335,7 @@ def main():
 
     print("\nResponses to questions completed!")
 
-    # TODO: This is evaluating the old format for johnson.jsonl. Needs to be adapted to the new results
+    # TODO: Update this evaluation to compare expected vs actual tasks
     # Azure AI Projects evaluation (optional)
     try:
         import os
