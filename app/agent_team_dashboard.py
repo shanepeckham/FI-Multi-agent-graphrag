@@ -29,39 +29,39 @@ tracer = trace.get_tracer(__name__)
 def parse_search_sources(response: str) -> dict:
     """
     Parse search response to extract chunk metadata and content.
-    
+
     Handles multiple formats:
     - chunk_id: 2, parent_id: 1
     - chunk: (Inventories: $5,351 million at the end of fiscal 2019.)
     - Sources: chunk_id: 2, parent_id: 1 (Inventories: $5,351 million...)
-    
+
     Args:
         response: The search response string
-        
+
     Returns:
         dict: Parsed metadata with keys 'chunk_id', 'parent_id', 'chunk'
               Example: {"chunk_id": ["2"], "parent_id": ["1"], "chunk": ["(Inventories: $5,351 million...)"]}
     """
     import re
-    
+
     # Initialize result dictionary
     result = {
         "chunk_id": [],
         "parent_id": [],
         "chunk": []
     }
-    
+
     try:
         # Pattern 1: Extract chunk_id and parent_id from separate lines
         # Matches: "chunk_id: 2, parent_id: 1"
         id_pattern = r'chunk_id:\s*(\d+),\s*parent_id:\s*(\d+)'
         id_matches = re.finditer(id_pattern, response)
-        
+
         # Pattern 2: Extract chunk content
         # Matches: "chunk: (Inventories: $5,351 million at the end of fiscal 2019.)"
         chunk_pattern = r'chunk:\s*(.+?)(?=\n|$)'
         chunk_matches = re.finditer(chunk_pattern, response, re.DOTALL)
-        
+
         # Extract IDs first
         ids_found = []
         for match in id_matches:
@@ -69,30 +69,30 @@ def parse_search_sources(response: str) -> dict:
             parent_id = match.group(2)
             ids_found.append((chunk_id, parent_id))
             print(f"🔍 Found chunk ID: {chunk_id}, Parent ID: {parent_id}")
-        
+
         # Extract chunks
         chunks_found = []
         for match in chunk_matches:
             chunk_text = match.group(1).strip()
             chunks_found.append(chunk_text)
             print(f"🔍 Found chunk text: {chunk_text[:50]}...")
-        
+
         # Pattern 3: Alternative pattern from Sources section
         # Matches: "Sources: chunk_id: 2, parent_id: 1 (Inventories: $5,351 million...)"
         sources_pattern = r'Sources:\s*chunk_id:\s*(\d+),\s*parent_id:\s*(\d+)\s*(.+?)(?=\n|$)'
         sources_matches = re.finditer(sources_pattern, response)
-        
+
         for match in sources_matches:
             chunk_id = match.group(1)
             parent_id = match.group(2)
             chunk_text = match.group(3).strip()
-            
+
             # Add to results if not already found
             if (chunk_id, parent_id) not in ids_found:
                 ids_found.append((chunk_id, parent_id))
                 chunks_found.append(chunk_text)
                 print(f"🔍 Found from Sources - ID: {chunk_id}, Parent: {parent_id}")
-        
+
         # Combine IDs and chunks (match them up in order)
         max_items = min(len(ids_found), len(chunks_found))
         if max_items == 0 and ids_found:
@@ -103,23 +103,23 @@ def parse_search_sources(response: str) -> dict:
             # If we have chunks but no IDs, create placeholder IDs
             max_items = len(chunks_found)
             ids_found = [("0", "0")] * max_items
-        
+
         for i in range(max_items):
             if i < len(ids_found):
                 chunk_id, parent_id = ids_found[i]
                 result["chunk_id"].append(chunk_id)
                 result["parent_id"].append(parent_id)
-            
+
             if i < len(chunks_found):
                 result["chunk"].append(chunks_found[i])
             else:
                 result["chunk"].append("")
-        
+
         # Summary
         found_items = [key for key, value in result.items() if value]
         if found_items:
             print(f"📊 Parsed search sources: {len(result['chunk_id'])} chunks found")
-            
+
             # Create sources dictionary for easier access
             sources_dict = {}
             for i, chunk_id in enumerate(result["chunk_id"]):
@@ -127,18 +127,18 @@ def parse_search_sources(response: str) -> dict:
                     "parent_id": result["parent_id"][i],
                     "chunk": result["chunk"][i]
                 }
-            
+
             # You can add WebSocket emission here if needed
             # emit_search_sources_update(sources_dict)
-            
+
         else:
             print("⚠️  No search sources found in response")
-            
+
     except Exception as e:
         print(f"❌ Error parsing search sources: {e}")
         import traceback
         print(f"Traceback: {traceback.format_exc()}")
-    
+
     return result
 
     return result
@@ -644,12 +644,12 @@ class AgentTeam:
                             # Let's specify the agent has responded
                             if agent.name != "TeamLeader":
                                 agent.has_responded = True
-                            
+
                             # Let's parse AI Search agent sources
-                            if agent.name == "RAG-agent-multi": 
+                            if agent.name == "RAG-agent-multi":
                                 _search_sources = parse_search_sources(text_message.text.value)
                                 self._search_sources = _search_sources
-                                
+
                                 # Emit search sources update to dashboard
                                 emit_search_sources_update(_search_sources)
 
@@ -718,7 +718,11 @@ class AgentTeam:
                 for tasks in self._tasks:
                     agent_name = tasks.recipient
                     if agent_name != 'user':
-                        if self._get_member_by_name(agent_name).has_responded:
+                        agent = self._get_member_by_name(agent_name)
+                        if not agent:
+                            print(f"⚠️  Warning: Could not find agent '{agent_name}' in team members")
+
+                        if agent.has_responded:
                             self._tasks.remove(tasks)
             self._current_request_span = None
 
