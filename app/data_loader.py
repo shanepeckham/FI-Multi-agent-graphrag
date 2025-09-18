@@ -17,6 +17,19 @@ def load_actions() -> List[Dict[str, Any]]:
     with open(actions_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+def load_languages() -> List[Dict[str, Any]]:
+    """
+    Load available actions from the actions.json file.
+
+    Returns:
+        List of language dictionaries, each containing:
+        - language_name: The language name (e.g., "English")
+        - language_name_abbrev: The language name abbreviation (e.g., "EN")
+    """
+    languages_path = "./languages.json"
+    with open(languages_path, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
 
 def get_action_types() -> List[str]:
     """
@@ -27,6 +40,16 @@ def get_action_types() -> List[str]:
     """
     actions = load_actions()
     return [action["task_type"] for action in actions]
+
+def get_languages() -> List[str]:
+    """
+    Get a list of available languages.
+
+    Returns:
+        List of language strings
+    """
+    languages = load_languages()
+    return [language["language_name"] for language in languages]
 
 
 def get_action_parameters(task_type: str) -> Dict[str, str] | None:
