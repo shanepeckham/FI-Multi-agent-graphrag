@@ -1,0 +1,23 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, j'ai besoin d'aide avec une charge non reconnue mon relevé de carte.
+Speaker 2:Bonjour, c’est NAME1 de UBS. Je me charge de cela. Comment allez-vous aujourd'hui?
+Speaker 1:Oui, ça va merci. Vous voulez quoi déjà comme infos
+Speaker 2:Pour commencer, pourriez-vous confirmer votre date de naissance et adresse pour des raisons de
+Speaker 1:Oui, bien sûr. Ma date de naissance est le DATE et mon adresse est ADDRESS.
+Speaker 2:Merci pour cette confirmation. Pourriez-vous me donner plus de dé tails sur la charge que vous ne reconnaissez pas ? Par exemple, la date, le montant et le du commerçant ?
+Speaker 1:Ouais... la charge date du 15 septembre pour un montant de 200 chez un commerçant nommé "Boutique XYZ", je crois.
+Speaker 2:Merci beaucoup pour ces informations. de vérifier rapidement les transactions associées à compte. Pendant ce temps, fait des achats récemment chez des commerçants similaires ou en ligne qui pourraient correspondre au nom ?
+Speaker 2:Euh, pas vraiment sûr. J'ai fait des achats en ligne, mais aucune "Boutiqu eXYZ. Est-ce possible que ce soit une erreur ou une fraude J'aimerais m'assurer que mon compte soit sécurisé.
+System processing...
+Speaker 2:Je comprends votre inquiétude. On va vérifier ça. Pour prévenir toute utilisation non autorisée, je vais temporairement bloquer votre carte. Ensuite, nous lancerons une enquête.
+Speaker 1:D'accord, merci. Faut-il que quelque cohse pour ça ?
+Speaker 2:Oui, il vous faudra remplir un formulaire de contestation. Pendant l'enquête, nous créditerons temporairement votre compte du montant contest é. Ça vous semble clair ?
+Speaker 1:Oui, je comprends. J'ai aussi un rendez-vous pour le 27 couverture de change. Pouvez-vous m'envoyer les informations nécessaires par email ?
+Speaker 2:Bien sûr. Concernant l'enquête, cela prend généralement entre 10 à 15 ouvrables pour déterminer la nature de la transaction. Si ce'st une fraude, une nouvelle carte émise sous 5 à 7 jours sans frais. Je vais également vous envoyer les détails pour votre rendez-vous du 27 septembre. Si vous avez d'autres questions, n'hésitez pas à me contacter.
+Speaker 1:Très bien, et pour le rendez-vous, combien de temps ça durera ? Est-ce qu'il y a des documents spécifiques à ?
+Speaker 2:Le rendez-vous durera 30 minutes en visioconférence. Je vais vous envoyer une liste des documents à avoir sous la main, incluant une vue d'ensemble de vos revenus et On minimisera toute interruption pour vous. En attendant, surveillez votre compte et activez les alertes pour être informé des transactions.
+Speaker 1:OK, merci pour ces Dois-je faire autre chose avant le rendezv-ous ?
+Speaker 2:Juste assurz-vous d'avoir la liste de vos revenus et actifs, ainsi que vos questions spécifiques concernant la couverture de change. Je vous enverrai un email avec les détails
+Speaker 1:Cool, merci pour votre aide.
+Speaker 2:À votre service. Si vous avez d'autres questions ou préoccupations, contactez-moi. Passez une bonne journée.

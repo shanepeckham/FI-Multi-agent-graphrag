@@ -1,0 +1,27 @@
+[
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-10",
+      "time": "14:00"
+    }
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-07",
+      "contact_note": "Cross-border structuring \u2013 optimize asset holding given upcoming international residency.",
+      "channel": "In-person at branch",
+      "duration_minutes": 30
+    }
+  }
+]

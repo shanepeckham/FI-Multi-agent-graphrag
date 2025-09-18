@@ -1,0 +1,25 @@
+[
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Salary",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/3389"
+      ]
+    }
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "investing & securities trading",
+      "details": "Client wants to invest for retirement."
+    }
+  }
+]

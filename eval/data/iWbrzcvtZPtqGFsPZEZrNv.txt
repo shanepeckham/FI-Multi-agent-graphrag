@@ -1,0 +1,49 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Äh... guten Morgen, hier ist NAME1 von UBS. Ich ruf an, um über die besprochenen Themen zu sprechen, insbesondere über das Problem mit dem digitalen Banking und die Aktualisierung Ihrer, äh, KYC-Informationen. Ich hoffe, es geht gut. Bevor wir weitermachen, könnten Sie mir bitte zu Sicherheitszwecken Ihr Geburtsdatum und Ihre Adresse bestätigen?
+
+Speaker 2:Ja, klar. Mein, äh, Geburtsda tum ist der TAG.MONAT.JAHR und meine Adresse ist ADRESSE.
+
+Speaker 1:Super, danke für die Ich hab Ihre Daten erfolgreich assen Sie uns mal mit den digitalen Banking-Problem anfangen. Können Sie mir bitte genau beschreiben, Schwierigkeiten Sie beim Einloggen in Ihr Online-Banking-Konto hatten? Gab's 'ne Fehlermeldung oder war der Login-Button vielleicht unresponsive?
+
+Speaker 2:Ja, ich hatte das Problem gestern Abend. Der Login-Button war einfach unresponsive, und konnte mich nicht einloggen. Zuerst dachte ich, es sei mein Passwort, also hab' ich zurückgesetzt. Aber, äh, das hat gebracht. ann hab' ich den Cache von meinem Browser geleert und verschiedene Browser getestet, baer ich komm' immer noch nicht rein. Könnte es vielleicht am, äh, liegen?
+
+Speaker 1:Hmm, klingt, äh, als hätten Sie schon paar sinnvolle Schritte zur Fehlerbehebung unternommen. Der 2-Faktor-Authentifizierungsprozess kann manchmal Probleme machen, wenn Authentifizierungs-App oder das Gerät nicht richtig funktioniert. Können Sie bitte checken, ob Sie die Authentifizierungs-App auf Ihrem Mobilgerät installiert haben und ob sie auch ordnungsgemäss Haben Sie SMS-Codes bekommen und eingegeben?
+
+System processing...
+
+Speaker 1:Oh, und haben Sie vielleicht 'ne Nachricht wegen laufenden System-Updates ebkommen? gibt's Wartungsarbeiten, die sowas verursachen.
+
+Speaker 2:Ja, die App ist installiert und sie funktioniert auch richtig, äh, scheint Ich hab' auch SMS-Codes bekommen und eingegeben, aber es löst da s Problem nicht. äh, nee, ich hab' keine Nachricht über System-Updates oder Wartungsarbeiten bekommen. Sie mir hel fen, mein Konto wieder zugänglich zu machen? Und könnte ich der Zwischenzeit einen alternativen Zugang zu meinen Bankdaten bekommen ,falls das heute nicht zu lösen ist?
+
+Speaker 1:Äh, freut mich zu hören, dass die App funktioniert und Sie die Codes bekommen haben. Wir können noch weitere Schritte zur Fehlerbehebung unternehmen. Erst einmal könnte es helfen, den Cache Browser erneut leeren und den Verlauf zu löschen. Manchmal es den komplett zu schliessen und wieder zu öffnen. Falls das nicht funktioniert, könnte ich 'ne manuelle Account-Entsperrung mit unserer technischen Abteilung besprechen.
+
+Speaker 1:Wenn's wirklich dringend ist, können Sie auch unseren telefon ischen Kundendienst nutzen, um Banktransaktionen und Kontodetails zu überprüfen. Oder probieren Sie unsere Banking-App, falls Sie die noch nutzen. Die könnte 'ne bessere Benutzererfahrung bieten.
+
+Speker 1: Ich versichere Ihnen, dass wir alle technischen Massnahmen ergriffen haben, um Ihre Daten zu schützen und bin zuversichtlich, dass wir das schnell lösen können. Lassen Sie uns jetzt Ihre KYC-Informationen aktualisieren. Sie haben angegeben, dass Sied erzeit arbeitslos sind. Könnten Sie mir bitte mehr über Ihre frühere Tätigkeit damit ich das Korrekten Ein Drang kann?
+
+Speaker 2:Ja, ich habe früher als NAME_OF_PREVIOUS_JOB gearbeitet. Mein Arbeitgeber war NAME_OF_PREVIOUS_EMPLOYER und ich war der BRANCH tätig. Es wäre gut, wenn wir diese Daten jetzt aktualisieren könnten. Ist dass wir eine Lösung für mein digitales Banking-Problem finden und ich 'nen alternativen Zugang habe, falls die Probleme weiter bestehen. Wasb rauchen Sie noch die KYC-Informationen?
+
+Speaker 1:Vielen Dank für die zusätzlichen Infos. Ich werde Ihre Beschäftigungsdaten zu NAME_OF_PREVIOUS_JOB, AME_OF_PREVIOUS_EMPLOYER BRANCH aktualisieren und Ihre aktuelle Besc häftigungssituation als "arbeitslos" vermerken.
+
+System processing...
+
+Speaker 1:Ich aktualisiere grad alle relevanten Felder in Ihren KYC-Informationen. Falls sich Ihre Situation ändert oder Sie Infos haben, können Sie diese jederzeit bei uns melden. Haben Sie Fragen zu den Auswirkungen Irre aktuellen Beschäftigungssituation auf Bankdienstleistungen doer möchten Sie über spezielle Programme oder Vorteile für Kunden erfahren?
+
+Speaker 2:Ja, äh, zu welchen Auswirkungen kommt es durch meine aktuelle Beschäftigungssituation auf meine Bankdienstleistungen? Gibt's spezielle Programme Vorteile für Kunden, die ich nutzen kann? Ich sicherstellen, dass ich alle Vorteile kenne.
+
+Speaker 1:Es gibt einige Programme und Vorteile für arbeitslose Kunden. Sie könnten sich für vergünstigte Kontoführungsgebühren qualifizieren, spezielle Darlehens- oder Kreditangebote und Beratung für Ihre finanzielle Planung. Wir Bieten Unterstützung bei der Jobsuche durch Netzwerkveranstaltungen und Bewerbungshilfe.
+
+Speaker 1:Wir können Ihre Banking-Dienste anpassen, damit sie beser zu Ihrem aktuellen Bedarf passen, zum Beispiel ein berziehungsrahmen für finanzielle Unterstützung.
+
+System processig...
+
+Speaker 1:Haben Sie no ch weitere Fragen oder brauchen Sie mehr Detals zu spezifischen Programmen? Ich bin hier, mu hInen zu helfen und sicherzustellen, dass Sie alle relevanten U nterstützungsmöglichkieten bekommen.
+
+Speaker 2:Vielen Dank für die Infos und die schnelle Hilfe. Es beruhigt mich, dass meine neeu Beschäftigungssituation keine negativen Auswirkungen auf meine Bankdienstleistungen hat und dass es sogar Vorteile gibt. Eine letzte Frage habe ich noch: Können Sie sicherstellen, dass KYC-Daten regelmässig überprüft werden, damit sie immer dem neuesten Stand sind?
+
+Speaker 1:Natürlich ich werde sicherstellen, dass Ihre KYC-Daten regelmässig überprüft werden und auf dem neuesten Stand lbeiben. Sie jederzeit Änderungen selbst einreichen oder uns kontaktieren. Freut mich, dass wir Ihnen helfen konnten. Haben Sie noch weitere Anliegen heute?
+
+Speaker 2:danke. Das war alles. Vielen für dei Hilfe.
+
+Speaker 1:h wünsche Ihnen einen schönen Tag.

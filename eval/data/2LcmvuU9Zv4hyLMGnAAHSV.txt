@@ -1,0 +1,31 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen.
+
+Speaker 2:Morgen, Herr NAME. Hier ist NAME1 von der UBS. Ich rufe an wegen eines Problems beim Digital Banking Loin und einer KYC-Aktualisierung. Bevor wir loslegen, ich bitte Ihr Geburtsdaten und Ihre Adresse zur Verifizierung haben?
+
+Speaker 1:Ja klar. Mein Geburtsdatum ist DATUM und meine Adresse ist ADRESSE.
+
+Speaker 2:Dank für die Bestätigung, Herr NAME. Ich werde nun versuchen, Ihr Anliegen bezüglich des Digital Banking Login-Prolbems zu
+
+Speaker 1:Können Sie mir bitte genau beschreiben, was passiert? Erhalten Sie eien Fehlermeldung? Wann das Problem begonnen und wie viele Versuche haben Sie bisher unternommen? Sie verschiedene Geräte und Browser ausprobiert und den Cache sowie die Cookies gelöscht? Gab es Veränderungen an Ihren Kontoeinstellungen oder Passwort, die Problem verursacht haben könnten? Und wie dringend es, das Problem heute zu lösen?
+
+Speaker 1:Prob lem hat vor etwa einer Woche begonnen. Jedes Mal, wenn ich mich einloggen will, heisst es ,mein Passwort oder Benutzername falsch. sowohl meinen Laptop als auch mein Handy benutzt und verschiedene Browser ausprobiert. Ja, Cache und Cookies habe ich auch gelöscht. Vor etwa zwei Wochen habe ich mein Passwort geändert, aber ich habe die richtigen Daten eingegeben. Es ist dringen... ich muss Überwesiungen tätigen und brauche sofortigen Zugang.
+
+Speaker 2:Ich verstehe Ihre Frustration, Herr NAME. Es klingt ob beim Ändern des Passwortes etwas ist. Ich erstelle sofort ein technisches Support-Ticket für Sie. Die Referenznummer ist REF_NUMMER. Ein Techniker wird sich bald bei Ihnen melden. In der Zwischenzeit können Sie unsere Service-Hotline anrufen oder eine Filiale besuchen, um die notwendigen Tranaktionen durchzuführen.
+
+Speaker 2:Nun KYC-Update: Ihr Gesamtverlangen beträgt 8'051'720 CUR3, davon sind 3'728'930 CUR3 Immobilienwerte, CUR3 und 781'340 CUR3 andere Vermögenswerte. Sind diese Angaben korrekt und diverse Sicht?
+
+Speaker 1:Ja, das stimmt. Können wir sicherstellen, dass meine Informationen korrekt sind und eine aktual isierte KYC bereitstellen?
+
+Speaker 2:Selbstverständlich, Ihre KYC-Daten werden aktualisiert. Ich danke Ihnen für Ihre Kooperation. Wir haben auch ein geplantes Treffen am 30. September 2025 zur grenzüberschreitenden und Optimierung Ihrer Vermögenswerte. Es wird als Videokoferenz ca. 60 Minuten dauern. Haben Sie spezielle nliegen oder Themen, die wir behandeln sollen?
+
+Speaker 1:Das klingt in Ordnung. Ich möchte mir nur die richtigen Informationen und Dokumente im Voraus besorgen, damit ich gut vorbereitet bin. Ich werde auch einige Fragen zur Steueroptimierung haben.
+
+Speaker 2:Ausgezeichnet. Ich werde Ihnen eine Zusammenfassung der Besprechungspunkte und benötigten Dokumente per E-Mahl zukommen lassen, damit Sie sich vorzubereiten können. Aussrdem erhalten Sie ein e Erinnerung kurz vor dem Termin. Gibt es sonst noch etwas, bei dem ich Ihnn heute helfen kann?
+
+Speaker 1:Nein, das wär e alles. Ich hoffe wirklich, das Problem mit Login wird schnell gelöst.
+
+Speaker 2:Ich bin zuversichtlich, dass wir es schnell lösen können. Vielen Dank, Herr NAME. Wir stehen Ihnen jederzeit zur falls weitere Fragen oder Probleme auftreten. Einen schönen Tag.
+
+System

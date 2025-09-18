@@ -1,0 +1,23 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-12",
+      "contact_note": "Annual relationship meeting \u2013 routine check-in to update on financial goals, life changes, and priorities.",
+      "channel": "In-person at branch",
+      "duration_minutes": 30
+    }
+  },
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  }
+]

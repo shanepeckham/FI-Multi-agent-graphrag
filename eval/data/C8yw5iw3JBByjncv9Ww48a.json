@@ -1,0 +1,21 @@
+[
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-08",
+      "contact_note": "Cross-border structuring \u2013 optimize asset holding given upcoming international residency.",
+      "channel": "Client office",
+      "duration_minutes": 60
+    }
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "payments",
+      "details": "Client wants to invest for retirement."
+    }
+  }
+]

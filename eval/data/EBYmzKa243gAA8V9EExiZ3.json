@@ -1,0 +1,21 @@
+[
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-01",
+      "contact_note": "Cross-border structuring \u2013 optimize asset holding given upcoming international residency.",
+      "channel": "Video call",
+      "duration_minutes": 90
+    }
+  },
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-08",
+      "time": "14:00"
+    }
+  }
+]

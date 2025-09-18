@@ -1,0 +1,30 @@
+[
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-17",
+      "contact_note": "Relationship deepening \u2013 introduce additional UBS specialists (e.g., investment advisor, retirement planner).",
+      "channel": "In-person at branch",
+      "duration_minutes": 90
+    }
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Investment",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/8217"
+      ]
+    }
+  },
+  {
+    "task_type": "update_contact_info_postal_address"
+  }
+]

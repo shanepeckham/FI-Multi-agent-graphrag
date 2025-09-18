@@ -1,0 +1,30 @@
+[
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Inheritance",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/9628"
+      ]
+    }
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-05",
+      "contact_note": "Philanthropy & charitable giving \u2013 explore UBS Optimus Foundation or donor-advised funds.",
+      "channel": "In-person at branch",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  }
+]

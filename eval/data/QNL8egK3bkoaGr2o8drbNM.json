@@ -1,0 +1,18 @@
+[
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "investing & securities trading",
+      "details": "Client wants to invest for retirement."
+    }
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-10",
+      "contact_note": "Liquidity event planning \u2013 discuss deployment of funds after a major asset sale or dividend payout.",
+      "channel": "Video call",
+      "duration_minutes": 60
+    }
+  }
+]

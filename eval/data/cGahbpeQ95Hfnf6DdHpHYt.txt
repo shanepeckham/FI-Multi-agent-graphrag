@@ -1,0 +1,44 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, euh, pardon... bonjour, NAME. C'est NAME ici. J'ai besoin de discuter de mon compte, semble que j'ai un découvert?
+
+Speaker 2:Bonjour Monsieur Oui, bien sûr. Avant de commencer, pourrais-je vous demander de confirmer votre de naissance et votre adresse pour des raisons de segurité ?
+
+Speaker 1:Oh, est-ce que vous avez besoin de mettre à jour mes informations de contact? Ah, pardon, j'ai confondu. Ma date de naissance est le DATE et mon adresse est l'RUE, CODE POSTAL, VILLE. C'est correct?
+
+Sp eaker Tout à fait, merci pour la confirmation. Alors, actuellement votre solde est négatif de, uh... AMOUNT.
+
+Speaker 1:Oh là là, je comprends pas... comment c'est arrivé?
+
+Speaker 2:Vous avez encouru un frais de découvert de AMOUNT et des intérêts de AMOUNT. Uh, pour éviter d'autres frais, je vous de transférer le montant nécessaire avant la phane de journée. Voulez-vous que je vous guide à travers le processus
+
+Speaker 1:Oui, ça serait bien. Mais avant, pouvez-vous m'expliquer comment les frais et les intérêts sont calculés? veux être de bien comprendre.
+
+Speaker 1:Bien sûr. Les frais de découvert sont calculés commeu n pourcentage du montant que votre compte a dépassé. Les intérêts, eux, sont calculés quotidiennement sur le solde négatif. Ça peut varier en ponction de durée du découvert.
+Speaker 1:D'accord, je vois. Et quelles sont mes options pour éviter cela à l'avenir ?
+
+Speaker 2:Vous pouvez configurer des notifications pour surveiller votre solde et activer un servie de protection contr eles découverts qui transférerait automatiquement des fonds depuis un autre compte. Voulez-v ous que je vous aide à mettre en ça?
+
+Speaker 1:Oh oui, ça Pouvez-vous m'expliquer comment procéder pour le transfert maintenant et la contre les découverts?
+
+Speaker 2:Bien sûr. Pour le transfert, utilisez votre e-banking. Connectez-vous, choisissez "Transfert de fonds", sélectionnez votre comme soruce, entrez le montant et confirmez. Pour la protection, elle des fonds dès que votre solde devient négatif, sans frais de service but, um, vérifiez les termes de votre compte.
+
+Speaker 1:D'accord, je vais faire le transfert après cet Pour les notifications, comment les configurer?
+
+Speaker 2:Connectez-vous à votre e-banking, don les paramètres, cherchez "Alters de compte" ou "Notifications" . Vous pouvez définir des seuils de solde recevoir des alertes par SMS ou e-mail. [pause] C'est vraiment utile pour éviter les frais.
+
+Speaker 1:Merci, ça semble très utile. Y a-t-il un montant maximum de découvert autorisé sur mon compte?
+
+Speaker 2:Oui, chaque compte a un plafond. Pour votre compte, c'est AMOUNT. Si vous avez besoin de plus, on peut discuter des comme une de crédit.
+
+Speaker 1:Ok, je comprends mieux maintenant. Une dernière chose, son les risques si je ne couvre pas découvert aujourd'hui?
+
+Speaker 2:Si ce n'est pas couvert, vous pourriez avoir des frais supplémentaires et des intérêts quotidiens. Cela peut aussi affecter votre historique banca ire et votre capacité à près futurs. Jer ecommande de le régler immédiatement.
+
+Speaker 1:Oui, je vais m'en occuper aujourd’hui.Et pour mettre à jour mes informations KYC, je suis employé chez 1 en tant que vendeur.
+
+Speaker 2:Merci, je mets ç a à jour tout de suite. Votre profil est maintenant avec statut professionnel fonction vendeur, employeur Company 1, secteur finance. [pause] Vous devriez recevoir une confirmation bientôt.
+
+Speaker 1:C'est bien. Merci beaucoup pour votre aide. Je me sens beaucoup mieux.
+
+Speaker 1:Rvai de pouvoir vous Monsieur NAME. Pour toute autre question ou besoin futur, pas à nous contacter. Je vous souhaite une bonne journée.

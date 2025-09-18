@@ -1,0 +1,23 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 2: Pronto, buongiorno, è il Signor NAME? Sono NAME1 della UBS. La chiamo per parlare della sua esperienza con la nostra app di digital banking. Come sta oggi? Prima di andare avanti, potrebbe gentilmente confermare la sua data di nascita e il suo indirizzo, solo per motivi di sicurezza?
+
+Speaker 1: Sì, certo, uh... la mia data di nascita è il DATE e il mio indirizzo è ADDRESS. [pause] Tutto ok?
+
+Speaker 2: Perfetto, grazie per aver confermato. [typing] Bene, ho notato che ha avuto difficoltà a trovare una funzione specifica nella nostra app. Le confermo che potrebbe non essere disponibile nella versione attuale. Potrebbe dirmi esattamente quale funzione stava cercando? Così posso aiutarla meglio o magari offrirle un'alternativa.
+
+Speaker 1: Sì, stavo cercando la funzione per impostare notifiche personalizzate per le transazioni in tempo reale, sa, mi aiuterebbe con la gestione quotidiana delle mie finanze. Mi chiedevo... potrebbe essere che è sotto un altro nome o in un'altra sezione? E, uh, come faccio a inviare feedback o, diciamo, una richiesta per una funzionalità tramite l'app? Ci sono novità su possibili aggiornamenti che includerebbero questa funzione?
+
+Speaker 2: Capisco bene, sarebbe sicuramente un ottimo strumento avere notifiche personalizzate. Al momento, l'app non offre questa funzione specifica sotto un altro nome, purtroppo. Però può gestire alcune notifiche generali sotto "Impostazioni" e poi "Notifiche". Se vuole inviare feedback o funzionalità richieste, c'è una sezione "Feedback" nell'app. [pause] Le sue richieste arrivano direttamente al nostro team di sviluppo e vengono valutate in base alla priorità delle richieste ricevute. Quanto agli aggiornamenti, stiamo lavorando sempre per migliorare l'esperienza utente. Questa funzione in particolare è già stata richiesta, quindi c'è una buona chance che venga inclusa in futuro!
+
+Speaker 1: Oh, bene... eh, sono davvero sollevato. Cioè, sapere che non sono l'unico a sentire questa esigenza, e che il vostro team sta già pensando di introdurla... è rassicurante sapere di poter contribuire. A proposito, ci sono altre funzionalità nuove o aggiornamenti di cui posso beneficiare, anche se non riguardano le notifiche personalizzate?
+
+Speaker 2: Certo, siamo sempre impegnati a offrire nuove opzioni per i nostri clienti. Recentemente abbiamo introdotto strumenti per il budget e gli obiettivi di risparmio, molto utili per la gestione delle finanze. Inoltre, c'è una nuova funzione in arrivo per il pagamento delle bollette direttamente dall'app. Se fosse interessato al beta testing o volesse fornire feedback direttamente, me lo faccia sapere e sarò felice di aiutarla a iscriversi. E non dimentichi, per assistenza o supporto tecnico, il nostro servizio clienti è sempre a disposizione. Ha ancora domande?
+
+Speaker 1: Grazie mille! Mi fa davvero piacere sapere di queste novità. Sicuramente mi piacerebbe partecipare al beta testing. È bello poter contribuire al miglioramento. Intanto, c'è qualche alternativa temporanea per tenere traccia delle transazioni senza le notifiche personalizzate?
+
+Speaker 2: È un piacere sapere che vuole essere parte del nostro programma di miglioramento! Intanto, anche senza le notifiche personalizzate, può consultare gli estratti conto digitali e la lista dei movimenti nell'app. È un metodo un po' più manuale, ma utile. Speriamo di integrare presto le notifiche personalizzate. Grazie ancora per il suo interesse nel beta testing; lo comunicherò al nostro team. Non esiti a ricontattarci per qualsiasi aiuto!
+
+On hold: 1 min
+
+Speaker 2: Grazie ancora per il suo feedback prezioso. Siamo davvero attenti a migliorare la sua esperienza. Se ha altre necessità o idee in futuro, ci faccia sapere. Le auguro un'ottima giornata, e resto in attesa di sentirla di nuovo!

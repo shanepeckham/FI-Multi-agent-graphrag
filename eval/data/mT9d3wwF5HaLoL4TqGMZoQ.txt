@@ -1,0 +1,28 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speak er 1: Gute Morgen, hier ist NAME. Ich hatte einen Anrf Ihnen bezüglich einer unerkannten Ge bühr und ieniger Kontoaktualisierungen.
+Speaker 2:Oh, guten Morgen Frau NAME. Ja, ich bin von UBS. Ich rufe an, um diese Punkte zu besprechen. wir fortfahren, könnte ich Sie bitten, Ihr Geburtsdatum und hre Adresse zu besttigen, aus Sicherheitsgründen?
+Speaker 1:Mein Geburtsdatum ist der TAG, MONAT, JAHR und meine Adresse ist STASSE, TADT, POSTLEITZAHL, LAND.
+Speaker 2:Oh, haben Sie die Detaillistischen für den PlanKontakt schon Entschuldigung, das war ein Fehler. Vieen Dank für die Bestätigung. Lassen Si e uns gleich mit der unerkannten Gebühr anfangen. Die Transaktion fand DATUM statt, mit einemBetrag von BETRAG und wurde bei dem Händler HÄNDLERNAME durchgeführt. Könnten bitte Ihre letzten Transaktionen durchehen und Sehen, ob Ihnen diese bekannt vorkommt?
+Speaker 1:Hmm, ich kann mich nichta diese Transaktion erinnern und bin ziemlich sicher, dass ich dort nichts gekauft habe. Können Sie mir genau ekrlären, wie iese Transaktion verarbeitet wurde und welche Schritte ich unternehmen muss, um keine Dispute einzureichen? Auch möchte ich wissen, ob dies meine finanziellen Mittel, wie etwa das verfügbare Guthabne oder Kreditlinie, beeinflusst.
+Speaker 2:Natürlich. Die Transaktion wurde mittels Ihrer Kreditkarte abgewickelt. Wir haben keine abnormale Aktivität festgestellt. Um eineDispute einzureichen, müssen Sie ein Formular ausfüllen, das wir Ihnen per Email schicken können. Die Bearbeitung des kann bis zu 14 Tage dauren. Während dieser Zeit bleibt der vorübergehend auf Ihrem Konto blockierte, sodass Ihr verfügbares Guthaben entsprechend reduziert wird. Ihre Kreditlinie bliebt jedoch dvaon unbeeinflusst.
+Speaker 1:Das klingt fair. Schicken Sie mir bitte das Dispute-Formular zu meiner Email-dAresse. Ich möchte auch meine Kontosicherheit verbessern, damit solche unerlaubten Aktivitäten nicht wieder vorkommen. Können Sie mir da helfen?
+Speaker 2:Selbstverständlich. Ich würde Ihnen empfehlen, Ihre rgelmässig zu ändern und auf ungewöhnliche Aktivitäten in Ihrem Konto zu achten. Zusätzlich könnten wir ein Authentifizierung auf Ihrem Konto einrichten, um zu sätzliche Sicherheit zu gewährleisten. Ich werde Ihnen eine Anleitung schicken, wie Sie das einrichten können.
+Speaker 1:Danke, das wäre sehr hilfreich. Ich möchte meine Adresse neue lautet: LAND Schweiz, POSTAL_REGION_NAME Valais, STADT Brig, POSTLEITZAHL 3900. wird diese Adresse in Ihren Systemen aktualisiert sein und in allen zukünftigen Kommunikationen reflektiert werden?
+Speaker 2:Ihre neue Adresse wird innerhalb von zwei Werktagen in unserem System aktualisiert innerhalb von zehn Werktagen in allen zukünftigen Bankkommunikationen reflektiert sein. Nun zur Ihrer nicht-postalischen Ihre neue Telefonnummer lautet +41000000000 und Sie bevorzugen Email-Kommunikation, richtig?
+Speaker 1:das ist korrekt.
+Speaker 2:Ich habe Ihre bevorzugte Kommunikationsweise und neue Telefonnummer in unserem System gespeichert. Weitere rechtliche Informationen werden wir nicht an diese Telefonnummer versenden. Nun zur Know-Your-Customer Aktualisierung bezüglich de Herkunft Ihrer Vermögenswerte. Sie erwähnten, dass ine grosse Summe geerbt Haben Sie den Link angesehenund bestätigt, dass dies die benötigen Nachweise umfasst?
+Speaker 1:Ja, das ist der korrekte Link zur der Erbschaft. Gibt es weitere Dokumentationen oder Nachweise, die ich muss, um diese Aktualisierung abzuschliessen?
+Speaker 2:Der angegebene Link is t für die KYC-Aktualisierung. Es sind keine weiteren Nachweise erforderlich. Ich werde die Details jetzt in unser System eintragen. Gibt es sonst noch etwas, das Sie heute besprechen möchten?
+Speaker 1:Nein, ich denke, das war alles. Vielen Dank für Ihre Hilfe und die schnelle Bearbeitung!
+Speaker 2:Es freut mich, dass ich Ihnen helfen konnte. Wenn Sie weitere Fragen haben, stehe ich jederzeit zur Verfügung. Ich werde die Aktualisierung Ihrer Adresse, Telefonnummer und KYC-Informationen sofort veranlassen Ihnen das Dispute-Formularper E-Mail zusenden. Haben Sie einen schönen Tag!
+Speaker 1:Vielen Dan,k das wünsche ich Ihnen Wiedersehen.
+Speaker 2:Auf Wiedersehen.
+Speaker 1:Ah, eine Sache noch, könnten Sie mich benachrichtigen, dass meine und Kontaktdaten aktualisiert wurden und meine KYC-Informationen bearbeitet sind?
+Speaker 1:Natürlich, werde Ihnen umgehend eine Bestätigung per E-Mail zusenden, Ihre Adresse, Ihre und die KYC-Aktualisierungen vorgenommen wurden. Ich werde sicherstellen, dass Sie heute darüber i nformiert werden.
+S peaker 1: Wunderbar, ich danke Ihnen vielmals für Ihre Schnelle und umfassende Unterstützung.
+Speaker 2:Wenn ich noch etwas für Sie tun kann, lassen Sie es mich bitte wissen.
+Speaker 1:Das war alles, danke.
+Speaker 2:Haben Sie einen schönen Tag.
+Speaker 1:uf Wiedersehen.
+Speake r 2: Auf Wiedersehen.

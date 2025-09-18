@@ -1,0 +1,32 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, j e voudrais v érifier mon solde de compte, s'il ovus plaît.
+Speaker 2:sûr, Monsieur NAME. Pour quel compte souhaitez-vous connaître le solde ?
+Speaker 1:Ah, il me semble que nous devions... oh pardon, confusion. Celui qui finit par... attends... 4829.
+Speaker 2:Merci. Un instant, s'il vous plaît.
+System processing...
+Speaker 2:Voilà, j'ai trouvé. Votre solde est de deux mille trois cent qaurante-sept francs suisses.
+
+Speaker 2:Bonjour, c'est NAME1 UBS. Je vous appelle pour discuter de points importants concernant votre expérience de banque en ligne et la mise à jour KYC. Comment allez-vous aujourd'hui, Monsieur NAME? Avant de pouvoir continuer, confirmer votre date de naissance et votre adresse pour des résonne de sécurité ?
+Speaker 1:Bonjour, ma date naissance est DATE et mon adresse est ADRESSE.
+Speaker 2:Merci, Monsieur NAME. J'aimerais aborder certaines questions concernant votre profil Pouvez-vous clarifier votre nouvelle situation Il me semble que vous êtes maintenant indépendant en tant que directeur dans le secteur des sains de santé. Pouvez-vous conf irmer cela ?
+Speaker 1:Oui, c'est exact. Je suis indépendant et je travaille comme directeur dans le secteur des soins de santé. Mais je ne suis pas sûr de la étape pour prouver l'origine de mais actifs. Pouvez-vous m'expliquer quels documents exactement je dois soumettre ? Et je voudrais aussi que ma communication par email soit mise à jour correctement ne pas manquer des notifications légales.
+Speaker 1:Merci pour la confirmation. Pour pr ouver l'origine de vos actifs, étant donné que vous avez hérité d'une somme e, nous aurions besoin d'un document officiel confirmant cet Vous pouvez nous fournir un lien vers un document numérisé ou un fichier PDF directement sur notre plateforme sécurisée.U n instant, je vais vous envoyer le lien fictif.
+
+Typing sounds...
+Speaker 2:Voici le lien où vous pouvez soumettre ce document : [https://submit.ubsdigitalbanking.com].
+Speaker 1:D'accord, merci.
+Speaker 2:Ensuite, concernant la mise à jour de votre adresse email pour les notifications légales, il est crucial de s'assurer que cette information est correcte et à jours. Cela a un impact significatif sur la réception de correspond ances légales et autr es communications importantes. Vous confirmez donc que votre adresse email doit être mise à jour vers user6742@example.com ?
+Speaker 1:Oui, c'est ça. Pouvez-vous aussi me confirmer quels autres documents pourraient être nécessaires en plus du document prouvant l'héritage ? Cela m'aiderait à tout prépare ren une seule fois.
+Speaker 2:En plus du document d'héritage, nous aurons besoin des relevés bancaires montrant le transfert des fonds hérités et tout autre document juridique associé, comme un testament ou une déclaration notariale.
+
+Typing sounds...
+Speaker 2:Concernant la vidéo conférenec prévue pour discuter de la stratégie de des devises, le 18 septembre vous convient bien
+Speaker 1:Oui, le 18 septembre 2025 ça marche. Et pourriez-vous me détailler ce que comprend stratégie d ecouverture des devises cette réunion ? C'est un flou pour moi.
+Speaker 2:Biensûr. cette réunion, nous examinerons votre situation financière en détail comment protéger vos revenus et actifs mondiaux contre les fluctuations des taux de change. Cela peut inclure l'utilisation de contrats à terme ou d'options. Je vous expliqu erai les différentes options et leurs impacts potentiels.
+
+Speaker 1:D'accord, merci. Est-ce que cette approche permettra de stabiliser mes investissements ?
+Speaker 2:Oui, exactement. Nos recommandations viseront à vous offrir une meilleure stabilité. Y a-t-il d'autres points que vous discuter concernant votre profil KYC ou vos besoins numériques ?
+Speaker 1:Non, je pense que c'est tout pour l'instant.
+Speaker 2:Excellent. Merci beaucoup, Monsieur NAME. Nous allons tout organiser pour le 18 septembre. Passez une bonne journée.
+Speaker 1:Merci, vous aussi.

@@ -1,0 +1,24 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen, ich bin etwas besorgt wegen meines Kontos.
+Speaker 2:Guten Morgen, hier ist NAME1 UBS. Wie kann ich Ihnen helfen?
+Speaker 1:also mein Konto ist überzogen und glaube, ich muss auch meine KYC-Informationen aktualisieren.
+Speaker 1:Oh, sollten wir Ihre Postadresse aktualisiere?n Entschuldigung, das war ein Fehler. Okay, bevor wir weitermachen, könnte nicht bitte Geburtstag und Ihre Adresse zur Bestätigung haben?
+Speaker 1:Geburtsdatum ist der DATUM und meine Adresse ist ADRESSE.
+Speaker 2:Vielen Dank. Wenn ich kurz Ihre Prüfungsdaten aufrufen darf... System lädt Momentan beträgt er Überziehungsbetrag AMOUNT. Haben Sie Informationen zu den oder Zinsen für Überziehungen
+Speaker 1:Uh, nein, ich habe keine Informaitonen darüber bekommen. Sie mir erklären, wie sich die Zinsen auf den Überziehungsbetrag anbrennen und welche Fristen ich habe?
+Speaker 2:Natürlich. Die Zinsen für Überziehungen werden täglich berechnet und betr agen aktuell XYZ%. Es wäre vorteilhaft, den negativen Saldo schnellstmöglich auszugleichen, um steigende Zinsen zu vermeiden.
+Speaker 1:Und welche Frist habe ich um den zu begleichen?Speaker 1: Normalerweise habenSie Tage Zeit. Wenn diese Frist überschritten können zusätzliche Strafgebühren anfallen. Ich kann Ihnen beim Einrichten eines Zahlungsplans helfen, um das zu vremeiden.
+S peaker 1: Ein Zahlungsplan klingt gut. Welche Optionen habe um solche Überziehungen in Zukunft zu vermeiden?
+Speaker 2:bieten Überziehungsschutzdienste, die Ihnen helfen, Ihr Budget besser im Blick zu behalten und vor unerwarteten Überziehungen zu schützen.
+Speaker 1:Danke für die Infos. Wie richte ich so einen Zahlungsplan ein, und wie funktioniert der Überziehungsschutz genau?
+Speaker 2:Um einen Zahlungsplan zu erstellen, müssten wir gemeinsam die Höhe Ihrer monatlichen Zahlungen festlegen. Beispielsweise könnten Sie monatlich AMOUNT überweisen. Zum Überziehungsschutz: Es gibt Basis- und Premiumschutz, wobei Premiumschutz höhere Limits hat und niedrigere oder keine Zinsen.
+Speaker 1:Das klingt gut mit dem Premiumschutz. Wie aktiviere ich den? Und könnten Sie die Laufzeit des Zahlungsplans berechnen?
+Speaker 2:Im Online-Banking unter „Mein Konto“ „Einstellungen“ > „Überziehungsschutz“. Danach behhalten Sie eine Bestätigung. Für die Laufzeit: Angenommen der Überziehungsbetrag beträgt AOMUNT und manchmal XYZ CHF überwiesen, dauer es etwa XYZ Monate.
+Speaker 2:Und für die KYC-Aktualisierung, welche Dokumente brauche ich?
+Speaker 2:Sie können den Erzschein und die Iden titätsbestätigung entweder persönlich vorlegen oder über unser Online-Portal hochladen. Wir verwenden Verschlüsselung zum Schutz Ihrer Daten.
+Sp eaker 1: Danke, das hilft mir sehr. Und die Benachrichtigungen über den Kontostatus sind schon eingerichtet?
+Speaker 2:Ja, ich habe sie berets per Telefon und E-Mail für Sie eingerichtet. Ihr Termin für den 9. September 2025 um 09:00 ist ebenfalls bestätigt.
+Speaker 1:Perfekt. Haben Sie noch Ratschläge für mich?
+Speaker 1:Nein, das wäre alles für jetzt. Vielen Dank für Ihr Vertrauen in BUS einen Tag!
+Speaker 1:Danke, ebenfalls!

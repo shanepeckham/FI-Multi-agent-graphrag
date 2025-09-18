@@ -1,0 +1,25 @@
+[
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-08",
+      "time": "09:00"
+    }
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "payments",
+      "details": "Client wants to invest for retirement."
+    }
+  },
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  }
+]

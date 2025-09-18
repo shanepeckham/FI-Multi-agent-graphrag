@@ -1,0 +1,51 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, c'est NAME. J'ai des soucis pour me compté à ma banque digitale et il y a aussi des mises à jour à sur mes informations pouvez m'aider?
+Speaker 2:Bonjour, Monsieur NAME. Ici NAME1 de UBS, comment allez-vous aujourd'hui?
+Speaker 1:Euh, oui, bien, merci.
+Speaker 1:Oh, excusez-moi, je pensais à autre chose. Non actualiserons les informations KYC concernant l'objet de votre relation avec la banque plus tard. Parfait. Avant de commencer, pour sécuriser votre compte, pourriez-vous me confirmer votre date de naissance et votre adresse, s'il vous plaît?
+Speaker 1:Oui, certainement. Ma date de naissance est [Date de naissance] et mon adresse [Adresse].
+Speaker 2:Merci. me décrire en détail le problème de connexion à banque digitale? Est-ce la première fois que cela se produit?
+Speaker 1:Alors, mes identifiants correctement, mais j'ai un message disant que mes informations de connexion sont incorrectes. J'ai essayer de réinitialiser mon de passe plusieurs mais ça n'a pas aidé. C'est la première fois que j'ai ce problème, et j'ai vraiment besoin d'accéder à mes comptes aujourd'hui.
+Speaker 2:Je suis désolé pour ce contretemps, Monsieur NAME. allons vérifier cela ensemble. Vous recevoi un e-mail un lien pour réinitialsier votre mot de passe. Avez-vous accès à boîte mail associée à votre compte bancaire?
+Speaker 1:Oui, j'ai accès à mon e-mail. Vous pouvez m'expliquer le processus pour l'authentification à deux facteurs aussi? Je ne pas sûr de comprendre comment ça fonctionne.
+Speaker 2:Absolutely. So once you reset your password, you'll login with new credentials. Then, you'll set 2FA, which linking y our account to your mobile phone, where you’ll receive a verification code time you log in.
+Speaker 1:Ok. J'aimerais aussi confirmer que mon statut professonnel a changé. Je maintenant travailleur indépendant et mon nouveau rôle est Manager. Mon employeur est 2 dans le secteur de la santé. Pouvez-vous aussi mettre à jour ces informations KYC pour moi?
+Speaker 2:Bien sûr! Pour l'authentification à deux facteurs : connectez-vous à l banque digitale, trouvez les paramètres de sécurité, sélectionnez 'Configurer 2FA'. Entrez votre numéro de téléphone, puis confirmez par le code reçu par SMS. Chaque fois vous vous cnnectez, vous recevrez un code. Cela sécurise vos Pour vos informations :
+- Statut professionnel : Travailleur indépendant
+- Fonction : Manager
+- Employeur : Company 2
+- Secteur : Santé
+
+Les informations seront mises à jour juste après notre appel. Des questions sur le 2FA avant de procéder à la réinitialisation ?
+Speaker 1:Non, ça va merci. Pour le lien de réinitialisation, devrais le de suite, c'est ça?
+Speaker 2:Oui, vérfie zvotre boîte de réception. Si vous nele recevez dans minutes, nou s essayerons une autre méthode.
+Speaker 1:Ok, je vérifie... Euh, toujours rien reçu.
+Speaker 1:Hm, je suis vraiment désolé pour cela. Permettez-moi de contacter notre équipe technique. Vous pouvez vériier votre téléphone pour voir si vous recevez un SMS avec un code de réinitialisation bientôt?
+Speaker 1:D'accord, je vais vérifier mon téléphone... Mais rien plus.
+Speaker 2:Je comprends votre frustration. L'équipe technique va vérifier cela. Entretemps, pour séquiser votre compte, vous devrez :
+1. Changer votre mot de passe
+2. Vérifier et mettre à jour vos infos personnelles
+3. Surveiller vos transactions
+4. Activer 2FA
+5. Contacter notre en cas d'alerte
+
+Je vais finaliser la mise à jour de votre profil KYC et envoyer la confirmation par e-mail. Pouvez-vous attendre quelques minuets pour les instructions de réinitialisation et vérifier votre de réception de nouveau ?
+Speaker 1:Oui, je vérifie de nouveau... mais rien encore. Ça devient vraiment Est-ce qu'il y a une autre méthode à essayer?
+Speaker 2:Oui, je vérifier cela tout de suite pour vous. Pendant ce temps, nous utilisons :
+- Cryptage avancé
+- Pare-feu et surveillance continue
+- Gestion des sessions
+Mises à jour régulières
+
+Quand vous recevez une alerte, changez de mot de passe, vérifeiz vo s infos, surveillez votre compte et contactez notre support immédiatement.
+
+Je vais vous e nvoyer une confirmation de mise jour de et du rendez-vous. Pour le rendez-vous, ce sera le septembre 2025 à votre bureau pour discuter des investissements alternatifs. Pouvez-vous vérifier encore une fois ?
+Speaker 2:Oui, je vérifie mon téléphone... toujours rien. Pour la surveillance en temps réel, pouvez-vous déatiller?
+Speaker 2:Permettez-moi de l'équipe technique. Pour la surveillance en temps réel :
+- Tentatives de connexion anormales
+- Transactios inhabituelles
+- Changements non autorisés
+
+Des questions supplémentaires inquietudes?
+Speaker 1:Non, tout est clair. Merci pour votre aide.

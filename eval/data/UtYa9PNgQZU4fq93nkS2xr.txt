@@ -1,0 +1,55 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Hallo, ich brauche Hilfe bezüglich meiner gesperrten Karte und muss meine Kontaktdaten aktualisieren. Können Sie mir da weiterhelfen?
+
+Speaker 1:Naturschwül, guten Moregn, hier spricht NAME1 von UBS. Ich hofe, es geht Ihnen gut. Bevor wir weitermachen, könnte ich Sie aus Sicherheitsgründen bitten, Ihr Geburtsdatum und Ihre Adresse bestätigen?
+
+Speaker 1:Ja klar, das wäre NAME, ADDRESS, Geburtsdatum: DATUM.
+
+Speaker 2:Oh, möchten Ihre Ko ntaktdaten aktualisieren? Entschuldigen bitte die Verwirrung. Vielen Dank für die Verifizierung, Herr NAME. Können Sie mir schildern, was passiert ist, dass Ihre Karte gesperrt wurde?
+
+Speaker 1:Ja, also, das war vor eins paar Tagen. Ich war in einem Geschäft einkaufe,n un dplötzlich funktionierte die Karte nchtm ehr. Ich dann am Geldautomaten versucht, aber auch da ging mehr. Echt frustrierend.
+
+Speaker 2:Ich verstehe, wie ärgerlich das sein häufigste Grund für eine Kartensperrung sind verdächtige Aktivitäten auf Ihrem Konto. Haben Sie irgendwelche Benachrichtigungen über mögliche verdächtige Transaktionen erhalten?
+
+Speaker 1:Nein, ich hab da nichts bekommen. Gibt's eine Möglichkeit, rauszufinden, ob irgenedine verdächtige Aktivität meinem Konto war?
+
+Speaker 2:Selbstverständlich. Einen Moment bietet, ich überprüfe das System.
+System processing...
+Können Sie mir sagen, ob Sie kürzlich ausserhalb der Schweiz waren oder ungewöhnlich grosse Beträge abgehoben haben?
+
+Speaker 1:Nein, ich war die ganze Zeit der und Beträge hab ich auch keine abgehoben.
+
+Speaker 2:Vielen Dank für diese Informationen. Ihre Karte wurde möglicherweise Sicherheitsgründen gesperrt, um M issbrauch zu verhindern. Um Karte wieder zu müssten eine Sicherheitsverifizierung durchlaufen – telefonisch oder in einerFiliale. Haben Sie eine Präferenz?
+
+Speaker 1:würde es lieber telefonisch machen, ich hab momentan keine Zeit, in eine Filiale zu gehen.
+
+Speaker 2:Das ist völlig Ordnung. Dafür ich einige Dokumente von Ihnen, wie einen gültigen Ausweis und eventuell weitere um Identität zu bestätigen. Haben Sie diese Dokumente gerade Hand?
+
+Speaker 1:Ja, ich hab meinen Ausweis hier. Welche anderen Unterlagen werden benötigt?
+
+Speaker 2:Abgesehenv on Ihrem Ausweis benötigen wir einen Nachweis Ihrer aktuellen Adresse und eine Kopie einer aktuellen Abrechnung. Sobald wir diese abgeschlossen haben, wird Ihre Karte innerhalb von 24 bis 48 Stunden entsperrt.
+
+Speaker 1:Gut, das klingt Fallen irgendwelche Gefühlen für diesen Prozess an?
+
+Speaker 2:Normalerweise Wenn irgendwelche Gebühren anfallen, werden wir Sie vorher in Form ehren.
+
+Speaker 1:Das ist berührend zu hören. Heisst das, dass meine Karte nach der Verifizierung Widder normal funktioniert?
+
+Speaker 2:Genau so ist es. Sobald die Verifizierung abgeschlossen ist und Ihre Identität wurde, widr's Ihre Karte wieder sein. Haben Sie noch andere Fragen zu Prozess?
+
+Speaker 1:Nein, ich das war’s. Können jetzt über die Kontaktdaten sprechen?
+
+Speaker 2:Natürlich, NAME. Lassen Sie uns zuerst Ihre aktuelle Adresse bestätigen. Ich habe Ihre Adresse als COUNTRY, postal_region_name=1200, Genève, Genève. Ist das korrekt?
+
+Spaker 1: Ja, das stimmt. Muss ich sonst noch was machen, emine Kontaktinformationen aktuell sind?
+
+Speaker 2:ein, das war alles. Die Informationen sind jetzt im System aktualisiert. Möchten Sie noch etwas anderes besprechen?
+
+Speaker 1:Nein, das wäre alles. Vielen Dank fürI hre Hilfe heute.
+
+Speaker 2:Es freut mich, dass ich Ihnen Hälfte konnte. Ihre Karte wird bald entsperrt, und Ihre Kontaktdaten aktualisi ert. Falls Sie zukünftig weitere Unterstützung benötigen oder Fragen haben, zögern Sie nicht, uns zu kontaktieren. Ich wünsche Ihnen einen schönen Tag.
+
+Speaker 1:Danke sehr, Ihnen auch! `[leises Lachen]`
+
+Speaker 1:Vielen Dank, auf Wiederhören!

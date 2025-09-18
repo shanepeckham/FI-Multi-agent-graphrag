@@ -1,0 +1,35 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1: Guten Morgen, ähm, wie war Ihr Name noch mal?
+
+Speaker 2: Guten Morgen! Mein Name ist NAME1 von der UBS. Ich rufe an, weil wir über Ihre digitalen Banking-Angelegenheiten und die Aktualisierung Ihrer Kontaktdaten sprechen wollten. Bevor wir weitermachen, könnte ich Sie bitte aus Sicherheitsgründen um die Bestätigung Ihres Geburtsdatums und Ihrer Adresse bitten?
+
+Speaker 1: Klar, äh, mein Geburtsdatum ist der DATUM und meine Adresse ist ADRESSE.
+
+Speaker 2: Danke für die Bestätigung, Herr NAME. Lassen Sie uns mit Ihrem Anliegen beginnen. Sie haben Schwierigkeiten beim Login ins digitale Banking, richtig? Können Sie mir genauer sagen, welche Fehlermeldungen Sie bekommen?
+
+Speaker 1: Ja, also... Ich versuche, mich einzuloggen, aber es heisst ständig, dass meine Zugangsdaten nicht richtig sind. Und ich bekomme keinen Bestätigungscode, um das Passwort zurückzusetzen. Ich glaub, das liegt an meiner alten Telefonnummer. Können wir das heute noch fixen? Ich bin etwas besorgt, dass da jemand auf mein Konto zugreift.
+
+Speaker 2: Ich verstehe Ihre Sorge und wir werden das schnell lösen. Ich sehe mal nach, ob Ihre Telefonnummer aktualisiert werden muss – das ist wahrscheinlich der Grund, warum Sie keinen Code bekommen. Sobald das erledigt ist, können wir Ihr Passwort zurücksetzen. Ich kümmere mich auch darum, dass Ihre E-Mail-Präferenzen stimmen. Gibt's sonst noch Änderungen bei Ihren Kontaktdaten?
+
+Speaker 1: Nein, nichts weiter. Aber es ist echt wichtig, dass die Telefonnummer heute noch geändert wird, damit ich wieder aufs Online-Banking kann. Bitte stellen Sie sicher, dass auch die E-Mail-Kommunikation stimmt.
+
+Speaker 2: Verstanden. Ihre Telefonnummer wird sofort aktualisiert, damit Sie den Bestätigungscode problemlos erhalten können. Und ich überprüfe Ihre E-Mail-Präferenzen, damit Sie alle Infos per E-Mail bekommen. Einen Moment, ich mache das für Sie.
+
+Speaker 2: Gut, ich werde Ihnen nachher auch erklären, wie Sie die Sicherheitsmassnahmen verstärken können. Haben Sie darüber hinaus erstmal Fragen?
+
+Speaker 1: Ja, äh, wie richte ich die Zwei-Faktor-Authentifizierung ein? Ich möchte wirklich sicher sein, dass mein Konto geschützt ist.
+
+Speaker 2: Natürlich, damit erhöhen Sie die Sicherheit Ihres Kontos sich... äh, zusätzlich. Sobald Ihre Telefonnummer im System aktuell ist, können Sie eine Authenticator-App verwenden, wie Google Authenticator oder Authy. Laden Sie die App aus dem App Store und gehen Sie dann in Ihrem Digital Banking zu den Sicherheitseinstellungen. Dort wählen Sie "Zwei-Faktor-Authentifizierung einrichten". Da gibt's dann einen QR-Code, den Sie mit der App scannen müssen. Und ich empfehle, die Backup-Codes sicher aufzubewahren, falls Ihr Telefon mal nicht verfügbar ist. Haben Sie weitere Fragen dazu oder zu anderen Sicherheitsfragen?
+
+Speaker 1: Ich will sicher sein, dass die Telefonnummer wirklich im System aktualisiert wurde, damit ich den Code empfangen kann und heute noch rein kann. Was passiert, wenn ich mein Telefon verliere? Wie komme ich trotzdem noch an mein Konto ran?
+
+Speaker 2: Ihre neue Telefonnummer ist jetzt im System, also sollten Sie den Bestätigungscode zum Zurücksetzen gleich erhalten. Wenn Sie Ihr Telefon verlieren, sind die Backup-Codes wichtig. Damit können Sie trotzdem auf Ihr Konto zugreifen. Zusätzlich können Sie eine alternative Telefonnummer oder ein anderes Mittel als Sicherheit hinzufügen. Sollten Sie Probleme haben, stehe ich bereit, um Sie zu unterstützen.
+
+Speaker 1: Alles klar, danke für den Tipp mit den Backup-Codes. Ich werde sie sichern. Können Sie mir jetzt noch bestätigen, dass alle E-Mail-Einstellungen umgesetzt sind? Es ist wichtig, dass das heute passiert.
+
+Speaker 2: Klar, Ihre E-Mail-Einstellungen sind jetzt aktualisiert. Alle Infos und Benachrichtigungen werden per E-Mail gesendet. Ich schlage vor, den Spam-Ordner gelegentlich zu prüfen, um nichts zu übersehen. Gibt's noch etwas Anderes, was ich für Sie tun kann?
+
+Speaker 1: Danke für alles, aber könnten Sie nochmal sicherstellen, dass die E-Mail-Kommunikation auch in den sicherheitsrelevanten Benachrichtigungen richtig ist? Ich will keine Lücken riskieren.
+
+Speaker 2: Ja, sicher. Ihre E-Mail-Adresse ist als bevorzugte Kontaktmethode eingetragen, inklusive aller sicherheitsrelevanter Benachrichtigungen. Versuchen Sie bitte, sich erneut ins Digital Banking einzuloggen. Bei Problemen melden Sie sich einfach bei mir. Gibt es noch etwas, wobei ich helfen kann?

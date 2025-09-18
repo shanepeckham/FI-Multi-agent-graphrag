@@ -1,0 +1,33 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1: Bonjour, euh... je crois que j'ai besoin d'aide concernant une, comment dire, une transaction par carte que je n'ai pas, euh, reconnue sur mon relevé. Je suis un peu inquiet, vous savez?
+
+Speaker 2: Bonjour, Madame. Oui, je, je comprends tout à fait. C'est un problème, euh, commun parfois. Je suis NAME1 de chez UBS, ravi de pouvoir vous aider aujourd'hui. Pour, uh, commencer, puis-je confirmer votre date de naissance et votre adresse pour des raisons de sécurité, s'il vous plaît ?
+
+Speaker 1: Oh, bien sûr, c'est DATE DE NAISSANCE et puis... attendez... oui, l'adresse est ADRESSE.
+
+Speaker 2: Parfait, merci pour cela. [pause] Donc, je vois ici une transaction effectuée le DATE que vous ne reconnaissez pas. Avez-vous une idée de comment cela aurait pu se produire ? Et, uh, si vous le voulez, je peux vous expliquer comment nous allons procéder pour enquêter sur ça.
+
+Speaker 1: Hm, ça m'ennuie un peu, vous savez. Est-ce que vous êtes sûr que je ne serai pas, disons, tenu responsable de ces charges-là ? Parce que les petites lignes de vos, uh, contrats, elles sont parfois... comment dire, floues, et je crains que la banque finisse par ne pas couvrir ça... Vous pouvez vraiment garantir un remboursement, rien caché ou des frais surprises ?
+
+Speaker 2: Je comprends votre, euh, inquiétude concernant les termes des contrats. Permettez-moi de vous rassurer, Madame. Oui, en cas de transactions non autorisées signalées rapidement, vous ne serez pas responsable et vous serez remboursé intégralement, sans frais cachés. Je tiens à être transparent sur ce sujet. Souhaitez-vous d'autres explications sur comment nous pouvons, uh... sécuriser cela à l'avenir ?
+
+Speaker 1: Ah, c'est déjà rassurant d'entendre ça. Mais, est-ce que je peux savoir quelles mesures de sécurité je pourrais prendre pour... éviter que ça ne se reproduise ? Par exemple, hmm... pouvez-vous m'expliquer si des alertes peuvent être configurées à ce sujet ?
+
+Speaker 2: Oui, bien sûr. C'est important de se sentir en sécurité, je comprends. Chez UBS, nous avons des alertes par SMS ou email qui vous avertissent dès qu'une activité suspecte est, uh, détectée. Et concernant votre carte, il est possible d'envisager des changements de plan qui intègrent des protections antifraude avancées, genre un suivi renforcé et une assistance 24h/24 si besoin. Souhaitez-vous que je vous en dise plus sur ces options ?
+
+Speaker 1: Je reste un peu sceptique. Pouvez-vous me donner un exemple concret ? Je veux dire, comment ces alertes ont-elles aidé d'autres gens à ne pas perdre de l'argent ? Aussi, si je change de plan de carte, y a-t-il... des frais ou conditions spécifiques à savoir ?
+
+Speaker 2: Bien sûr, je comprends votre scepticisme. Euh, par exemple, récemment un client a reçu une alerte pour une transaction dans un pays où il n'était jamais allé. Il a pu bloquer sa carte instantanément, évitant toute perte. Pour ce qui est des plans avancés, ils offrent effectivement un, comment dire, suivi renforcé avec quelques frais supplémentaires, mais ceux-ci sont clairement indiqués. Je suis là pour répondre à toutes vos questions ou organiser un rendez-vous si vous préférez.
+
+Speaker 1: D'accord, c'est un bon exemple. Et l'application mobile, elle a aussi ces fonctionnalités, non ? Comme ça je pourrais gérer tout directement... depuis mon téléphone ?
+
+Speaker 2: Exactement, notre application mobile vous offre une surveillance en temps réel. Vous pourriez garder un œil sur toutes vos transactions facilement. J'aimerais qu'on organise un rendez-vous pour voir plus en profondeur ces fonctionnalités et, euh... répondre à vos questions. Et rappelez-vous, nous sommes toujours disponibles pour tout besoin d'assistance supplémentaire. Ça vous convient ?
+
+Speaker 1: Oui, ça me semble bien, merci beaucoup pour l'aide.
+
+Speaker 2: Avec plaisir, Madame. N'hésitez pas à nous contacter si vous avez besoin de quoi que ce soit d'autre. Bonne journée !
+
+Speaker 1: Merci. Au revoir.
+
+Call ends

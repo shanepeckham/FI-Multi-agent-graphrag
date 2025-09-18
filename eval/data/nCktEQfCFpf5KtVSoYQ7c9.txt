@@ -1,0 +1,50 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Ähm, Hallo, ich habe da ein Problem mit meiner digitalen Bankanwendung. Können Sie mir helfen?
+Speaker 2:Guten Morgen, Herr NAME. Mein Name ist von der UBS, und ich rufe an, um einige Themen bezüglich Ihrer digitalen Bankanwendung und Ihrer Kontakte daten zu besprechen. Könnten Sie zunächst bitte Ihr Geburstdatum und Ihre Adresse zur Sicherheit bestätigen?
+
+Speaker 1:Mein Geburtsdatum ist [DATUM] und Adresse ist [ADRESSE].
+
+Speaker 2:Vielen Dank für die Bestätigung Ihrer Daten, Herr NAME. Lassen Sie uns zuerst über Ihre digitale Bankanwendung sprechen. Sie erwähnt, dass Ihnen bestimmte Funktion fehlt. Könnten Si emir bitte genaure erklären, welche Funktionen Sie im Moment vermissen wie oft Sie auf stossen?
+
+Speaker 1:Ja, ich habe beim letzten Mal festgestellt... äh, dass ich kein e Möglichkeit habe, die Kategorien meiner Ausgaben automatisch zu verwalten. Ich benutze die App regelmässig, fast täglich, und stosse leider oft auf Unannehmlichkeiten. Es wäre sehr hilfreich, wenn ich eine Übersicht meiner Transaktionen nach Kategorien bekommen könnte , um meine Vinanzen im Blick zu halten.
+
+Speaker 2:Ich verstehe. Das ist sicherlich eine sehr nützliche Funktionen, di vielen unserer Kunden helfen könne, ihre Finanzen effektiver zu managen. Ich werde unsere IT-Abteilung darüber informieren und prüfen, ob so eine Funktion in zukünftigen Updates int egriert werden kann. Updates: Team arbeitet ständig daran, die App zu Wri haben einige spannende Neuerungen geplant. Haben Sie andere Anmerkung oder Feedback zu unserer App, das Sie gerne teilen möchten?
+
+Speaker 1:Ja, äh, abgesehen von den Kategorien hatte ich kürzlich auch Probleme mit der Sicherheit der App. Ich mache mir etwas Soren, dass meine Daten möglicherweise nicht ausreichend geschützt sind. Können Sie mir mehr über die Sicherheitsmassnahmen App erzählen und ob es Aktualisierungen gibt, die diese verbessern?
+
+Speaker 2:Natürlich, Sicherheit ist für uns oberste Priorität. Die verwendet fortschrittliche Verschlüsselungstechnologien, um sicherzusteleln, dass Ihre Daten stets geschützt sind. Zusätzlich arbeiten wir daran, regelmässig Sicherheitsupdates einzuspielen, um auf neuesten Stand zu bleiben und jegliche Schwachstellen zu beheben. Die nächste Scherheits aktualisierung ist für kommenden Monat geplant. Falls Sie kann ich Ihnen wie Sie zusätzliche Sicherheitsfunktionen, wie die Zwe-iFaktor-Authentifizierung, in der App aktivieren können.
+
+Speaker 1:Das klingt beruhigend. Einen Überblick über die zusätzlichen Siche rheitsfunktionen häätte ich gerne. Ausserdem habe ich Oft Schwierigkeiten, die App zu navigieren. Könnten Sie mir vielleicht einen kurzen Durchgang der wichtigsten Funktionen geben?
+
+Speaker 2:Selbstverstnädlich. uns kurz durch die aktuellen Funktionen gehen, angefangen bei Übersicht für Kontoauszüge und Transaktionen. Danach erkläre ich Ihnen die Einstellungen für die Sicherheitsoptionen sowie die Funktion Verwaltung der Benachrichtigungen. Wenn Sie möchten, können wir auch die neuen geplanten Funktionen durchgehen.
+
+Speaker 1:wäre sehr hilfreich, danke.
+
+Speaker 2:Perfekt. Um Ihre Kontaktdaten zu aktualisieren: Ihr neues E-Mail-Adressbuch lautet user4063@example.com, richtig?
+
+Speaker 1:Ja, genau. Ich bevorzuge E-Mail-Kommunikation, weil ich so alle wichtigen Informationen sofort bekomme und es für mich ist, zu organisieren. Gibt es rechtliche Einschränkungen beim Empfang von Informationen per E-Mail, die ich kennen sollte?
+
+Speker 2: Der Empfang rechtlicher Informationen per E-Mail kann manchmal kompliziert sein, insbesondere wenn gesetzlich vorgeschriebeneSchriftform erforderlich ist. In diesen Fällen E-Mail-Kommunikation las unsicher oder unzureichend betrachtet werden. Wir stellen sicher, dass wichtige Dokumente sicher und ordnungsgemäss zugestellt werden. Wenn Sie jedoch in estimmten Fällen dennoch auf dem Postweg benachrichtigt müssen, informieren wir Sie entsprechend.
+
+Speaker 1:Alles klar, solange ich für die meisten Infos meine bevorzugte E-Mail nutzen kann, bin ich zufrieden. Sie mir bitte nächsten Besprechungstermin bestätigen?
+
+Speaker 2:Gerne. Der hlagene Termin für die nächste Besprechung ist der 8. September 2025 um 14:00 Uhr. Passt Ihnen Datum und die Uhrzeit?
+
+Speaker 1:Ja, das klingt gut Es passt weil ich dem Tag frei habe und die Besprechung daher nicht unter Zeitdruck steht.
+
+Speaker 2:Hervorragend. Ich werde den Termin dann festhalten. Falls es Änderungen gibt, lassen Sie es mich bitte wissen. werde Ihnen einige Tage vorher eine Erinnerung senden. Gibt es noch etwas, das Sie besprechen möchten?
+
+Speaker 1:Ja, ich bin nun selbstständig und arbeite als Manager für die Firma Company 2 im Gesundheitswesen. Kann ich diese neuen Informationen für mein KYC-Update bestätgien?
+
+Speaker 2:Das verstehe, lassen Sie uns diese Informationen aktualiseren. Sie sind jetzt selbstständig, Ihre Funktion ist Manager und Sie arbeiten für Company 2 im Gesundheitssektor. Haben sich sonst noch Änderungen in Ihrer Situation ergeben, die wir aufnehmen sollten?
+
+Speaker 1:Nein, das sind alle Aktualisierungen, die ich aktuell habe.
+
+Speaker 2:Gut, ich werde diese Informationen entsprechend aktualisieren. Wen Sie irgendwelche zus ätzlichen Dkumente zur Besätigung Ihres neuen Beschäftigungsstatus haben, Sie diese gerne einsenden. Dies könnte helfen, Ihr Profil vollständig und korrekt zu halten.
+
+Speaker 1:Alles klar, das werde ich tun. Vielen Dank für Ihre Hilfe.
+
+Speaker 2:Gerne geschehen. Wenn irgenwelche weiteren Anliegen entstehen, stehe ich jederzeit zur Vielen Dank und einen schönen Tag noch.
+
+Speaker 1:Dankeschön, Ihnen auch!

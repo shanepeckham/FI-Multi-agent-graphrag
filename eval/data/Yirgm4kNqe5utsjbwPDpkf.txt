@@ -1,0 +1,35 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1: Guten Morgen, hörst du mich? Es ist Herrn NAME hier.
+
+Speaker 2: Guten Morgen, Herr NAME. Hier ist NAME1 von der UBS. Ich hoffe, es geht Ihnen gut. Könnten Sie mir bitte zur Sicherheit Ihr Geburtsdatum und Ihre Adresse bestätigen?
+
+Speaker 1: Ja, ähm, mein Geburtsdatum ist der DATE, und meine Adresse, oh ja, das ist jetzt Adresse, Carouge, Genève. Hoffentlich hab ich das richtig.
+
+Speaker 2: Perfekt, vielen Dank für die Bestätigung, Herr NAME. Lassen Sie uns weiter über die Digital-Banking-App sprechen. Sie hatten erwähnt, dass Ihnen eine bestimmte Funktion fehlt. Um welche handelt es sich genau?
+
+Speaker 1: Ja, äh, ich glaube, es war die Funktion für wiederkehrende Überweisungen. Ich habe versucht, sie einzurichten, aber irgendwie scheint sie nicht auffindbar. Und dann, äh, bekam ich einen Fehlermeldung, dass die Funktion nicht verfügbar ist. Wissen Sie, ob da ein Update rausgekommen ist?
+
+Speaker 2: Ah, ich verstehe. Nach so einem Update kann es manchmal etwas tricky sein, sich zurechtzufinden. Die wiederkehrenden Überweisungen sollten unter "Überweisungen" und dann "Geplante Überweisungen" zu finden sein. Wenn es gerade nicht funktioniert, könnte es tatsächlich mit einem Update zusammenhängen. Wir aktualisieren die App regelmässig, um die Sicherheit und Funktionalität zu verbessern. Haben Sie alle Benachrichtigungen in Ihrer App aktiviert, um über solche Änderungen informiert zu bleiben?
+
+Speaker 1: Ah, gerade nicht, ich werde das überprüfen. Gibt es noch, äh, andere Funktionen, die neu platziert wurden? Und was mache ich, wenn die App wieder zicken macht?
+
+Speaker 2: Es gibt tatsächlich ein paar Funktionen, die neu strukturiert wurden. Zum Beispiel der Anmeldeprozess, der jetzt sicherer ist. Was die App-Updates angeht, diese erfolgen alle paar Monate. In der App und im Store können Sie die Update-Notizen einsehen. Und sollten Sie mal ein Problem mit der App haben, steht Ihnen unser telefonischer Support oder die Chat-Funktion direkt in der App zur Verfügung. Funktioniert super bei technischen Anliegen! Noch was, das Sie wissen möchten?
+
+Speaker 1: Ja, das klingt gut, danke. Ich möchte sicherstellen, dass mein Termin am 10. September 2025 bei Ihrer Filiale noch steht. Und äh, etablieren Sie bitte die neuen Infos in Ihrem System, also meine Adresse und meine Jobdetails.
+
+Speaker 2: Selbstverständlich, Herr NAME. Ihr Treffen am 10. September 2025 zur Portfolio-Diskussion steht weiterhin im Plan. Ich werde Ihre Adresse und beruflichen Informationen auf den neuesten Stand bringen. Gibt es, äh, sonst noch was, was die App betrifft, das ich Ihnen erklären kann?
+
+Speaker 1: Das mit der Zwei-Faktor-Authentifizierung, wie läuft das ab? Und bei der Suchfunktion, haben Sie da Tricks, welche Schlagworte man nutzen kann?
+
+Speaker 2: Ja, gern! Die Zwei-Faktor-Authentifizierung fügt eine zusätzliche Sicherheitsebene hinzu. Neben Ihrem Passwort brauchen Sie z. B. einen SMS-Code oder Fingerabdruck. Für die neue Suchfunktion, probieren Sie mal „Dauerauftrag“ oder „Kontostand“. Das sollte Ihnen den Weg ein bisschen erleichtern. Noch was, das ich für Sie klären kann?
+
+Speaker 1: Super, danke. Und Entschuldigung, ich weiss nicht, ob ich’s schon gefragt hab, aber die Adresse und meine Jobdaten im System sind korrekt, oder?
+
+Speaker 2: Ja, natürlich. Ihre Adresse in Carouge und Ihre beruflichen Informationen bei Company 3 sind alle aktualisiert. Haben Sie zu den anderen Themen noch Fragen?
+
+Speaker 1: Nein, ich glaube, das deckt alles ab. Vielen Dank für die Hilfe und Bestätigung!
+
+Speaker 2: Absolut, gerne geschehen! Lassen Sie es zu keinem Problem kommen—wir sind nur einen Anruf entfernt. Schönen Tag noch, Herr NAME.
+
+Speaker 1: Danke, ebenfalls!

@@ -1,0 +1,46 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, um, je m'appelle Monsieur NAME. Je viens de recevoir un appel concernant une réunion... ah, basé sur un scénario ou quelque chose. Est-ce que vous pouvez comprendre?
+Speaker 2:Bonojur Monsieur NAME, je suis NAMA1 de UBS. Comment allez-vous aujourd'hui? Avant qu'on continue, pourriez- vous me confirmer votre date de naissance et votre adresse pour des raisons de sécurité ?
+Speaker 1:oui, sûr. Ma date d e naissance est le DATE et mon adresse est ADDESS.
+Speaker 2:Merci, Monsieur NAME. Alors, no us avons bien vérifié vos informations de sécurité. Pouvez-vous me plus de détails sur la charge que vous n'avez pas ? La date transaction, le montant, et le nom du marchand, s'il vous plaît ? Cela nous aidera à l'investiguer plus rapidement.
+Speaker 1:La date de la transaction est le DATE, le montant AMOUNT et le marchand est MERCHANT. Ça a juste apparu soudainement, et je sais pas comment ça a se produire. Est-ce que c'est récurrent, comme est-ce qu'il y a eu d'autres similaires par le passé ?
+
+Speaker 2:D'accod, Monsieur NAME. Je comprends votre inquiétude. de vérifier cela immédiatement. Je vais analyser votre historique de transactions pour v oir si cette charge est récurrente ou unique. Si nous découvrons qu'elle est non autorisée, je vous à travers le processus pour la contester. Veuillez aptianter un moment pendant que je fais cette vérification.
+System procssing...
+Speaker 1:Merci, vraim ent important pour moi de résoudre cela le vite possible. Aussi, euh, pourriez-vous m'expliquer les étapes s'il s'avère que c'est effectivement une ? Et combien de temps cela pourrait prendre pour être résolu ?
+Speaker 2:Bien sûr. Si la charge est frauduleuse, nous devons d 'abord la conte ster auprès du marchand et effectuer une enquête interne. Ça implique de remplir un formulaire de contestation et de fournir des informations supplémentaires nécessaire. Le peut prendre jusqu'à deux semaines, nous essayons toujours de résoudre ces problèmes le plus rapidement possible. En attendant, mettrons en place des mesures de sécurité supplémentaires pour protéger votre compte. Avez-vous activé les notifications de sécurité et l'authentification à deux facteurs sur votre compte ?
+Speaker 1:Euh, je ne suis pas sûr d'avoir activé ces fonctionnalités. Pouvais-vous m'en dire plus sur les notifications et l'authentification à deux facteurs Je veux être certain que tous les dispositifs de sécurité sont en place.
+Speaker 2:Absolument. Les notifications de sécruité vous alertent immédiatement par SMS ou email lorsqu'une transaction suspecte est détectée. L'authentification à deux facteurs ajoute une couche de sécurité en exigeant un code secondaire, généralement envoyé à votre téléphone, en plus de mot de passe. Ces outils sont près effica ces pour prévenir transactions non autorisées et remforser la sécurité de votre compte. Vous gérer ces paramètres sur votre application bancaire, ou je peux vous assister pour configurr maintenant. Voulez-vous que je vous aide à les activer tout de suite ?S
+peaker 1: Oui, j'aimerais que vous m'aidiez à activer ces fonctionnalités de sécurité immédiatement. C'est crucial. Et euh, pouvez-vous vérifier si le montant de cette trasnaction a affecté mon solde disponible ou mon crédit ? Comment ça pourriat influencer mon compte si ce n'est pas résolu rapidement ?
+peaker2: Bien sûr. Pour activer les notifications sécurité et l'authentification à deux facteurs, devez ouvrir votre application bancaire UBS sur votre téléphone.
+
+Pour les notifications de sécurité:
+1. Naviguez le menu principal.
+2. Sélectionnez "Paramètres".
+3. Cliquez sur Notifications".
+4. Activez les alertes pour les transactions suspectes et définissez vos préférences de notification (SMS ou email).
+
+Pour l'authetnification à deux facteurs:
+1. Toujours dans les "Paramètres".
+2. Sélectionnez "Sécurité" "Authentification à deux facteurs".
+3. Suivez les instructions pour associer numéro de téléphone à votre compte bancaire.
+
+Quant à l'impact de la transaction sur votre solde disponible, je vérifier ça maintenant. Si cette charge reste non résolue, elle pourrait affetcer votre solde disponible et possiblement votre crédit. Veuillez patienter pendant que nous effectuons ces vérifications.
+System procesing...
+Speaker 2:Merci de votre patience, NAME. J'ai vérifié, cettecharge non reconnue a réduit votre solde disponible de AMOUNT. Heureusement, votre crédit n'a pas été affecté pour l'instant.
+
+Pour éviter ces situations à il est recommandé d'utiliser notre service de surveillance proactive. Une fois les notifications de sécurité et l'authentification à deux facteurs activées, nous pourrons ajouter des mesures supplémentaires de sécurité. Si la charge est réellement frauduleuse, notre équipe contestera en votre nom etvous recevrez une confirmation par email o uSMS. La résolution complète peut prendre jusqu'à deux semaines, mais nous ferons tout pour accélérer le processus.
+
+Avez-vous des quetions ou d'autres préoccupations avant qu'on cet appel ?
+Speaker 1:Merci beaucoup pour votre aide... votre patience avec cette situation. J'ai une dernière Cette charge pourrait-elle affecter mon historique bancaire ou ma cote de crédit, même si elle est résolue ? Et avez-vous des conseils pour surveiller mon compte régulièrement ?
+Speaker 2:Je comprends votre inquiétude. En cas de contestation réussie, al charge frauduleuse ne devrait pas votre historique bancaire ni votre cote de crédit. No tre priorité est d garantir que toute activité frauduleuse soit correctement adressée.
+
+Pour serveill er compte, je recommande de:
+1. Vérifier vos transactions au moins une fois par semaine vai l'application mobile ou en ligne.
+2. Activer les notifications de sécurité pour des alertes immédiates.
+3. Utiliser l'authentification à deux facteurs pour la protection supplémentaire.
+
+Si vous voyez quelque d'anormal, contactez-nous immédiatement. Y a--il autre chose vous aimeriez discuter ?
+Speaker 1:Non, merci beaucoup votre aide et votre patience. Je vais vérifier compte régulièrement et activer toutes les mesures de sécurité recommandées. Je apprécie vraiment. Au revoir.
+Speaker 2:Au revoir, Monsieur NAME. Bon courage avec tout ça.

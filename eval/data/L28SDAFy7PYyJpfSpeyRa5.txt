@@ -1,0 +1,33 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Hallo, ich habe am Wochenende eine komische Transaktion auf meiner Karte gesehe nund wollte das melden.
+Speaker 2:Morgen, mein Name ist NAME1 von UBS. Wie geht es Ihnen heute? Um unsere Unterhaltung fortsetzen zu können, bitte ich Sie, Ihr Geburtsdatum und Ihre Adresse zum Zwecke der Sicherheitsüberprüfung zu bestätigen.
+Speaker 1:Ja, klar. Mein Geburtsdatum ist der DATUM und meine Adresse lautet ADRESSE.
+Speaker 2:Vielen Dank für di Bestätigung Ihrer Daten. Lassen Sie uns nun Details des sel tsamen Kartenvorgangs durchgehen. Können mir bitte nähere Informationen zu der Transaktion geben, wie den Betrag und das Datum, an dem sie durchgeführt wurde?
+Speaker1: Ja, Deine Transaktion beträgt und fand am DATUM Stat. Ich habe wirklich keine Erinnerung daran, diese Transaktion gemacht zu haben.
+Speaker 2:Vielen Dank für die Information. Lassen Sie mich das näher überprüfen. Das könnte ein legitimer Kauf bei einem Händler sein, den vielleicht vergessen haben, oder ein Fehler. Moment bitte. System processing...
+Speaker 1:[pause] Ja, das wäre beruhigend, wenn es nur ein Fehler ist. Können mir sagen, wer der Händler ist und was gekauft wurde?
+Speaker 2:Ich sehe hier, dass der Händler als HÄNDLERNAME angegeben und die Zahlung scheint für eine SERVICE/BESCHREIBUNG zu sein. Kommt Ihnen das irgendwie bekannt vor?
+Speaker 1:ein, das kommt mir überhaupt nicht vor. Was machen wir, wenn ich die Transaktion nicht anerkenne?
+Speaker 1:In iesem Fall melden wir die Transaktion als strittig. Ich werde den Dispute-Prozess für Dabei wird die umfassend geprüft, und wir müssen herausfinden, ob tatsächlich eine nicht autorisierte Zahlung vorliegt.
+Speaker 2:Das klingt gut. Wie lange dauert dieser Dispute-Prozess normalerweise? Muss ich irgendwelche zusätzlichen Unterlagen bereithalten?
+Speaker 2:Prozess dauert der Regel zu fünf Werktage. Zum jetzigen Zeitpunkt benötigen wir keine weiteren Unterlagen von da wir bereits alle relevanten Infomrationen haben. Ich melde die Transaktion als strittig und unser Team wird sich darum kümmern.
+Speaker 1:Vielen Dank. Können Sie auch meine letzten Kartentransaktionen überprüfen, um sicherzustellen, dass weiteren Probleme aufgetreten sind?
+Speaker 2:Ja, gerne. Lassen Sie uns Ihre letzten Transaktionen durchgehen. System processing... Ich werde eine aktuelle Übersicht Ihrer Kartenvorgänge bereitstellen Hund wir überprüfen zusammen, ob alles richtig ist.
+Speaker 1:Das ist gut. Ich möchte sicherstellen, dass meine Karte für die Zukunft sicher ist. Was kann ich um solche Probleme zu verhindern?
+Speaker 2:Es ist wichtig, regelmässig Ihre Kontoauszüge zu überprüfen und sofort verdächtige Transaktionen zu melden. Wir bieten auch zusätzliche Sicherheitsvorkhrungen wie Alarmbenachrichtigungen direkt auf Ihrem Smartphone an, wenn eine Transaktion durchgeführt wird. Ausserde können Sie unesre Zwei-Faktor-Authentifizierung nutzen, um Ihre Online-Zahlungen zu schützen.
+Speaker 1:Das klingt hilfreich. Welche weiteren Massnahmen bietet die Bank zum Schutz vor betrügerischen Aktivitäten an?
+Speaker 2:Neben den genannten Massnahmen bieten wir Versicherungsschutz gegen Betrug und unautorisierte Transaktionen. Unser Prevention Team überwacht kontinuierlich alle Aktivitäten und wird Sie sofort benachrichtigen, wenn verdächtige Muster erkannt werden.
+Speaker 1:bin erleichtert z u hören, dass Sie so vieles tun, um mich zu schützen. Was passiert, wenn eine unautorisierte Transaktion meine finanziellen Mitteil belastet?
+Speaker 2:Wenn eine unautorisierte Transaktion wird, erstattet die Bank den betroffenen Betrag und überprüft alle Sicherheitsprotokolle, um sicherzustellen, dass das Problem nicht erneut auftritt.
+Speaker 1:Mama fühle ich mich viel sicherer. Können wir nun meine KYC-Daten überprüfen und aktualisieren?
+Speaker 2:Natürlich. Gemäss unser en Aufzeichnungen haben Sie insgesamt Vermögenswerte von 4205372 CUR2, die sich wie folgt aufteilen: Immobilienvermögenvon 4102278 CUR2, liquide Mittel von 639869 CUR2 und andere Vermögenswerte von 124926 CUR2. Diese Vermögenswerte sind diversifiziert. Stimmen diese Details?
+Speaker 1:Ja, das sind die korrekten Angaben.
+Speaker 2:Perfekt, ich habe Ihre KYC-Daten aktualisiert. Können wir jetzt das Treffen bestätigen?
+Speaker 1:Ja, bitte. Welches Datum und welche Uhrzeit hatten vorgesehen?
+Speaker 2:Das Treffen ist für den 9. September 2025 um 09:00 Uhr geplant. Können Sie diesen Termin bestätigen?
+Speaker 1:Ja, das passt mir gut.
+Speaker 2:Wunderbar. Und wir haben einen weiteren Termin für die Rentenplanung am 24. September 2025 für eine persönliche Besprechung in der Filiale. Die Sitzung dauert 90 Minuten, da wir Ihre Bereitschaft für den Ruhestand bewerten und Portfolionpassungen vorschlagen.
+Speaker 1:Das klingt richtig. Vielen Dank für Ihre Unterstützung und die detaillierten Erklärungen.
+Speaker 2:Gerne. Es war mein Vergnügen, Ihnen bei diesem Anliegen zu helfen. Wenn Sie in Zuknft weitere Fragen haben oder Unterstützung benötigen, zögern Sie bitte nicht, uns zu kontaktieren. Ich wünsche I hnen einen angenehmen Tag.
+Speaker 1:Danke, das werde ich. Ihnen auch einen schönen Tag!

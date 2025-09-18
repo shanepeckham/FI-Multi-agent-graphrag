@@ -1,0 +1,24 @@
+[
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "pension planning",
+      "details": "Client wants to invest for retirement."
+    }
+  },
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-06",
+      "contact_note": "Retirement planning \u2013 assess readiness and propose portfolio adjustments.",
+      "channel": "In-person at branch",
+      "duration_minutes": 30
+    }
+  }
+]

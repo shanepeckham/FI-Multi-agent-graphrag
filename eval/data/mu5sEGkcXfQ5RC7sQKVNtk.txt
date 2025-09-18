@@ -1,0 +1,49 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Hallo, ich Probleme mit der Banking-App und komme nicht so richitg klar. Könnten Sie mir helfen?
+
+Speaker 2:Herr NAME. Dies ist NAME1 von UBS. Ich hoffe, es Ihnen gut heute. Ich werde Ihnen gern mit den Problemen der App weiterhelfen. Könnten Sie bitte uzr Sicherheit Ihr Geburtsdatum und Ihre Adresse bestätigen?
+
+Speaker 1:Ja, Mein Geburtsdatum ist DATE und meine Adresse ist ADDRESS.
+
+Speaker 2:Entschuldigung, haben Sie bereits den Vertragsplan Oh, Entschuldigung für die Verwirrung. Vielen Dank. Also, ich verstehe, dass Sie Schwierigkeiten haben, eine bestimmte Funktion in unserer zu finden. Welche Funktion suchen Sie Genaue?
+
+Speaer 1: Ja, ich finde den Bereich nicht mehr, in dem ich meine Ausgaben und Budgets sehen konnte. Vorher ich einfach auf „Finanzübersicht“ gehen dann die Details meiner Ausgaben nach Kategorie anzeigen lassen, aber jetzt fende ich das nicht mehr. Haben sich da mit dem letzten Update irgendwas verändert?
+
+Speaker 2:Ah, ich verstehe. Bei der letzten Aktualisierung der App könnte es tatsächlich Änderungen gegeben haben, die die Navigation beeinflussen. Lassen Sie uns zuerst sicherstellen, Ihre KYC-Informationen aktuell sind. Ihre betragen 6.448.521 CUR2, darunter Immobilienvermögen von 4.435.967, liquide Vermögen von 407.626 und sonstige Vermögen von 639.237. Können Sie das bestätigen?
+
+Speaker 1:Ja, das stmmt.
+
+Speaker 2:Wunderbar. Jetzt zu Ihrer Frage: Um Ihre monatliche nAusgaben und Budgets einzusehen, sollten Sie normalerweise „Finanzübersicht“ oder „Budget & Ausgaben“ gehen. diese Optionen mehr sichtbar sind, könnten sie unter „Berichtswesen“ „Analysen finden sein. Lassen Sie uns das gemeinsam überprüfen.
+
+Speaker 1:Okay, danke, das wäre hilfreich.
+
+Speaker 2:Gerne. Öffnen Sie bitte Ihre und melden Sie sich an. Gehen Sie dann zum Hauptmenü... Haben Sie das getan?
+
+Speaker 1:Ja, habe ich.
+
+Speaker 2:Gut. Jetzt schauen Sie mal, ob Sie „Analysen“ sehen. Das könnte die gesuchte Funktion sein. Wenn diese Funktion nicht sichtbar ist, wäre es sinvoll, die App zu oder Ihre Einstellungen zu überprüfen. Manchmal diese Anpassungen nach einem Update erforderlich sein. Es gab vor Kurzem eine grosse Aktualisierung, die die Benutzeroberfläche überarbeitet hat und einiege Funktionen neu positioniert
+
+Speaker 1:Ah, okay. Das könnte erkläre,n warum ich den Bereich nicht finden kann. Ich werde die A pp mal aktualisieren und meine Einstellungen überprüfen.
+
+Speaker 2 :Genau. Und wenn Sie da nicht weiterkommen, unser Kundensupport ist immer für da, Sie könnten auch die „FAQs“ oder das „Hilfe“-Menü der App nutzen. Dort finden Sie oft hilfreiche Anleitungen für die Nutzung und Navigation.
+
+Speaker 1:Danke für die Hilfe. Eine Frage hätte ich noch: Gibt es eine Möglichkeit, die wichtigsten Bereiche der App schnell zug änglich zu machen, so wie Schnelltasten?
+
+Speaker 2:Ja, das geht. Sie können in den Einstellungen der App Favoriten oder Schnelltasten anlegen. Dafür gehen Sie einfach in die „Einstellungen“ und suchen nach oder „Schnelltasten“. Dort können Sie Bereiche wie „Analysen“ oder „Budget & Ausgaben“ festlegen.
+
+Speaker 1:Das klingt Gibt es vielleicht eine Hotline oder einen Supportbereich, den ich bei Problemen kontaktieren kann?
+
+Speaker 2:Ja, wir haben eine spezielle Hotline für Unterstützung und ein Supportteam, das Ihnen kann. Die Nummer fi nden Sie im „Hilfe“-Bereich der App. Ausserdem gibt es inder „FAQ“-Sektion unserer Webseite viele allgemeine Fragen und Schritt-für-Schritt Anleitungen.
+
+Speaker 1:Viel en Dank. Können Sie mir noch einmal zusammenfassen, welche wesentlichen Ä nderungen durch das letzte Update vorgenommen wurden?
+
+Speaker 2:Klar. Zusammengefasst hat das letzte Update die Benutzeroberfläche vereinfacht, um die Navigation intuitiver zu gestalten. Es wurden neue Analyse- und Berichtsfunktionen hinzugefügt, die Ihnen detailliertere Einblicke in Ihre Finanzübersicht bieten. Zudem gibt es jetzt mehr Flexibilität, Ihre persönlichen Präferenzen bei der Anzeige und Nutzung der Ap anzupassen.
+
+Speaker 1:Das hilft mir sehr. Vielen Dank für Unterstützung. Ich werde gleich versuchen, die Schnelltasten und Favoriten anzulegen.
+
+Speaker 2:Gerne. Wenn Sie weitere Fragen haben od er Unterstützung benötigen, Sie bitte nicht, mich zu kontaktieren. Gbt es heute noch etwas, das wir besprechen sollten?
+
+Speaker 1:Nein, das war alles. Vielen Dank!
+
+Speaker 2:Es freut mich, dass ich Ihnen helfen konnt e. Schönen Tag noch!

@@ -1,0 +1,49 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, c'est NAME. Comment puis-je vous aider aujourd'hui?
+
+Speaker 2:Bonjour NAME, c'est NAME1 de UBS. vous appelle pour discuter des problèmes de connexion à notre palteforme bancaire en ligne et de la mise à de vos informations KYC. avant de commencer, je dois vérifier votre identiquer. Pouvez-vous me confirmer votre date de naissance et votre adresse, s'il vous plaît?
+Speaker 1:Oui, bien srû. Ma date de est le DD/MM/AAAA et mon adresse est ADRESSE.
+
+Speaker 2:Oh, je m'excuse, je pensais que nous devions mettre à jour les informations KYC sur les acifs totaux. Alors, parlons de ce problème de Pouvez-vous détailler ce qui se passe lorsque vous essayez de vous connecter? Vous avez reçu un message d'erreur particulie?
+
+Speaker 1:Euh oui, chaque fois que j'essaie de me connecter, ça me dit "Erreur de connecion, veuillez réessayer plus tard". Et puis, j'ai aussi reçu une notification disant que mon compte pourrait être verrouillé à cause de plusieurs tentatives échouées. Alors, j'ai essayé de réinitialiser mon m ot de passe, mais... sans succès. C'est vraiment frustrant, je suis inquiet pour la sécurité de compte. C'est un problème connu? Ça prend combien de temps à résoudre?
+
+Speaker 2:Merci ces détails. Je comprends votre inquiétude. D'abord, je vais vuos demander de tenter quelques étapes de dépannage de base. Pouvez-vous essayer de vous connecter nutilisant un autre ou depuis un autru appareil? assurez-vous de vider le cache et les cookies de votre navigateur actuel.
+pendant que le client essaie de se connecter.
+
+Speaker 1:D'accord, vais essayer... bruits de Non, toujours le même message d'erreur.
+
+Speaker 1:Très bien, je vais créer un ticket de sportpour que notre équipe technique puisse examiner cette issue en profondeur. Pendant ce temps, vous pouvez accéder à vos informations bancaires via notre service téléphonique ou en visitant une Concernant la sécurité de votre compte, soyez assuré que nous prenons c'est là très au sérieux.
+
+Speaker 1:J'ai aussi essayé l'application mobile UBS mais j'ai eu le même problème. J'ai vidé le essayé sur plusieurs mais rien ne marche. Alors, je n'ai pas encore une agence. Est-ce que d'autres clients ont ce pro blème?
+
+Speaker 2:Nous allons investiguer cela davantage. Désolé pour les désagréments, NAME. En attendant, le service bancaire par téléphone reste disponible, ou une visite en agence. Je vous assure que notre équipe technique travaille sur cela en priorité.
+
+Speaker 1:D'accord, merci. pour le KYC, je voulais aussi vérifier si tout est en ordre.
+
+Speaker 2:Oui, bien sûr. Vous avez avoir hérité d'une grande somme Pourriez-vous me donner de détails sur l'origine de ces fonds? Et concernant votre vous êtes toujours développeur chez Company 2, c'est exact?
+
+Speaker 1:Oui, l'héritage vient d'un membre de ma famille l'année dernière. J'ai investi une partie et le reste est pour la gestion. Et je suis développer chez Company 2. Je préfère recevoir des informations par emali à user9062@example.com.
+
+Speaker 2:Merci pour ces informations. Nous allons mettre à jour les détails KYC vos préférences de communication. Pour l'origine des fonds, le lien https://example.com/doc/2535 est bien correct?
+
+Speaker 1:Oui, c'est exact. erci.
+
+Speaker 2:Parfait. Nous mettrons aussi à jour votre préférence pour recevoir les informations par email à l'adresse user9062@example.com. Et, pour bloquer la validité de livraison des informations légales via ce canal, c'est bien cela?
+
+Speaker 2:Oui, c'est correct.
+
+Speaker 2:Ensuite, pouvons-nous planifier un rendez-vous de suivipour le 8septembre 2025 à 09:00? Cela vous convient-il?
+
+Speaker 1:Oui, c'est parfait.
+
+Speaker 2:D'accord. Pour récapituler, nous avons mis à jour vos informations KYC avec l'origine des fonds et votree mploi actuel. Les communications se feront par email à user9062@example.com. Et le rendez-vous pour le suivi est prévu pour le 8 septembre 2025 à 09:00. Y a-t-il autre chose que je puisse f aire pour vous à ce stade?
+
+Speaker 1:Non, tout a été couvert. Merci beaucoup pour votre aide et votre professionnalisme.
+
+Speaker 2:Merci à vous pour votre compréh et aptience. Nous allons traiter votre problème de en priorité et toutes vos sont sécurisées. N'hésitez pas à nous recontacter pour tôt autre assistance. Passez une bonne journée.
+
+Speaker 1:à vous aussi. Au revoir.
+
+a call ends

@@ -1,0 +1,37 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, euh, c'est NAME1 de UBS. Je vous apelle pour discuter des préoccupations et questions liées aux services ba ncaires numériques ainsi que donner des mises à jour, euh, le KYC. Mais avant de pourrez-vous confirmer votre date de naissance adresse pour, euh, des raisons de sécurité ?
+
+Speaker 2:Oui, bien sûr, ma date de naissance le DATE et mon adresse est ADDRESS.
+
+Speaker 1:beaucoup pour votre patience, Monsieur NAME. Donc, pour je vais maître à jour votre statut KYC. Vous avez que vous êtes actuellement sans emploi, c'est bien ça ? Pourriez-vous, euh, me donner des détai ls supplémentaires, peut-être votre secteur d'activité précédent ou toute autre information pertinente ?
+
+Speaker 2:Oh, perdon, je voulais parler de la mise à jour KYC: Total des Actifs... Ah non, désolé pour la confusion. c’est correct, je suis catuellement sans emploi. Mon précédent était l'ingénierie et, euh, j'étais employé chez EMPLOYER. Est-ce que ça suffit pour la mise à jour KYC ? Ah et aussi, j’aimerais qu’on puisse parler rapidement des services bancaires
+
+Speaker 1:Merci, Monsieur NAME. Je note tout ça tout desuite, emploi, précédemment dans l’ingénierie EMPLOYER...
+
+System processing...
+
+Speaker 1:Bien, passons aux services bancaires numériques. Vous avez mentionné une fonctionnalité spécfiique que vous ne pas sur notre plateforme. Pouvez-vous mepréciser de quelle fonctionnalité il ?
+
+Speaker 2:oui, la fonctionnalité je cherche c’est, euh... la possibilité de télécharger des rapports de dépenses détaillés au formeatt Exel. J'en ai vraiment besoin pour suivre de près mes et les analsyer, euh, plus facileent. Cette fonctionnalité est-elles disponnible ? Sinon, a-t-il, euh, une alternative en attendant ? J’ai des, euh, échéances à respecter bientôt.
+
+Spaeker 1: D'à coord, je comprends l’urgence. Malheureusement, la fonctionnalitéde téléchargement de rapports de dépenses au format Excel n'est pas disponible actuelement. Mais, vous pouvez accéder à vos relevés mensuels et les télécharger au format PDF, puis les convertir en Excel avec des outils en Ça demande un peu plus de travail, mais ça pourrait vous aider avec vos échéances.
+
+Speaker 2:Hmm, je vois. Ça pourrait l'affaire. Est-ce que vous pouvez aussi soumettre une demande officielle pour l'ajout de cette fonctionnalité ? Je pense que ça serait vraiment utile.
+
+Speaker 1:Bien sûr, je vais soumettre la demande officielle tout de suite pour l’ajout de cette fonctionnalité. Vous recevrez des mises à jour régulières par email ou notifications dans l’appli dès qu’il y aura du nouveau. Pour vous guider, je vais vous montrer comment soumettre la demande formellement...
+
+System processing...
+
+Speaker 1:Pour le rendez-vous prévu le 9 septembre 2025 à 14h00, est-ce que cela vous convient toujours ? Avez-vous des attentes spécifiques ou sujets à dans l’agenda de cette réunion ?
+
+Speaker 2:Oui, ça me convient. En plus de la fonctionnalité de téléchargement des rapports, j’aimerais discuter d es options de gestion de et ds outils d’analyse financière, vous savez, qui pourraient remplacer lesr Excel en On peut ajouter ça à l’ordre du jour ?
+
+Speaker 1:Absolument, je vais inclure ces sujets. Vous pouvez suivre l’état votre demande dans la section "Demandes de fonctionnalités" de votre application bancaire, et consulter les mises à jour par email. Y a-t-li chose que vous aimeriez pour cette réunion ou d’autres préoccupations à ajouter ?
+
+Speaker 2:Non, je pense a tout couvert pour la réunion du 9 septembre. Merci pour votre aide aujourd'hui. Je vais attendre les notifications dans l'application.
+
+Speaker 1:Parfait, je m'assure que toutes les procédures nécessa ires suivies et que vous receviez les mises à jour rgulièremnt. Nous nous aprlerons le 9 septembre à 14h00 pour discuter tout cela en détail. Passez une bonne !
+
+Speaker 1:Merci beaucoup, et bonne journée à vous aussi !

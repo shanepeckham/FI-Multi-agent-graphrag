@@ -1,0 +1,31 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 2: Guten Tag, hier spricht REPR_NAME von der UBS. Ähm, ich rufe Sie an, um über Ihr Anliegen bezüglich unserer Digital Banking App zu sprechen. Guten Tag, Herr MR_CLIENT_NAME. Ich hoffe, es geht Ihnen gut heute?
+Speaker 1: Guten Tag, REPR_NAME. Ja, [pause] ja, mir geht es gut, danke der Nachfrage.
+Speaker 2: Das freut mich zu hören. Bevor wir ins Detail gehen, Herr MR_CLIENT_NAME, darf ich Sie der Sicherheit halber bitten, kurz Ihr Geburtsdatum und Ihre aktuelle Adresse zu bestätigen?
+Speaker 1: Ja, klar. Äh, also, mein Geburtsdatum ist der DATE_OF_BIRTH, und meine Adresse ist ADDRESS.
+Speaker 2: Perfekt, vielen Dank, Herr MR_CLIENT_NAME. Die Daten stimmen so überein. Checks system [pause] Gut. Ähm, Sie hatten sich bei uns gemeldet, weil Sie Schwierigkeiten mit unserer Digital Banking App haben, richtig?
+Speaker 1: Ja, genau, richtig. Also, ich, äh, ich muss dringend einen Dauerauftrag anpassen, wissen Sie? Und ich finde diese Funktion einfach nicht in der App! Ich habe jetzt schon, äh, mehrmals gesucht, unter 'Zahlungen' und dann auch unter 'Dienstleistungen', aber es scheint einfach nicht da zu sein. Ich frage mich, ist diese Funktion überhaupt in der mobilen App verfügbar oder nur auf dem Desktop? Es ist wirklich ärgerlich, dass ich das nicht schnell finde. Können Sie mir bitte Schritt für Schritt sagen, wo ich das finde? Ich brauche das wirklich, äh, heute noch erledigt. Das ist wichtig.
+Speaker 2: Noting down Herr MR_CLIENT_NAME, ich verstehe das absolut. Dass Sie das heute noch erledigen müssen und es frustrierend ist, die Funktion nicht auf Anhieb zu finden. Ähm, seien Sie unbesorgt, die Anpassung von Daueraufträgen ist selbstverständlich in unserer mobilen App verfügbar, nicht nur auf dem Desktop. Wir werden das jetzt gemeinsam Schritt für Schritt durchgehen, damit Sie es schnell erledigen können.
+Speaker 2: Bitte folgen Sie mir Schritt für Schritt. [pause] Zuerst, äh, stellen Sie sicher, dass Sie in der UBS Digital Banking App eingeloggt sind. Das haben Sie schon, nehme ich an?
+Speaker 1: Ja, ja, bin eingeloggt. Hab die App offen.
+Speaker 2: Sehr gut. Können Sie mich noch gut verstehen?
+Speaker 1: Ja, einwandfrei.
+Speaker 2: Perfekt. Dann, am unteren Rand des Bildschirms sehen Sie die Navigationsleiste. Tippen Sie dort bitte auf 'Zahlungen'. Können Sie das sehen?
+Speaker 1: Ja, 'Zahlungen', hab ich.
+Speaker 2: Wunderbar. Innerhalb des Bereichs 'Zahlungen' suchen Sie nun nach einer Option, die 'Daueraufträge' oder 'Meine Daueraufträge' heisst. Diese ist oft etwas kleiner dargestellt oder in einer Liste aufgeführt, nicht direkt als grosse Schaltfläche. Manchmal findet man sie auch unter einem Reiter 'Aufträge'. Ich bleibe dran, während Sie das prüfen. Melden Sie sich, sobald Sie diese Option gefunden haben oder wenn Sie eine Frage haben.
+Speaker 1: Moment, ich, äh, schau mal. [pause] Oh, hier! Ja, ich hab's! Es war, äh, es war unter so einer kleineren Liste, da war 'Daueraufträge'. Ja, hab ich gefunden!
+Speaker 2: Exzellent, Herr MR_CLIENT_NAME, das freut mich sehr, dass Sie es so schnell gefunden haben! Sehr gut.
+Speaker 2: Da Sie den Dauerauftrag heute noch dringend anpassen müssen, lassen Sie uns direkt mit den nächsten Schritten fortfahren: [pause] Tippen Sie nun bitte auf den Dauerauftrag, den Sie in der Liste ändern möchten. Der sollte sich dann öffnen und Ihnen die Details anzeigen.
+Speaker 1: Okay, ja, hab ich, er ist offen.
+Speaker 2: Sehr gut. Sobald die Details des Dauerauftrags sichtbar sind, suchen Sie nach einer Option wie 'Bearbeiten' oder 'Ändern'. Die befindet sich oft oben rechts oder unten im Detailfenster.
+Speaker 1: 'Bearbeiten', ja, hab ich gefunden.
+Speaker 2: Wunderbar. Klicken Sie darauf, und Sie sollten nun die Felder sehen, die Sie anpassen können – zum Beispiel den Betrag, das Datum oder den Empfänger. Nehmen Sie bitte die gewünschten Änderungen vor. Ich warte hier solange.
+Speaker 1: Okay, [pause] ja, ich ändere das jetzt schnell. typing sounds So. Das ist jetzt, äh, geändert.
+Speaker 2: Und ganz wichtig ist noch, dass Sie am Ende auf 'Speichern' oder 'Bestätigen' tippen, damit die Änderungen auch tatsächlich wirksam werden.
+Speaker 1: Ja, ja, klar. [pause] So, jetzt hab ich auf 'Speichern' getippt. Puh!
+Speaker 2: Sehr gut, Herr MR_CLIENT_NAME! Das freut mich ausserordentlich zu hören, dass die Anpassung des Dauerauftrags erfolgreich war und Sie jetzt beruhigt sind. Es war mir ein grosses Anliegen, dass wir das heute noch für Sie klären konnten. [pause]
+Speaker 2: Um Ihnen zukünftige Suchen in der App zu erleichtern, möchte ich Ihnen noch einen kleinen Tipp geben, falls Sie das noch nicht wussten: Wir haben eine Suchfunktion in der App, die Sie oben rechts finden können. Oft hilft es, dort direkt nach Stichworten wie 'Dauerauftrag' zu suchen. Das erspart manchmal das lange, äh, Suchen in Menüs.
+Speaker 1: Ah, ja, das ist ein guter Tipp! Das merke ich mir sofort, vielen Dank.
+Speaker 2: Sehr gerne. Haben Sie denn sonst noch weitere Fragen zu anderen Funktionen der Digital Banking App oder gibt es sonst noch etwas, wo ich Sie heute unterstützen kann?
+Speaker 1: Nein, äh, ich habe für heute keine weiteren Fragen mehr. Das war jetzt wirklich wichtig und ich muss dringend weiter. Vielen herzlichen Dank nochmals für Ihre rasche Hilfe, das war sehr effizient.

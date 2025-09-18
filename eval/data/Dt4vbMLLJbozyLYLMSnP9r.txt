@@ -1,0 +1,65 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, Monsieur NAME. Je suis NAME1 de UBS. Je vous appelle pour discuter des préoccupations que vous avez concernant la connexion à notre service bancaire en ligne et mettre à jour votre profil KYC la planification de votre retraite. Avant de poursuivre, pourriez-vous confirmer votre date naissance et votre adresse pour des raisons de sécurité ?
+
+Speaker 1:Bonjour. Uh, ma date de naissance est DATE et mon adresse est l'ADRESSE. vraiment besoin de résoudre ce problème de connexion aujourd'hui car je dois effectuer une transaction
+
+Speaker 1:Merci, Monsieur NAME. Je comprends parfaitement l'urgence de la situation. Commençons par résoudre problème de connexion à notre site en ligne. Pouvez-vous me décrire les étapes que vous suivez lorsqu'il vous est demandé de vous connecter, ainsi que les d'erreur que vous rencontrez ?
+
+Speaker 2:Bien Donc, chaque fois que j'essaie de me connecter, je vais sur le site de la banque, j'entre mon identifiant et mon mot de passe. Ensuite, il y a la vérification de sécurité où je suis censé recevoir un code par SMS, mais je ne reçois jamais ce code. À la place, j'obtiens un message d'erreur indiquant que la vérification a échoué. Je commence à me demander si mon compte a été compromis.
+
+Speaker 1:Je comprends votre inquiétude, Monsieur NAME. Il que le problème soit lié à la configuration de la vérification par Permettez-moi de vous guider à travers le de configuration correcte de la double authentification. Pouvez-vous me dire si vous avez déjà essayé d'utiliser une application d'authentification que Google Authenticator ou une autre pour recevoir le code de sécurité à deux facteurs
+
+Speaker 2:Non, je n'ai pas utilisé Authenticator ou d'autres applications de ce type. J'ai toujours reçu le code par SMS avant.
+
+Speaker 1:D'accord, je vais vous comment configurer l'application Google Authenticator comme alternative au SMS. Cela devrait résoudre problèmes. Pour commencer, vous devez télécharger l'application, puis associer votre compte à cette application en scannant un code QR que nous vous fournirons. Faites-moi savoir si vous souhaitez que vous guided cette procédure maintenant.
+
+Speaker 2:Oui, s'il vous plaît, j'aimerais que vous m'aidiez à le faire maintenant.
+
+Speaker 1:Très bien, ourvez d'abord l'App Store ou Google Play Store et cherchez "Google Authenticator". Une fois vous avez téléchargé l'application, ouvrez-la. Ensuite, accédez à votre bancaire en ligne, et dans les paramètres de sécurité, recherchez l'opti on de configuration d'une méthode d'authentification. Vous y trouverez un code QR à scanner. Vous voyez cette option ?
+
+Speaker 2:Oui, je l'ai trouvée. J'ai scanné le code QR avec Authenticator.
+
+Speaker 1:Excellent. Vous devriez maintenant voir des générés par l'application outes quelques secondes. Utilisez le code pour compléter la vérification sur notre site bancaire. Essayes de vous connecter en utilisant votre identifiant et votre mot de passe, et utilisez le code de l'application pour la vérification.
+
+Speaker 2:Cela a foncti onné! Jes uis connecté à mon compte bancaire. Merci beaucoup pour votre je peux enfin ma transaction.
+
+Speaker 1:Je suis heureux d'etendre cela. Nous prenons très au sérieux la sécurité de vos transactions en ligne et nous avons plusieurs mesures de protection en place pour garantir que votre compte sécurisé. ce propos, pour renforcer encore plus la sécurité, il recommandé de changer régulièrement votre mot de passe et de garder vos in formations de contact à jour.
+
+Speaker 1:Maintenant, passons à la mise à jour de votre profil KYC po la planification de votre retraite. Pouvez-vous me donner plus de détails sur vos objectifs d'investissement pour la retraite et vos financiers actuels ?
+
+Speaker 2:Je voudrais principalement investir ans des produits de retraite. Mon objectif est de constituer un capital suffisant pour garantir une retraite confortable. Actuellement, j'ai des économies et quelques investissemnets à revenu fixe. Je voudrais savoir quels sont les produits sécifiques offerts par votre banque pour la planification de la retraite et les avantaes fiscaux associés.
+
+Speaker 1:Je vous remercie pour détails. À UBS, offron s une variété de produits d'investissement pour la planification de la retraite. L'un des produits les plus populaires est le Pilier a, qui offre des avantages fiscaux intéressants, puisque les co ntributions sont déductibles du revenu imposable jusqu'à un certain montant. Nous également des fonds de pension, des assurances vie, et des portes feuilles d'investissement diversifiés spécialement conçus la retraite.
+
+Speaker 1:J'aimerais vous expliquer davantage les avantages fiscaux liés aux investissements de retraite spécifiques sur notre plateforme. L'un des principaux avatnages est que les fonds du Pili er 3a ne sont pas imposables tant qu'ils rstent dans le compte, et vous bénéficiez d'une déduction fiscale pour les contributions que vous faites chaque année. Pour les autres produits, les avantages peuvent varier en fonction de votre situation financière et des montants
+
+Speaker 1:Est-ce que vous avez d'autres questions concernant les options d'invetsissement ou sur la sécurité de vos informations personnelles ?
+
+Speaker 2:Non, très clair. Je suis intéressé par le P ilier 3a et les fonds de pension. Je voudrais également programmer un rendez-vous pour discuter en de mes otpions pour optimiser ma planification de retraite.
+
+Speaker 1:Parfait. Je vais prendre note de cela et vous proposer des créneaux disponibles pour que nous puissions avoir un rendez-vous de suivi et ajuster votre stratégie pour la retraite. Je vais aussi vérifier rapidement informations de sécurité et pour que tout soit en ordre. Merci votre collaboration aujourd'hui, Monsieur NAME.
+
+Speaker 2:Merci pour votre aide et votre patience.
+
+Speaker 1:Je vous en prie, NAME. Je vais faire en sorte de mettre à jour rapidement votre profil KYC avec ls détails vos objectifs de planification de retraite et le type d'investissement que vous souhaitez effectuer. Je vais également m'assurer que vos informations de sécurité sont à jour afin d'éviter tout problème futur.
+
+On hold: 2 min
+
+Speaker 1:Je vais procéder immédiatement à cette mise à jour et vous founir une confirmation par courrier électr onique.
+
+Speaker 2:D'accord, j'apprécie votre réactivité. Pour les investissements, comment puis-je structurer mes contributions mensuelles au Pilier 3a et aux fonds de pension afin d'optimiser les avantages fiscaux et la du capital ?
+
+Speaker 1:Très bonne Pour maximiser les avantages fiscaux et la croissance du capital, est recommandé de contribuer régulièrement au 3a, idéalement chaque mois. Vous pouvez configurer un progamme de contributions automatiques à partir de votre compte Quant aux fonds de pension, il est conséillé de déterminé un montatn à chaque mois en fonction de budget de vos objectifs de rendement. Je vais préparer des basées sur différents niveaux de contributions mensuelles et les avantages fiscaux correspondants. Ensuite, je les enverrai à votre adresse électronique.
+
+Speaker 2:Cela m'aide beaucoup. Pendant que vous préparez cela, aussi vérifier une dernière fois que toutes mes informations de sécurité sont à jour pour éviter tout problème futur ?
+
+Speaker 1:Absolument. Je vais aussi vérifier que toutes vos informations de contact sont jour et sécurisées. Je vais m'assurer que votre numéo de téléphone, adresse courriel et autres détails sont correctement enregistrés. Si tous vos documents sont déjà enregistrés, vous n'aurez pas besoin de les fournir à nouveau.
+
+Speaker 2:Très bien. J'attends votre confirmation pour pouvoir avancer sereinement.
+
+Speaker 1:je vais procéder à ces vérifications et mises à jour sans tarder. Vous recevrez toutes les pr courriel bientôt. Merci de votre patience, Monsieur NAME.
+
+Speaker 2:Merci beaucoup pour votre Je usis impatient de commencer ces investissements dès que possible.
+
+Speaker 1:Je vous en prie, Monsieur NAME. Passez un excellent journée.

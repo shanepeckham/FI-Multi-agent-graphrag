@@ -1,0 +1,11 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-19",
+      "contact_note": "Rebalancing proposal \u2013 recommend shifting allocations due to market moves or changed risk appetite.",
+      "channel": "In-person at branch",
+      "duration_minutes": 90
+    }
+  }
+]

@@ -1,0 +1,31 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Uh... Bonjour, c'est... um, NAME. Je viens de voir un découvert sur mon compte et je suis un peu inquiet.
+
+Speaker 2:Bonjour, Monsieur NAME. C'est AME1 UBS. Je comprends... avant de poursuivre, pourriez-vousconfirmer votre date de naissance et votre adresse pour des raisons de sécurité ?
+
+Speaker 1:Euh, oui, bien sûr... Ma date denaissance c'est le DATE et mon adesse ADDRESS.
+
+Speaker 2:Merci pour la vérification, Monsieur NAME. Je vois là qu'il y a actuellement un solde négatif sur votre à cause de quelques transactions récentes. Permettez-moi de vous expliquer ce se passe.
+
+Speaker 1:Oh,m erci. J'ai eu très peur en voyant ça. Pouvez-Vous m'expliquer pourquoi mon compte est à découvert ?
+
+Speaker 2:Bien sûr, Monsieur Après vérification, il semble que votre solde négatif soit dûà quelques paiements automatiques qui ont été débités plus tôt que prévu.L e montant total de ces transactions a dépassé votre solde disponible, qui a entraîné ce découvert. Je détailler ces transactions pour vou.
+
+Speaker 1:d'accord. Quels paiments automatiques ont causé ça ?Y'a t-il des frais ou des intérêts liés à ça ?
+
+Speaker 2:Oui, alors... Il y a eu un paiement de AMOUNT à COMPANY le DATE et un de AMOUNT par SERVICE le DATE. Ces deux transactio ns ont dpassé votre solde. Il y a également des frai sde découvert AMOUNT appliqués. Les intérêts sont calculés quotidiennement selon le solde.
+
+Speaker 1:non. Et donc, comment fais pour transférer de l'argent pour couvrir ce édcouvert immédiatement ?
+
+Speaker 2:Vous pouvez faire u ntransfert depuis un autre compte en utilisant nos services en ligne ou l'appli mobile UBS. Si vous le faites avant 17h, ça pris en compte aujourd'hui. Concernant la protection contr e les découverts, vous pouvez opter pour uncrédit renouvelable.
+
+Speaker 1:Ok, euh, je vais faire le transfert maintenant alors. Par contre, je voudrais aussi mettre en des alertes de solde faible. Pouvez-vous m'expliquer comment faire ça dans l'application ?
+
+Speaker 2:Oui, ben sûr. Ouvrez l'application et connectez-vous. Une fois connecté, allez dans 'Paramètres' puis 'Alertes'. Choisissez 'Alertes de solde faible' et définissez le montant. pouvez prsonnaliser fréquence des notifications.
+
+peaker 1: Alors, je vais faire exactement ça. Merci beaucoup pour votre aide et patience.
+
+Speaker 2:C’est un plaisir d’aider, Monsieur NAME. Si vous avez besoin de plus d’aide, dites-le-moi. Est-ce que tout est clair pour vous ?
+
+Speaker 1:Oui, merci.

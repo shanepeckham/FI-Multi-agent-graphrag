@@ -1,0 +1,66 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, je m'appelle NAME. J'ai un souci avec mon application de banque digitale, pourrez-vous m'aider
+
+Speaker 2:Bonjour, Madame NAME. C'est NAME1 e UBS, je vous appelle pour discuter des fonctionnalités de la banque digitale et de la mie à de vos informations de contact. Ava nt de commencer, pourriez-vous me conformer votre date naissance et votre a dresse pour des raisons de sécurité, s'il vous plaît ?
+
+Speaker 1:Bien sûr, ma da te de naissance le DATE et mon adresse est ADDRESS.
+
+Speaker 2:Merci. Vos informations de sécurité ont été vérifiées avec succès. Commençosn la mise à jour de vos i nformations de contact. Vous souhaitez mettre à jour votre numéro de téléphone et spécifier que vous préférez recevoir communications email, c'est bien cela ?
+
+Speaker 1:c'est exact. Mon nouveau numéro est +41000000000 et je voudrais que toutes les communications soie nt envoyées par email plutôt que par courrier postal.
+
+Speaker 2:D'accord, je vais mettre à ces informations dans notre système. Pour le numéro de téléphone, il est formaté correctement et je vais le remplacer immédiatement. Pour la préférence de communication par email, je vais ajouter un commentaire à votre dossier pourm’assurer que vous receviez les notifications via email à partir de maintenant.
+
+Speaker 1:Parfait, je vous remercie. J'aimerais aussi m'assurer que mon adresse class T est enregistrée pour une utilisation complète et non limitée.
+
+Speaker 2:Oui, votre adresse class T est biencorrecet et utilisable pour toutes les correspondances digitales. Tout est en ordre de ce côté.
+
+Speaker 1:Merci, c'est rassurant. Maintenant, j'ai quelques soucis avec l'application de banque dig itale. Je n'arrive pas à trouver une fonctionnalité
+
+Speaker 2:Je comprends. Pouvez-vous me d ire de quelle il s'agit et les étapes que vous avez djà suivi pour la trouver ?
+
+Speaker 1:Je cherche la fonctionnalité de transfert d'argent entre comptes bancaires, mais je ne la trouve nulle part.
+
+Speaker 2:Merci pour cette précision. Permettez-moi de vous guider. Lorsque vous ouvrez l'applicaiton, assurez-vous d'être connecté. Ensuite, allez dans la section "Comptes" et sélectionnez le compte à partir duquel vous voulez effectuer le transfert.
+
+Speaker 1:Oui, j'ai fait cela, mais je ne vois toujours pas l'option de transfert.
+
+Spaeker 2: Après avoir sélectionné votre compt,e recherchez l'icône de transfert d'argent, qui ressemble souvent à une flèche ou à deux flèches en cercle. Si vous ne voyez pas cette icône, il est possible qu'elle ait été déplacée lors de la mise à jour de l'application.
+
+Speaker 1:Est-ce que cela veut dire que des mises jour récentes auraient pu modifier l'implacement de certaines fonctionnalités ?
+
+Speaker 2:Oui, c'est possible. Notre application reçoit des mises à jour périodiques pour améliorer la fonctionnalité et la Parfois, cela implique de déplacer des fonctionnalités. Je vais vérifier s'il y a eu des modifications concernant le transfert d'argent.
+
+On hold: 2
+
+Speaker 2:Alors, il semble qu'une mise à jour récente at déplacé la fonction. Si elle est temporairement indisponible, vous pouvez effectuer un transfert en ligne via notre site web vous rend re dans une de nos succursales. Aussi, je vous encourage à vérifier les d'aide ou les tutoriels vidéo de l'application.
+
+Speaker 1:D'accord, je vais essayer ces alternatives. Y a-t-il d'autres astuces pour naviguer efficacement dans l'application ?
+
+Speaker 2:Bien sûr. Je recommande de parcourir les sections d'aide fréquentes et didacticiels disponibles dans l'application. Ils des guides pas à pas sur différentes fonctionnalités. Vous pouvez aussi ajuster les paramètres de l'application selon votre convenance.
+
+Speaker 1:Je vais les explorer. Ily a une autre fonctionnalité qui e pose prolbème...
+
+Speaker 2:Pas de souci, je suis là pour vous aider.D e quelle autre fonctionnalité s'agit-il ?
+
+Speaker 1:C'est la fonctionnalité de gestion des budgets. Je ne comprends pas comment ajouter des de dépenses.
+
+Speaker 2:Pour ajouter des catégories de dépenses, ouvrez la section "Budgets" puis cherché l'option "Ajouter une catégorie" et sélectionnez les types que vous souhaite suivre. Vous pourrez nommer chaque catégorie et définir des limites de dépenses.
+
+Speaker 1:J'ai essayé, l'option "Ajouter une catégorie" ne semble pas apparaître pour moi.
+
+Speaker 2:Cela semble être un problème technique. Nous allons vérifier si cette fonctionnalité a été affectée par une mise à jour. En attendant, je vais transférer votre demande à l'éqiupe support technique pour une assistance approfondie.
+
+Speaker 1:Merci beaucoup. J'espère que cela pourra être résolu rapidement.
+
+Speaker 2:Je comprends votre frustration et vais m'assurer que votre demande soit traitée en priorité. Voici le résumé de vos nouvelles informations : Numéro de téléphoner: +41000000000, Préférence de communication: email. Confirmez-vou ces détails ?
+
+Speaker 2:Oui, cela em convient.
+
+Speaker 2:Parfait. Si vous rencontrez d'autres problèmes ou avez des questions supplémentaires, n'hésitez pas à nous contacter. Nous là pour vous aider.
+
+Speaker 1:Merci, au revoir.
+
+Speaker 2:Passez une bonne journée, Madame NAME.
+

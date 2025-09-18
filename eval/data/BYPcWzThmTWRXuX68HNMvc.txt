@@ -1,0 +1,36 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+
+Speaker 1:Bonjour, merci de m'aider. J'ai rencontré des difficultés pour me connecter à ma banque en ligne. Chaque fois que j'essaie de me connecter, je reçois un message d'erreur indiquant que mon mot de passe est incorrect, mais je suis certain qu'il et correct. J'ai essayé de réinitialiser le mot de passe et de vider le cache de mon navigateur, mais n'a aidé. J'utilise l'application mobile sur iOS. Je n'ai jamai eu de problème avec vos services bancaires en ligne auparavant. J'ai des transactions importantes à effectuer aujourd'hui, je veux m'assurer que mon argent est en sécurité.
+
+Speaker 2:Bonjour, Mr. NAME. Merci pour ces précisions. Je parfaitement votre inquiétude concernant vos trasactions importantes d'aujourd'hui. de continuer, pouvez-vous s'il vous plaît vérifier que votre application UBS est à jour sur l'App Store?
+
+Speaker 1:Oui, j'ai vérifié et il n'y a pas demise à jour pour l'application UBS sur l'App Store. Mon mot de passe est je l'ai confirmé plusieurs fois.
+
+Speaker 2:Merci. Assurons-nous que avant toutes les iformations nécessaires résoudre le problème. Pouvez-vous réinitialiser l'authentification à deux facteurs? Vous recevrez alors un code de vérification sur numéro de téléphone associé à compte. Une fois que cela est fait, essaye vous et faites-moi savoir si cela fonctionne.
+
+Speaker 1:Voilà, j'ai réinitialisé l'authentification à deux facteurs et entré le code de vérification. Je vaisse essayer de me connecter à nouveau. J'espèr sincèrement que cela fonctionne cette fois, car j'ai des transactions cruciales à effectuer aujourd'hui.
+
+Speaker 2:Je comprends votre rustration, ne vous en faites pas, nous allons résoudre cela ensemble. Pendant que vous pire-je commencer la mise à jour de vos informtaions KYC? Par exemple, pouvons-nous discuter de l'objet de la relation d'affaires?
+
+Speaker 1:Oui, nous pouvons. Je souhaite investir pour ma retraite et trader des titres.
+
+Speaker 2:D'accord, Mr. NAME. Donc, pour récapituler, investir pour votre retraite des titres. Passons à la mise à jour de votre adresse postale. J'ai noté que vous avez déménagé à Luzern, pourriez-vous me confirmer votre nouvelle adresse?
+
+Speaker 1:c'est exact. Ma nouvell e est NAME, ADDRESS à Luzern, carrière nommée 6000, résidence numéro 6. Pouvez-vous confirmerles informations enregistrées?
+
+Speaker 2:Merci, Mr. NAME. Noue mettons jour votre adresse postale avec ces informations : pays CH, région postale 6000, Luzern, résidence numéro 6. Vous avez haussis mentionné héritage comme origine de vos actifs, pourriez-vous nous fournir des documents corroborant cette information? J'ai également noté vos actifs totaux, vous confirmez qu'ils sont corrects.
+
+Speaker 1:Oui,les informations sont correctes. Pour ce qui est de corroboration, voici le lien vers le document confirmant l'origine de mes actifs : ‘https://example.com/doc/1344’. Concernant le rendez-vous futur pour discuter du financement de l'immobilier, des yachts, des œuvres d'art ou des entreprises, je confirme que la date du 16 septembre 2025 me convient et que je préfère que ce soit en personne à votre agence pour une durée de 60 minutes.
+
+Speaker 1:Merci, Mr. NAME. Le document a été reçu et sera ajouté à votre dossier. Votre rendez-vous pour le 16 septembre 2025est confirmé. En attendant, avez-vous pu accéder à votre compte après la réinitialisation de l'authentification à deux facteurs?
+
+Speker 1: Oui, j'ai essayé de me reconnecter mais malheureusement, cela toujours pas fonctionné. J'ai vraimet besoin d'accéder à mon compte aujourd'hui pour ces transactions importantes. Que pouvons-nous faire maintenant?
+
+Speaker 2:Je comprends, Monsieur NAME. situation est priorisée. Veuillez contacter immédiatement notre service client au UNXAMPLE. Ayez numéro de compte, vos oordonnées de sécurité prêtes et indiquez l'urgence de vos transactions prévues pour aujourd'hui. Notre équipe technique est informée de votre cas.
+
+Speaker 1:D'accord, je vais les contacter tout de suite. J'espère sincèrement que résoudra rapidement mon problème. Merci beaucoup pour votre aide détaillée et votre dans cette situation urgente.
+
+Speaker 2:C'est un plaisir de vous aider, Mr. NAME. N'oubliez pas de me tenir au courant une fois votre accès restauré. Nous veillerons à ce que vous puissiez effectuer toutes vos transactions en toute sécurité. Bonne avec le ervice client!
+
+Speaker 1:Merci encore. Je vous tiendrai informé de l'évolution de la situation.

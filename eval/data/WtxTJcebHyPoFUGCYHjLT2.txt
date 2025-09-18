@@ -1,0 +1,56 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:je voudrais parler à qulequ'un de mes problèmes de connexion eta ussi de la mise à jour de mes informations KYC.
+
+Speaker 2:Bonjour, Monsieur NAME. C’est de chez UBS. J'ai vu les notes, et suis ici pour vous aider. Avant de commencer, pourrais-je confirmer votre date de naissance et votre adresse pour des raisons de sécurité ?
+
+Speaker 1:Oui, bien sûr. Ma date de naissance est le DATE et mon adresse est DDRESS.
+
+Speaker 2:Merci, Monsieur NAME. Alors, commençons par les problèmes de connexion. Vous pourriez me dire exactement ce qui se passe quand vous essayez de vous connecter à votre compte ? Par exemple, est-ce que vous obtenez des messages d'erreur spécifiques ou est-ce que votre mot de passe est refsué ?
+
+Speaker 1:Oui, alors, quand j'essaie de me connecter, ça me dit que mon mot de passe est incorrect. J'ai de le réinitialiser, mais je n'ai pas reçu l'email. Est-ce que c'est un problème du système de la banque ?
+
+Speaker 2:Je comprends que ce soit frustrant. Ça peut arriver pour plusieurs raisons. Peut-être que le mot de passe a été mal saisi, ou votre compte a été verrouillé après trop de tentatives échouées. pause Pour l'email de réinitialisation quin 'arrive pas, cela pourraitêtre un problème de de spam ou problème temporaire de notre coté.
+
+Speaker 1:Et mes infos sont bien protegées pendant tout ça ?
+
+Speaker 2:Absolument. Nos systèmes sont sécurisés. Mais je pe nse qu'il serait bon configurer l'authentification à deux facteurs (2FA) pour plus de sécurité. Est-ce que vous avez un smartphone avec vous ?
+
+Speaker 1:Oui, mais je suis un peu perdu avec tout ça. Vous pouvez m'expliquer comment faire?
+
+Speaker 2:Bien sûr. Vous devez tout d'abord télécharger une application d’authentification comme Google Authenticator. Voulez-vous que je vous guide à travers cette étape ?
+
+Speaker 2:Oui, je pense que Google Authenticator, ce bien.
+
+Speaker 2:bien .Ouvrez l'App Store ou Google Play sur votre smartphone et cherchez "Google Authentc theatre." Une fois l'application trouvée, appuyez sur "Installer".Ensuite, ouvrez l'application. Dites-moi quand c’est et je vous donnerai un QR code pour la connexion.
+
+Speaker 1:D'accord, une seconde… D'accord, j'ai téléchargé et l'application.
+
+Speaker 2:Parfait. Maintenant, sur votre compte en ligne UBS, allez dans les de sécurité et sélectionnez "Configurer l'authentification à deux facteurs". Une option pour scanner un code QR apparaîtra. Ouvrez Google Authenticator, appuyez sur "+", puis "Scanner code QR." Scannez le code QR affiché sur votre écran. Avez-vous réussi ?
+
+Speaker 1:Oui, j'ai réussi à scanner. Mais comment ça mon compte plus sécurisé exactement ?
+
+Speaker 2:En plus de votre mot de passe, vous devez entrer un code uniqu généré par l’application à chaque connexion. Don même si quelqu’un a votre mot de passe, il ne pourra pas accéder à votre compte sans ce code unique. Maintenant, de vous et de vous reconnecter avec le nouveau système.
+
+pour l'action
+
+Speaker 2:Vous y êtes arrivé ?
+
+Speaker 1:Oui, ça a marché. Très bien, passons à la mise à des informations KYC. J'ai des questions sur quelles informations vous avez besoin exactement, surtout pour la catégorie "investing & securities trading".
+Speaker 2:Bien sûr. Nous avons besoin de détails sur vos objectifs financiers, votre expérience en et votre profil de risque. Cela nous permet d'assurer que nos services sont alignés avec vos attentes et de tester conformes aux régulation. Tout est fait que vos informations soient bien sécurisées.
+
+Speaker 1:Quels déta ils spécifiques sur mes objectifs, mon expérience, et mon profil devez-vosu connaître? Et combien de temps cela prendra-t-il?
+
+Speaker 2:Nous aurons besoin d’informations comme vos objectifs de retraite, la durée de vos investissements, des détails sur les types d'investissements que vous avez faitsauparavant, et votre toléranc e au risque. Une fois que vous avez fourni toutes ces informations, la mise à jour ne prend généralement que quelques jours ouvrables.
+
+Speaker 1:D'accord, merci. Je veux juste m'assurer que tout est à jour et sécurisé.
+
+Speaker 2:Absolument. Nous sommes là pour nous assurer que toutes vos informations sont à jour et vos objectifs d'investissement sont bien pris en compte. Si vous avez d’autres questions, n’hésitez pas demander.
+
+[bruit de fond, chien aboie]
+
+Speaker 1:Jardin, mon chien. Merci beaucoup pour votre
+
+Speaker 2:Pas de souci. Passez journée, Monsieur NAME.
+
+Speaker 1:Merci, bonne à vous aussi.

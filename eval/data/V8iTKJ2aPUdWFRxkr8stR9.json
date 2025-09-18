@@ -1,0 +1,27 @@
+[
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Investment",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/5335"
+      ]
+    }
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-05",
+      "contact_note": "Cross-border structuring \u2013 optimize asset holding given upcoming international residency.",
+      "channel": "Client office",
+      "duration_minutes": 90
+    }
+  }
+]

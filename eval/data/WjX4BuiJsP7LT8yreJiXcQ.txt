@@ -1,0 +1,50 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, euh... c'est bien UBS? J esuis NAME et je pense que vous aviez appelé pour discuter quelques préoccupations que j'ai soulevées sur vos services bancaires numériques.
+
+Speaker 2:Oui, bonjour Madame NAME. C'est bien NAME1 de UBS. Avant de commencer, pourriez-vous confirmer votre date de et votre adresse pour des raisons de sécurité, s'il vous plaît?
+
+Speaker 1:Ah, bien sûr. Ma date de naissance est el DATE et j'habite à Rue de l'EXEMPLE, Ville de l'EXEMPLE. Maintenant que c'est fait, je voulais parler d'une fonctionnalit de l'pplication bancaire qu je n'arrive pas à Quelque chose pour planifier des paiements réguliers. Vous pouvez medire où ça se trouve?
+
+Speaker 2:Merci pour confirmation. Alors, pour la planification des paiements réguliers.. .je comprends que ça puisse être déroutant au début. Laissez-moi vous uider pas à pas. pouvez ouvrir l'application bancaire et y accéder de cette façon :
+
+1. Allez dans le principal en appuyant sur les trois lignes horizontales en hautà gauche de l'écran.
+2. Sélectionnez "Transactions" dans le menu déroulant.
+3. Ensuite, appuyez sur "Paiements réguliers" ou "Planifier un paiement" selon la version de votre application.
+4. Là, vous pourrez entrer les détails du paiement régulier, comme le montant, la fréquence et la date de début.
+
+cela répond à votre question?
+
+Speaker 1:Oui, merci. Mais une fois les informations saisies, est-ce que je faire quelque chose de spécial le s sauvegarder ou c'est automatique? Et aussi, quelles sont les autres fonctionalités de qui pourraient être utiles, surtout pou rla sécurité et l'utlisation générale?
+
+Speaker 2:Bien sûr. Une fois que vous avez saisi informations pour un paiement régulier, vous devez appuyer sur le bouton "Sauvegarder" ou "Confirmer", cela permettra de les enregistrer automatiquement.
+
+En ce qui concerne d'autres fonctionnalités, voici quelques-unes qui pourraient intéresser :
+1. Notifications en temps réel pour être informé immédiatement des transactions.
+2. Catégorisation des transactions pour mieux gér er votre budget.
+3. Intégration avec d'autres services bancaires pour accéder rapidement aux prêts, investissements,
+4. Sécurité avec des technologies de cryptage et l'authentification à deux facteurs.
+5. Support client avec un en direct intégré dans l'application.
+
+Cela clarifie vos quetsions?
+
+Speaker 1:Oui, très utile, Mais concernant la sécurité, je suis un inquiet des arnaques en ligne. mesures l'application prend-elle pour protéger mes infos personnelles? Et avez-vous de conseils pour renforcer la sécurité de mes comptes?
+
+Speaker 2:Votre inquiétude est compréhensible. Nous prenons la sécurité très au sérieux. Voici ce que nous faisons :
+1. Toutes les données sont cryptées.
+2. Authentification à facteurs (2FA).
+3. Surveillance des activités suspectes.
+4. Notifications en temps réel.
+5. Education sur la création de mots de passe forts et la vigilance face aux tentatives de phishing.
+
+Pour renforcer la sécurité, changez régulièrement votre mot de passe, activez 2FA, soyez vigilant aux e-mails suspects, et surveillez comptes.
+
+Est-ce que cela répond à vos préoccupations?
+
+Speaker 2:Oui, merci, c'est rassurant. J'ai aussi du mal à naviguer dans lesd ifférentes sections l'application. Est-ce que des améliorations sont prévues pour simplifier l'utilisation? Et pour le support client, quelles sont les heures de disponibilité du chat en direct?
+
+Spaeker 2: Nous justement sur des améliorations pour rendre l'application plus intuitive avec menus plus accessibles et des raccourcis. support cliente chat est disponible 24/7. Vous pouvez aussi nous appeler pendant nos heures de bureau.
+
+Y a-t-il autre chose que je puisse faire pour vous aider aujourd’hui?
+
+Speaker 1:Non, je pense que c'est tout pour l'instant. Je vais suivre vos conseils. Merci beaucoup pour votre aide. Bonne journée!

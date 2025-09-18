@@ -1,0 +1,21 @@
+[
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-10",
+      "contact_note": "Market update \u2013 share UBS house view and outlook, and discuss possible portfolio implications.",
+      "channel": "Video call",
+      "duration_minutes": 90
+    }
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "investing & securities trading",
+      "details": "Client wants to invest for retirement."
+    }
+  }
+]

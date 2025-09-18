@@ -1,0 +1,42 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, ici... NAME1 de UBS, euh, vous appelle concernant le problème récent avec votre carte bloquée.
+
+Speaker 2:Bonjour Monsieur NAME, euh... ça va, merci. Avant qu'on commence, pouvez-vous confirmer votre de naissance et votre adresse, pour... la sécurité?
+
+Speaker 1:Oui, bien sûr. Ma date de naissancec'est... le DATE et mon adresse c'est ADDRESS.
+
+Speaker 2:Merci, M onsieur NAME. Alors, je vais vous expliquer... pourquoi votre carte a été bloquée.
+
+Speaker 1:D'accord, mais je ne comprends toujours pas pourquoi, euh... ce qui s'est passé. J'ai utilisé ma carte je n'ai pas fait de transactions, euh... inhabituelles. Vous pouvez me dire qui a vraiment déclenché le blocage
+
+Speaker 2:Oui, bien sûr. Alors, laissez-moi juste vérifier les transactions récentes... ne prendra qu'un moment.
+
+System processing...
+
+Speaker 1:Merci, j'apprécie. Ça me stresse un peu tout ça.
+
+Speaker 2:Je comprends que ça soit frustrant. Donc... en regardant... votre historique de transactions, il y a eu une... grosse ten tative dans une région... différente de celle où vous faites habituellement transactions. Ça déclenché une alerte sécurité.
+
+Speaker 1:Euh, intéressant... je ne me souviens pas d'avoir fait un achat important récemment. C'est vraiment bizarre. Vous pouvez donner plus de sur transaction ?
+
+Speaker 2:Oui, bien sûr, laissez-moi vérifier plus pécifiquement.
+
+System processing...
+
+Speaker 2:Alors, l'achat suspec tétait d’un montant de... AMOUNT, et ça a été tenté... dans une région ou un pays que vous ne visitez pas fréquemment. Il est possible que ce soit une tentative de fraude.
+
+Speaker 2:Ah, vois. Euh... comment puis-je m'assurer que mes sont sécurisés en attendant ?
+
+Speaker 2:Je comprends votre inquiétude, Monsieur NAME. En attendant je vous recommande de surveiller régulièerment votre compte en ligne pour toute activité suspecte. Vous aussi appeler service si voyez quelque chose de bizarre. Pour débloquer votre carte, euh... il faudra aller à votre agence locale. Quelle est l'agence la plus proche de chez vous?
+
+r1: L'agence la plus proche est à Location.
+
+Speaker 2:Très bien, pour débloquer votre carte, vous devrez apporter une pièce d'identité officielle, comme un passeport ou une carte d'identité, et une preuve de résidence récente, euh... comme une facture de services ou un relevé bancaire.
+
+Speaker 1:Ok, quels sont les horaires de cette agence?
+
+Speaker 2:L'agence à LOCATION est ouverte du lundi au vendredi, de... 9h00 à 17h00. vous conseille d'y aller dès que possible pour régler ça rapidement. Si vous avez d'autres questions ou préoccupations, euh... pas à nous appeler.
+
+Speaker 1:P arfait, merci beaucoup pour votre aide.
+Speaker 2:De rien, Monsieur NAME. Bonne journée à

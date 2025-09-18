@@ -1,0 +1,34 @@
+[
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-12",
+      "contact_note": "Portfolio review \u2013 discuss current asset allocation, performance, and alignment with client\u2019s goals.",
+      "channel": "Video call",
+      "duration_minutes": 60
+    }
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "investing & securities trading",
+      "details": "Client wants to invest for retirement."
+    }
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Investment",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/6137"
+      ]
+    }
+  }
+]

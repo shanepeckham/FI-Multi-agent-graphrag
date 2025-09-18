@@ -1,0 +1,21 @@
+[
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-08",
+      "time": "14:00"
+    }
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-18",
+      "contact_note": "Annual relationship meeting \u2013 routine check-in to update on financial goals, life changes, and priorities.",
+      "channel": "In-person at branch",
+      "duration_minutes": 45
+    }
+  }
+]

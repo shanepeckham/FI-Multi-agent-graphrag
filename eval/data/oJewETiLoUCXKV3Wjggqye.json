@@ -1,0 +1,28 @@
+[
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-08",
+      "time": "09:00"
+    }
+  },
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Investment",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/9865"
+      ]
+    }
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "update_contact_info_postal_address"
+  }
+]

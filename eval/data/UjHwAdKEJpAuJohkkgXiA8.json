@@ -1,0 +1,11 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-28",
+      "contact_note": "Annual relationship meeting \u2013 routine check-in to update on financial goals, life changes, and priorities.",
+      "channel": "In-person at branch",
+      "duration_minutes": 90
+    }
+  }
+]

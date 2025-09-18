@@ -1,0 +1,35 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, euh, excusez-moi, c'est UBS ?
+Speaker 2:Bonjour eur/Madame NAME, c'est NAME1 de UBS. Je vous appelle pour discuter d'une charge non recnonue sur votre compte. Pour des raisons de sécurité, pourriez-vous s'il vous plaît confirmer votre date de naissance et votre adresse ?
+Speaker 1:Oui, bien sûr, euh, alors ma date de naissance le JOUR/MOIS/ANNÉE et mon adresse est ADDRESS.
+Speaker 2:Merci beaucoup pour cesinformations. Je vois effectivement une charge que vous ne reconnaissez pas. La charge a été faite le DATE pour un montant de Avez-vous récemment effectué une transaction qui pourrait correspondre à ce montant
+Speaker 1:Um, on, je me pas d'avoir fit une telle transaction. Cette charge pourrait-elle être récurrente ou est-ce quelque chose de ponctuel ? Et, est-ce qu'il y a eu d'autress ignalements de fraudes récentes ?
+Speaker 2:Lai ssez-mo i vérifier cela pour pause Concernant les activités frauduleuses, il vrai que nous avons eu quelques signalements récents. Je vais examiner vos transactions en détail. Pour ce qui est de la charge, elle être confirmer votre adresse email pour nous assurer que nos communications sont à jour ?
+Speaker 1:Oui, bien sûr, c'est EMAIL. Pouvez-vous m'expliquer comment cette charge est apparue si c'est une fraude ? Et comment puis-je sécuriser mon compte pour éviter des problèmes ?
+Speaker 2:Merci pour la confirmation de votre adresse email. tapote le clavier La charge a été faite chez un en ligne identifié par le code "DESCRIPTION". Si cette charge est frauduleuse, nous pouvnos contester la transaction. Voici comment nous procédons:
+1. Nous bloquons la transaction et informons le marchand.
+2. Nous analysons votre pour détecter toute activité suspecte.
+3. Si la fraude est confirmée, nous vous rebmoursons.
+Pour sécuriser votre compte, activez les notifications pour toutes les transactions et mettez en place une à deux facteurs. Utilisez également des mots de passe complexes et ne les parta gez pas. Avez-vous d'autres questions à ce sujet ?
+Speaker 1:Euh oui, comment initier cet te contestation et combien de temps cela pourrait prendre ? Et cmment je peux activer les notifications pour chaque transaction ?
+Speaker 2:initier une contestation:
+1. Connectez-vous à votre banque en ligne ou appelez notre service client.
+2. Trouvez la transaction à contester.
+3. Sélectionnez l'option pour contester la transaction et fournissez les détails.
+Cela peut jusqu'à 30 jours ouvrables. Pour activer les notifications:
+1. Connectez-vous à votre en ligne.
+2. Allez dans les paramètres de votre compte et activez les notifications de transactions.
+J'ai mis à jour vos informations de contact. Est-ce qu'il y a autre chose que je peux vous aider à comprendre ?
+Speaker 1:Oui, je voudrais comprendre ce l'authentificationà deux facteurs et je peux l'activer. C'est quelque chose que je fais en ligne ?
+Speaker 2:Bien sûr. L'authentification à deux facteurs ajoute une seconde couche de sécurité. Une fois votre mot de passe entré, vous re cevrez un code unique sur votre téléphone ou une application. Pour l'activer:
+1. à votre compte en ligne.
+2. Allez dans lse paarmètres de sécurité et suivez les instructions.
+Pour les tran sactions bloquées, vous recevrez une immédiate par email ou teto avec les étapes à suivre.
+Speaker 1:Merci pour cette information. Et confirmer une fois de plus que mes informations de contact so nt à jour ?
+Speaker 2:Absolument, je confirme que votre numéro de téléphone et votre adresse emali son t à jour. Vous recevrez toutes les communications à EMAIL. Est-ce tout clair maintenant ?
+Speaker 1:Oui merci, si des documents supplémentaires sont nécessairse pour KYC, comment vais-je être informé ?
+Speaker 2:Si des documents complémentaires sont nécessaires, nous vous informerons par email toutes les instructions. Cela n'impactera pas vos transactions en cours, c'est juste pourgarder nos dossiers à jour.
+Speaker 1:D'accord, merci beaucoup. Il n'y a rien d'autre, c'est tout pour moi.
+Speaker 2:Parfait. Je suis content d'avoir pu vous aider. Passez une bonne journée. Au revoir.
+Speaker 1:Merci, au revoir.

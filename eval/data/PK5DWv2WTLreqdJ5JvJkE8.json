@@ -1,0 +1,17 @@
+[
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-26",
+      "contact_note": "Philanthropy & charitable giving \u2013 explore UBS Optimus Foundation or donor-advised funds.",
+      "channel": "Client office",
+      "duration_minutes": 60
+    }
+  }
+]

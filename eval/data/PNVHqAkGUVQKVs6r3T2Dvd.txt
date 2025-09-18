@@ -1,0 +1,39 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, NAME1, j'aibesoin de vérifier certains détails concernant mon compte.
+
+Speaker 2:Bien sûr, donnez-moi une seconde pour vérifier votre compte. Puis-je vous demander de confirmer votre date de naissance et adresse pourd es raisons de sécurité ?
+
+peaker 1 : Oui, date de naissance est le DATE, et mon adresse est ADRESSE.
+
+Speaker 2:Merci pour la confirmation. Commençons par le découvert sur votre compte. Le montant exact de votre découvert est de AMOUNT CHF. Cela a été calculé en fonction des transactions récentes et des fonds disponibles. Atcuellement, le décovuert est actif depuis DATE et il le sera jusqu’à ce que le de votre compte soit positif à nouveau.
+
+Speaker 1:Oui, d'accord. Mais euh, je rese un peu confus sur comment vous avez précisément calcul éles frais et les intérêts sur le découvert. Pouvez-vous me montrer une simulation ou un exemple concret de ce ? Euh et comment je pourrais mettre en place ces alertes pour éviter d'atteindre la limite de découvert à l’avenir ?
+
+Sepaker 2: Je comprends. Supposons que votre découvert soit de 1000 CHF avec un taux d'intérêt de 5% par mois. Vous payerez 50 CHF par mois en intérêts. Ça s'ajoute chaque mois tant que le découvert n'est pas réglé. En plus, y a une fixe de 20 CHF par mois. Donc si votre découvert durait trois mois, les frais totaux serait 150 CHF pour les intérêts plus 60 CHF pour les commi ssions, soit 2 CHF au total.
+
+Speaker 1:Ok, ça fait our la clarification.
+
+Speaker 2:Pour les alertes, vous pouvez les activer par SMS ou imal à partir de votre espace client en ligne ou via notre applicati on mobile. Voici la procédure les configurer :
+1. à votre compte bancaire en ligne ou à l'application mobile UBS.
+2. Allez dans la section 'Alertes et Notifications'.
+3. Activez les notifications de solde et configurez le seuil de la limite de découvert.
+4. Choisissez votre mode notification préféré.
+
+Speaker 1:Merci, cela semble utile. Maintenant, concernant la mise à jour de mes informations KYC, j'ai récemment hérité d'une grosse somme d'argent. Quels documents je dois fournir pour vérifier l'origine de ces actifs et est-ce que cet héritage aura des implications dont devrait être conscient ?
+
+Speaker 2:Vous devrez fournir des documents prouvant l'existence de cet héritage, exemple le testament ou autours document juridique prouvant que vous êtes le bénéficiaire. En ce qui concerne le s implications fiscales ,l'héritage en soi n'est généralement pas imposable Suisse, mais les revenus générés par ces actifs peuvent l'être. Il est préférable de consulter un conseiller fiscal pour comprendre les implications spécifiques de votre situation.
+
+Speaker 1:Très bien, je vais préparer les documents nécesasires. Pour la mise à jour de mon adresse postale, mon adresse actuelle est ADRESSE. Et mon email préférés pour toutes les communications non postales est user8156@example.com. Pouvez-vous vérifier que tout est bien mis à jour ?
+
+Speaker 2:Je vais vérifier cela immédiatement. Votre nouvelle adresse postale ADRESSE à Neuchâtel et votre email user815@example.com ont été correctement mis à jour. Toutes lescorrespondances digitales seront cet ema il.
+
+Speaker 1:Je voudrais aussi programmer une réunion pour discuter de mes objectifs planification de la retraite. Le 8 septembre 225 à 9h00 me convient. Avez-vous des disponibilités?
+
+Speaker 2:Oui, nous avons une disponibilité le 8 septembe 2025 à 9h00. Je vais enregistrer cette date et préparer les documents nécessaires pour notre discussion. Je vais vous envoyer documents brochures par concernant les options de produits de pension. Pouvez-vous aussi confirmer que l'adresse email user8156@example.com a bien jour ?
+
+Speaker 1:D'accord, merci. Oui, je vais tout vérifier. J'espère que les alertes fonctionneront correctement et ej vais préparer les documents KYC. Merci encore pour votre aide.
+
+Speaker 2:Merci pour votre patience et copération. Nous allons-y assurer que les alertes fonctionnent correctement et que toutes vos mises à jour de KYC sont traitées efficacement. Bon journée et à très bientôt.
+
+Speaker :1 A bientôt, merci.

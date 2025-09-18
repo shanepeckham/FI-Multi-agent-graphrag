@@ -1,0 +1,27 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-02",
+      "contact_note": "Estate & succession planning \u2013 discuss wills, trusts, and intergenerational wealth transfer.",
+      "channel": "Video call",
+      "duration_minutes": 90
+    }
+  },
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "investing & securities trading",
+      "details": "Client wants to invest for retirement."
+    }
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "update_contact_info_postal_address"
+  }
+]

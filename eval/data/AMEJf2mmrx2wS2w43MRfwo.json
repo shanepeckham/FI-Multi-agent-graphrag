@@ -1,0 +1,11 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-09",
+      "contact_note": "Estate & succession planning \u2013 discuss wills, trusts, and intergenerational wealth transfer.",
+      "channel": "In-person at branch",
+      "duration_minutes": 45
+    }
+  }
+]

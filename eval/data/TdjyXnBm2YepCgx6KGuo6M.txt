@@ -1,0 +1,41 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, je viens de recevoir appel de vous concernant le blocage d e ma carte. Je suis un peu inquiet.
+Speaker 2:Bonjour Monsieur NAME. C'est un plaisir de vous parler aujourd'hui, je NAME1 de UBS. Avant de commencer, puis-je vous demander de confirmer votre date de naissance et votre adresse pour des raisons de sécurit é?
+Speaker 1:Ah oui, Rien sûr. Ma date de aissance est le DATE et mon adresse est l'ADRESSE.
+Speaker 2:Merci, Monsieur NAME. Maintenant que nous avons vérifié vos détails de sécurité, permettez-moi d'abord de expliquer votre carte été bloquée initialement. Il pourrait y avoir plusieurs raisons, telles qu'une activité inhabituelle ou une suspicion de
+
+Speaker 1:Eh, je ne comprends pas très bien pourquoi ma carte a été bloquée. Pouvezv-ous détai ller un peu plus ce qui a pu déclencher ça?
+
+Speaker 2:Bien sûr. Votre carte a été bloquée car nous avons détecté une activité inhabituelle, ce qui pourrait indiquer une tentative de fraude. C'est pour protéger vos fonds. Actuellement, votre carte est opérationnelle. Pour évider de futurs blocages, nous pouvons mettre en place des mesures de sécurité supplémentaires,comme des alertes de transactions part SMS ou et l'authentification à deux facteurs.
+
+Speaker 1:Y des frais associés à ces mesures sécurtié? Et aussi, commnet puis-je surveiller lest ransactions non autorisées?
+
+Speaker 2:Normalement, il n'y a pas de frais pour le déblocage de la carte. Pour surveiller les transactions non autorisées, vous pouvez utiliser notre application mobile vous aurez un en temps réel de toutes vos transactions. aux meilleures pratiques, nous vous recommandons de ne jamais partager votre code PIN, de nepas laisser otre carte à des endroits sécurisés et de signaler toute activité suspecte immédiatemen.
+
+Speaker 1:Oui, d'accord. pense que ça pourrait être une bonne idée de mettre en place ces mesures de sécurité. Mais pouvez-vous expliqur plus décrale comment fonctionne l'authentification à deux facteurs?
+
+Speaker 2:Absolument. L'authentification à deux facteurs ajute une sécurité supplémentaire en deandant deux formes de vérification. Par exemple, après avori entré votre mot de vous recevez un code unique par SMS ou via une application de Pour le mettre en place:
+
+1. Ouvrez notre application mobile ou à notre site web.
+2. Allez dans les paramètres sécurité de votre compte.
+3. Sélectionnez l'option d'authentification à deux facteurs.
+4. Suive les instructions pour lier votre numéro de téléphone ou télécharger l'application de vérification.
+5. Une fois configuré, vous recevrez des codes de chaque tentative de connexion.
+
+Pour surveiller les non autorisées dans l'application mobile:
+
+1. Ouvrez l'application mobile et connectez-vous à votre compte.
+2. Accédez à 'Mse et sélectionnez votre carte.
+3. Vous verrez une lisse de toutes les transacions récentes. Vous pouvez les parcourir.
+4. vous remarquez une transaction vous pouvez la signaler directement vie l'application.
+
+Est-ce que cela vous éclaire davantage?
+
+Speaker 1:Oui, ça m'aide beaucoup, merci. Je pourrais avoir uneconfirmation écrite de l'activation de ces mesures de sécurité et des instructions pour révérence future?
+
+Speaker 2:Bien sûr, je vais m'assurer que vous une confirmation écrite et des instructions détaillées par email. je vous confirme qu'il n'y a pas de frais pour services. Y a-t-il autre chose que vous souhiatiez discuter aujourd'hui?
+
+Speaker 1:Non, je pense que c'est tout. Merci beaucoup pour votre aide.
+
+Speaker 2:Je en prie, NAME. Passez une journée.

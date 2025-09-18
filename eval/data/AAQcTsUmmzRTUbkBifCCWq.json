@@ -1,0 +1,14 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-19",
+      "contact_note": "Relationship deepening \u2013 introduce additional UBS specialists (e.g., investment advisor, retirement planner).",
+      "channel": "Client office",
+      "duration_minutes": 45
+    }
+  },
+  {
+    "task_type": "update_kyc_activity"
+  }
+]

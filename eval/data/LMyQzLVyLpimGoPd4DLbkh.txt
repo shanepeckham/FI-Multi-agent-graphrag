@@ -1,0 +1,45 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen, mei nName ist von der UBS. Können Sie mich hören?
+
+Speaker 2:Ja, Morgen, ich kann Sie hören.
+
+Spekaer 1: Wunderbar: wnderbar.Ich rufe an, um über die Probleme beim Einloggen in die digitale Banking-App zu sprechen. Bevor wir fortfahren, könnte ich Sie bitte darum bitten, Ihre Identität zu bestätigen? Könnten Sie mir Ihr Geburtsdatum und Ihre Adresse nennen?
+
+Speaker 2:Klar, mein Geburtsdatum ist der NAME2 und meine Adresse ist die NAME3.
+
+Speaker 1:Vielen Dank für die Bestätigung. Lassen Sie uns nun über Ihre Login-Probleme sprechen. Was für erhalten Sie und haben Sie bereits irgendwelche Schritte zur Fehlerbehebung unternommen?
+
+Speaker 2:Also, ich bekomme immer wiederdie Meldung "Unbekannter: unbekannter Fehler" und "Ihr Benutzername oder Passwort i st falsch". Ich habe versucht, mein Passwort zurückzusetzen, aber das funktioniert auch nicht. Liegt das vielleicht an einer Wartung oder einer Störung?
+
+Speaker 1:Hm, das könnte durchaus sein. Haben Sie die Fehlermeldungen: fehleranmeldungen auf verschiedenen Geräten od er Netzwerkverbindungen erhalten? Also, zum Beispiel auf Ihrem Smartphone und Tablet?
+
+Speaker 2:Ja, ich habe: habe es sowohl auf meinem S martphone als auch auf meinem Tablet beide sind mit meinem Heim-WLAN verbunden. Die Fehlermeldungen erscheinen auf jedem Gerät gleich. Was können wir jetzt tun? Gibt es eine Möglichkeit, dass ich trotzdem Zugang zu meinen Finanzinformationen bekome oder dringende Transaktionen: transferaktionen durchführen kann?
+
+Speak er 1: Danke für die Info. Es scheint ein grösseres Problem zu sein. Ich werde sofort ein technisches Supportticket für erstellen, sodass wir das Problem untersuchen und beheben können. In der Zwischenzeit können Sie unser Telefonbanking nutzen oder eine unserer Filialen besuchen, um dringende Angeleegnheiten zu regeln. Ihre finanziellenInformationen sind sicher; es gibt keinen Hinweis, dass diese Login-Pr obleme Ihre Kontosicherheit gefährden.
+
+Speaker 2:Das ist sehr beruhigend zu hören. Ich bin froh, dass meine sicher sind. Können S ie mir sagen, wie lange es normalerweise dauert, bis solche Probleme behoben sind? Gab es in letzter Zeit erhebliche oder Updates an der digitalen Plattform?
+
+Speaker 1:Durchschnittlich lösen wir solche Anmeldeprobleme innerhalb von 24 bis 48 Stunden. Wir haben kürzlich einige Updates und neue Funktionen eingeführt, die möglicherweise damit zusammenhängen. Wir schätzen Ihr und Ihre Geduld, während wir daran arbeiten. Haben Sie noch weitere Fragen oder Anregungen zu anderen Servicefunktionen?
+
+Speaker 2:Vielen Dank, dass Sie das so schnell in die leiten. Können Sie mir mehr über die neuen Funktionen und Updates auf der digitalenP lattform: platzform erzählen? Irgendwelche nützlichen Features, die ich nutzen könnte?
+
+Speaker 2:Natürlich, ich freue mich, Ihnen mehr darüber zu erzählen. Wir habe kürzlich die Benutzeroberfläche unserer digitalen Plattform aktualisiert für bessere Navigation und Benutzerfreundlichkeit. Dazu gehört eine optimierte und individuell anpassbare erweiterte Sicherheitsfeatures wie die Zwei-Faktor-Authentifizireung, und eine verbesserte von Finanzplanungs und Anlage-Tools.
+
+Speaker 2:Oh, klingt interessant. Haben Sie ein paar Tipps, wie ich diese: diese neuen Funktionen am besten nutzen kann und ob es zusätzliche Sicherheitsvorkehrungen gibt, die ich beachten sollte?
+
+Speaker 1:Klar. Um die erweiterte Sicherheit zu nutzen, sollten Sie die Zwei-Faktor-Authentifizierung aktivieren. Es bietet eine zusätzliche Sicherheitsebene, indem Sie neben Ihrem Passwort einen Code eingeben, den Sie per SMS oder über eine AuthentifizierungsA-pp erhalten. Dadurch wird unbefugter Zugang schwieriger.
+
+Speaker 1:Die Finanzplanungs-Tools helfen Ihnen, Ihre finanziellen Zieleb esser zu erreichen. Sie können individuelle Budgetvorgaben festlegen und Ihre Investitionen detailliert analysieren. Ausserdem ist es wichtig, regelmässig Ihre Passwörter: apsswörter zu aktualisiere und die neuesten App-Updates zu installieren.
+
+Speaker 2:Vielen Dank für die hilfreichen Tipps. Noch eine Frage: Wie erfahre ich am besten vo kommenden Wartungsarbeiten oder geplanten Updates?
+
+Speaker 1:Die beste Weise its, die Benachrichtigungsfunktion der digitalen Plattorm nutzen. Aktivieren Sie Benachrichtigungen für automatische Updates nd wichtige Nachrichten. Sie können auch unseren Service-Status-Bereich in der App oder auf der Webseite regelmässig überprüfen. senden wir E-Mails mit wichtigen Informationen z u unseren Dienstleistungen.
+
+Speaker 1:Haben Sie sonst noch oder Fragen? Ihr Feedback ist uns wichtig.
+
+Speaker 2:Nein, das wäre alles. Danke fr die umfassenden Informationen. Ihre Hilfe ist wirklich wertvoll.
+
+Speaker 1:Es war mir eine Freude, Ihnen helfen zu können. Falls Sie weitere Fragen haben, stehen wir Ihnen jederzeit zur Verfügung. Ich wünsche Ihnen einen schönen Tag!
+
+Speaker 2:Vielen Dank! Ihnen auch schönen Tag.

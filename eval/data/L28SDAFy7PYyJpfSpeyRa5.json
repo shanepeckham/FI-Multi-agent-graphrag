@@ -1,0 +1,21 @@
+[
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-09",
+      "time": "09:00"
+    }
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-24",
+      "contact_note": "Retirement planning \u2013 assess readiness and propose portfolio adjustments.",
+      "channel": "In-person at branch",
+      "duration_minutes": 90
+    }
+  }
+]

@@ -1,0 +1,62 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1: Bonjour, c'est NAME. J'ai besoin d'aide avec mon
+
+Speaker 2: Bonjour, Monsieur NAME. C'est un plaisir de vous parler aujourd'hui. J'espère que vous allez bien. Avant de continuer, puis-je vous de confirmer votre date de naissance et votre adresse pour des raisons de sécurité ?
+
+Speaker 1: Oui, bien sûr. Ma date naissance est le DD.MM.YYYY et mon adresse est ADDRESS.
+
+2: Merci pour ces informations. Une seconde, je vais mettre à jour vos données KYC. Vous avez mentinné que vos actifs proviennent principalement de votre salaire et d'un Pourriez-vous plus de détails sur l'héritage et éventuellement nous envoyer les documents de corroboraiton à cette URL : https://example.com/doc/3770 ?
+
+Speaker 1: Oui, c'est bien ça. La majeure partie de mes actifs provient de mon salire, et j'ai hérité d'une somme importante il y a quelques années. J'ai téléchargé les documents à l'URL mentionnée.
+
+Speaker 2: D'accord, merci pour votre coopération . Maintenant, pourriez-vous la voleur totale de vos actifs ? Nous avons noté 6,834,619 CUR3, répartis com suit : actifs immobiliers - 3,680,086 CUR3, actifs liquides CUR3, et autres actifs - 150,313 CUR3.
+
+Speaker 1: Oui,c'est correct. La valeur totale et la répartition sont exactes.
+
+Speaker 2: noté cela. Voyons maintenant votre activité professionnelle. Vous êtes toujours employé dans le domaine des ventes, dans le secteur de la santé, chez Company 1 ?
+
+Speaker 1: Oui, je travaille toujours chez Company 1, dans le secteur de la santé.
+
+Speaker 2: Merci pour ces précisions. Maintenant, par rapport à votre problème de connexion sur la plateforme numérique, pouvez-vous me décrire ce qui se passe exactement ?
+
+Speaker 1: Oui, à fois que j'essaie de me connecter, ça me dit que mon mot de passe est incorrect. J'ai vérifié plusieurs fois et même mon mot de passe récemment. J'ai aussi mis à jour mon téléphone, peut-être que ça cause un problème ?
+
+Speaker 2: Hmm, je vois. Il est possible que la mise à jour de votre appareil ait causee des conflits. Avez-vous utilisé la plateforme sans problème avant mise à ?
+
+Speaker Oui, jel'utilise régulièrement pou vérfier mes comptes et les transactions. C'est la preière fois que j'ai ce problème.
+
+Speaker 2: Laissez-moi vous expiquer 'lauthentification à deux facteurs, ce qui renforcera la sécurité de vos comptes. Connaissez-vous cette fonctionnalité ?
+
+Speaker 1: je comprends mais je ne suis pas trop sûr du processus pour la Pouvez-vous m'aider ?
+
+Speaker 2: Bien L'authentification à deux facteurs ajoute une couche de sécurité en exigeant un code de évrification après votre mot de passe. Voici comment la conif gurer :
+
+1. Accédez à votre profil sur la plateforme.
+2. Allez dans les paramètres sécurité.
+3. Sélectionnez l’option d’authentification à deux facteurs.
+4. Choisissez comment recevoir le code (SMS, email, ou appllication d’authentification).
+5. Suivez les instructions.
+
+Speaker 1: D'accord, je vais essayer de faire ça. J'ai des inquiétudes sur la sécurité et la confidentialité.
+
+Speaker 2: Je comprends, votre sécurité est notre priorité. La plateforme et équipée des dernières fonctionnalités de sécurité. Si vous avez besoin d'aide pendant la configuration, n'hésitez pas à me contacter.
+
+Speaker 1: Merci beaucoup. Je vais activer l'authentification à deux facteurs maintenant. J'apprécie votre aide.
+
+2: C'est un plaisir. Une dernière chose, pour vérifier l'historique de vos connexions :
+
+1. Connecter-vous à votre compte
+.2. Allez dans 'Paramètres' ou 'Sécurité'.
+3. Recherchez 'Histori connexion' ou 'Activité de connexion'.
+4. Consultez les dates, heures et appareils utilisés.
+
+Speaker 1: D'accord, merci. Ça me rassure. Une dernière question, à fréquence les mises à jour de sécurité effectuées sur la plateforme ?
+
+Speaker 2: En général, les mises à jour de sécurité sont trimestrielles, avec des mises à jour supplémentaires si nécessaire. Vous serez informé via des noti fiction et emails. Y a-t-il autre chose que je puiss faire pour vous ?
+
+Speaker 1: Non, c'est tout pour l'instant. Merci en corps pour votre aide précieuse.
+
+Speaker 2: Je suis ravi d'avoir pu vous aider, Monsieur NAME. N'hésitez pas à nous contacter en cas de besoin. Passez une excellente jurnée !
+
+Speaker 1: Vous assi, merci

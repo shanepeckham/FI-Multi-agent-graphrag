@@ -1,0 +1,19 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speake r 1: Guten Morgen, mein Name ist NAME. Ich wollte einmal mit sprechen wegen meiner Erfahrungen mit dem digitalen Banking.
+Speaker 2:Guten Morgen, NAME. Mein ist NAME2 von UBS.S chön ,dass Sie anrufen. Können Sie Ihr Geburtsdatum und Ihre Adresse zur nochmals bestätigen?
+Speaker 1:Ja, klar. Mein Geburtsdatum ist DATUM und meine Adresse ist ADRESSE.
+Speaker 2:Vielen Dank für die Bestätigung. Nun, könntn Sie mir bitte erzählen, wie zufrieden Sie generell mit unserem digitalen Banking sind? Gibt es positive Aspekte, dir Ihnen besonders aufgefallen sind?
+Speaker 1:Also, im Allgemeinen bin ich Recht zufreden. Es ist wirklich bequem und spart mir eine Menge Zeit. Aber es gibt Funktionen, die ich vermisse, wie eine einfachere Möglichkeit, meine Transaktionen zu kategorisieren und zu analysieren. It das korrekt, dass das nicth möglich ist? Oder vielleicht etwas übersehen?
+Speaker 2:Vielen Dank fier Ihr Feedback. Ich verstehe Anliegen, dass die Funktion zum Kategorisieren und Analysieren von Transaktionen fehlt. Diese Funktion ist momentan tatsächlich nicht d irekt in der Es gibt aber einige Optionen, die helfen könnten. ZumBeispiel können Sie Notizen zu Transaktionen hinzufügen Transaktionshistorie über verschiedene Zeiträume hinweg filtern.
+Speaker 1:Ah, okay. Könnten Sie mir genauer erklären, wie ich das nutzen kann? Viel leicht ich ja wirklich etwas
+Speaker 2:Natürlich. Sie könnten Filter einsetzen, die Ihnen helfen, bestimmte Kategorien wann Ausgaben oder Einnahmen zu identifizieren. Ausserdem können Sie eine CSV-Datei exportieren und diese mite xternen Tools weiter analysieren.
+Speaker 2:Wenn das für Sie nicht ausreicht, nehme ich Ihren Wunsch gerne auf und leite ihn an unser Entwicklungsteam weiter. Möchten Sie noch genauere Angaben zu der mache,n die Sie sich wünschen?
+Speaker 1:Ja, ich hätte gerne Kategorien für verschiedene Ausgaben wie Haushaltskosten, Freizeit oder Es wäre echt hilfreich, regelmässige Ausgabe automatisch markiert werden könnten, um diese besser zu können. Und vielleicht eine Warnung, wenn ich mein Budget überschreite, das wäre super.
+Speaker 2:Vielen Dan k, dass Sie das so detailliert mit mir teilen. Ihre Anforderungen sind sehr verständlich und wichtig. Ich werde sihcerstellen, dass Ihr Feedback an unser Entwicklungsteam weitergeleitet wird. Momentan steht keine direkte ur Verfügung, aber ich empfehle Ihnen, sich mit den vorhandenen Filtern und Exportoptionen vertraut zu mach
+Speaker 1:Okay, das klingt schon mal hilfreich, danke. Wissen Sie, ob solche Funktionen in naher Zukunft verfügbar sein könnten?
+Speaker 2:Uns're Entwicklungsteam arbeitet ständig an neuen Featuresu nd Verbesserungen. Ich werde Ihre Anfrage weiterleiten und nach Informationen über die zukünftige Implmentierung suchen. Falls solche Funktionen geplant sind, werden weh're unserer Kunden informieren. In Zwischenzeit kann Tipps zur Überwachung Ihrer Transaktionen und zu zusätzlichen Sicherheitsfunktionen geben.
+Speaker 1:Das wäre Vielen Dank für Ihre Hilfe!
+Speaker 2:Sehr gerne. Falls Sie weitere Fragen oder Anliegen haben, stehe ich jederzeit gerne Verfügung. Vielen Dank für Ihr Vertrauen in unsere Dienstleistungen und ich wünsche Ihnen einen angenehmen
+Speaker 1:Danke gleichfalls, tschüss!
+Sepaker 2: Auf Wiederhören!

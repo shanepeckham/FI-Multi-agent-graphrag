@@ -1,0 +1,44 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 2:Guten Morgen, meinem ich handle ein Proble m mit dem Zugang zu - äh, ... zu meiner Banking-Plattform.
+Speaker :2 Guten Morgen, hier spricht NAME1 von UBS. Ich verstehe, se frustrierend ist, nicht auf die digitale Plattform zugreifen zu können, und wir können das sicherlich heute klären. Könnten Sie mir Sicherheitsüberprüfung Ihr Geburtsdatum und Ihre Adresse bestätigen?
+Speaker 1:klar, mein Geburtsdatum ist der DATUM und meine Adresse ist ADRESSE.
+Speaker 2:Danke für Bestätigun g. Ein Mom bitte...
+System processing...
+Speaker 2:Super, fand Irhe Angaben. Können Sie mir bitte mitteilen, welche Fehlermeldungen angezeigt werden, wenn Sie versuchen sich anzumelden? Haben Sie kürzlich Ihre Login-Daten oder E-Mail-Adresse geändert?
+Speaker 1:Die Fehlermeldung lautet: "Ungültige Anmeldeinformationen." Und ich habe meine oer E-Mail-Adresse letzter Zeit nicht geändert. Um ehrlich zu sein, ich bin mir nicht ganz sicher, wie die Zwei-Faktor-Authentifizierung funktioniert und wie sie helfen kann.
+Speaker 2:Alles klar. Die Zwei-F aktor-Authentifizierung (2FA) eine zusätzliche Sicherheitsschicht. Selbst wenn jemand Ihr Passwort kennt, bleibt Ihr Konto weil ein zweiter Faktor wie ein Eimer Code erforderlich ist. Diesen Code können Sie per SMS erhaltene oder über eine Authentifizierungs-App generieren.
+Speaker 1:Ah, verstehe...also ein zusätzlicher Schritt der Sicherheit.
+Speaker 2:Genau! Hier sind die Schritte, einzurichten:
+1. Loggen Sie sich in Ihr Konto
+2. Gehen Sie zu den Sich erheitsei nstellungen.
+3. Wählen Sie die „Zwei-Faktor-Authentifizierung“.
+4. Registrieren Sie Ihre Telefonnummer oder verbindenSie eine Authentifizierungs-App.
+5. Geben Sie den Code ein, Sie erhalten haben.
+
+Falls Sie auf Probleme stossen, bin ich da, um Ihnen durch jeden Schritt zu helfen.
+
+Kurze Erinnerungspause
+Speaker 1:Was die Sicherheit Ihrer Daten und Gelder angeht, verwenden wir moderne Sicherheitsprotokolle und Technologien, um sicherzustellen, dass alles gemäss den höchsten Standards erfolgt.
+
+Bevor wir uns um die Aktualisierung Ihrer Kontaktdaten kümmern, haben Sie heute Abend dringende Rechnungen, die bezahlt werden müssen, richtig?
+Speaker 1:Ja, das Ich wäre wirklich dankba r, wenn wir das heute Abend eine Lösung finden könnten. Auch der Kontaktdaten, meine neue Telefonnummer +41000000000 und ich bevorzuge E-Mail für die Kommuinkation.
+Speaker 2:V werde Ihre Kontaktdaten sofort aktualisiere n:
+- Neue Telefonnummer: +41000000000
+- Kommunikationspräferenz: E-Mail
+- Adressklasse: T
+- Zustellung rechtlicher Hinweise: Blockiert
+
+Und bezüglich Ihres Beschäftigungsstatus: Sie sagten, dass Sie arbeitslos sind?
+Speaker 1:Ja, korrekt. Bitte löschen Sie die Daten zu Funktion, Arbeitgeber und Sektor.
+
+Notierung...
+Speaker 2:Ich habe Ihre entspreched aktualisiert.
+- Beschäftigungstsatus: Arbeitslos
+- Funktion, Arbeitgeber, und Sektor wur den entfernt.
+
+werde auch einspezielles Support-Ticket erstellen mit hoher Priorität, damit Ihr Login-Problem bis heute Abend sicher gelöst Unser Team kümmert sich sofort darum. Haben noch weitere Fragen oder Bedenken?
+Speaker 1:Nein, das war alles. Vielen Dank für Ihre Geduld und Unterstände. Ich erleichtert, dass wir das klären und besondrs, dass ic noch Zugang zu meinem Konto haben werde.
+Speaker 2:Ich freue dass helfen konnten. Ich habe den Termin für den 9. September 2025 um 14:00 Uhr für Sie festgelegt. Sollten weitere Fragen zögern Sie nicht, uns zu kontaktieren. Gibtes sonst noch etwas, das ich für Sie tun kann?
+Speaker 1:Nein, das war alles. Vielen Dank nochmals für Ihre Hilfe!
+Speaker 2:Gern geschehen! Einen schönen Tag noch!

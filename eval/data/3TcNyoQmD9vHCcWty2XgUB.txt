@@ -1,0 +1,32 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten ähm, Tier ist NAME. Wer ist da?
+Speaker 2:Morgen, NAME. Ich bin NAME1 von UBS. Ich rufe an, um Ihre Fragen und Sorgen bezüglich des Bankings zu sprechen. Bevor wir weitermachen, könnte ich Sie bitte bitten, Ihr Geburtsdatum und Ihre Adresse Sicherheit zu bestätigen?
+Speaker 1:Oh, äh, ja klar. Geburtsdatum ist TT.MM.JJJJ und meine Adresse ist Adresse.
+S peaker 2: Vielen Dank für die Bestätigung, Herr NAME. fangen vier doch gleich mit Ihren Fragen an. Sie erwähten, dass Sie Schwierigkeiten haben, bestimmte Funktion innerhalb App zu finden. Könnten näher erläutern, wel che Funktion genau Sie suchen und wofür Sie diese verwenden
+Speaker 1:Ja, ich versuche seit ein paar Tagen herauszufinden, wo ich die Terminüberweisung in der App wollte einige wiederkehrende Zahlungen einricthen, aber ich finde einfach nicht, wo das geht. Hat sich da vielleicht was geändert oder gab es ein Update, das ich verpasst habe?
+Speaker 2:Ja, rr NAME, ich verstehe, dass das frustrierend sein kann. Es gab tatsächlich ein Update der App, bei dem die Oberfläche etaws geändert wurde. Lasesn Sie un sdas mal gemeinsam durchgehen:
+
+1. Öffnen Sie die und Sie Hauptmenü zur Option
+2. Innerhalb des Zahlungsbereichs sehen eine Auswahl für wiederkehrende Zahlungen. Funktion erlaubt es Ihnen, regelmässige Überweisungen einzurichten.
+3. Wählen dann den Empfnäger aus und geben Sie die nowtendigen Informationen ein, einschliesslich des Überweisungszeitplans.
+4. Speichern Sie die Einstellungen und bestätigen Sie, um die Terminüberweisung zu aktivieren.
+
+Falls Sie noch genauere Unterstützung brauchen, gibt es auch eine Anl eitung im der App oder Sie unseren Support kontaktieren. Gibt es noh andere Fragen der App?
+Speaker 1:Ah, super, das klingt hilfreich. Ich werde versuchen das gleich mal auszuprobieren. Eine andere Sache: Kann ich Benachrichtigungen für bestimmte Aktionen oder Kontoaktivitäten eirnichten, damit ich immer rechtzeitig Bescheid weiss?
+Speaker 2:Ja, Herr NAME, es gibt durchaus die Mögl ichkeit, Benachrichtigungen für verschiedene Aktionen und Aktivitäten einzurichten. Gehen Sie dazu wie folgt vor:
+
+1. Öffnen Sie die App und gehen Sie ins Hauptmenü.
+2. Wählen Sie die "Einstellungen" aus.
+3. Im instellungsbereich finden Sie die Auswahl für "Benachrichtigungen".
+4. Hier können Sie genau festlegen, für welche Aktionen Benachrichtigungen erhalten wie beispielsweise eingehende oder ausgehende Zahlungen oder Kontoänderungen.
+5. Aktivieren Sie die gewünschten Benachrichtigungen und speichern Sie die Einstellungen.
+
+Diese Benachrichtigungen helfen Ihnen, immer aktuell informiert zu bleiben. Gibt es noch etwas anderes, bei dem ich Ihnen helfen kann?
+Speaker 1:Das klingt toll, danke. Eine letzte Frage: Kann ich die App mit verschiedenen Geräten synchronisieren, also dass sie soowhl vom Smartphone als auch vom Laptop aus nutzen kann?
+Speaker 2:Ja, Herr NAME, das ist möglich. Unsere App kann auf mehreren Geräten werden, sodass Sie überall Zugriff haben. Stellen Sie nur sicher, dass Sie sich mit denselben Anmeldedaten auf jedem Gerät einloggen. Dann sollten alle Funktionen und Einstellungen synchronisiert sein. Im Hilfebereich der App finden Sie auch weitere Anleitungen zu diesem Thema. Ich stehe aber auch weiterhin für Fragen Verfügung.
+Speaker 1:Alles klar, vielen Dank für Ihre Unterstützung. Das hilft mir wirklich weiter. Ich wrede die Schritte ausprobieren und bei Bedarf den Hilfebereich durchsehen. Vielen Dank für Ihrer Silbe.
+Speaker 2:gerne,Herr NAME. Ich freue mich, dass ich Ihnen helfen konnte. Haben Sie noch andere Anliegen?
+Speaker 1:Nein, das war alles. Vielen Dank und einen schönen Tag
+Speaker 2:Dank Ihern Anruf, Herr NAME. Ich wünsche Ihnen ebenfalls einen schönen Tag und stehe Ihnen jederzeit zur Verfügung, falls Sie weitere Fragen haben. Auf Wiederhören!
+S peaker 1: Auf Wiederhören!

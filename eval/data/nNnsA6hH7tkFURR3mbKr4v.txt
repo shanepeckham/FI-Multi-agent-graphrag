@@ -1,0 +1,62 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen, mein Na me ist NAME von der UBS. äh, besten... ich rufe an, um über Schwierigkeiten bei der Nutzung der digitalen Banking-App sprechen, ausserdem wollte ich noch Fraen zur KYC-Aktualisierung klären. Wie geht es Ihnen? Bevor darf ich Sie aus Sicherheitsgründen bitte um Bestätigung Ihres Geburtsdatums und Ihrer Adresse
+
+Speaker 2:Ja klar, mein Geburtsdatum ist [Geburtsdatum] und meine Adresse ist Moment ADDR, ja das passt.
+
+Speaker 1:Vielen Dank. Frau NAME, ich möchte Ihnen versichern, ass wir Ihnen bei der Lösung Ihrer App-Probleme sowie bei der Aktualisierung Ihrer KYC-Daten helfen werden. Also, ähm, zunächst zu den Bedenken bezüglich der digitalen Banking-App. Können Sie mir welche Funktion Sie in der App nicht finden können und welche Schwierigkeiten Sie beim Navigieren haben?
+
+Speaker 2:Jaa, naja, ich hab Probleme die Funkton zur Überprüfung meiner Transaktionshistorie finden. Jedes Mal , wenn ich versuche, darauf zuzugreifen, scheint sie irgendwie nicht vorhanden zu sein oder ist schwe rzu finden. Das macht mich echt unsicher. Ich bin mir nicht sicher, ob ich vielleicht einen Fehler mache oder ob die App aktualisiert wurde und sich was geändert hat. Könnten mir eine Anleitung geben oder, äh, ein paar Tipps, wie ich das leichter finden kann?
+
+Speaker 1:Ja, ich verstehe, dass das verwirrend sein kann. Ich entschuldige mich für die Unannehmlichkeiten. Lassen Sie mich Ihnen eine Schritt-für-Schritt-Anleitung geben, damit Sie Ihre Transaktionshistorie finden können. Also zuerst, öffnen Sie die App und gehen Sie zum Hauptmenü. Dort sollten Sie die Option "Konten" sehen. Wenn Sie darauf klicken, Sie eine Ihrer Konten. Wählen Sie das dessen Transaktionshistorie Sie überprüfen und dann sollte es eine Registerkarte oder einen A bschnitt mit aktuellen Transaktionen oder Verlaufsdetails geb en. Das sollte normalerweise direkt darunter oder innerhalb derselben Übersicht sein. Falls die Funktion immer noch nicht erscheint, könnte es sein, dass ein Update stattgefunden hat. Haben Sie schon versucht, die App neu zu starten oder sich ab- und wieder anzumelden?
+
+Speaker 2:Ja, ich hab die App schon neu gestartet und mich auch ab- und wieder angemeldet. Aber ich finde die Transaktionshistorie wirklich nicht. Es wäre super, Sie mir eine aktualisierte Anleitung fürdie neueste Version der App gben könnten, oder sagen könnten, ob sich was geändert hat. gibt es noch die allgemeine Navigation, die mir oft Probleme bereitet. Können Sie mir da auch helfen?
+
+Speaker 1:Vielen Dank für Ihre Geduld. Es scheint, als ob es ein paar Änderungen in der neuesten Version der App gegeben haben könnte. Lassen Sie uns die aktualisierte Anleitung durchgehen. Öffnen Sie App, navigieren Sie zum Hauptmnü und Sie "Konten". In der neuesten sollten Sie dann ein Symbol oder ene Schaltfläche sehen, die "Verlauf" oder "Transaktionen" Ihres Kontos anzeigt. Vielleicht müssen Sie das Konto auswählen, das Sie überprüfen und dann Sie die Transaktionshistorie unter einer neuen oder einem Abschnitt. Falls Sie die Funktion immer noch nichtf inden können, wir können auch gerne einen Bild schirm teilen, um Sie durch den Prozess zu führen.
+
+Um Ihre Navigations erfahrungen zu verbessern, empfehle ich regelmässige Updates Sie können auch die Suchfunktion App benutzen, um schnell er zu den gewünschten Funktionen zu gelangen. Können Sie mir sagen, welche Funktionen Sie besonders häufig nutzen? Dann kann ich gezielte Tipps geben.
+
+Speaker 2:ich glaub, ich hab die Transaktionshistorie jetzt gefunden, danke die Anleitun. die allgemeine Navigation bleibt schwierig. Können Sie mir genauer erklären, wie ich zwischen verschiedenen Konten wechseln kann und die Favoritenfunktion nutzen kann?
+
+Zusätzlich möchte ich meine KYC-Daten aktualisieren. Meine gesamten Vermögenswerte betragen AMOUNT, die Währung ist CURRENCY, meine gesamten Immobilienwerte betragen AMOUNT, gesamten liquiden Werte betragen AMOUNT und meine sonstigen Vermögenswerte betragen AMOUNT. Meine Anmerkungen dazu sind, äh, are diversified. Ausserdem bin ich selbstständ ig arbeite als Manager bei Company2 im Technologiesektor.
+
+Speaker 1:Ah, ich verstehe, dass Dir allgemeine Navigation in der App verwirrend sein kann. Lassen Sie uns inige spezifische Tipps durchgehen. Um zwischen verschiedenen Konten zu wechseln, öffnen Sie die App und navigieren Sie zum Hauptmenü. Dort sollte Kontenliste angezeigt werden. Sie klicken einfach auf das gewünschte Konto und dessen sollten erscheinen. Für Favoritenfunktion können Sie bestimmte Konten oder Funktionen markieren, die Sie häufig verwenden. Sie nach einem Stern- oder Herzsymbol neben den jeweiligen Einträgen und klicken Sie darauf, um diese als Favorit zu speichern. Diese Favoriten können Sie dann schnell über das Hauptmenü oder eine spezielle Favoritenliste erreichen.
+
+Jetzt zu Ihren KYC-Daten. Ich Ihre noiert:
+Gesamte Vermögenswerte: AMOUNT in CURRENCY
+Immobilienwerte: AMOUNT
+Liquidwerte: AMOUNT
+Sonstige Vermögenswerte: AMOUNT
+Anmerkunge:n Assets are diversified
+Sie sind selbstständig, arbeiten als Manager bei Company2 im Technologiesektor.
+
+Um dieseI nformationen zu verifizieren und sicherzustellen, dass keine Fehler vorliegen, benötigen Sie einige Schritte:
+1. Melden Sie sich in der App an und navigieren Sie zu „Mein Profil“ oder „KYC-Details“.
+2. Dort sollten Sie eine Option zur A ktualisierung Ihrer Vermögenswerte und Tätigkeitsdetails finden.
+3. Geben Sie die neuen Daten sorgfältig ein und speichern Sie die Änderungen.
+4. In einigen Fällen werden zusätzliche Dokumente geforder, um Ihre Vermögenswert eund Tätigkeit zu verifizieren. Dies könnte Eigentumsnachweise für Immobliien, Kontoauszüge für Liquidwerte oder sonstige relevante Dokumente sein.
+
+Wenn zusätzliche Dokumente erforderlich sind, gibt Ihnen die App oder unser Team spezifische Anweisungen wie diese sicher hochladen können. Datenschutz ist uns sehr wichtig und Ihre persönlichen und finanziellen Informationen werden bei uns sicher gespeichert und vor unbefugtem Zugriff geschützt. Ale Daten werden gemäss den geltenden Datenschutzbestimmungen verarbeitet und gesichert.
+
+Speaker 2:Ah, vielen Dank für die Tipps, das werde ich probieren. Jetzt möchte ich sicherstellen, meine KYC-Daten korrekt sind. Könnten Sie bitte bestätigen, dass alle welche Sie haben, meine gesamten Vermögenswerte, Währungsangaben undsonstige Details zu meinen Asstesrichtig verzeichnet sind?
+
+Speaker 1:Natürlich, Frau NAME. Ih re aktualisierten KYC-Daten ermöglichen es uns, Ihnen besser angepasste und Produkte anzubieten, beispielsweies personalisierte Anlageberatung basierend auf Ihrem aktualisierten Vermögensprofil sowie Zugang zu exklusiven Finanzprodukten und bevorzugten Bankdienstleistungen und Konditionen für Selbstständige und Manager im Technologiesektor.
+
+Jetzt zu den notwendigen Dokumenten, die Sie benötigen und deren spezifische Zuordnung in der App:
+Immobilienwerte: Eigentumsnachweise wie Kaufverträge, Setuerbescheide oder Immobilienbewertungsgutachten.
+Liquidwerte: Aktuelle Kontoauszüge, Jahresabschlussberichte oder
+Sonstige Wertpapierbecheinigungen und Zertifikate.
+
+Summe Hochladen dieser Dokum
+1. Anmeldung in der App – Hauptmenü, ann „Mein Profil“ oder „KYC-Update“ auswählen.
+2. Immobilienwerte hochladen – Bereich „Immobilienwerte“ suchen und hinzufügen" klicken, dann Eigentumsnachweise hochladen.
+Liquidwerte hochladen – Bereich für Liquidwerte finden und "Dokument hinzufügen" klicken, dann entsprechende Dokumente hochladen.
+4. Sonstige Vermögenswerte hochladen – Abschnitt „Sonstige Vermögenswerte“ D"okument hinzufügen", wie Investitionsberichte oder Zertifikate hochladen.
+
+der Sicherheitsmassnahmen:
+- Verschlüsselung: Alle Daten werden übertragen und gespeichert.
+- Zugriffskontrolle: Nur autorisierte Mitarbeiter haben Zugriff auf Ihre persönlichen und finanziellen
+- Regelmässige Sicherheitsüberprüfungen: Unsere Systeme werden regelmässig auf Schwachstellen und Bedrohungen überprüft.
+- Datenschutzrichtlinein: Wir folgen strengen Datenschutzrichtlinien und Vorgaben, um Ihre Daten zu schützen.
+
+Haben Sie noch Fragen oder benötigen Sie weitere Unterstützung beim Hochladen Ihrer Dokumente?

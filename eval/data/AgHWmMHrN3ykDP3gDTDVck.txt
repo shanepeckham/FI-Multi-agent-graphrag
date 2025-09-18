@@ -1,0 +1,63 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Mor gen.
+Speaker 2:Guten Morgen,das ist NAME1 von UBS. Ich rufe an, um über Ihre rund einige damit verbundene Fragen zu sprechen. Wie geht es Ihnen heute? Können Sie mich gut
+Speaker 1:Ja, ich höre Sie gut. Danke. Mir ganz kurt. Ähm, wegen meinem Was genau ist der Stand?
+Speaker 2:Bevor wir fortfahren, könnte ich Sie bitten, Ihr Geburtsdatum und Ihre Adresse zu ebstätigen, um Ihre Identität aus Sicherheitsgründen zu verifizieren?
+Speaker 1:Klar, mein Geburtsdatum ist DATUM und meine Adresse ist ADRESSE.
+Speaker 2:Vielen Dank für die Bestätgung Ihrer Daten. Ich sehe, dass Ihr Problem eine Kontoüberziehung betrifft und ich möchteIhnen dazu detaillierte Informationen geben.
+
+Speaker 1:Ja, bitte. Ich bin mir nicht ganz sicher über die Details.
+Speaker 2:Der momentane Überziehungsbetrag CHF AMOUNT. Es betrifft einen Transfer von AMOUNT am DATUM sowei eine Zahlung von CHF AMOUNT am DATUM. Das gibt Ihnen enen Überblick über die Vorgänge, die dem negativen Saldo geführt haben.
+
+Speaker 1:Ah, verstehe. Und wie können wir das regeln?
+Speaker 2:Um den Überziehungsbetrag zu decken, können Sie entweder sofort eine Überweisung vornehmen oder andere finanzielle Anpassungen vornehmen. Es ist wichtig zu wissen, dass Überziehungsgebühren und Zinssätze anfallen.
+
+Speaker 1:Was genau sind das für Gebühren und Zinssätze?
+Speaker 2:Die Bank erhebt eine Überziehungsgebühr von CHF AMOUNT für heben Monat, das Konto überzogen ist. Zusätzlich gibt es einen Zinssatz von AMOUNT% auf den überzogen Betrag, welcher täglich berechnet wird. Zum Beispiel, wenn Ihr Konto für einen um CHF AMOUNT übe rzogen ist, Ihre Gebühr CHF AMOUNT, plus die Sitzen auf den negativen Saldo.
+
+Speaker 1:berechnet... wie funktioniert das genau?
+Speaker 2:Zinssatz wird täglich berechnet, indem der jährliche Prozentsatz auf einen Tag heruntergebrochen wird. Zum wenn die jährliche Überziehungsrtae AMOUNT% beträgt, dann wird dieser Prozentsatz durch 365 Tage geteilt. Die tägliche Rate wird auf den überzogenen Betrag angewendet. Es gibt Kalkulatoren auf unserer Online-Plattform, mit denen Sie die geschätzten Zinsen im Voraus berechnen können.
+
+Speaker 1:Okay, das ist klar. Und was muss ich tun, um den Betrag zu überweisen?
+Speaker 2:Sie können den Betrag direkt über unsere Online-Plattform oder mobile App überw eisen. Gehe nSie einfach zu "Überweisung", geben Sie den negativen Slado-Betrag ein und wählen Sie Ihr verbundenes Konto Alternativ können Sie auch unsere Teleonbanikng-Dienste ntzen und den Betrag telefonisch überweisen. Brauchen detaillierte Anleitung?
+Speaker 1:Ja, das wäre suer.
+Speaker 2: Also, auf der Online-Plattform:
+1. Loggen Sie sich in Ihr Online-Bankin-gKonto ein.
+2. Gehen Sie Menüpunkt "Überweisungen" und wählen Sie "neue Überweisung".
+3. Geben Sie den Betrag des Kontosados ein.
+4. Wählen Sie das Konto as, von dem der Betrag abgebucht werden soll.
+5. Bestätigen Sie die Überweisung und schliessen Sie Vorgang ab.
+Speaker 1:Verstanden. Ich werde das heute noch machen.
+
+Speaker 2:Die Frist zur Deckung des Üb ist der DATUM, um zusätzliche Strafen zu vermeiden. Bei Polizzen hilft unsere Bank, zusätzlichen Informationsquellen für ein besseres Kontomanagement zu finden, damit zukünftige verhindert werden können.
+
+Speaker 1:Ah, gut zu wissen. Was schlagen Sie damit ich solche Überziehungen in Zukunft vermeide?
+Speaker 2:Um Ihr Kontomanagemetn zu optionierenudn künftige Überziehungen zu verhindern, empfehle ich Ihnen, regelmässig Ihre Kontobewegungen zu überwachen und gegebenenfalls rte Benachrichtigungen einzruichten. Eine detaillierte Anlage Ihrer Einnahmen und Ausgaben kann auch hilfreich sein, um potentielle Eng pässe frühzeitig zu identifizieren. Darüber hinaus wir auch Finanzplanungsdienste an.
+
+Speaker 1:Finanzplanung klingt interessant. Könnten Sie mir mehr darüber erzählen?
+
+Speaker 2:Natürlich. Unsere spezialisierte Finanzberater bei UBS können Ihnen per sönliche Finanzberatungen anbieten, bei denen Ihre Einnahmen und Ausgaben analysiert werden. Anschliessend entwickeln wir dann massgeschneiderte Strategien für Ihr Konto, einschliesslich Budgets und Sparplänen. Ich kann einen Termin für Sie vereinbaren, wenn Sie möchten
+.
+Speaker 1:Ja, das wärehilfreich. Wie lange dauert in der Regel so eine Beratung?
+
+Speaker 2:Eine typische Beratung dauert etwa 60 Minuten. Soll ich diesen Termin jetzt für Sie arrangieren? Gibt es eine bevorzuget Zeit oder Datum?
+
+Speaker 1:Dienstag wäre Geht das nächste Woche?
+
+Speaker 2:Kein Prblem. Ich werde das einrichten und die Bestätigung senden.
+Speaker 2:Perfekt. Vielen Dank. Was is t mit meinem nächsten Meeting am 8. September?
+Speaker 2:Im nächsten persnölichen am 8. September um 14:00 Uhr werde ich Ihnen unsere vorstellen, einen Anlageberater und einen Rentenplaner. Das Treffen wird in unserer Filiale stattfinden und etwa 60 Minuten dauern. Wir können auch Broschüren und Informationsmaterial zu den Themen wie steuerbegünstigte Rentenpläne, indexbasierte ETFs und langfristige Investmentfonds für Ihre Vorbereitung zusenden. Möchten Sie diese bekommen?
+
+Speaker 1:Ja, das wäre sehr hilfreich. Und dann könnten Sie mir vielleicht eine Liste mit den Anforderungen für die Erbschaftsdokumente zusenden?
+Speaker 2:Natürlich. spezifischen Anforderungen umfassen notarielle Testamente, Nachlassinventare gerichtliche Bestätigungen. Es wäre ideal, wenn die Dokumente bis zum Meeting am 8. September eingereicht werden. Der Nachweis Ihrer Arbeitslosigkeit könnte durch Sozialversicherungsausweise oder Bescheinigungenvom Arbeitsamt erfolgen.
+
+Speaker 1:Ich verstehe. Viele für die Infos. Ich habe keine eiteren Fragen im
+
+Speaker 2:Gern geschehen. Ich werde die nötigen Schritte einleiten:
+- Termin am 8. September 2025 um 14:00 Uhr
+- Weitere Kontaktaufnahme am 5. Oktober 2025
+- KYC-Daten Aktualisierung.Sollte noch etwas sein, können Sie sich melden.
+Speaker 1:Fabelhaft. Vielen Dank und bis bald!
+
+Auflegen

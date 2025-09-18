@@ -1,0 +1,31 @@
+[
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-09",
+      "time": "14:00"
+    }
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Inheritance",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/6296"
+      ]
+    }
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-13",
+      "contact_note": "Alternative investments \u2013 discuss private markets, hedge funds, or real assets.",
+      "channel": "In-person at branch",
+      "duration_minutes": 60
+    }
+  }
+]

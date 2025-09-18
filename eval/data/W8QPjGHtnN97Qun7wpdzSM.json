@@ -1,0 +1,24 @@
+[
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-08",
+      "time": "14:00"
+    }
+  },
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-15",
+      "contact_note": "Market update \u2013 share UBS house view and outlook, and discuss possible portfolio implications.",
+      "channel": "In-person at branch",
+      "duration_minutes": 90
+    }
+  }
+]

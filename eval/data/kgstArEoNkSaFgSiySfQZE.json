@@ -1,0 +1,14 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-07",
+      "contact_note": "Retirement planning \u2013 assess readiness and propose portfolio adjustments.",
+      "channel": "In-person at branch",
+      "duration_minutes": 60
+    }
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  }
+]

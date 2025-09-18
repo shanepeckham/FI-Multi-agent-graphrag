@@ -1,0 +1,31 @@
+[
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Inheritance",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/8614"
+      ]
+    }
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-08",
+      "contact_note": "Liquidity event planning \u2013 discuss deployment of funds after a major asset sale or dividend payout.",
+      "channel": "In-person at branch",
+      "duration_minutes": 60
+    }
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "payments",
+      "details": "Client wants to invest for retirement."
+    }
+  }
+]

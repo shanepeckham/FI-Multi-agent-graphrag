@@ -1,0 +1,14 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-03",
+      "contact_note": "Rebalancing proposal \u2013 recommend shifting allocations due to market moves or changed risk appetite.",
+      "channel": "Video call",
+      "duration_minutes": 90
+    }
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  }
+]

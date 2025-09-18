@@ -1,0 +1,27 @@
+[
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "investing & securities trading",
+      "details": "Client wants to invest for retirement."
+    }
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-06",
+      "contact_note": "Sustainable investing \u2013 align portfolio with ESG/impact preferences.",
+      "channel": "Video call",
+      "duration_minutes": 30
+    }
+  }
+]

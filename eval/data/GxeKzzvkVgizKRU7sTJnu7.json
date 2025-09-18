@@ -1,0 +1,34 @@
+[
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Inheritance",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/6137"
+      ]
+    }
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "payments",
+      "details": "Client wants to invest for retirement."
+    }
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-09",
+      "contact_note": "Market update \u2013 share UBS house view and outlook, and discuss possible portfolio implications.",
+      "channel": "Client office",
+      "duration_minutes": 30
+    }
+  },
+  {
+    "task_type": "update_kyc_activity"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-17",
+      "contact_note": "Estate & succession planning \u2013 discuss wills, trusts, and intergenerational wealth transfer.",
+      "channel": "In-person at branch",
+      "duration_minutes": 90
+    }
+  },
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-09",
+      "time": "09:00"
+    }
+  }
+]

@@ -1,0 +1,25 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, je pense avoir des problèmes avec mes connexions bancaires en ligne, et ça commence vraiment à me frustrer. Pouvez-vous m'aider?
+
+Speaker 2:Bonjour, ici NAME1 de UB.S Je suis désolé d'apprendre ça. Avant de pouvez-vous me confirmer votre date de naissance et votre adresse pour des raisons de sécurité?
+
+Speaker 1:bien sûr. Ma date de naissance est le DATE et mon adress est ADDRESS.
+
+Speaker 2:Merci, vos informations sont vérifiées. Parfait, on peut commencer. rencontré des changements récents, comme u ndéménagement un nouveau travail par exemple? Et avez-vous utilisé notre plateforme dernièrement?
+
+Speaker 1:Eh bien, j'ai eu quelques soucis avec la connexion à la plateforme. J'ai essayé de me connecter mais je reçois toujours des messages d'erreur disant que mon mot de passe est même après l'av oir réinitialisé plusieurs fois. C'est vraiment frustrant. Vous pouvez m'aider?
+
+Speaker 2:Oui, je suis vraiment désolé que vous ayez ce problème. Ne vous inquiétez pas, on va régler ça ensemble. Quels navigateurs web avez-vous essayés pour vous connecter? Avez-vous vidé le cache de votre navigateur?
+
+Speaker 1:Oui, j'ai essayé avec Google Chrome et Safari, mais c'est le même problème partout.J'ai vidé e cache et les mais rien ne marche. C'est stressant parce que j'ai besin d'accéder à mon compte pour gérer mes finances. Est-ce que c'est à cause d'une mise à jour récente de votre lpateforme? D'autres clients ont-ils ce problème aussi?
+
+Speaker 2:Oui, je comprends que ce soit stressant. Il est ossible qu ece soit lié à une mise à jour récente. Nous avons eu des rapports similaires d'autres clients. Avez-vous activé l'authentification à deux facteurs sur votre compte? Cela peut parfois causer des problèmes si la configuration n'est pas correcte. On peut vérifier ça ensemble si vous voulez.
+
+Speaker 1:Oui, j'ai activé l'authentification à deux facteurs, mais je pense que quelque chose ne fonctionne pas ocrrectement. Pouvez-vous m'expliquer comment vérifier et reconfigurer cette authetnification?
+
+Speaker 1:sûr, allons-y étape par étape. Accédez à la page de g estion de votre sur notre plateforme, puis trouvez l'option de sécuri té ou d'authentification à deux facteurs. Assurez-vous que votre numéro de téléphone et votre adresse e-mail sont corrects. Vous devriez voir une option pour tester ou réinitialiser l'authentification. Essayez de réinitialiser de reconfigurer en suivant les instructions. Assurez- vous que vous recevez les codes par SMS ou via Google Authenticator. reste en ligne, donc n'hésitez pas à me dire si marche non.
+
+Speaker 1:Face à des bruits de fond Oh, attendez une mon chien aboie. bruits d'aboiemnet fond D'accord, j'ai suivi les étapes, mais ne marche toujours pas. vraiment urgent. Pouvez-vous trans férer mon cas à l'équipe immédiatement?
+
+Speaker 2:Oui, je comprends. Je vais transférer votre cas à notre équipe technique pour une résolution rapide. Merci de votre patience et désolé ces désagréments.

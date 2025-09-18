@@ -1,0 +1,11 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-25",
+      "contact_note": "Cross-border structuring \u2013 optimize asset holding given upcoming international residency.",
+      "channel": "Video call",
+      "duration_minutes": 90
+    }
+  }
+]

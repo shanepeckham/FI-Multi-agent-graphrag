@@ -1,0 +1,53 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen. Äh, ich habe Schwierigkeiten beim Einloggen in mein Digital Banking Konto. Können Sie mir da helfen?
+
+Speaker 2:GutenMorgen, mein Name ist NAME1 von UBS. Natürlich, ich kann Ihnen helfen. Bevor wir Sie bitte Ihre Identität bestätigen, indem Sie Ihr Geburtsdatum und Ihre Adresse angeben?
+
+Speaker 1:Ja klar, mein Geburtsdatum ist DATE und meine Adresse ist ADDRESS.
+
+Speaker 2:Perfekt, vielen Dank. Ich überprüfe das kurz... prüft Daten... Das ist alles korrekt.
+
+Speaker 1:danke. Also, das Problem ist, dass ich jedes wenn ich versuche einzuloggen, Nachricht bekomme, dass mein Passwort falsch ist, obwohl ih sicher bin, dass richtig ist. Das fing an, nachdem ich mein Pas swort geändert habe. Ich habe versucht es zurückzusetzen, aber es funktioniert immer noch nicht. Ist irgendwas an meinem Konto geändert worden?
+
+Speaker 2:Ich verstehe, das ist wirklich ärgerlich. Es klingt nach einem technischen oder vielleicht einer Sicherheitsmassnahme nach Ihrer Passwortänderung. Lassen Sie uns ein paar grundlegende Schritte zru Fehlerbehebung durchgehen. Haben Sie schon den Cache Ihres zu leeren oder einen anderen Browser zu verwenden?
+
+Speaker 1:Ja, das hab ich schon gemacht. Firefox, Chrome, Cache geleert, probiert – nichts hilft. Ich mache mir ernsthaft Sorgen um die Sicerheit meines Kontos. Können wir da irgendwas um dass meine Daten sicher sind?
+
+Speaker 2:Natürlich, ich verstehe Ihre Sorgen. Wir werden ein technisches Supportticket erstellen, damit unser Team das Problem so schnell wie möglich untersuchen kann. der Zwischenzeit könnten wir zusätzliche Sicherheitsüberprüfungen durchführen, um sicherzugehen, das Ihr Kono nicht gefährdet ist. Haben Sie ausser den Login-Problemen noch irgendetwas Ungewöhnliches bemerkt?
+
+Speaker 1:Nein, soweit ich weiss, gibt es keine weiteren Unregelmässigkeiten. Aber ich möchte wirklich bald wieder Zugang zu meinem Konto haben. Gibt e s eine Schätzung, wann das wahrscheinlich wieder funktionieren wird?
+
+Speaker 2:Sobald das technische Supportticket erstellt ist, slolte unser Team i nnerhalb von bis 48 Stunden darauf antworten. Vielleicht könnten Sie in der Zwischenzeit über unsere mobile Banking-App zugreifen. Haben Sie das schon versucht?
+
+Speaker 1:nein, die App habe ich noch nicht probiert. Können wir jetzt auch nochmal zusammen meine persönlichen Daten überprüfen, um sichezugehen, dass alles richti hinterlegt ist?
+
+Speaker 2:Ja, natürlich. Einen Moment bitte, ich Ihre Daten durch... Kurze Pause für die Überprüfung... Ihre und Telefonnummer sind korrekt registriert. Alles sollte stimmen. Ich erstelle jetzt das technische Supportticket.
+
+Speaker 1:Okay, das klingt nen jetzt über die KYC-Updates sprechen?
+
+Speaker 2:Gerne. Gerade zu Ihren Gesamtvermögenswerten: Ihr Gesamtvermögen beträgt CHF 6'395'088, aufgeteilt in Immobilienwe rt CHF 3'051'929, liquide CHF 2'539'244 und sonstige Vermögenswerte CHF 483'827. Haben Sie dazu noch Anmerkungen oder Änderungen?
+
+Speaker 1:Nein, die Angaben sind korrekt. Können wir über meinen Kontakttermin am 11. September 2025 sprechen was auf der Agendasteht?
+
+Speaker 2:Natürlich, Ihr Kontakttermin ist für den 11. September 2025 als Videoanruf geplant und etwa 60 Minuten dauern. Wir werden ein Marktupdate besprechen, inklusive der UBS-Hausmeinung und Marktausblick, sowie mögliche Auswirkungen auf Portfolio. Haben Sie spezielle Fragen oder möchten Sie Themen ergänzen?
+
+Speaker 1:Nein, das klingt gut. Können wir über meine Investitionsziele für die Altersvorsorge sprechen?
+
+Speaker 2:Absolut. Sie bevorzugen risikoarme Anlagen wie Anleihen und konservativ gemanagte Fonds, richtig?
+
+Speaker 1:Genau. Ich möchte langfristig sichre Erträge. Können Sie mir konkrete Optionen empfehlen?
+
+Speaker 2:Ich würde konservativ gemanagte Anleihenfonds empfehlen, die stabile Erträge bieten. Mischfonds, die Anleihen und Aktien kombinieren, knönten auch passend sein. Zum nächsten Termin werde ich detaillierte Informationen und Prospekte bereithalten. Haben Sie Präferenzen für bestimmte Sektoren oder Regionen?
+
+Speaker 1:Nein, keine speziellen Präferenzen. Wie sieht es mit den Dokumenten zur Herkunft meiner Vermögenswerte aus? Ist alles korrekt?
+
+Speaker 2:Ja, Ihre Vermögenswerte stammen aus Ihrem Gehalt und einer geerbten Summe. Die Dokumentationen sind korrekt archiviert. Möchten Sie weitere Dokumente hinzufügen oder besteht Klärungsbedarf?
+
+Speaker 1:Nein, alles scheint korrekt zu sein. Vielen Dank für Ihre Hilfe heute.
+
+Speaker 2:Ich danke Ihnen für Ihre Geduld. Ich werde sicherstellen, dass Ihr Einloggprblem schnellstens gelöst wird. Haben Sie noch Fragen oder Anliegen?
+
+Speaker 1:Nein, das war's. Vielen Dank nochmals.
+
+Speaker 2:Gern geschehen. Einen schönen Tag noch und ich freue mich auf unseren nächsten Termin.

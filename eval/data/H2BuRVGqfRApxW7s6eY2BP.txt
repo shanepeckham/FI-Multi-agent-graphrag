@@ -1,0 +1,31 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 2:Morgen, ich bin NAME1 der UBS. Äh, ich rufe an, um mit Ihnen über Ihre Erfahrungen mit unserer digitalen Banking-App zu sprechen. Bevor wir weitermachen, könnten Sie mir bitte, äh, zu Sicherheitszwecken Ihr burtsdatum und Ihre Adresse bestätigen?
+
+Speaker 1:Guten Morgen, mein Geburtsdatum ist DATUM und meine Adresse ist, äh, ADRESSE.
+
+Speaker 2:Vielen Dank die Bestätigung. Ich habe gesehen, dass Sie kürzlich unsere digitale Banking-App verwendet haben. Wie war Ihre erste Erfahrung damit? Gab es Schwierigkeiten oder, äh, etwas, worüber Sie sich unsicher waren?
+
+Speaker 1:Ja, ich habe die App verwendet, aber ich fand es... wenig einen bestimmten eBreich zu finden. Bin mir nicht sicher, ob ich was übersehen habe oder ob es versteckt ist. Äh, ich suche nach einer um meine letzten Transaktionen zu überprüfen, aber das scheint nicht so einfach auffindbar. Können Sie mir da helfen und erklären, wie ich die finde?
+
+Speaker 2:Natürlich, ich verstehe Ihre Verwirrung. Die Funktion, um Ihre letzten Transaktionen zu überprüfen, finden Sie im Hauptmenü unter dem Reiter "Konten". Sie müssen dort das entsprechende Konto auswählen, und dann sehen Sie eine Übersicht Ihrer letzten Transaktionen. Ich, ähm, ich führe Sie Schritt für Schritt durch den Können Sie das Hauptmenüsehen?
+
+Speaker 2:Ja, ich sehe das Hauptmenü. Da sind verschiedene Reiter, wie "Konten", "Überweisungen", "Karten" und "Investitionen". Äh, Sie den Reiter "Konten"? Wenn ich da drauf klicke, sehe ich eine Liste meiner Konten, aber wo finde ich die Transaktionen?
+
+Speaker 2:Genau, Sie sind im richtigen Be reich. Sie den Reiter "Konten" auswählen, müssen Sie auf das Konto klicken, äh, für das Sie die Transaktionen sehen möchten. Nachdem Sie das Konto ausgewählt haben, sollten die leztten Transaktionen direkt sichtbar sein. Falls das nicht der Fall ist, könnte es sein, dass die Ansicht angepasst werden muss. Gibt es dort eine Option wie "Transaktionshistorie" oder etwas Ähnliches?
+
+Speaker 1:Äh... Ja, sehe eine Option namens "Transaktionshistorie". Wenn ich darauf klicke, öffnet sich eine Liste meiner letzten Transak tionen. Danke, das hat funktioniert. Aber generell ich die Navigation ein wenig, äh... unübersichtlich. Gibt es vielleicht eine Art Tutorial oder Anleitung, die mir helfen könnte, die App besser zu verstehen und zu nutzen?
+
+Speaker 2:Ja, es gibt mehrere Ressourcen. Innerhalb der App finden Sie Tutorials und Anleitungen, die Ihnen Schritt für Schritt die verschiedenen Funktionen erklären. Darüber gibt es FAQ-Sektion und eine Hilfe-Funktion. äh, wenn Sie ewitere Unterstützung brauchen, steht Ihnen unser Kundendienst um die Uhr zur Verfügung, entweder über das Telefon oder den Live-Chat in der Wir möchten, dass die Nutzung der i ntuitiv ist und dass Sie alle gewünschten Funktionen schnell finden und effektiv nutzen
+
+Gibt es noch andere Bereiche oder Funktionen in der App, bei denen Sie Schwierig keiten haben oder die Sie näher erklärt haben möchten?
+
+Speaker 1:Ich das klingt hilfreich.Eine Funktion, die ich gerne besser verstehen würde, ist die Überweisung. Da gibt es verschiedene Optionen und einige davon sind mir nicht ganz ganz klar. Können Sie mir da helfen? Und wie sicher ist diese Funktion?
+
+Speaker 2:Kein Problem, ich erkläre Ihnen gerne, wie Sie Überweisungen tätigen und wie die Optionen funktionieren. Im Hauptmenü finden Sie den Reiter "Überweisungen". Wenn Sie diesen auswählen, sehen Sie mehrere Optionen wie "Einmalige Überweisug", "Dauerauftrag" und "Auslandsüberweisung". Sie wählen einfach die gewünschte Option aus und folgen den Anweisungen für die Eingabe der Empfängerdaten, des Betrags und gegebenenfalls weiterer Details.
+
+Zur Sihcerheit: Wir haben verschlüsselte Datenübertragung, zweistufige Authentifizierung und Echtzeit-Benac hrichtigungen implementiert. Das soll verdächtige Aktivitäten schnell erkennen und
+
+Falls Sie jemals Zweifel haben oder Unterstützung benötigen, äh, nutzen Sie die Tutorials oder FAQs, oder kontaktieren Sie direkt den Kundendienst. Wir sind hier, um Ihnen zu helfen sicherzustellen, dass Sie die App bestmöglich und sicher verwenden können.
+
+Gibt es noch andere Fragen oder Anliegen?

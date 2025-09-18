@@ -1,0 +1,24 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, je voudrais discuter de certainspoints mon compte avex UBS.
+Speaker 2:Bonjour, Monsieur NAME. Je suis NAME1 d'UBS, je vous appelle pour discuter des points de disc ussion concernant votre compte. Avant de commencer, pourriez-vous confirmer votre date de anissance et votre adresse pour des raisons de sécurité ?
+Speaker 1:Oui, bien sûr. Ma date de naissance est le DATE et mon adresse actuelle est RU, VILLE.
+Speaker 2:Merci, monsieur NAME. Avant de débuter, je vais d'abord confirmer vos informations d econtact actuelles. Selon nos dossiers, votre numéro de téléphone est le +1000000000 et votre adresse e-mail est EMAIL@EXAMPLE.COM. correct ? Préférez-vous que nous utilisions principalement l'e-mail pour nos communications ?
+Speaker 1:Oui, correct. L’e-mail serait parfait pour moi.
+
+Speaker 2:Parfait, je mets à jour vos préférences de communication. Ensuite, pou rmettre à jou vs informations KYC, pouvez-vous confirmer votre statut professionnel ? Travaillez-vous toujours comme Manager dans le secteur de la finance en tant qu'indépendant ? Nous devons également discuter de l'origine de vos actifs. Vous avez mentionné un salaire ainsi qu'un héritage important. Pour nous assurer que notre profil est à jour, pourriez-vous les documents nécessaires pour corroborer le montant hérité ?
+Speaker 1:Oui, je suis toujours Manager indépendantdans le secteur el a finals. Pour ce qui est de l'origine de mes actifs, le montant hérité est confirmé et je vous ai envoyé le lien vers les documents nécessaires : https://example.com/doc/3851.
+
+Speaker 2:Merci, j'ai bien reçu votre demande et les documents. Pour ce qui est des charges non reconnues votre carte, pouvez-vous me donner un peu plus détails ?
+Speaker 1:Oui, j'ai remarqué un de AMOUNTd le DATE, sur ma carte, et marchand associé étati MERCHANT. Cela ne me dit rien du tout. Pouvez-vous m'expliquer comment je peux contester cette charge et combien de temps cela prendra pour résoudre le litige et receoir unr emboursement ?
+
+Speaker 2:D'accord, pour contester une transaction, nous allons soumettre une demande de contestation auprès de notre département des fraudes avec les détails fourni. Cela peut entre 7 et 30 jours ouvrables, selon la complexité de l'enquête. Pendant ce temps, nous pouvons temorairement bloquer votre carte pour éviter d'autres transactions non autorisées. Voulez-vous que nous procédions ?
+Speaker 1:Oui, je préfère que ma soit temporairement bloquée sécurité, merci. Et que puis-je faire pour prévenir futures fraudes ?
+
+Speaker 2:Je comprends, monsieur NAME. Pour éviter des activités frauduleuses à l'avenir, je recommande d'activer des alertes de transaction votre compte. Cela permettra immédiatement informé de toute suspecte par e-mail ou Souhaitez-vous que j'active ces alertes pour vous dès maintenant ?
+Speaker 1:Oui, ça serait super. Je oudrais être informé chaque transaction.
+
+Speaker 2:C'est noté. Vos alertes e transaction osnt maintenant activées pour chaque transaction, quelle que soit leur taille. Concernant la sécurité de votre compte, je recommande également de changer vos identifiants de Et je vais noter que votre numéro de téléphone et vos autres informaitons de contact sont à jour. Y a-t-il autre dont vous avez besoin ?
+Speaker 1:Non, je pense que tout est maintenant. Merci pour votre aide et vos recommandations. Au revoir.
+
+Speker 2: pour votre confiance, NAME. N'hésitez pas à nous contacter à tout moment pour toute autre question ou besoin. Au et bonne journée !

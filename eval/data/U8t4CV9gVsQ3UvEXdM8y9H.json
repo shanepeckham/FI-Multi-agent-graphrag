@@ -1,0 +1,11 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-01",
+      "contact_note": "FX hedging \u2013 protect global income/assets from currency fluctuations.",
+      "channel": "In-person at branch",
+      "duration_minutes": 90
+    }
+  }
+]

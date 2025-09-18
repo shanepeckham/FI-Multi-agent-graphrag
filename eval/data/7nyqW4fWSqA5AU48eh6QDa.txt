@@ -1,0 +1,29 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1: Bonjour, c’est Monsieur... euh, enfin, je suis NAME. J'ai cru comprendre que vous souhaitiez discuter avec moi ?
+
+Speaker 2: Bonjour, Monsieur NAME ! Oui, en fait, c’est NAME1 de chez UBS. Euh, je vous appelle pour discuter de nos fonctionnalités bancaires numériques. Vous allez bien aujourd'hui, j'espère ? 
+
+Speaker 1: Oui, oui, ça va, merci. Et vous ?
+
+Speaker 2: Très bien, merci ! Alors, avant qu'on continue, puis-je vous demander de confirmer votre date de naissance et votre adresse juste pour des raisons de sécurité ?
+
+Speaker 1: Bien sûr, pas de souci. Ma date de naissance c’est le DATE et mon adresse, c’est ADDRESS.
+
+Speaker 2: Super, merci, Monsieur NAME. Je vais vérifier ces informations rapidement. pause pour vérification Alors, y a-t-il des fonctionnalités numériques particulières qui vous intéressent dans notre application ?
+
+Speaker 1: Eh bien, c'est gentil de demander. J’utilise souvent les services bancaires numériques d'autres établissements, et, euh... il y a certaines choses que je trouve vraiment utiles. Des notifications en temps réel sur mes transactions, par exemple, et aussi, catégoriser mes dépenses pour gérer mon budget. Vous avez ça chez vous ?
+
+Speaker 2: Oui, merci pour vos retours, ils sont très précieux. Actuellement, nous avons bien les notifications pour certaines transactions. Par contre, pour la catégorisation automatique des dépenses, euh, ce n'est pas encore en place. Mais c'est sur notre radar, et je vais faire remonter votre demande à notre équipe de développement. Et pour les mises à jour, justement, on a des choses sur le feu comme une interface plus intuitive...[pause] Est-ce qu’il y a d’autres fonctionnalités que vous trouvez indispensables ?
+
+Speaker 1: Eh bien, j'aime bien les outils de planification financière qui aident à suivre les objectifs. J'ai vu ça ailleurs et c'est pas mal. Vous avez une idée de, euh... comment les retours de clients sont collectés chez vous ? Et à quelle fréquence vous mettez à jour l'application ?
+
+Speaker 2: Ah, une idée intéressante ! Là, pour ça, nous n'avons pas encore d'intégration avec les outils de planification financière, mais je vais transmettre. Pour les retours, on a pas mal de canaux, en fait: les enquêtes de satisfaction, les retours via l'appli, et bien sûr, des appels comme celui-ci. Et, euh, pour les mises à jour, on essaie régulièrement. Si vous avez d'autres suggestions, surtout, n'hésitez pas.
+
+Speaker 1: Merci, NAME1, j'apprécie vraiment que vous soyez à l'écoute. C'est rassurant. Je vais réfléchir s'il y a autre chose. Pour le moment, c’est tout, mais encore merci pour l'écoute et l'aide.
+
+Speaker 2: Je vous en prie, Monsieur NAME. Je vous remercie beaucoup pour vos suggestions. Et n'hésitez surtout pas à nous recontacter si quelque chose vous vient à l'esprit. Je vous souhaite une excellente journée. Au plaisir de continuer à vous servir.
+
+Speaker 1: Merci ! Bonne journée à vous aussi. Au revoir !
+
+Speaker 2: Au revoir, Monsieur NAME !

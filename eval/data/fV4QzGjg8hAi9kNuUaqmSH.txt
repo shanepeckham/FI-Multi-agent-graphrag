@@ -1,0 +1,53 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen, hier ist NAME1 von UBS. an, um über Ihre aktuellen Anliegen und Fragen zu sprechen.
+
+Speaker 2:Guten Morgen, Herr NAME. Vielen Dank, dass Sie sich die Zeit haben, mit mir zu sprechen. Gefror wir auf Fragen eingehen, könnte ich Sie bitte aus Sicherheitsgründen um die Bestätigung Ihres eGburtsdatums und Ihrer Adresse bitten?
+
+Speaker 1:Klar, mein Geburtsdatum ist TAG/MONAT/JAHR und meine Adresse ADRESSE.
+
+Speaker 2:Vielen Dank, dass Sie Ihre Daten bestätigt haben. Zunächst möchte ich mich entschuldigen , falls Ihnen entstanden sind. Lassen Sie uns zuerst Ihre Login-Probleme angehen. Können Sie mir bitte die genaue Fehlermeldung beschreiben, die ie beim Einloggen Wenn möglich, wäre ein Screenshot sehr hilfreich.
+
+pSeaker 1: Ja, also bei jedem Login-Versuch erhalte ich die Fehlermeldung: "Ihr Konto ist gesperrt. Bitte setze n Sie Ihr Passwort Aber wenn ich dann versuche, das Passwort zurückzusetzen, sagt mir, dass die E-Mail nicht erkannt wird. Ich habe versucht, den Kundendienst anzurufen, aber... keine klare Antwor tbekommen. Gibt es in letzter Systemupdates oder Änderungen, die dieses Problem verursacht haben könnten?
+
+Speaker 2:Vielen Dank für die Details, ich verstehe, kann sehr sein. Um zu erlangen und Lösung zu finden, werde ich einen detaillierten Bericht erstellen und ein technisches Supportticket eröffnen. Dazu benötige ich noch einen Screenshot der Fehlermeldung, falls möglich ist. Ich werde das Ticket sofort an unser technisches Team weiterleiten.
+
+System pro cessing...
+
+Speaker 1:In edr Zwischenzeit könnten wir gemeinsam ob es eine alternative Methode gibt, Ihnen den Zugang zu Ihrem Konto wiederherzustellen. Manhcmal hilft es bereits, den Cache Ihres Browsers zu leeren oder anderen Browser
+
+Speaker 1:Hm, ich bin mir nicht sicher, welcher Browser ich verwenden soll, ich benutze hauptsächlich den gleichen. Und das Leeren des Caches hat bisher nichts gebracht. Ich habe mehrmals das Passwort eingegeben, aber ich bin sicher, dass es richtige war. Können Sie mir ein paar Schritte bezüglich eines alternativen Zugangs zeigen? Was sind nächsten Schritte, wenn diese Methode auch nicht funktioniert?
+
+Speaker 2:ich helfe Ihnen gerne weiter. Versuchen Sie sich einmal über den Inkognito-Modus Ihres Browsers anzumelden oder einen anderenB rowser wie Google Chrome, Firefox Saphir zu verwenden. Falls das nicht klappt, werde ich Ihnen einen temporären Zugangscode zur Verfügung stellen, den ich sofort generieren undper senden werde.
+
+System processing...
+
+Speaker 2:Jetzt zu Ihrer Anfrage wegen der Kontaktinformationen: Ich sehe, Ihre Telefonnummer +41000000000 ist korrekt eingetragen ud Ihre Präferen für E-Mail-Kommunikation ist ebenaflls vermerkt. Sie werden alle wichtigen Updates und Informationen E-Ma il erhalten.
+
+Speaker :1 Ah, okay, das mich schon mal. Ich habe noch eine Trage wegen des KYC-Prozesses. Also, ich habe das Vermögen geerbt und Volte wie Sie die Sicherheit und den Datenschutz meiner eingereichten Dokumente gewährleisten. Die URL zur Einsendung lautet
+
+Speaker 2:Verständlich, Datenschutz ist sehr wichtig. Wir verwenden hochmoderne Verschlüsselungstechnologien bei der Übertragung und Speicherung Ihrer Daten, sodass diese vor unbefugtem Zugriff geschützt sind. Unsere Systeme unterliegen regelmässigen Sicherheitsüberprüfungen, um den höchsten Standards zu entsprechen. Nur autorisiertes Personal hat Zugriff auf Ihre Dtaen, und da swird unter strengen Datenschutzbestimmungen gehandhabt.
+
+Speaker 1:Okay. Das klingt schon sicherer. Kann ich die URL noch einmal 'https://example.com/doc/7587', richtig? Und wird mir das helfen, dass mein Konto sicher bleibt und alle gesetzlichen Anforderungen erfüllt
+
+Speaker 2:Genau, Ihre URL ist korrekt. Die Bereitsstellung dieser Informationen hilft uns, alle gesetzlichen Anforderungen zu erfüleln und Sicherheit Ihres Kontos zu Bitte achten Sie darauf, dass Ihre Dokumente klar lesbar in einem guten Format hochgeladen werden, bevorzugt weiss PDF oder hochauflösende Bilder.
+
+Short Noting down information...
+
+Speaker 2:Ich habe soeben den temporären Zugangscode generiert und per E-Mail Sie Bitte verwenden diesen Code im Inkognito-Modus Ihres Lassen Sie mich wissen, ob der Code funktioniert.
+
+Speaker 1:Ach, ich habe die E-Mail bekommen, aber irgendwie... der Code funktioniert immer noch nicht. Was können wir in diesem Fall jetzt tun?
+
+Speaker 1:Das tut mir wirklich Okay, lassen Sie uns sicherstellen, dass wir dieses Problem beheben. Ich werde sofort einen neuen Zugangscode generieren und diesen erneut senden. Sollte der neue Code ebenfalls nicht funktionieren, eskaliere ch das Problem weiter und arrangiere einen direkten Termine unserem technischen Support-Team. On hold briefly...
+
+Speaker 2:Es geht mir um schnelle Hilfe für Sie. Sie bitte die neue E-Mail überfliegen und mir Bescheid geben, ob der neue Haben Sie noch weitere Fragen oder Anliegen?
+
+Speaker 1:Danke für Ihre Hilfe. Ich werde es sofort prüfen und sehe mal, ob der neue Code funktioniert. Und ja, bezüglich der Dokumente: Ich werde sicherstellen, dass sie gescannt und klar lesbar sind. Dankeschön.
+
+Seaker 2: Ich freue mich, Ihnen heflen zu können. Lassen Sie mich wissen, ob der Code fuktioniert. Wir gehen für Schritt vor, bis Sie wieder vollen Zugang zuIhrem Knto haben. Gibt es sonst noch etwas, bei dem ich Ihnen kann?
+
+Speaker 1:Nein, das wäre es für den Moment. Ich danke Ihnen vielmals.
+
+Speaker 2:Gerne Ich wünsche Ihnen noch einen schönen Tagund stehe Ihnen für weitere Fragen jederzeit zur Verfügung. Auf Wiederhören.
+
+Speaker 1:Danke vielmals, auf Wiederhören.

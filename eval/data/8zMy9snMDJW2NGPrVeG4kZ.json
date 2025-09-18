@@ -1,0 +1,14 @@
+[
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-20",
+      "contact_note": "Portfolio review \u2013 discuss current asset allocation, performance, and alignment with client\u2019s goals.",
+      "channel": "In-person at branch",
+      "duration_minutes": 90
+    }
+  }
+]

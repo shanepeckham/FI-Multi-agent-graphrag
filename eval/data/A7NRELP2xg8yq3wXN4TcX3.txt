@@ -1,0 +1,45 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen, hier ist Herr NAME1 von UBS. ch rufe an, um über die verschiedenen Themen zu sprechen, die wir für unser heutgies Gespräch geplant haben. Vorab möchte ich Sie bitten, Ihre Identität zu bestätigen. Können Sie bitte Ihr Geburtsdatum und Ihre Adresse nennen?
+
+Speaker 1 :Äh, ja, mein Geburtsdatum ist DER TAG und meine Adresse ist DIE ADRESSE.
+
+Speaker 1:Vielen für d ie Bestätigung Ihrer Identität. Lassen Sie uns zunächst ein Update der Informationen Ihren Vermögenswerten vornemhen. Könnten Sie bitte bestätigen, dass Ihre gesamten Vermögenswerte derzeit AMOUNT liegen und in der Währung CUR2 geführt Ihre Immobilienvermögen sich auf AMOUNT, Ihre liquide Vermögen auf AMOUNT und sonstige Vermögen auf AMONT. Haben Sie hierzu irgendwelche Updates oder Kommentare, die wir in Ihren Unterlagen hinzufügen sollten?
+
+Speaker 2:Ja, das stimmt. Mein Gesamtvermögen beträgt 1.49.086 CUR2. Meine Immobilienvermögen belaufen sich auf 3.487.437 CUR2, mein liquides Vermögen auf 4.454.095 CUR2 und sonstige Vermögen auf 407.170 CUR2. Das Vermögen ist breit gestreut. Vielen Dank, dass Sie nach den aktuellen Angaben gefragt haben. Können Sie die Informationne zum Zweck der Geschäftsbeziehung, also die Altersvorsorge, bestätigen und aktualisieren?
+
+Speaker 1:Natürlich, das ich gerne vermerken. Ihre Altersvorsorge also der Hauptzweck. Gibt es sonst noch etwas, was Sie aktualisieren möchten?
+
+Speaker 2:genau. Und das führt mich zum nächsten Thema. Ich habe Schwierigkeiten, eine bestimmte Funktion in der Banking-App zu finden. Ich versuche, die Option zur Antragsstellung ein neues Pensionen-Investment zu finden. Ich habe bereits verschiedene Menüs durchsucht und nach Anweisungen auf Ihrer Webseite geschaut, aber ich immer eine Fehlermeldung. Können Sie mir vielleicht Schritt-für-Schritt-Anleitung geben, wie ich diese Funktion finden und nutzen kann?
+
+Speaker 1:Natürlich, das kann ich tun. Lassen Sie mich Ihnen schrittweise zeigen, wie Sie diese Funktion finden können:
+
+1. Öffnen Sie die Banking-App und loggen Sie sich mit Benutzernamen und Passwort ein.
+2. Auf der Startseite Sie auf das Menü-Symbol in der oberen linken Ecke.
+3. Navigieren Sie zu dem Abschnitt "Investitionen".
+4. Unter "Investitionen" finden Sie Kategorie namens "Pensionen".
+5. Wenn Sie diese öffnen, sehen Sie verschiedene Optionen, darunter eine "Antragsstellung" neue
+
+Falls Sie weiterhin Probleme oder Fehlermeldungen erhalten, könnte es hilfreich sein, die App zu aktualisieren oder neu zu installieren. Falls das nicht klappt, können wir gerne einen technischen Support für Sie einrichten.
+
+Speaker 2:Vielen Dank für diese detaillierte Anleitung. Ich habe die Schritte wie beschrieben bfolgt und es scheint jetzt alles zu funktionieren. Es ist eine grosse Erleichterung, dass Problem gelöst ist. Ausserdem möchte ich dass meine neue Postadresse korrekt im System erfasst ist. Ich wohne jetzt in der neuen ADDRESS.
+
+Speaker : nehme Ihre neue Adresse inu nser System auf: ADDRESS. Ich bestätige auch, dass Ihre bevorzugte Kommunikationsmethode für rechtliche Informationen per Email anuser7134@example.com ist und diese Informationen dementsprechend akutalisiert wurden. Gibt es noch Anliegen odre spezi elle Funktionen, die Ihnen bei der Nutzung der App Schwierigkeiten
+
+Speaker 2:Nein, alle anderen Funktionen in der App sind soweit in Ordnung. Könnten Sie mir noch bestätigen, ob es alternative Methoden gibt,um meine Bankgeschäfte zu verwalten, falls ich in Zukunfterneut auf Schwierigkeiten stosse?
+
+Speaker 1:Ja, natürlich. Sie können jederzeit unseren telefonischen Kundendienst kontaktieren oder die Online-Banking-Plattform direkt auf unserer Webseite nutzen. Ausserdem steht Ihnen selbstverständlich auch der Besuch einer unserer Filialen offen.H aben Sie eine diese r Methoden speziell bevorzugt?
+
+Speaker 2:Vielen Dank, beruhigt mich. Ich werde bei Schwier igkeiten zuerst die Online-Banking-Plattform über den Webbrowser verwenden und bei Bedarf den telefonischen endienst kontaktieren. Noch eine Frage: Gibt es zusätzliche Empfehlungen meine Altersvorsorge? Ich sicherstellen, dass meine Investitionen optimal für den Ruhestand geplant sind.
+
+Speaker 1:Es ist sicherlich eine Idee, regelmässig Ihre Strategie zu überprüfen, um sicherzustellen, dass sie Ihren Zielen entspricht. Eine unabhängige Überprüfung Ihrer Strat egie könnte wertvolle Einblicke bieten. Ich schlage vor, dass wir einen Termin vereinbaren, bei wir detailliert darüber sprechen. Wie wäre es mit Mittwoch um 14:00 Uhr?
+
+Speaker 2:Ja, das passt mir gut. Alternativ in ich auch am Freitagvormittag verfügbar.
+
+Speaker 1:Prima, Mittwoch um 14:00 Uhr notiert. Ich werde Ihnen vorher Materialien zusen den, die wir besprechen werden. Ich freue mich auf unser Gespräch. Gibt es momentan noch etwas, das ich für Sie tun kann?
+
+Speaker 2:Nein, das war’s erstmal. VielenDank für die geduldige Unterstützung. Ich freue mich auf unser Gespräch am Mittwcoh.
+
+Speaker 1:Gern geschehen. Einen schönen noch!
+
+Speaker 2:Ihnen auch, danke.

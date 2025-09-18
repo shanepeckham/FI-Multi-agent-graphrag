@@ -1,0 +1,37 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen, hier Sprich NAME1 von UBS. Äh... ich habe ein paar Punkte, die ich mit Ihnen besprechen möchte. Zuerst das Problem mit dieser unerkannte Buchung auf Ihrer Karte und dann die Aktualisierung Ihrer KYC-Informationen bezüglich Gesamtvermögen. Konnten Sie bitte Ir Geburtsdatum und Ihre Adesse zur bestätigen?
+
+Speaker 2:Mein Geburtsdatum DER_DATUM und, ähm, meine Adresse lautet DIE_ADRESSE.
+
+Speaker 1:Vielen Dank für die Bestätigung. Lasen Sie uns Problem mit der Buchung besprechen. Können Sie mir bitte die Details der Transaktion mitteilen, also Datum, Betrag Informationen über den Händler?
+
+Speaker 2:Ja, klar. Also, ich habe eine Belastung auf meinem Konto festgestellt, die ich nicht erkennen kann. Das Datum der Transaktion war DER_DATUM, der Betrag war DER_BETRAG, äh, und der Händler war NAME_DES_HÄNDLERS. Können Sie m ir erklären, wie sowas passieren kann und was die Bank unternimmt, um das zu klären?
+
+Speaker 1:Fehlen Dank für die Details. Wir prüfen diees Transaktion sofort. Solche Buchungen können durch verschiedene Gründe verursacht werden, wie Fehler beim Zahlungsabwickler oder, ähm, sogar betrügerische Aktivitäten. Ich erläutere Ihnen den Prozess der Streitigkeitseinreichung. Zunächst bnötigen wir eine schriftliche Bestätigung, dass Sie diese Transaktion nicht autorisiert haben. Zusätzlich wären jegliche weiteren Informationen, die Sie haben, hilfreich. Sobald wir Ihre Bestätigung haben, untersuchen wir die Transaktion und informieren Sie über dn Fortschritt. [pause]
+Speaker 1:In der Zwischenzeit könnte Karte vorübergehend gesperrt werden oder eie neue Karte ausgegeben werden, um weitere unerkannte Belastungen zu verhindern. Wie möchten Sie fortfahren?
+
+Speaker 2:Ich verstehe. Was genau m uss ih in der schriftlichen Bestätigung angeben? Gibt ein spezielles Formular, das ich ausfüllen muss? Und wie lange dauert es normalerweise,bis sowa s geklärt ist? Mein Konto soll während dieser Zeit sicher sein und keine weiteren Belastungen vorkommen. Solange die Untersuchung läuft, wäre ich daran interessiert, meine Karte vorübergehend zu sperren.
+
+Speaker 2:Und bezüglich KYC-Informationen: Die Zahl der Gesamtvermögen klingt Allerdings bin ich mir nicht ganz sicher über die genaue Aufteilung zwischen den einzelnen Asset-Kategorien. Können Sie mich durch den Prozess führen und erklären, was das für zukünftige Transaktionen und die Sicherheit meiner Informationen bedeutet?
+
+Speaker 1:Ja, das verstehe ich. Für die schriftliche Bestätigung können Sie eine formelle Erklärung verfassen, in der Sie bestät igen, dass die angegebene Transaktion nicht autorisiert Wir bieten auch ein spezielles Formular dafür an. Die Dauer der Klärung kann, ähm, zwischen wenigen Tagen bis zu mehreren Wochen variieren, je nach Komplexität des Falls. Ich werde Ihre Karte vorübergehend und eine ausgeben, sobald Siedas bestätigen. Können Sie bitte bestätigen, dass Sie mit der vorübergehenden Sperrung und der Augabe einer neuen Karte einverstanden sind?
+
+Speaker 1:Jetzt zu den KYC-Informationen bezüglich Ihrer Gesamtvermögen: Si denGesamtbetrag von 3432493 CUR3 bestätigt. Lassen Sie nun die genaue Aufteilung durchgehen: Ihre Immobilienwerte betragen 3823187, Ihre liquiden 1233931 und Ihre onstigen Vermögenswerte 355. Können Sie diese Angaben bestätigen, oder gibt es Änderungen?
+
+Speaker 2:Ich bin mir nicht sicher, ob ich den Gesamtbetrag richtig verstehe. Sie haben gesagt, dass mein Gesamtvermögen 3432493 beträgt, aber die Immobilienwerte 3823187, was ist. Wie ist das möglich und was bedeutet das für meine zukünftigen Transaktionen und die Sicherheit meiner Inform ationen?
+
+Speaker 1:Es tut leid für die Verwirrung. Lassen Sie uns die Zahlen klären. Ihr Gesamtvermögen beträgt 3432493 CUR3, und innerhalb dieser Summe sind die Immobilienwerte 3823187, die liquiden Mittel und die sonstigen Vermögenswerte 355.
+
+Speaker 1:Die Diskrepanz könnte durch doppelte Erfassunen Fehlbuchungen entstanden sein. Sie uns Zahlen nochmal durchgehen:
+- Immobilienwerte: 3823187 CUR3
+- Liquide Mittel: 1233931 CUR3
+- Sonstige Vermögenswerte: 355 CUR3
+
+Speaker 1:Können Sie diese bestätigen oder gibt es Änderungen
+?
+Speaker 1:J a, ich habe meine letzten Kontoauszüge überprüft und kann bestätigen, dass die Immobilienwerte tatsächlich bei 3823187, die liquiden Mittel bei 1233931 und die sonstigen Vermögenswerte 355 liegen. Aber es verwirrt mich, dass der Gesamtbetrag höher ist. Gibt es vielleicht eine doppelte Erfassung? Können Sie sicherstelln, dass alle Zahlen korrekt und keine falschen Einträge vorhanden sind?
+
+Speaker 1:Vielen Dank für Ihre Geduld. Ich werde sofort eine Bereinigung Ihrer KYC-Iformationen initiieren dieD aten korrekt erfassen. Werte müssen innerhalb des Gesamt vermögen von 3432493 CUR3 liegen.
+
+Speker 1: Um die Korrektheit Ihrer Daten sicherzustellen, werde ich den Prozess starten und schriftlich bestätige,n dass alle Daten aktualisiert werden. Dies wird keine negativen Auswirkungen auf Ihre zukünftigen Transaktionen haben und Ihre Informationen werden sicher und vertraulich behandelt. Falls Sie zusätzlic he Fragen oder Bedenken zur Sihcerheit Ihrer Daten haben, Sie es mich wissen. Sind Ihre Anliegen damit geklärt, oder gibt es noch Punkte, die wir besprechen sollten?

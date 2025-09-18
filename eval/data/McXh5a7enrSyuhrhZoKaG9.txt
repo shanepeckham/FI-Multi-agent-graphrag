@@ -1,0 +1,51 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen. Ähm, mein Name ist NAME und i ch habe Probleme mit dem digitalen Banking und ich müsste auch meine Konaktdaten aktualisieren. Könnten Sie mir da bitte helfen?
+
+Speaker 2:Guten Morgen, Frau NAME. Mein Name ist NAME2 von UBS. Wie geht es Ihnen heute? Bevor wir fortfahren, könnten Sie bitte Ihr Geburtsdatum und Ihre Adresse zur Identitätsprüfung bestätigen?
+
+Speker 1: Klar, mein Geburtsdatum ist DATUM und meine Adresse ist STRASSE, HAUSNUMMER, POSTAL_ADDRESS, Schweiz.
+
+Speaker 2:Ach, Entschuldigung, ich meinte nicht das KYC-Update. Vielen Dank für die Bestätigung. Lassen Sie uns jetzt über das digitale Banking sprechen. Können Sie genau erläutern, welche Schwierigkeiten Sie beim Einloggen haben? Sie eine Fehlermeldung oder können Sie Ihr Konto gar nicht öffnen? Und Sie bereits Massnahmen wie das Zurücksetzen Ihres Passworts oder das Leeren Browser-Caches ausprobiert?
+
+Speaker 1:Ja, ich bekomme ständig eine Fehlermeldung, dass mein Passwort falsch ist, obwohl ich mir sicher bin, dass es richtig ist. Ich habe das Zurücksetzen des Passworts versucht und auch den Cache geleert, aber es bringt einfach nichts. wirklich frustrierend, ich brauche Zugang zu meinem Konto meine Bankgeschäfte. Können Sie mir bitte
+
+Speaker 2:Ach, klingt wirklich ärgerlich. Ich verstehe, wie frustrierend ein ann. Lassen Sie uns mal einiger Diagnoseschritte durchgehen. Haben Sie das Passwort zurückgesetzt und darauf geachtet, dass Sie Leerzeichen oder spezielle verwenden, die eventuellnicht akzeptiert werden? Nutzen Sie einen aktuellen Browser?
+
+Spe aker 1: Ja,das habe ich alles schon gnacht. Und äh, ja, mein Browser ist auf dem neues ten Stand.
+
+Speaker 2:Okay, gibt es eine Zwei-Faktor-Authentifizierung, die aktiviert ist und deren Code vielleicht ni cht korrekt eingegeben wurde?
+
+Speaker 1:Äh, nein, das sollte nicht das Problem sein.
+
+Speaker 2:Hm, dann werde ich sofort ein technisches Support-Ticket für Sie erstellen, damit unsere IT-Abteilung das Problem genauer untersuchen kann. [kurze Pause] Bis dahin könnten Sie versuchen, unser mobiles Banking oder die telefonische Kund enbetreuung für Bankgeschäfte zu benutzen.
+
+Speaker 1:Das wäre schon mal hilfreich, danke. Ähm, auerdem, ich bin umgezogen und möchte neue Adresse bestätigen: Lausanne, POSTAL_REGION_NAME, 1000, Schweiz.
+
+Speaker 2:Vielen Dank, ich habe Ihre neue Adresse als Lausanne, Vaud, 1000, Schweiz in unserem System aktualisiert. Es ist wichtig, dass alle Informationen korrekt sind, damit unsere Kommunikation reibungslos verläuft.
+
+Speaker 1:danke. Es gibt noch ein geplantes Meeting für den 08.09.252 um 14:00 Uhr. Können Sie mir sagen, was dafür vorbereiten muss und was ich erwarten kann?
+
+Speaker 2:Ja, gerne. Für das Meeting wäre es hilfreich, Sie Ihre aktuellen Finanzdokumente mitbringen könnten , jene, die Ihre Investitionsstrategie und Vermögensverteilung betreffen. Wir Ihre Altersvorsorge und die Optimierung Ihrer Investments Vielleich t könnten auch Ihre Versicherungspolicen oder Altersvorsorgepläne hilfreich sein.
+
+Speaker 1:Uh, okay. Und ich möchte auch meine EIC-Daten aktualisieren. Hauptziel ist es, für den Ruhestand investieren. Welche Optionen gbt es da und wie kann ich meine finanziellen Ziele am besten erreichen?
+
+Speaker 2:Ganz wichtiges Thema. Es git diverse Optionen wie Anleihen, Aktien oder Mischfonds innerhalb eines wie der Säule 3a. Diese Optionen können nicht nur hlfen, Ihr Vermögen zu sichern, sondern bieten auch steuerliche Vorteile. Wir werden beste Strategie für Sie ausarbeiten.
+
+Speaker 1:Das klingt schon mal gut. Und zu meinen gesamten Vermögenswerten: Immobilienvermögen 1.556.641 CUR2, liquide Vermögenswerte 3.498.190 CUR2 und sonstige Vermögenswerte 942.369 CUR2. Ich habe eine diversifizierte Strategie. Was halten Sie davon?
+
+Speaker 2:Ihre diversfizierte Strategie ist bereist ine solide Grundlage. Wir können zusätzliche Anlagemöglichkeiten in Betracht ziehen, die Ihr Risiko minimieren und das Potenzial gewinnbringende Renditen maximieren. Eine detaillierte Beratung wird Ihnen helfen, die beste Vorgehensweise für Ihre finanziellen Ziele zu entwickeln.
+
+Speaker 1:Klingt vielversprechend. Haben Sie sonst noch Tipps, wie ich mich auf das Meeting vorbereiten sollte?
+
+Speaker 2:Ja, bereiten Sie bitte auch etwaige oder Altersvorsorgepläne vor. Dies ermöglicht un seine umfassende Analyse Ihrer finanziellen Situation und gezielte Entscheidungen bezüglich Ihrer Alte rsvorsorge.
+
+Speaker 1:Perfekt. Und bis das Login-Problem gelöst ist, werde ich das mobile Banking oder die telefonische Kundenbetreuung nutzen.
+
+Speaker 2:Ich hoffe, dass der Support das Problem schnell lösen kann. Wenn Sie weitere Fragen lassen Sie es mich bitte wissen. Ihre Zufrieden heit ist uns sehr
+
+Speaker 1:Vielen Dank für Ihre Unterstützung und Ihre Geduld.
+
+Speaker 2:Es war mir ein Vergnügen, Ihnen zu helfen. freue mich auf unser Meeting und stehe Ihnen jederzeit weitere Fragen zur Verfügung. Einen schönen Tag wünsche ich Ihnen.
+
+Speaker 1:Danke, Ihnen auch!

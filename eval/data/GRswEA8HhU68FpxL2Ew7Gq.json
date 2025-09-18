@@ -1,0 +1,21 @@
+[
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-08",
+      "time": "14:00"
+    }
+  },
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-02",
+      "contact_note": "FX hedging \u2013 protect global income/assets from currency fluctuations.",
+      "channel": "Client office",
+      "duration_minutes": 45
+    }
+  }
+]

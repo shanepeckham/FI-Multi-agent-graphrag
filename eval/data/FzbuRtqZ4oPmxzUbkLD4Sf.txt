@@ -1,0 +1,54 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Äh, guten Morgen. Hier ist NAME. Ich hab ein Problem beim Login in die digitale Banking-Plattform und ausserdem müssen meine KYC-Informationen aktualisiert werden.
+
+Speaker 2:Guten Morgen Herr NAME. Dies ist NAME1 von der UBS. Um Ihnen helfen zu können, könnte ich Sie bitten, Ihre Identität zu bestätigen. Könnten Sie Ihr Geburtsdatum und Ihre Adresse angeben?
+
+Speaker 1:Mein Geburtsdatum ist DER_GEBURTSDATUM undmeine Adresse ist ANSCHRIFT.
+
+Speaker 2:Vielen Dank für Bestätigung. Okay, bezuüglich Ihrer KYC-Aktualisierungen: Sie haben erwähnt, dass Sie nun selbstständig sind und anager bei Firma 2 im Finanzsektor geworden sind, richtig? Ich werde dese Infos sofort in Sitzt dann eintragen. Diese Änderungen können Einfluss darauf haben, wir Ihre Dienstleistungen und Produkte massschneidern.
+
+Speaker 2:Zum Können mir bitte genauer sagen, was passiert, Sie versuchen, sich einzuloggen? es eine Fehlermeldung, die angezeigt wird?
+
+Speaker 1:Ja, also, immer wenn ich versuche, mich einzuloggen, bekomme ich eine Meldung, dass meine Anmeldedaten falsch sind. Aber ich bin mir scher, dass das Passwort richtig ist, weil ich es mehrfach habe. Mein Konto scheint zu sein. Gibt es bekannter Probleme oder Störungen mit dem digitalen Banking-Service aktuell? Ich habe es soohl auf meinem Laptop als auch auf meinem Handy versucht, aber der Fehler bleibt gleich.
+
+Speaker 2:Ich verstehe Ihre Sorge. Es gibt derzeit keine Störungen mit unserem digitalen Banking-Service. Lassen Sie uns zunächst Ihr Passwort zurückzusetzen. Gehen Sie bitte auf unsere Website und klicken Sie auf "Passwort Dann müssen Sie Ihre E-Mail-Adrsse oder Benutzername eingeben, und Sie erhielten eine E-Mail mit einem Link zum Zurücksetzen Ihers Passworts.
+
+Speaker 2:Falls Ihr Konto gesperrt ist, wird möglicherweise eine Fehlermeldung angezeigt, dass Ihr Konto gesperrt wurde. Dann müsste ich Ihren Zugang zuerst entsperren. Hatten Sie Probleme beim Empfang der E-Mail zum Zurücksetzen des Passworts?
+
+Speaker 1:Ich habe meine E-Mail überprüft und tatsächlich keine E-Mail zur Passwortzurücksetzung erhalten. Das bedeutet Wohl, mein Konto gesperrt ist. Können Sie mich den Entsperrvorgang führen? Auch könnte ich Hilfe beim Einrichten der Zwei-Faktor-Authentifizierung gebrauchen, um sicherzustellen, dass mein Konto Wasser geschützt ist.
+
+Speaker 1:Übrigens, da ich oft ausserhalb der regulären Geschäftszeiten eine Möglichkeit, digitalen auch dann zu erreichen?
+
+Speaker 2:Es tut mir leid, dass Sie Probleme haben. Bevor wir Ihr Konto entsperren, ich Ihre Identität erneut bestätigen müssen. Könnten Sie mir bitte Ihr Geburtsdatum und Ihre Adresse nochmals nnenen?
+
+Speaker 1:Ja klar. ANSCHRIFT.
+
+Speaker 2:Vielen Bank. Ihr Konto ist jetzt entsperrt, und Sie sollten sich wieder einloggen können. Lassen Sie uns die einrichten. Gehen Sie bitte zu den Einstellungen Ihres digitalen Banking-Kontos und wählen die Option Sicherheits- oder Konto-Einstellungen. Dort finden Sie die Möglichkeit, die Zwei-Faktor-Authentifizierung zu
+
+Speaker 2:Sie können entscheiden, ob Sie Ihren Sicherheitscode per SMS Ihr Handy oder per E-Mail erhalten möchten. Nachdem Sie diese Einstellung vorgenommen haben, senden wir Ihnen einen Bestätigungscode, den Sie eigneben müssen. Damit wird die Zwei-Faktor-Authentifizierung und Ihr Konto ist besser geschützt.
+
+Speaker 2:Falls Sie dabei Hilfe benötigen, können Sie mich jederzeit kontaktieren. möchten ich Ihnen mitteilen, dass wir Unterstützung ausserhalb der regulären anbieten. Sie können jederzeit unserentechnischen Support über unsere spezielle Hotline oder unsere Online-Dienste erreichen.
+
+Speaker 2:Jetzt zur KYC-Informationen: Ihre aktualisierten Details wurden erfolgreich eingetragen. Diese können auf bestimmte Bankprodukte auswirken, die auf Ihre neuen beruflichen Informationen abgestimmt sind.
+
+Speaker2: Ihre Selbstständigkeit Position als Manager können Ihnen Zugang zu und Dienstleistungen bieten. Haben Sie spezielle Anliegen oder Fragen zu den Änderungen bei den KYC-Informationen?
+
+Speaker 2:Vielen Dank für Ihre Unterstützung. Das beruhigt Ich würde gerne sicherstellen, dass ich alles verstehe. Können Sie mir Schritt-für-Schritt-Anleitung zur Einrichtung der Zwei-Faktor-Authentifizierung schicken?
+
+Speaker 1:Und ich würde gerne mehr darüber erfahren, wie meine neuen KYC-Daten meine bestehenden Bankprodukte beeinflussen könnten. Welche speziellen Finanzprodukte und Dienstleistungen sind nun mich verfügbar als Selbstständiger und Man ager im Finanzsektor?
+
+Speaker 2:Natürlich, ich werde Ihnen eine Schritt-für-Schritt-Anleitung zukommen lassen:
+
+Speaker 2:1. Melden Sie auf der digialen an mit Ihrem Benutzernamen und neu festgelegten Passwort.
+Speaker 2:2. Gehen Sie zu den oder Konto-Einstellungen.
+Speaker 2:3. Wählen die Option zur Zwei-Faktor-Authentifizierung.
+Speaker2: 4. Entscheiden Sie, ob Sie Ihren Sicherheitscode per SMS oder erhalten möchten.
+Speaker 2:5. Geben den Bestätigungscode ein, den wir Ihnen schicken, um die Zwei-Faktor-Authentifizierung zu aktivieren.
+
+Speaker 2:Falls Sie zusätzliche Hilfe benötigen, stehe ich Ihnen jederzeit zur
+Speaker 2:Nun zu Ihrer KYC-Aktualisierung: Diese Änderungen könnten Ihnen Zugang zu massgeschneiderten Finanzlösungen, wie bestimmten Investmentfonds, Geschäftskrediten und Beratung Firmenkapital bieten. Ich werde Ihnen eine detaillierte der verfügbaren Optionen zukommen lassen.
+
+Speaker 1:Gibt es noch weitere Fragen oder ein Anliegen, das besprechen möchten?
+
+Speaker 1:Nein, das für jetzt. Danke nochmal für Ihre

@@ -1,0 +1,8 @@
+[
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "update_kyc_activity"
+  }
+]

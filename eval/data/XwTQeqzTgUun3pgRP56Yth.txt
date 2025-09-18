@@ -1,0 +1,27 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, je suis NAME1 de UBS. J'appelle pour discuter des problèmes que vous avez cocnernant nos fonctionnalités de banque digitale et la mise à jour de vos informations KYC. Pouvez-vous confirmer votre date de naissance et votre adresse pour des raisons de sécurité ?
+Speaker 2:Bien sûr, ma date naissance est le DATE et mon adresse actuelle est ADRESS, Suisse.
+Speaker 1:Merci d'avoir confrmé vos informations. aPssons maintenant à la à jour de vos informations KYC. Vous avez mentionné que l'origine de vos actifs provient de votre salaire ainsi qu'une somme héritée. J'ai bien reçu le lien du document de preuve : 'https://example.com/doc/5348'. Je vais le vérifier dans système. [pause]E nsuite, vous avez mentionné des problèmes avec notre bancaire digitale. Pouvez-vous m'en dire plus sur la fonctionnalité spécifique qui vous manque ?
+Speaker 2:Oui, je qu'il manque ue fonction de notification en temps réel pour transactions. C'est vraiment important pour la gestion de mes finçailles, surtout pour mon entreprise. Est-ce que cette sera disponible bientôt ?
+Speaker 1:Actuellement, notre plateforme ne rep ose pas de notifications en temps réel pour les transactions, mais cette fonction est prévue dans lse futures mises à jour. En attendant, nous avons des rapports de transactions réguliers que vous pouvez configurer. Cela pourrait être une solution temporaire. Est-ce que vous semble utile ?
+Speaker 2:Pour les rapports de transactions est-ce qu'il y a des configurations splendifiques que je dois faire ? Je ne suis pas sûr de bien comprendre comment les en place.
+Speaker 1:Je comprends. Laissez-moi vous expliquer les étapes. Pour les rapports de tarnsaction sur notre plateforme, vous devrez :
+1. Vous connecter à votre compte notre plateforme bancaire en ligne.
+2. Aller dans la section "Services"
+3. Sélectionner "Rapports de Transactions" parmi les disponibles.
+4. les paramètres selon vos préférences : des rapports (quotidienne, menuelle), mode de réception (email, téléchargement).
+Une que tout est réglé, cliquez sur "Enregistrer" pour activer les rapports.
+Speaker 2:D'accord, je vais essayer ça. Mais si j'ai des difficultés, je pourrais de l'aide ?
+Speaker 1:Absolument, notre équipe d'assistance est disponible pour vous aider à chaque étape. En attendant que la fonctionnalité de cation en temps réel soit ajoutée, ces rapportsv ous permettront de surveiller vos transactions. Y a-t-il chose que vous aimeriez discuter concernant la sécurité ou d'autres préoccupations ?
+Speaker 2:Concernant la sécurité, vos assurances les systèmes de sécurité bancaire me tranquillisent, mais je reste un peu enquête de ne pas avoirde notifications en temps réel. Est-ce que vous avez d'autres recommandations pour garantir la sécurité de mes finances ?
+Speaker 1:Bien sûr. Voici quelques mesures supplémentaires :
+1. Activer les alertes sécurité usr votre fou les connexions et les tentatives de fraude.
+Vérifier vos comptes régulièrement, au moins une par jour.
+3. Utiliser à deux (2FA) pour un accès sécurisé.
+4. Exainer les rapportsde transatcions et identifier toutes anomalies.
+5. Et contactez-nous immédiatement en cas transaction suspecte.
+Ces devraient à sécuriser vos finances en attendant les en temps réel. Avez-vous d'autres questions ou préoccupations ?
+Speaker 2:Non, c'est pour l'instant. Merci pour votre aide.
+Speaker 1:Je ravi d'avoir pu vous aider aujourd'hui. Si vous avez d'autres questions à l'avenir, n'hésitez pas à nous contacter. Passez une bonne journée.
+Speaker 2:Mercie beaucoup. Pasesz également une bonne journée.

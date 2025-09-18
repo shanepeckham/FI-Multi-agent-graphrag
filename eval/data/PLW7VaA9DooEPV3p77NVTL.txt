@@ -1,0 +1,51 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, je vous de m'avoir appelé. Il y a une charge que je ne reconnais pas sur mon compte et je suis très inquiet. Uh, avant qu'on avance, pouvez-vous me confirmer le processer de vérification de mon identité?
+
+Speaker 1:Bonjour, Monsieur Oui, sûr. C'est NAME1 de chez UBS. Pour commencer, je vais devoir confirmer quelques informations de sécurité. Pouvez-vous me donner votre date de et votre adresse, s' il vous plaît?
+
+Speaker 1:uh... Bien sûr, ma date de naissance est le DATE et mon adresse est ADDRESS.
+
+Speaker 2:Merci, Mr. NAME. Euh [pause], maintnant touts les informations Vous avez mentionné une charge non reconnue sur votre compte, c'est bien cela?
+
+Speaker 1:Oui, exactement. I l y a une transaction que je ne reconnais pas du tout. Euh, elle a été faite le DATE pour un montant de AMOUNT auprès de MERCHANT. Pouvez-vous vérifier ça pour moi, et voir si une erreur ou une fraude?
+
+Speaker 2:e comprends votre préoccupation. [pause] Pour commencer, je vais en détail cette charge non reconnue. Euh, pouvez-vous vérifier i vous avez fait des achats récents auprès de ce marchand ou utilisé vos informations de compte sur leur site?
+
+Speaker 1:Non, je n'ai rien acheté chez eu Et je suis sûr que je n'ai jamais mes coordonnées chez eux.
+
+Speaker 2:D'accord. Et avez-vous reçu une notification ou un message cette transaction non reconnue?
+
+Speaker 1:Oui, euh, j'ai reçu un message concernant la rtansaction non reconnue le DATE pour un montant de AMOUNT auprès de MERCHANT.
+
+Speaker 2:Très bien, jevais rechercher toutes les transactions associées à ce montant et ce marchand. System processing... Cela peut euh, la suspension temporaire de votre carte ou des alertes de surveillance pour détecter activité suspecte. En attendant, voul ez-vous vérifier ensemble s'il y a eu d'autres activités inhabituelles sur votre compte?
+
+Speaker 1:Oui, s'il vous plaît. Je suis vraiment que ma quart ait été compromise. Pouvez-vous aussi, uh, vérifier si ce genre de problème a déjà signalé avec ce marc hand?
+
+Speaker 2:Bien sûr, vérifions ensemble l'activité récente votre compte Je vais également vérifier si nous avons reçu signalements concernant des problèmes similaires avec ce marchand. Cela prendra quelques instants.
+
+System processing...
+
+Speaker 1:Je n'ai pas reçu d'autre alertes suspectes, juste celle concernant MERCHANT. faire quelque chose de pl us pour sécuris e mon compte?
+
+Speaker 2:Je suis ravi de asvoir que vous notifications. À partir de votre date de notification, nous pouvons voir s'il y a un schéma fraude. Pour davantage votre compte, je recommande d'activer les de transaction en temps réel et la vérification en deux étapes. Euh, je vais maintenant terminer la vérification de votre compte pour s'assurer qu'il n'y a pas d'autres transactions
+
+Speaker 1:Merci pour ces recommandations. Comment mettre en place la vérification en deux dontvous parle?z
+
+Speaker 2:Oui, bien sûr. Pour activer la vérification en deux étapes, pouvez accéder à votrep rofil de compte en ligne et sélectionnez l'option de sécurité. Cela impliquera d'associer un code de vérification envoyé sur votre téléphone mobile chaque fois que vous vous connectez ou effectuez des transactions.
+
+Speaker 1:D'accord, je vaism ettre ça en place. Y a-t-il autre chose que je devrais verre à ce stade?
+
+Speaker 2:En plus de la vérification en deux étapes, euh, il est recommandé de réviser régulièrement vos relevés de compte et de signaler immédiatement toute activité suspecte. Nous avons termié la vérification de votre compt et il n'y a pas d'autres suspectes détectées pour le moment.
+
+Speaker 1:Je comprends. Je suis vraiment content que vous m'aidiez à traves cette station difficile.
+
+Spaker 2: Je suis hureux de vous ainsi. Nous allons broquer votre carte immédiatement et émettre une nouvelle. La procédure de contestation commencera et nous vous informé à chaque étape. Si vous avez questions ou besoins, notre équip eest l pour vous aider.
+
+Speaker 1:Merci beaucoup pour votre aide. Je suis plus rassurait maintenant. À ça, est-ce que UBS propose des services ou options supplémentaires pour protéger mes finances?
+
+Speaker 2:Nous comprenons parfaitement l'importance de la sécurité financière. Nous offrons désormais un outil de surveillance des fraudes en temps réel avec des alertes instantanées pour toute activité suspecte. De plus, nous avons renforcé notre programme de protection contre le vol d'identité qui sureille votre crédit pour détecter toute activité inhabituelle. Je vais vous, euh, envoyer des informations détaillées s ur tous ces ser vices.
+
+Speaker 1:Merci beaucoup. Je vous apprécie vraiment tout ce que vous faites pour sécuriser mon compte.
+
+Speaker 2:C'est notre priorité. Je vous souhaite une excellente journée, Monsieur NAME, et sachez que nous sommes là pour haider à protéger vos

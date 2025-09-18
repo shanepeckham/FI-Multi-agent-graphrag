@@ -1,0 +1,49 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen. Name ist NAME und ichhabe Probleme mit dem Digital Banknig Login. Können Sie
+
+Speaker 2:Guten Morgen, hier spricht NAME1 UBS. Natürlich, helfe Ihnen gerne. Könnten Sie mir zunächst Ihr Geburtsdatum und Ihre bestätigen? Ohne das, äh, können wir Sicherheitsgründen nicht weiteres machen.
+
+Speaker 1:Ja, sicher. Mein Geburtsdatum ist DATUM und meine Adresse lautet ADRESSE.
+
+Speaker 2:Vielen Dank. Ok, dann zu Ihrem Problem: Sie haben Schwierigkeiten, einzuloggen. Können Sie mir sagen, was passiert, wenn Sie versuchen, sich anzumelden? Bekommen Sie eine Fehlermeldung? Äh, oder ist es ein Problem mit Ihrem Benutzernamen oder Passwort?
+
+Speaker 1:Es ist das Passwort. Ich habe es mehrmals ich bin mir sicher, dass es korrekt ist, doch ich bekomme immer die Fehlermeldung, dass das Passwort falsch ist. Ich habe auch versucht, die 'Passwort vergessen'-Funktion zu nutzen, aber ich bekomme keine E-Mail.
+
+Speaker 2:Ich verstehe, das klingt frustrierend. sicherzugehen, un, haben Sie die richtige E-Mail-Adres se für den Passwort-Reset angegeben?
+
+Speaker 1:Ja, die ist korrekt. Aber selbs nach mehrmaligen Versuchen kommt keine E-Mail Es könnte mit dem Betriebssystem-Update zusammenhängen, dass mein Gerät vor zwei Tagen erhalten hat.
+
+Speaker 2:In Ordnung, ich werde das überprüfen. Manchmal kann ein Betriebssystem-Update solche Probleme verursachen. Könnten Sie bitte noch sagen, welches Gerät und welchen Browser Sie verwenden?
+
+Speaker 1:benutze, äh, einen Windows-Laptop und Chrome als Browser.
+
+Speaker 2:Ok. System processing Ich jetzt eine Passwort-Rücsetzungs-E-Mail an Ihre gespeicherte Adresse senden. Überprüfen Sie bitte Ihre E-Mail und folgen Sie den Anweisungen. Während darauf warten, könnten Sie bitte auch Ihre Authentifizierungs-Ab öffnen udn überprüfen, ob alles korrekt eingestellt ist? Manchmal hilft es die App neu zu installieren.
+
+Speaker 1:Okay, werde ich machen.
+
+Speaker 2:Ausserdem könnte Ihre Sicherheitssoftware die Funktionalität unserer Systeme Könnten Sie diese temporär deakti vieren und dann nochmal versuchen?
+
+Speaker 1:ich probiere das aus.
+
+System processing...
+
+Speaker 2:In Ordnung, Ihre neuen beruflichen Details und Adresse sind:
+- Selbstständig als Manager bei Company 1 im Gesundheitssektor
+- Adresse: CH, St. Gallen, 900,0 residence_id 80
+
+Speaker 1:Ja, das stimmt.
+
+Speaker 2:Für Ihre Altersvorsoge und Renteninvestitionen sind langfristige und sichere Anlagen optimal, Sie möchten eine stabile Rendite, korrekt?
+
+Speaker 1:Ja genau Dokument zur Herkunft meiner habe ich bereits hochgeladen:
+
+Speaker 2:Perfekt. Dann ist der Termin für den 09. September 025 um Uhr bestätigt. Bringen bitte alle relevanetn Dokumente mit. Gibt es weitere Fragen oder Punkte, die Sie besprechen möchten?
+
+Speaker 1:Nein, das Danke für Hilfe!
+
+Speaker 2:Gerne, ich werde die E-Mail jetz senden und Sie prüfen Ihre Einstellungen. Valls sonst noch was ist, lassen Sie es mich btte wissen.
+
+Speaker 1:Mach ich, danke. Auf Wiederhören!
+
+Speaker 2:Auf Wiederhören!

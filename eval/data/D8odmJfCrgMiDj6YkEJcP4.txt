@@ -1,0 +1,29 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1: Hallo, ja, guten Morgen. Ich habe hier eine Frage zu meinem, ähm, Digital Banking... Es geht um die Sache, die wir letzte Woche besprochen hatten. Können Sie sich erinnern?  
+  
+Speaker 2: Guten Morgen, Herr NAME. Ja, ich erinnere mich, das war bezüglich einer bestimmten Funktion, die Sie nutzen wollten. Bevor wir fortfahren, darf ich Sie zur Sicherheit um Ihr Geburtsdatum und Ihre Adresse bitten?  
+  
+Speaker 1: Äh, klar. Mein Geburtsdatum ist der... ähm, DATUM und meine Adresse ist die ADRESSE.  
+  
+Speaker 2: Vielen Dank, Herr NAME. Lassen Sie uns direkt loslegen. Sie hatten also auf eine Funktion hingewiesen, mit der Sie Ihre Investitionen über die App anpassen können. Könnten Sie das vielleicht noch etwas näher erläutern?  
+  
+Speaker 1: Ja, genau. Also, ich dachte, ähm, es gäbe etwas, womit ich meine Investitionen direkt in der App... wie sagt man... optimieren kann, vor allem im Hinblick auf meine Ruhestandsziele. Aber irgendwie... ich finde das nicht. Mache ich was falsch oder gibt's das einfach noch nicht?  
+  
+Speaker 2: Ich verstehe, danke für die Infos. Also, im Moment können Sie mit der App Ihre Investitionen überwachen, aber direkte Anpassungen... das ist noch nicht möglich. Aber, äh, Ihr Feedback ist wirklich wertvoll, und wir geben das gerne an unser Entwicklungsteam weiter. Bis dahin, vielleicht wäre die Zielsetzungsfunktion etwas für Sie? Damit können Sie Ihre Spar- und Investitionsstrategien visualisieren. Soll ich Ihnen das mal erklären?  
+  
+Speaker 1: Zielsetzungsfunktion, hm... klingt interessant, aber wie hilft mir das konkret bei meinen Ruhestandsplänen? Und das mit den KYC-Informationen, ich bin nicht ganz sicher, was das für meine Investments bedeutet.  
+  
+Speaker 2: Klar, gern. Mit der Zielsetzungsfunktion können Sie konkrete Sparziele festlegen, zum Beispiel für den Ruhestand. Sie geben einfach den Endbetrag und den Zeitraum ein, äh, und die App zeigt Ihnen, wie viel Sie sparen sollten. So haben Sie Ihre Strategie besser im Blick. Bezüglich KYC: Wir aktualisieren den Zweck Ihrer Geschäftsbeziehung, um Ihre Investitionsziele klarer abzustecken und so unsere Dienstleistungen besser anzupassen. Ist das soweit verständlich, oder brauchen Sie mehr Details?  
+  
+Speaker 1: Ja, ich verstehe jetzt besser, danke. Aber ich frage mich noch, äh... wenn meine KYC-Infos aktualisiert werden, was genau ändert sich dann für mich? Welche Infos muss ich genau angeben?  
+  
+Speaker 2: Gute Frage! Bei der KYC-Aktualisierung geht es darum, Ihre Investitionsstrategien, gerade für die Altersvorsorge, effektiver zu kategorisieren. Also zum Beispiel Ihre Beiträge zu Säule 3a Konten oder spezielle Investments, die Sie tätigen. Dazu brauchen wir Details wie Beträge und Häufigkeit der Einzahlungen, um alles korrekt abzubilden. Wenn Sie da noch spezifische Fragen haben, nur zu.  
+  
+Speaker 1: Okay, verstanden. Also, wenn ich jetzt monatlich in einen Altersvorsorgefonds einzahle, wie wird das bei Ihnen erfasst? Und wie gebe ich diese Infos am besten an?  
+  
+Speaker 2: Solche regelmässigen Zahlungen werden als „Investitionen für den Ruhestand“ kategorisiert. Wir benötigen dazu Details wie, ähm, die Beträge, Frequenz und die Produkte, in die Sie investieren. Eine Liste wäre super hilfreich. Achten Sie auf die genauen Angaben, das hilft uns ebenfalls, passende Banklösungen anzubieten. Sollten noch Fragen aufkommen, lassen Sie es mich gern wissen.  
+  
+Speaker 1: Okay, also... ich schicke Ihnen dann eine Liste mit den Fonds und Konten, zusammen mit den Beträgen und wie oft ich einzahle. Irgendwas Besonderes, worauf ich achten muss, damit das korrekt in Ihrer KYC-Aktualisierung landet?  
+  
+Speaker 2: Genau, eine detaillierte Liste wäre perfekt. Achten Sie darauf, den Fokus auf die Ziele und Art der Investments zu legen. Diese Infos fliessen nicht nur in die KYC-Aktualisierung, sondern beeinflussen auch die digitalen Banklösungen, die wir Ihnen anbieten. Wenn sich Unklarheiten ergeben oder Sie Hilfe brauchen, zögern Sie bitte nicht, mich anzurufen.  

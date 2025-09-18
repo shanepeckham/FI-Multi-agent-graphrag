@@ -1,0 +1,37 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, c’est NAME1 de UBS. C’est bienne Monsieur NAME ?
+Speaker 2:Oui, bonjour.
+Speaker 2:Je vous appelle pour discuter des points concernant notre réunion. Ça va bien aujourd’hui ? Ah, avant de commencer,pourriez-vous confirmer votre date de naissance et votre adresse pour des raisons de sûreté ?
+Speaker 2:Oui, ma date de naissance est LE_DATE_DE_NAISSANCE, et mon adresse est LE_ADRESSE.
+Speaker 1:Merci, Monsieur NAME. Je vais vérifier cela rapidement, un instant... hold: 1 min D'accord, tout est en ordre. Votre adresse postale est bien LE_ADRESSE à Delémont, Jura
+Speaker 2:Oui, c’est exact.
+Speaker 1:Parfait, merci. Maintenant, pourriez-vous me confirmer que vous êtes actuellement indépendant, occupant le poste de Manager chez Company 2 dans le secteur financier ?
+Speaker 2:Oui, c’est ça. Je suis indépendant et je travaille c hez Company 2.
+Speaker 1:Merci la confirmation. Passons aux points clés de notre réunion sur la planification des pensions et es stratégies d’investissement pour la retraite. Nous allons examiner d'abord les dfiférentes options de diversification de vos actifs en vue de la Nous discuterons des proudits comme pilier 3a qui offrent des avantages fiscaux. vous semlbe bien ?
+Speaker 2:Oui, mais j'aimerais être sûr ces options correspondent vraiment à mes besoins et Pouvez-vous détailler les risques et rendements associés à ces options ?
+Speaker 1:Bien entendu. Tout d'abord, actions peuvent offrir des rendements élevés au fil du temps, mais elles sont plus sujettes à la volatilité du marché. Les obligations offr ent des revenus réguliers avec moins de risque, et les biens immobiliers… attend, avez-vous des biens immobiliers actuellement
+Speaker 2:Oui, j'ai quelques propriétés.
+Speaker 1:Très bien, les biens immobiliers offrent des revenus et une appréciation de la valeur au fil du temps. En diversifiant investissements dans le pilier 3a, vous pouvez profiter des avantages fiscaux tout en les risques.
+Speaker 2:Mais comment ça fonctionne exactement au niveau fiscal ?
+Speaker 1:Les contributions au pilier 3a sont déductibles de votr e revenu imposable, ce qui réduit votre charge fiscale. Les gains générés ne sont pas imposés jusqu'au retrait, et au moment du retrait, ils sont généralement imposés à un taux réduit.
+
+Speaker 2:D’accord, je vois. Et notre réunion, vous avez dit le 09 eptembre 09h00?
+Speaker 2:Ou,i exactemnet. Pour la réunion, pourriez-vous préparer les informations nécessaires concernant vos actifs actuels... euh... e ttous les autres documents qui pourraient être pertinents?
+Speaker 2:Quels documents exactement dois-je apporter ?
+Speaker 1:Vous devrez apporter une pièce d'identité valide, une preuve de résidence, des relevés de vos actifs et immobiliers, et votre déclaration fiscale la plus récente. Aussi une preuve de votre statut d'indépendant et informations sur votre rôle chez Company 2.
+Speaker 2:Tout est noté.
+Speaker 1:Parfait. Voici la finale pour votre KYC:
+1. Total des actifs : 2019241 unités de CUR2.
+2. Total des actifs immobiliers : 3056255
+3. Total des actifs liquides : 3688407 unités.
+4. Total des autres actifs : 841177 unités.
+5. Diversification portefeuille : Les actifs diversifiés.
+Adresse : LE_ADRESSE à Delémont, Jura.
+Statut professionnel : Indépendant, oculant le poste de Manager chez Company 2 dans le financier.
+Objectif de la relation d'affaires : Planification de la retraite et investissements pour retraite.
+La date de l réunion est confirmée pour le 09 2025 à 09h00. Ces informations sont-elles exactes?
+Speaker 2:O ui, toutes les informations sont correctes. J’apprécie la vérification vais préparer les documents nécessaires.
+Speaker 1:Parfait, Monsieur NAME. Je vous remercie pour votre collaboration. Je suis ici pour toute aide supplémentaire avant notre réunion. Bonne préparation et à bientôt.
+Speaker 2:Merci encore pour tout. À bientôt.
+

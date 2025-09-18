@@ -1,0 +1,51 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:euh, oui, bonjour. Je suis j'ai dès soucis avec des frais non reconnus sur moine relevé bancaire...
+
+Speaker 2:Bonjour, M. NAME. C'est NAME1 de UBS. Je vous appelle pour discuter de ces faris non reconnus. Donc, avant de commencer, pourrais-je demander de confirmer votre date de naissance et votre adresse pour des de sécurité?
+
+Speaker 1:Oui, bien sûr. Euh, ma date de naissance est le DATENAISSANCE et mon adresse est ADRESSE.
+
+Speaker 2:Merci pour la confirmation. Je votre préoccupation concernant ce frais non reconnu. Permettez-moi de vous expliquer en ce qui s'est passé.
+
+Speaker 2:Alors, le frais apparu sur votre relevé est daté du DATE et s'élève à AMOUNT. Il a été effectué auprès du marchand MERCHANT. Nous avons dé-jaune vérifié cette transaction et l'avons jugée légitime car elle correspond à votre modèle de dépenses. Mais vais vous fournir pouce de dé tails.
+
+Speaker 1:Euh... je suis sûr de ne pas avir effectué cete transaction. Ça me semle un p eu que vous l'ayez jugée légitime. Quelles étapes avez-vous suivies exactement pour en arriver cette conclusion?
+
+Speaker 2:Tout à fait, je comprends votre scepticisme. Permettez-moi de vous expliquer les étapes que nous avons suivies. D'abord, nous avons la date et du frais avec MERCHANT. Puis, nous avons comparé cette transaction avec vos achats précédents pour détecter des similitudes. Nous avons également examiné géolocalisation de la transaction.
+
+Si malgré cela, vous êtes serre-tain de ne pas avoir effectué cette trasacti on, nous pouvonsinitier un de contestation. Le processus typique miplique la soumission d'un formulaire détaillant l'incident, examiné notre département fraudes. Cela peut prendre entre 7 et 10 jours ouvrables.
+
+Avez-vous d'autres transactions récentes que vous ne reconnaissez
+
+Speaker 1:Non, mais j’aimrai que nous fassions une revue des transactions récentes pour vérifier s'il y a eu d'autres activités suspectes. Et euh... pouvez-vous aussi me parler des mesures p réventives que je peux prendre?
+
+Speaker 2:Absolument. Je vais examiner vos ransactions récentes. Pour les mesures voici quelues recommandations:
+
+1. Activer altesse de transaction.
+2. Mettre place l'authentification à deux facteurs.
+3. Utiliser une application bancaire sécurisée.
+4. Limiter dépenses quotidiennes.
+5. Changer régul ièrement vos mots passe.
+
+Quels sont les dates spécifiques pour lesquelles nous devri ons examiner les transactions?
+
+Speaker 1:Oh, euh, les trois derniers mois, s'il vous plaît. Et il a frais pour le processus de contestation?
+
+Speaker 2:Très bien. Je vais examiner les transactions trois derniers mois. Il n'y a généralement pas de frais pour la contestation de frais non reconnus. Quant à remplacer votre carte, c'est une bonne option. pouvons émettre une nouvelle sans frais supplémentaires.
+
+Nous avons proposé un rendez-vous le 9 septembre 2025 à 14h00. Est-ce que ça vous convient?
+
+Speaker 1:Oui, c'est noté. Pour les dates, donc de jouer 2025 jusqu'à aujourd'hui. Et euh... est-ce que le processus de contestation peut commencer tout de après?
+
+Speaker 2:Bien sûr. Je vais examiner les transactions dès maintenant. Si nous trouvons des anomalies, nous pouvons initier le processus de contestation immédiatement. On peut soumettre le formulaire de réclamation et notre département de fraudes examinera cela.
+
+Pouvons-nous commencer par examiner les relevés de votre compte?
+
+Speaker 1:Oui, commençons tout de suite.
+
+Speaker 2:D'accord, je vais vérifier les transactions de juillet 2025 jusqu'à aujourd'hui . Je m'assurerai aussi que les notifications de transaction sont activés pour que vous soyez informé de toute utilisation future.
+
+Pouvons-nous continuer?
+
+Speaker 1:Oui, ocntinuons. Merci pour votre aide.

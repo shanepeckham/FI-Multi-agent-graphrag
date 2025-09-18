@@ -1,0 +1,21 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-10-04",
+      "contact_note": "Sustainable investing \u2013 align portfolio with ESG/impact preferences.",
+      "channel": "In-person at branch",
+      "duration_minutes": 90
+    }
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "payments",
+      "details": "Client wants to invest for retirement."
+    }
+  },
+  {
+    "task_type": "update_kyc_total_assets"
+  }
+]

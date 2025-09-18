@@ -1,0 +1,55 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+
+Speaker 1:Guten Morgen, dort NAME1 von der UBS?
+Speaker 2:Gu ten Herr NAME. Ja, hier ist NAME1 von der UBS. Ich rufe an, um über einige wichtige Punkte bezüglich Ihres digitalen Bankkontos und einiger Updates Ihrer Kundendaten zu sprechen.
+
+Speaker 1:Oh, ah, Wo soll ich anfangen?
+
+Speaker 2:Um Ihre aus Sicherheitsgründen bestätigen,k önn te ich Sie bitten, Ihr Geburtsdatum und Ihre Adresse anzugeben?
+
+Speaker 1:äh, mein Geburtsdatum ist DATUM und meine Adresse ist ADRESSE.
+
+Speaker 2:Dank führ die Bestätigung Ihrer Identität, Herr Dann fangen wir mal an. Sie hatten erwähnt, dass Sie Schwierigkeiten haben, sich in Ihr Bank konto einzuloggen. Können Sie mir bitte genauer beschreiben, welche Probleme Sie dabei habne und welche Fehlermeldungen angezeigt werden?
+
+Speaker 1:Ja, ähm, jeds Mal, wenn ich versuche, mich einzuloggen, bekomme ich die Nachricht “Fehler 502 - Fehler bei der Verbindung”. habe es schon miete verschiedenen Browsern und Geräten ausprobiert, aber der Fehler bleibt. Können Sie mir da helfen? Ich mache mir wirklich Sorgen um die Sicherheit meines Kontos.
+
+Speaker 2:Vielen Dank detaillierte Beschreibung. klingt nach einer server seitigen Störung. Lassen Se us zuerst die üblichen Schritte druchgehen. Haben Sie den Browser-Cache gelöscht und es nochmals versucht? Welches und welchen Browser Sie hauptsächlich, und haben Si ees schon mit einem anderen probiert?
+
+Speaker 1:Ja, ich habe den Cash geleert und alle empfohlenen drchgeführt, aber der Fehler bleibt. Ich brauche dringend Zugang zu meinem Konto, da ich Transaktionen überwachen muss.
+
+Speaker 2:Verstanden. werde sofort eine Eskalation an unser technisches Supportteam weiterleiten. Gleichzeitig möchte ich Ihnen einige Alternativen zeigen. Können Sie sich eventuel vorstellen, Ihre Knotodetails vorübergehend über die Bankfiliale oder telefonisch zu vewralten?
+
+Pause, Aufzeichnungen werden gemacht...
+
+Speaker 1:Ja, äh, parallel dazu wollte ich auch meine aktualisieren. Ich bin jezt selbstständig und arbeiten als Manager bei "Company 2" im Könnten Sie das bitte auch den Systemen aktualisieren?
+
+Speaker 2:Selbstverständlich. Ich werde diese nun vermerken. Können Sie mir auch Ihre Adresse geben, damit ich diese auch aktualisiere?
+
+Speaker 1:Ja, meine neue Adresse lautet: Land Schweiz, 6430, Schwyz, Schwyz, Wohnsitz-ID 84. Wie das normalerweise, bis die Änderungen im System wirksam sind?
+
+Speaker 2:Die Änderungen werden in de rRegel innerhalb von 24 Stunden wirksam. Ihre zukünftige Korrespondenz wird dann an die neue Adresse gesendet. Ich werde gleich die Aktualisierungen vo rnehmen.
+
+System wird aktualisiert...
+
+Speaker 1:Dankeschön. Und, äh, gibt es eine Möglichk eit, wie ich sichergehen kann, dass mein Konto vor unbefugten Zugrifen geschützt ist? Diese Login-Probleme machen mich wirklich
+
+Speaker 2:Herr NAME, verstehe Ihre Besorgnis. Unsere Systeme sind sehr sicher. Während das Problem würde ich Ihnen empfinden, Zwei-Faktor-Authentifizierung zu aktivieren. Möchten Sie, dass ich Ihnen zeige, wie das geht?
+
+Speaker 1:Ja bitte, das wäre super.
+
+Speaker 2:Gut. Um die Zwei-Faktor-Authentifizieurngzu aktivieren, loggen Sie sich in Ihr digitales Bankkonto ein, navigieren zum Bereich "Sicherheitseinstellungen" und wählen Sie "Zwei-Faktor-Authentifizierung". Geben Sie Ihre Mobiltelefonnummer ein, aus die der Sicherheitscode gesendet wird, dann bestätigen Sie und folgen Sie den Anweisungen.
+
+Speaker 1:Okay, das werde ich gleich machen. Danke ür die Erklärung. Und wie schnell kannst ich eine Rückmeldung vom technischen Supportteam erwarten?
+
+Speaker 2:In der Regel innerhalb weniger Stunden. Sie können aber auch jederzeit direkt in die Bankfiliale gehen, falls es länger dauern sollte.
+
+Speaker 1:Gut, vielen Dank. Könnten Sie mich bitte informieren, sobald es N euigkeiten gibt?
+
+Speaker 2:Natürlich, Herr NAME. Ich werde Sie auf dem Laufenden halten. Ihre neuen Änderungen sind alle im System: Selbstständig als Manager bei "Company 2" im Gesundheitswesen und Ihre neue Adresse Schweiz, Postleitzahl 6430, Schwyz, Schwyz, Wohnsitz-ID 84. Haben Sie sonst noch Fragen?
+
+Speaker 1:Nein, das war alles. Vielen Dank für Ihre Hilfe, NAME1.
+
+Speaker 2:Gern geschehen, Herr NAME. Ich wünsche Ihnen einen schönen Tag.
+
+Speaker 1:Danke, Ihnen

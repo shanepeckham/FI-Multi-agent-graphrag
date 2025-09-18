@@ -1,0 +1,12 @@
+[
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Inheritance",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/9290"
+      ]
+    }
+  }
+]

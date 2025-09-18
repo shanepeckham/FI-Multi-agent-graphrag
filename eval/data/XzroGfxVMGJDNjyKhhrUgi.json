@@ -1,0 +1,14 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-10",
+      "contact_note": "Market update \u2013 share UBS house view and outlook, and discuss possible portfolio implications.",
+      "channel": "Video call",
+      "duration_minutes": 90
+    }
+  },
+  {
+    "task_type": "update_kyc_activity"
+  }
+]

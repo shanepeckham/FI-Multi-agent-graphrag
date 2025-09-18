@@ -1,0 +1,21 @@
+[
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-18",
+      "contact_note": "Mortgage or credit facility \u2013 discuss financing for real estate, yachts, art, or business purposes.",
+      "channel": "In-person at branch",
+      "duration_minutes": 60
+    }
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "investing & securities trading",
+      "details": "Client wants to invest for retirement."
+    }
+  }
+]

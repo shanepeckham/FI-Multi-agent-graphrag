@@ -1,0 +1,55 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, Monsieur NAME, euh, c'est un plaisir de vous parler ajourd'hui. J'espère que vous a llez bien. Avant de commencer, est-ce que vous pouvez confirmer votre date de naissance et votre adresse pour des raisons de sécurité ?
+
+Speaker 2:Bien sûr. Je suis né DATE et mon adresse est ADRESSE.
+
+Speaker 1:Merci d'avoir confrimé vos informations. Donc, on m'a dit que vous avez des soucis avec la, euh, fonction de la banque numérique dans Pouvez-vous me dire exactement ce que vous avez essayé jusqu'à présent? Vous avez eu messages d'erreur ou des notifications s péciales?
+
+Speaker 2:Oui, j'ai essayé fois de la trouver sans succès. Je suis allé dans la section "Services" puis "Options de paiement", maisj e ne vois pas cette fonction. Aucun m essage d'erreur, ce qui rend ça encore plus frustrant. Est-ce qu'il faut des autorisations spéciales ou un type de compte particulier? Ah, et est-ce qu'il y a eu des mises à jour récentes de affectant cette accessibilité?
+
+Speaker 1:Ah oui, comprends, c'est frustrant. Attendez, ouais, il est possible que des autorisations spéciales ou un typ ede compte particulier soient nécessaires. Et, hum, effectivement, des mises à jou rrécentes peuvent avoir changé l'accessibilité. Laissez-moi confirmer quelques détails et vous guider.
+
+System processing...
+
+Speaker 1:Alors, voilà les étapes à suivre:
+
+1. Ouvrez l'application bancaire.
+2. Connetez-vous avecvos identifiants.
+3. Allez dans "Services".
+4. Recherchez "Options de paiement" et sélectionnez "Fonctions supplémentaires".
+5. Assurez-vous que votre compte a les permissions nécessaires et activez les avancées dans les paramtres.
+
+Si ça ne marche pas, peut-être que votre type de compt ene les inclut pas, ou il y a des autorisations supplémentaires. Vous avez certifiée si votr eapplication est à jour? Peut-être réinstaller l'application aiderait.
+
+Je peux aussi vous offrir une session de tutoriel en direct, par téléphone ou partage d'écran, pour vous guider. Ça irait ?
+
+Speaker 2:merci pour les Je vais essayer ces étapes. Un tutoriel en direct serait C'est frustrant de ne pas comprendre où ça bloque. les mises à jour récentes, qu'est-ce qui a changé exactement? Et pour les autres fonctionnalités disponibles, vous pouvez me donner plus détails?
+
+Speaker 1:Parfait, je vous propose session aujourd'hui à 15h00 ou demain matin si vous préférez. Concernant les mises à jour, elles ont la sécurité, donc certaines fonctions maintenant une authentificaion à edux facteurs ou ont été regroupées différemment.
+
+Pour les nouvelles fonctionnalités:
+utils de et éponomie: Suivre vos dépenses, définir limites budgétaires, recevor des recommandations pour vos économies.
+2. Assistant virtuel: Un chatbot qui répond à vos questions et vous guide dans l'application.
+3. Sécurité renforcée: Authentification à deux facteurs, protocoles de sécurité avancés.
+4. Gestiondes comptes multiples: Basculer facilement entrez vos différents comptes.
+5. Alertes de transactions: Notifications pour toutes les transacti ons en temps réel.
+
+Je vais confirmer la rencontre prévue pour le 8 septembre 2025 à 9h00. Ça vous
+
+Speaker 2:Oui, le 8 septembre à 9h00 c'est parfait aussi. Merci pour les détails. Ok pour 15h00 aujourd'hui. Et concernant les permissions, es-tce compliqué? J'espère que ça ira vite.
+
+Speaker 1:Parfait, confirmation enregistrée. Pour les permissions supplémentaires, voici étapes:
+1. Accédez aux paramètres de sécurité.
+Activez à deux facteurs.
+3. Ajoutez les permissions nécessaires pour les foncti onnalités avancées.
+
+vais vous envoyer les détails d'assiette par email et de partage d'écran. Ça inclura aussi des vidéos tutoriels et des guides écrits pour vous aider.
+
+Est-ce qu'il y a auteur chose avant c'est jeune de tutoriel? Je suis là vous aider.
+
+Speaker 2:Non, ça ira, merci pour votre aide. J'attends le mail détails. Merci beaucoup!
+
+Speaker 1:Très bien, vous envoie tout ça tout de suite. Merci Monsieur NAME et à tout à l'heure à 15h00 pour la session de tutoriel.
+
+Speaker 2:Merci. À tout à l'heure !

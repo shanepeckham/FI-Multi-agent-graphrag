@@ -1,0 +1,53 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Hallo, äh, ich hab' ein Problem, mich in mein Konto einzuloggen.
+
+Speaker 2:Guten Morgen, hier spricht NAME1 von UBS. Ich ruef an bezüglich Ihres aktuellen Anliegens zum Login afu der digitalen Banking-Plattform und dem KYC-Update. Um Ihre Identität aus Sicherheitsgründen z verifizieren, könnte ich Sie bitte zunächst um die Bestätigung Ihres Geburtsdatums und Ihrer Adresse bitten?
+
+Speaker 1:Klar, mein Geburtsdatum [DATUM] und meine Adresse ist [ADRESSE].
+
+Speaker 1:Vielen Dank für die Bestätigung. sagten, Sie hätten ein Problemb eim Einloggen. Können Sie das ein bisschen näher erläutern? Haben Sie schon versucht, das Problem selbst zu lösen?
+
+Speaker 1:Ja, äh, also, ich hab' versucht, mich mit meinem Passwort aber ich krieg' immer 'ne Fehlermeldung, dass falsch ist. Ich hab’ auch schon versucht, mein Passwort zurückzusetzen aber das hat auch nicht funktioniert. Ich mach' mir Sorgen um die Sicherheit meines Kontos. Wie wird mein Konto eigentlich geschützt?
+
+Speaker 2:Vielen Dank, dass Sie das so detailliert erklrt haben. Das klingt wirklich frustrierend. Unsere digitale Banking-Plattform hat mehrere Sicherheitsvorkehrungen, einschliesslich der Zwei-Faktor-Authentifizierung. Das ist ein zusätzlicher Schutzmechanismus neben Ihrem Passwort.
+
+Kurze Pause, um die Informationen aufzurufen...
+
+Speaker 2:Diese Authentifizierugn kann über eine App, SMS oder E-Mail erfolgen. Haben Sie die App Ihrem Mobilgerät installiert? Ich würde Ihnen ger ne Schritt für Schritt helfen, diese Sicherheitsfunktion zu aktivieren.
+
+Speaker 2:Ja, ich hab’ die App installiert. Wie sol lich weiter vogrehen?
+
+Speaker 2:Gut, gehen Sie bitte in die in Ihrer App. Dor t finden Sie den Abschnitt für die Zwei-Faktor-Authen tifizierung. Wählen Sie die Option "App" und folgen Sie den Ah, und falls Sie lieber SMS E-Mail nutzen möchten, können Sie das in den Einstellungen auswählen. Möchten Sie das jetzt zusammen machen?
+
+Speaker 1:Ja, das wäre super. Und wie oft muss ich diese Zwei-Faktor-Authentifizierung machen?
+
+Spea ker 2: Sie müssen sie nur einmalige inrihcten. Danach wird die zusätzliche Bestätigung bei jedem Login automatisch angefordert, entweder durch die App, SMS oder je nachdem, was Sie gewählt haben. Brauchen Sie noch Hilfe bei der Einrichtung?
+
+Speaker 1:Nein, ich ich hab's jetzt verstanden. Vielen Dank! Können wir jetzt das KYC-Update besprechen? Was genau brauchen Sie dafür?
+
+Speaker 2:Natürlich. Für das KYC-Update benötige ich Ihre Daten, wie Name, Geburtsdatum und Adresse. Das hilft uns, sicherzustellen, dass Ihre Daten auf dem neuesten Stand sin d und Ihre geschäftliche Beziehung zur Bank korrekt ist, insbesondere für Zahlungen und Altersvorsorgeinvestments.
+
+System notiert Informationen...
+
+Speaker 2:Ihre Daten werden sicher und vertraulich behandelt. Können Sie mir bitte sagen, was genau der Zweck Ihrer Beziehung zur Bank ist, besonders in Bezug auf Zahlungen und Renteninvestments?
+
+Speaker 1:Ja, also, hauptsächlich mache ich regelmässige Zahlungen und Investitionen für meine Altersvorsorge. Ich will nur sicherstellen, dass alles korrekt und sicher ist.
+
+Speaker 2:Alles klar, vielen Dank für die Klarstellung. werde Ihre Akten entsprechend mit "Zahlungen und Altersvorsorge" aktualisieren.
+
+System speichert die Aktualisierungen...
+
+Speaker 2:Haben Sie noch oder etwas anderes, das wir besprechen sollten?
+
+Speaker 1:Nein, das war’seigentlich. Vielen Dank für Ihre Hilfe!
+
+Speaker 2:Ich freue mich, dass ich Ihnen helfen konnte. Ihre wurde aktualisiert und alles ist auf dem neuesten Stand. Wenn Sie in Zukunft Fragen haben oder Unterstützung zögern Sie nicht, uns zu kontaktieren. Gibt es noch etwas, bei dem ich Ihnen jetzt behilflich sein kann?
+
+Speaker 1:Nein, das wäre alles. Dankeschön!
+
+Speaker 2:Sehr gerne. Vielen Dank für Vertrauen und Ihre Geduld. Einen schönen Tag noch!
+
+Speaker 1:Danke, Ihnen auch, tschüss!
+
+Speaker 2:Auf Wiederhören!

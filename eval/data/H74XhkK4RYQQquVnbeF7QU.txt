@@ -1,0 +1,43 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1: Hallo, ich hoffe, Sie können mich hören. Hier ist NAME, ich habe gerade einen Anruf von Ihnen bekommen.
+
+Speaker 2: Guten Morgen, Herr oder Frau NAME. Mein Name ist NAME1 und ich rufe von der UBS an. Vielen Dank, dass wir Sie erreicht haben. Ich wollte mit Ihnen über ein paar wichtige Themen sprechen, wie Ihre Probleme beim digitalen Banking-Login, die Zwei-Faktor-Authentifizierung und die Aktualisierung Ihrer KYC-Informationen. Geht es Ihnen gut heute?
+
+Speaker 1: Ja, danke, soweit alles in Ordnung. Äh, was genau brauche ich denn für diese KYC-Aktualisierung? Ich habe nämlich kürzlich meinen Job gewechselt und, äh, bin mir da nicht so sicher.
+
+Speaker 2: Vielen Dank, dass Sie uns das mitteilen. Lassen Sie uns zuerst Ihre Identität verifizieren. Könnten Sie bitte Ihr Geburtsdatum und Ihre Adresse bestätigen?
+
+Speaker 1: Oh, klar, mein Geburtsdatum ist DATUM und, äh, meine Adresse ist ADRESSE.
+
+Speaker 2: Perfekt, danke. Also für die KYC-Aktualisierung wäre es wichtig, dass Sie uns Informationen über Ihren aktuellen beruflichen Status zukommen lassen, auch wenn Sie momentan nicht arbeiten. Haben Sie vielleicht eine Bestätigung Ihrer Kündigung oder einen Lebenslauf, den Sie einreichen könnten? Falls Sie Hilfe brauchen, um zu verstehen, welche Dokumente notwendig sind, lassen Sie es mich wissen.
+
+Speaker 1: Ehrlich gesagt, bin ich mir nicht sicher, welche Dokumente nötig sind, da ich kürzlich arbeitslos geworden bin. Könnten Sie mir einen kurzen Überblick geben, wie der Prozess ist und was genau ich einreichen muss?
+
+Speaker 2: Natürlich, ich bin hier, um das mit Ihnen durchzugehen. Sie müssten eine schriftliche Bestätigung Ihrer vorherigen Anstellung und einen aktuellen Lebenslauf einreichen. Ein Formular zur Aktualisierung Ihrer KYC-Informationen ist ebenfalls erforderlich. Dieses Formular können Sie auf unserer Webseite finden oder in einer unserer Filialen abholen. Wenn wir weitere Dokumente benötigen, informieren wir Sie selbstverständlich. Kann ich Ihnen sonst noch bei etwas Anderem helfen, zum Beispiel beim Ausfüllen der Formulare?
+
+Speaker 1: Ah, okay, das klingt machbar. Ich mache mir nur Sorgen, wie diese Änderungen sich auf meine Bankdienstleistungen oder Vorteile auswirken könnten. Bleibt alles normal, während mein KYC-Status aktualisiert wird?
+
+Hintergrundgeräusch eines bellenden Hundes
+
+Speaker 1: Oh, sorry, das war mein Hund.
+
+Speaker 2: Kein Problem. Also, Ihre bestehenden Bankdienstleistungen sollten weitgehend reibungslos weiterlaufen, vorausgesetzt, alle erforderlichen Unterlagen sind vollständig. Ihr Zugang zum Konto sollte nicht eingeschränkt sein, während unsere Prozesse laufen. Sollten doch Fragen oder Probleme auftreten, informieren wir Sie umgehend. Haben Sie noch Fragen hierzu?
+
+Speaker 1: Ja, ich... ich bin mir immer noch nicht ganz sicher, was "alle erforderlichen Unterlagen" umfasst. Und dieser Zwei-Faktor-Kram – beeinträchtigt mich das? Oder gibt’s spezielle Formulare zur Arbeitslosigkeit?
+
+Speaker 2: Kein Grund zur Sorge. Der KYC-Prozess sollte Ihnen nicht im Weg stehen, neue digitale Funktionen oder die Zwei-Faktor-Authentifizierung einzurichten. Für Arbeitslosigkeit gibt es ein spezielles Anpassungsformular, das wir Ihnen gerne zukommen lassen. Soll ich Ihnen helfen, es herunterzuladen oder auszufüllen?
+
+Speaker 1: Ja, das wäre super. Oh, und was die Zwei-Faktor-Sicherung angeht, könnten Sie mir bitte etwas mehr darüber erzählen? Ich habe gehört, sie kann das Konto zusätzlich absichern.
+
+Speaker 2: Gerne. Die Zwei-Faktor-Authentifizierung (2FA) bietet zusätzlichen Schutz, sodass nur Sie – selbst wenn jemand Ihr Passwort knackt – Zugang haben. Sie können zwischen SMS, einer Authentifizierungs-App oder E-Mail-Verifizierung wählen. Sollen wir mit einer Anleitung zur Installation einer Authentifizierungs-App starten? Ausserdem schicke ich Ihnen einen Link zum KYC-Formular, den Sie online ausfüllen können.
+
+Speaker 1: Ja, das wäre hilfreich. Und könnten Sie mir einige Apps empfehlen? Für den Fall, dass die 2FA mal nicht funktioniert. Wie vorgehen, wenn ich ins Ausland reise?
+
+Speaker 2: Sicherlich. Google Authenticator oder Authy sind empfehlenswerte Optionen. Wenn 2FA nicht funktioniert, zum Beispiel bei Auslandsreisen, richten Sie am besten Sicherungsoptionen ein, wie alternative Kontaktmethoden oder Backup-Codes. Ich schicke Ihnen jetzt gleich den Link zum KYC-Formular. Gibt es noch etwas, bei dem ich Ihnen helfen kann?
+
+Speaker 1: Vielen Dank für die Erklärungen. Ich werde mich darum kümmern, äh, könnten Sie mir nochmal den genauen Prozess für die App-Einrichtung erklären? Ich möchte sicherstellen, dass ich keine Probleme bekomme, wenn ich die App benutze oder reise.
+
+Speaker 2: Na klar. Also, erstmal installieren Sie eine App wie Google Authenticator oder Authy. Nach der Installation öffnen Sie die App, wählen "Konto hinzufügen" und scannen den QR-Code von Ihrem Bankkonto. Die App generiert dann fortlaufend Codes, die Sie bei der Anmeldung nutzen. Und für Sicherheit, richten Sie während dieses Prozesses alternative Kontaktmethoden ein, wie eine zweite Telefonnummer. Dies hilft bei der Kontowiederherstellung. Falls Fragen auftauchen, lassen Sie es mich wissen.
+
+Speaker 1: Super, danke. Das war sehr hilfreich.

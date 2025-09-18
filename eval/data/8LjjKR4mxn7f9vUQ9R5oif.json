@@ -1,0 +1,24 @@
+[
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Inheritance",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/6640"
+      ]
+    }
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-30",
+      "contact_note": "Liquidity event planning \u2013 discuss deployment of funds after a major asset sale or dividend payout.",
+      "channel": "Video call",
+      "duration_minutes": 30
+    }
+  }
+]

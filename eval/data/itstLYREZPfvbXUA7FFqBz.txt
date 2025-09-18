@@ -1,0 +1,49 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour. Euh, en fait, je suis un peu inquiet, j'ai des soucis avec le de mon compte.
+
+Speaker 2:Bonjour M. c'est NAME1 de UBS. Je suis là pour vous aider. Avant de continuer, pouvez-vous confirmer votre date de naissanc e et votre adresse des raisons sécurité?
+
+Speaker 1:Bien sûr, ma date de naissance est le DATE et mon est ADDRESS.
+
+Speaker 2:Merci pour la vérification. Alors, je comprends que vous sauriez anxieux. Actuellement, votre solde de compte est négatif de AMOUNT et les frais de découvert sont calculés quotidiennement avec un taux d'intérêt de X%. Il est conseillé de régulariser votre situation pour éviter des frais supplémentaires. Vous pouvez fonds depuis d'autres UBS ou externes.
+
+Speaker 1:Ah oui, mais euh, pouvez-vous m'expliquer comment les frais sont calculés exactement, aussi en détail les outils automatisés pour éviter découverts?
+Speaker 2:Bien ûr. Les frais de découvert sont calculés quotidiennement sur le solde négatif. La formule est ((Montant du découvert)  (Taux d'interet annuel)) / 365. Par exemple,si votre découvert est de AMOUNT un taux de montant multiplié par le taux d'intérêt et divisé par 365 donne les intérêts quotidiens.
+
+Speake 2: D'accord, donc c'est le dû quotidiennement, et sur une semaine ça se multiplie, c'est ça? Et les outils automatisés, comment ça mache?
+
+Speaker 2:Exactement. Pour éviter les découverte, nous pouvons configurer :
+1. Des alertes de solde: A chaque fois que votre solde approche du requis, vous recevez une notification par email à user9741@example.com.
+2. Des transferts automatiques : Configurer des transferts entres vos comptes pour assurer des fonds suffisantes.
+3. Un service de protectionc ontre les découverts : Nous pouvons lier vos comptes pour automatiquement tout découvert.
+
+Speaker 1:C'est rassurant. Eh, comment on fait pour configurer ces alertes et transferts automatiques? Je veux m'assurer de tout cela pour qu'il n'y ait pas de soucis.
+
+Speaker 2:Pas de je vais vous :
+1. Co nnectez-vous votre compte via l'application UBS ou le web.
+2. Sélectionnez 'Alertes et notifications' dans le m enu principal.
+3. Cliquez sur 'Configurer une alerte de solde', définissez seuil minimum et la fréquence, puis entrez ardesse email user9741@example.com.
+4. Pour les transferts automatiques, allez dans 'Transferts automatiques', choisissez compte source et destination, définissez le montant et les conditions, puis activez.
+
+Speaker 1:Ok, je vois. C'est clair. Et, euh, concernant le plans de paiement échelonné et découvert autorisé, pouvez-vous me donner des exemples précis, s'il vous plaît?
+
+Speaker 2:Bien sûr. Pour un plan de paiement échelonné, que votre découvert est AMOUNT; nous pourrions des paiements mensuels de (AMOUNT / x moi) sur 6 Pour un découvert autorisé, si vous avez un solde négatif jusqu'à AMOUNT, vous pouvez avoir une lime de crédit DOUBLE_AMOUNT des intérêts appliqués sur le montant utilisé.
+
+Speaker 1:D'accord, ça m'éclaire. Est-ce que mes informations KYC et de communication sont à jour alors?
+
+Speaker 2:Oui, vos informations sontà jour avec un d'actifs de 8,357,789 CUR1, et votre adresse email user9741@example.com est enregistrée pour toutes les communications bancaires.
+
+Speaker 1:Parfait. Merci beaucoup pour votre Je suis prêt à configurer les alertes et transferts automatiques Puis-je compter sur votre assistance en cas de problème?
+
+Speaker 2:Absolument, NAME. Si vous avez d'haide, n'hésitez pas à me contacter directement ou via notre support clien. Passons donc la
+
+System processing...
+
+Speaker 1:Merci baucoup. Je me sens déjà mieux informé et moins stressé.
+
+Speaker 2:Je suis heureux de pouvoir vous aider. Passez une excellente journée, et n'hésitez pas à nos contacter pour toute autre assistance.
+
+Speaker 1:Meri, au revoir.
+
+Speaker 2:Au reoir, NAME.

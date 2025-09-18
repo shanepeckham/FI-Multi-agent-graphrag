@@ -1,0 +1,65 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen... äh hallo, Tier spricht NAME1, von der UBS, wie kann ich Ihnen behilflich sein? Ich hätte ein paar Fragen zu meinem Login Problem und ähm... dem digitalen Banking. Äh... sowie ein paar andere Dinge. Wie geht es Ihnen heute?
+
+Speaker 2:Guten Morgen! Mir ghet's gut, danke, und Ihnen? Ich hoffe , alles ist in Ordnung. Bevor wir beginnen, könnte ich Sie bitte um Ihr Geburtsdatum und Ihr eAdresse bitten - zu natürlich.
+
+Speaker 2:Ja klar, kein Problem. Mein Geburtsdatum ist [DATE] und meine Adresse ist [ADDRESS].
+
+Speaker 2:Danke, Herr NAME. Also, lassen Sie zuerst Ihr Login-Problem klären. Können Sie mir genau sagen, welche Fehlermeldungen Sie bekommen? Ist das Problem öfter passiert oder nur einmal?
+
+Speaker 1:Mehrfach. Ähm, jedes Mal wenn ich versuche mich einzuloggen, sagt es, meine Login-Details sind nicht korrekt, obwohl sie sicher richtig eingegeben hab . Das ist echt dringend, ich brauche den Zugang für meine finanziellen Können Sie mir helfen und sagen, ob ich etwas falsch gemacht hab?
+
+Speaker 2:Ich verstehe, wie wichtig das für Sie ist. Lassen Sie uns das schnell lösen. Klingt nach einem Problem mit den Login-Daten. Wir könnten Ihre Login-Daten zurücksetzen und die 2-Faktor-Authentifizierung einrichten, um die zu
+
+Kurze Pause, um Notizen zu machen.
+
+Speaker 2:Haben Sie Zugang der E-Mail-Adresse, die mit Ihrem Konto verknüpft ist? Dann könnten wir eine E-Mail senden, Ihr Login zurückzusetzen.
+
+Speaker 1:Ja, ich hab Zugang zu meiner E-Mail. Können Sie wir die Schritte erklären, wie ich das mache und ähm... wie 2-Faktor-Authentifizierung genau? Ich muss das heute noch klären, hab rcihtig Sorge, dass meine Transaktionen blockiert werden.
+
+Speaker 2:Natürlich, ich erkläre Ihnen alles. Zuerst senden wir eine E-Mail mit einem Link nur Zurücksetzung der Login-Daten. Sie sollten die E-Mail jetzt gleich bekommen.
+
+System sendet E-Mail...
+
+Speaker 2:Sobald Sie die Login-Daten zurückgesetzt haben, richten wir die 2-Faktor-Authentifizierung ein:
+1. Melden Sie sich mit den Daten an.
+2. Sie bekommen einen Siherheitscode per SMS.
+3. Geben Sie diesen Code ein, um endgültig anzumelden.
+
+Haben Sie die E-Mail schon bekommen?
+
+Speaker 1:Ja, warte mal... ja, ich habe die E-Mail bekommen und den Prozess abgeschlossen. Was kommt als Nachstes?
+
+Speaker 2:Super, jetzt richten wir die 2-Faktor-Authentifizierung ein. Melden Sie sich mit den neuen Daten an und folgen den Anweisungen für den Sicherheitscode.
+
+Speaker 1:Okay, ich mach das mal schnell. Und, noch was... ich hab kürzlich eine grosse Erbschaft behalten. Welche Dokumente braucht ihr für die KYC-Informationen-Aktualisierung? Ich will sicherstellen, dass alles korrekt auf meinem Konto angezeigt wird.
+
+Kurze Pause, System überprüft Informationen.
+
+Speaker 2:ich sehe, Ihre KYC-Informationen müssen aktualisiert werden. Wir benötigen:
+1. Eine offizielle Erbschaftsbescheinigung.
+2. Eine Erklärung über den Ursprung des Geldes.
+Senden Sie diese bitte über den angegebenen Link: [https://example.com/doc/1206].
+
+Speaker :1 Alles klar, ich hab die Dokumente hochgeladen. Wie lange das Ganze?
+
+System die Dokumente...
+
+Speaker 2:Normalerweise dauert es 2-3 Werktage. Sobald alles überprüft ist, werden die auf Konto sichtbar. Falls wir weitere Infos brauchen, wir uns.
+
+Speaker 1:Gut, i ch hab die Schritte für die 2-Faktor-Authentifizierung gemacht. Alles wiederhergestellt. Vielen Dank. Und bezüglich der esi rgendwas Spezielles, das ich noch beachten muss?
+
+Speaker 2:Nein, alles ist klar und es sollte keine Verzögerungen bei Transaktionen geben, im Gegenteil, es verbessert die Sicherheit. Sollte noch etwas fehlen, melden wir uns
+
+Speaker 1:Danke für Hilfe. Sie bitte bestätigen, dass tatsächlich alle notwendigen Dokumente da sind und wie es konkret dauert?
+
+Speaker 2:Ja, ich kann bestätigen, wir haben alles erhalten und es dauert normalerweise 2-3 Werktage. Falls noch was Geld, niformiere ich Sie sofort. Ich sorg e dafür, dass alles reibungslos läuft.
+
+Speaker 1:Vielen Dank, wirklcih hilfreich. Habe sonst kiene Fragen mehr.
+
+Speaker 2:war mir eine Freude, Ihnen zu helfen. Haben Sie einen schönen Tag!
+
+Speaker 1:Danke, Ihnen auch. Auf Wiederhören!
+
+Speaker 2:Auf Wiederhören!

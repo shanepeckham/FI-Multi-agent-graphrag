@@ -1,0 +1,27 @@
+[
+  {
+    "task_type": "update_kyc_total_assets"
+  },
+  {
+    "task_type": "update_contact_info_postal_address"
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-28",
+      "contact_note": "Portfolio review \u2013 discuss current asset allocation, performance, and alignment with client\u2019s goals.",
+      "channel": "In-person at branch",
+      "duration_minutes": 90
+    }
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "parameters": {
+      "purpose_category": "pension planning",
+      "details": "Client wants to invest for retirement."
+    }
+  }
+]

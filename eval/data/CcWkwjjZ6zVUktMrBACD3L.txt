@@ -1,0 +1,23 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, Monsieur, uh, NAME. Oui, euh, c'est NAME1 de l'UBS, je appelle pour discuter des problèmes que vous rencontrez avec... l'application de banque numérique. Pouvez-vous s'il vous plaît confirmer votre date de naissance et votre adresse pour des raions de sécurité?
+
+Speaker 2:Oui, bien sûr. Ma date de naissance est le DETTE et mon adresse estADDRESS.
+
+Speaker 1:Merci, Monsieur Alors, je comprends que l'application vous pose des difficultés. Pouvez-vous me dire plus précisément ce qui ne fonctionne ce que vous ne trouvez pas dans l'application, s'il vous plaît?
+
+Speaker 2:Ah, oui, bien sûr. A lors, j'ai cherché la fonctionnalité de d'argent, mais ne la trouve nulle Est-elle déplacée dans une mise à jour récente? Je commenceà être un peux perdu
+
+Speaker 1:Ah, je vois. Oui, il est possible qu'elle ait changé de avec la mise à jour. Permettez-moi de vosu guider. uOvrez l'appliction, allez dans le menu principal, et sélectionnez "Paiements et Transferts". Vous devr iez trouver "Transférer l'argent" là. Si vous ne la voyez pas tout de suite, pouvais-vous me confirmer que vous la dernière version de
+
+Speaker 2:D'accord, suis dans le menu principal, mais je ne vois pas "Paiements et Transferts". Comment que je vérifie si c'est la dernière version?
+
+Speaker 1:Si vous ne voyez pas l'option, il est possible que le menu ait été réorganisé. Pour version, allez dans les paramètres de votre téléphone, puis dans "Applications". Recherchez l'application UBS et vérifiez la version. Si elle n'est pas à jour, mettez-la à jour via l'App Store ou Google Play. Ensuite, relancez l'application et vérifiez à nouveau. Est-ce que cela vous aide?
+
+Speaker 2:Merci. Euh, j'ai vérifié et en fait, je n'avais pas la version. Je l'ai mise à jour et je vois "Paiements et Transfert"s. Y a-t-il une manière plus rapide pour vérifier cela, sans fouiller à chaque fois dans les paramètres?
+
+Speaker 1:Ravi suis content que la mise à jour ait résolu le problème. Pour vérifier rapidement, ouvrez simplement l'application UBS et allez dans ses propres paramètres. y trouverez une option pour vérifier les mises à jour ou voir la vesion. De plus, l'application envoie des notifications pour les mises à jour. Est-ce que je peux vous aider avait autre chose aujourd'hui?
+
+Speaker 2:Oui, euh, ce vraiment utile. Je vais surveiller les la prochaine Sy non, es-tce que le navigateur de sécurisé quand j'utilise connexion Wi-Fi non sécurisée? Je veux etre sûr que mes informations sont protégées.
+
+Speaker 1:Je comprends complètement votre péroccupation. Notre application utilise des protocoles de sécurité avancés pour garantir que vaux données restent protégées, même avec une Wi-Fi non sécurisée. Toutes iformations sont cryptées. Nous recommandons aussi d'activer l'authentification à deux facteurs pour plus de sécurité. Si vous d'autres questions ou inquitudes sur la sécurité, je serais heureux de vous aider davantage.

@@ -1,0 +1,55 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 2:Morgen, mein Name ist NAME1 der UBS. Ich rufe an, um über Ihre aktuellen Probleme mit der im Digital Bankin g zu sprechen.
+
+Speaker 1:Guten Morgen, Herr NAME. Ja, freut mich. Ich es geht Ihnen gut. Äh, bevor wir fortahren, kann ich Sie bitten, mein Geburtsdatum und meine Adresse zu bestätigen?
+
+Sp eaker 1: Natürlich, Ihr Geburtsdatum und Ihre Adresse bitte?
+
+Speaker 1:Mein Geburtsdatum ist DATUM und Adresse ist ADRESSE.
+
+Seaker 2: Dank! KönnenS ie imr genau beschreiben, welche Sie beim Einloggen ins Digital Banking haben? Bekommen Sie eine bestimmte Fehlermeldung oder, ähm, haben Sie Probleme bei der Authentifizierung?
+
+Speaker 1:Ja genau, ich bekomme immer eine Fehlermeldung, die besagt, dass meine Zugangsdaten ungültig sind. Passiert schon seit etwa einer Woche. Ich habe mehrfach versucht, mein Passwort zurückzusetzen, aber nichts hilft. Ich habe auch keine Änderungen an meinem Gerät oder vorgenommen, also sollte das das Problem sein.
+
+Speaker 2:Oh je, das klingt wirklich frustrierend. Lassen Sie uns ein paar durchgehen, um das zu lösen. Haben Sie schon versucht, sich von einem anderen Gerät oder Browser das Probleme.
+
+Speaekr 1: Ja, ich hab’s sowohl auf meinem Laptop als auch auf meinem Handy probiert. Verschiedene Browser auch, aber das Problem bleibt. Ich bin besorgt, weil ich einen Zugang zu meinem Ko nto habe und keine Bankgeschäfte durchführen kann.
+
+Speaker 2:Ich verstehe Ihre Sorge. Es ist wirklich wichtig, dass Sie Zugang zu Ihrem Konto haben. Ich werde jetzt ein technisches Support-Ticket für Sie erstellen, damit unser IT-Team das genauer untersuchen kann. Könnten mir bitte Ihre E-Mail-Adresse und Telefonnummer geben, damit ich diese ins Ticket aufnehmen kann?
+
+Speaker 1:Klar, meine E-Mail-Adresse ist EMAIL nud meine Telefonnummer ist TELEFONNUMMER. Haben Sie eine Ahnung, wie lange es dauern wird, bis das Problem behoben ist?
+
+Speaker 2:V ielen Dank. Ich habe Ihre Informationen notiert. Sobald das Ticket erstellt ist, wid sich unser IT-Team darum und Sie per E-Mail oder Telefon informieren. Normalerweise sollten wir innerhalb von 24 bis 48 Stunden eine erhalten. In der Zwischenzeit können Bankgeschäfte telefonisch erledigen, bis das Problem behoben ist.
+
+Speaker 1:Das klingt gut. Ich hoffe, das wird schnell gelöst. Wissen Sie, ob andere Kunden ähnliche Probleme haben?
+
+Speaker 2:Uns sind keine weitverbreiteten Probleme bekannt, aber manchmal treten individuelle technische auf. Ich werde sicherstellen, dass Ihr schnell bearbeitet wird. Haben Sie noch weitere Fragen oder Anliegen?
+
+Speaker 1:Danke für Ihre Hilfe. Abgesehen davon habe ich eine gute Erfahrung mit Ihrem digitalen Banking gemacht. Aber die Geschwindigkeit der App könnte verbessert werden. Gibt Pläne, Performance der App zu steigern?
+
+Speaker 2:Es freut mich u hören, dass Sie insgesamt zufrieden sind. Ja, wir arbeiten daran, die und Leistung unserer App verbessern. Ihr Feedack ist sehr wertvoll für uns. Haben Sie noch weitere Vorschläge?
+
+Speaker 1:Äh, danke. Manchmal dauert es länger, bis Seiten geladen werden und Informationen angezeigt werden. Verbesserungen da wären sehr hilfreich.
+
+Speaker 2:Vielen Dank für Ihr wertvolles Feedback. Wir sind uns dieser Problematik bewusst und arbeiten kontinuierlich an Verbesseru ngen. Ist das swoeit für Sie akzeptabel?
+
+Speaker 1:Ja, das ist gut zu wissen. Ich hoffe, das Anmeldeproblem wird bald gelöst.
+
+Speaker 2:Absolut. Wenn ich Ihnen sonst noch irgendwie helfen kann, lassen Sie es mich wissen. Ich wünsche Ihnen einen schönen
+
+Speaker 1:Danke, Ihnen auch!
+
+System processing...
+
+Speaker 1:Übrigens, ich habe einige dringende Zahlungen, die diesen Monat ausgeführt werden müssen. Können Sie mir helfen, diese Zahlungen trotz des Anmeldeproblems rechtzeitig durchzuführen?
+
+Speaker 2:Natürlich, iwr verstehen die Dringlichkeit. Ich werde sicherstellen, dass Ihre Zahlungen korrekt undp ünktilch durchgeführt werden. Könnten Sie mir die Details dieser Transaktionen mitteilen, inklusive Beträgen und Fälligkeitsterminen?
+
+Speaker 1:Ja, Überweisung auf ein anderes Konto in Höhe von AMOUNT und eine Rechnung in Höhe AMOUNT, beide bis Ende dieser Woche. Können Sie sicherstellen, dass diese Zahlungen ausgeführt
+
+Speaker 2:Auf jeden Fall. Ich werde Ihre Transaktionen überwachen. Haben Sie noch weitere Anliegen oder Fragen?
+
+Speaker 1:Nein, das war’s erstmal. Danke für Ihre Unterstützung. Ich hoffe, dass das Anmeldeproblem bald behoben wird.
+
+Speaker 2:Gern geschehen. Wir sind hier, um Ihnen zu helfen. Einen schönen Tag noch!

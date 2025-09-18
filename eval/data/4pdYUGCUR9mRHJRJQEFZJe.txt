@@ -1,0 +1,116 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen, ich brauche Hilfe mit meinem Digital Banking Login. Können mir vielleiht dabei Elfen?
+
+Speaker 2:Guten Morgen, hier spricht NAME1 von UBS. Wie geht es Ihnenheute? Können mir bitte zur Identitätsüberprüfung Ihr Geburtsdatum und Ihre Adresse bestätigen?
+
+Speaker 1:Oh, Entschuldigu ng, ich meinte nicht dieAktualisierung der Herkunft Ihrer Vermögenswerte. Ähm, sicher. Mein Geburtsdatum ist der DATUM und meine Adresse lautet ADRESSE.
+
+Speaker 1:Vielen für die Bestätigung. Lassen Sie uns mit dem Digital Banking Login Problem beginnen: Welche Fehlermeldung erhalten Sie, wenn Sie versuchen, sich einzuloggen? Und welches Gerät und welchen Webbrowser oder welche App-Version verwenden Sie?
+
+Speaker 1:Ich erhalte eine Meldung, dass meine Zugangsdaten nicht korrekt sind. Ich benutze ein mit Windows 10 und den neuesten Chrome-Browser. Ich habe schon mehrmals versucht, das Passwort zurückzusetzen, aber es klappt einfach nicht. Ich mache wirklich Sorgen um die Sicherheit meines Kontos.
+
+Speaker 1:Verstehe, das klingt ärgerlich. Lassen Sie uns das Problem Schritt für Schritt angehen. Zunächst werden wir versuchen, Ihr Passwort sicher zurückzusetzen. Bitte folgen Sie diesen Schritten:
+
+1. Öffnen Sie den Login- Bereich auf unserer digitalen Bankseite.
+2. Klicken Sie auf "Passwort vergessen".
+Geben Sie Benutzernamen oder Ihre E-Mail-Adrese ein.
+4. Folgen Sie den Anweisungen, um eine Passwort-Rücksetz-E-Mail zu
+5. Klicken Sie den Link in der E-Mail und erstellen ein nues Passwort.
+
+Falls Sie dabei weitere Probleme haben, kann ich durch das Passwort-Reset-Verfahren führen. richten wir die Zwei-Faktor-Authentifizierung ein, um di e Sicherheit Ihres Kontos zu erhöhen. Können Sie mir bitte mitteilen, ob diese Schritte für Sie funktionieren?
+
+Speaker 1:Ich habe die Schritte befolgt und ein neues Pa sswort erstellt, aber ich erhalte immer noch dieselbe Fehlermeldung. soll ich jetzt tun? Aussen sehen, könnten Sie mir bitte mehr über die Zwei-Faktor-Authentifizierung erklären und wie ich sie einrichten kann? Mein Handy ist ein iPhone und ich benutze Gmail.
+
+Speaker 2:Das ist wirklich frustirerend, ich verstehe. Zunächst sollten wir sicherstellen, dass keine technischen Probleme mit Ihrem Browser bestehen. Versuchen bitte, den Cache des Browsers zu leeren oder den Inkognito-Modus zu verwenden und sich erneut einzuloggen. Wenn das nicht funktioniert, können wir den technischen hinzuziehen.
+
+Zu den Vorteilen der Zwei-Faktor-Authentifizierung:
+1. Zusätzliche Sicherheit: Zusätzlich zum Passwort wird eine zweite Information benötigt.
+2. Schutz vor Betrug: Es erschwert Betrügern den Zugang zu Ihrem Konto.
+3. Einfacher und sicherer Zugang: Authentifizierung kann durch eine App Google Authenticator oder SMS erfolgen.
+
+Die Einrichtung ist einfach:
+1. Melden Sie sich Ihrem Account an und ehen Sie zu de Sicherheitsinstellungen.
+Wählen „Zwei-Faktor-Authentifizierung einrichten“.
+Verbinden Sie Ihr Handy und Ihre E-Mail-Adresse.
+
+Ihr iPhone und Gmail sind vollständig kompatibel dafür. Können versuchen, den Cache leeren und sich dann erneut einzuloggen?
+
+Speaker 1:Ich habe den Cache geleert und mich im Inkognito-Modus eingeloggt, aber ich bekomme immer noch die gleiche Fehlermeldung. Müssen wir den technischen Support einschalten?
+
+Bezüglich der Zwei-Faktor-Authentifizierung, brauche ich genauere Anwesungen, wie ich mein Handy vrknüpfen kann. Muss ich eine App herunteralden oder bekomme ich eine SMS? Und funktioniert es, ewnn ich Handy wechsle?
+
+Speaker 2:Da das Löschen des Cache kein Ergebnis gebracht hat, werde ich den technischen Support kontaktieren. Lassen Sie uns das Problem schnellstmöglich lösen. Ich werde Ihnen Bescheid geben, sobald der technische Support verfügbar ist.
+
+Zur Zwei-Faktor-Authentifizierung:
+Für Google Authenticator:
+1. Laden Sie die App h erunter.
+2. Melden Sie sich in Ihrem Konto an und gehen Sie zu den Sicherheitseinstellungen.
+3. Wählen Sie „Google Authenticator“ und folgen Sie Anweisungen.
+
+F SMS:
+1. Wählen Sie „SMS“ in den Sicherheitseinstellungen.
+2. Geben Sie Ihre Telefonnummer ein.
+3. Folgen Sie den
+
+Ja, es funktioniert auch bei einen Handywechsel. Sie müssen nur den Sicherheitscode
+
+Nun, könnten Sie mir bitte auch Ihre Beschäftigungsstatus, Funktion, Namen Ihres Arbeitgebers und den Sektor bestätigen?
+
+Speaker 1:Ich habe den geleert und auch Firefox benut zt, aber immer noch dieselbe Fehlermeldung. Können wir bitte den technischen Support anrufen?
+
+Ich bin beschäftigt als Manager bei Company 1 im Technologiesektor.
+
+Darüber möchte ich geplanten Treffen bestätigen, eins am 11. September um 14 Uhr für die Nachlassplanung und ein weiteres am September um 14 Uhr in der Filiale.
+
+Speaker 2:Da es nicht funktioniert hat, werde ich sofort technischen Support kontaktieren und die Dringlichkeit Ihres Falls hervorheben. Wir dafür, dass Sie innerhalb der nächsten 30 Minuten eine Antwort erhalten.
+
+Für die Zwei-Faktor-Authentifizierung:
+1. Gehen Sie zu den Sicherheitseinstellungen in Ihrem Konto.
+2. Wählen Sie „Zwei-Fkator-Authentifizierung einrichten“.
+Wählen Sie „SMS“ und geben Sie Ihre Telefonnummer ein.
+4. Folgen Sie Anewisungen und bestätigen Sie den Code, den Sie per SMS erhalten.
+
+Ich habe Ihre Beschäftigungsinformationen aktualisiert. Bezüglich Ihrer Treffen:- Am September um 14 Uhr zur Nachlassplanung.
+- Am 9. September um 14 Uhr in der Filiale.
+
+Bitte bestätigen Sie diese Termine und lassen Sie mich wissen, ob diese passen.
+
+Speaker 1:Ja, die Termine am 11. und 9. September um 14 Uhr passen. Muss ich spezielle Dokumente vorbereiten oder mitbringen?
+
+Und wann kann ich mit einer Antwort vom technischen Support rechnen? Es ist wirklich dringend.
+
+Speaker 2:Für das zur Nachlassplanung am 11. September wäre es gut, wenn Sie Ihr Testament, eine Liste Ihrer Ver mögenswerte und alle rechtlichen oder finanziellen Unterlagen mitbringen.
+
+Unser technisches Support-Team sollte innerhalb d er nächsten 30 Minuten antworten. In der Zwischenzeit könnten weitere Schritte unternehmen. Haben Sie den Browser neugestartet oder einen anderen Browser wie Firefox ausprobiert?
+
+Speaker 1:Ja, habe ich. Firefox auch probiert, aber es funktioniert nicht. Was kann ich noch tun, während wir auf den Support warten?
+
+Speaker 2 : Ich verstehe Ihre Frustration. Ich werde die Priorität Ihrer Anfrage erneut erhöhen. Wenn Sie möchten, kann ich Ihnen eine direkte des technischen Suppor ts geben. Ausserdem wir Ihre Zwei-Faktor-Authentifizierung einrichten, um Sicherheit Ihres Kontos zu erhöehn. Haben Sie eine Authentifizierungs-App wie Google Authenticator installiert oder bevorzu gen Sie die SMS-Option?
+
+Speaker 2:Ich bevorzuge SMS-Option. Wie richte ich diese genau ein?
+
+ja, die Telefonnummer des technischen Supports wäre sehr
+
+Speaker 2:Um die Zwei-Faktor-Authentifizierung per einzurichten:
+
+1. Melden Sie sich in Ihrem Konto an und gehen Sie zu den Sicherheitseinstellungen.
+2. Wählen Sie „Zwei-Faktor-Authentifizierung einrichten “.
+3. Wählen Sie „SMS“ als bevorzugte Methode und geben Sie Ihre Telefonnummer ein.
+4. Folgen Sie den Anweisungen und geben Sie den Bestätigungscode ein, den Sie per SMS erhalten.
+
+Hier ist die Telefonnummr des technischen [TECHNICAL_SUPPORT_PHONE_NUMBER]. Haben Sie noch weitere Fragen oder Anliegen, während wir warten?
+
+Speaker 1:Danke, ich werde die Einrichtung gleich durchführen und den Support anrufen. Soll ich sonst noch etwas das Treffe n zur Nachlassplanung am September
+
+Meine Telefonnummer hat sich kürzlich geändert. Könnten Sie auch gleich aktualisieren?
+
+Speaker 2:Könnten Sie mir bitte Ihre neue Telefnonummer mitteilen? Für das Treffen am 11. September bringn Sie bitte Ihr Testament, Vermögensliste und alle relevanten Dokumente mit. Haben Sie no ch Fragen zu den Treffen oder der Zwei-Faktor-Authentifizierung?
+
+Speaker 1:Meine neue Telefonnummer ist [NEUE TELEFONNUMMER]. Ist es möglich, den technischen Support auch anders zu erreichen, wahrscheinlich die Telefonnummer nicht funktioniert?
+
+Speaker 2:VielenDank, ich habe Ihre neue Telefonnummer aktualisiert. Falls Sie den Support telefonisch nicht erreichen, nutzen Sie bitte unseren Online-Support-Chat: [WEB_CHAT_LINK]. Gibt es sonst noch etwas?
+
+Speaker 1:Nein, das wäre alles. Dank für Ihre Hilfe.
+
+Speaker 2:Gren geschehen. Ich hoffe, das Problem wird schnell behoben. Schönen Tag noch!

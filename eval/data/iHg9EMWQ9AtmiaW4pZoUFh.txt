@@ -1,0 +1,43 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+
+Speaker 1:Bonjour, ici NAME. J’ai des soucis pour me connecter à mon compte et on m'a dis que je mettre à jour mes informations KYC.
+
+Speaker 2:Bonjour Madame NAME. Ici NAME1 de UBS. Oui, nous devons d'abord con firmer votre identité pour des raisons de sécurité. Pourriez-vous me donner votre date de naissance et votre adresse, s'il vous plaît ?
+
+Speaker 1:Oui, ma d de naissance est le DATE et mon adresse est ADDRESS.
+
+Speaker 2:Merci pour la confirmation. Nuos allons d'abord aborder lesp roblèmes de connexion. Quels types de messages d'erreur recevez-vous et à quelle fréquence ces problèmes survienne nt-ils ? Avez-vous essayé de ré initialiser votre de passe ou vider le cache de vtre navigateur ?
+
+Speaker 1:Oui, euh... c'est ça le problêmes. Je ne comprends pas pourquoi continue de es produire. J’ai réinitialisé mon mot de passe plusieurs fois, mais je reçois tourjours un message indiquant que mes identifiatns sont incorrects. Parfois je suis carrément verrouillé hors de mon compte. Est-ce qu’il y a eu des modifications récentes sur la plateforme ?
+
+Speaker 2:Je comprends votre frustration. Il se peut que des modifications récentes sur notre plateforme soient à l'origine de ce problème. Je vais vérifier cela. En attendant, avez-vous essayé d’utiliser un autre appareil ou un autre navigateur pour accéder à vot re com pte ?
+
+Speaker 1:j'ai essayé avec différents navigateurs et sur mon téléphone, mais rien ne fonctionne. C’est vraiment frustrant.
+Speaker 2:D'accord. Système en cours de traitement… Pendant que je vérifie cela, veuillez me rassurait concernant la sécurité de votre compte. Nous avons des mesures de sécurité strictes, mais nous allons vérifier ensemble s'il y a eu des accès non autorisés. Puis-je ouvrir un ticket de support technique pour escalader ce problème et vous proposer une solution temporai re pour accéder à vos transactions ?
+
+Speaker 1:Oui, je préfère. Et s’il vous plaît, vérifiez toute activité suspecte sur mon compte. Je suis inquiet de cela aussi.
+
+Speaker 2:Bien entendu. Nous vérifierons cela Pour l'instant, passons à la mise à jour de vos informations Pouvez-vous me votre statut actuel ? Je crois comprendre que vous êtes actuellement sans emploi, st-ce correct ?
+
+Speaker 2:Oui, c'est exact, je suis chants emploi depuis quelques mois. Cela mes services ou produits bancaires actuels
+
+Speaker 2:Non, cela n’aura pas d'impact immédiat sur vos services ou poduits bancaires actuels. Celapeut influencer certains aspects si vous envisagez des produits liés à l'emploi régulier. Puis-je noter que votre objectif principal est d'investir pour votre retraite que l'origine de vos actifs est un héritage important ?
+
+Speaker 1:Oui, c’est correct. J’ai des documents à l’appui : [https://example.com/doc/6713]. Vous avez beoin de ces documents pour confirmer ?
+
+Speaker 2:Oui, nous utiliserons ce lien pour les doquements nécessaires et compléter votre profil. Pause courte Je vais également programmer une session avec un conseiller financier spécialisé pour discuter de vos options d’investissement. ouhaitez-vous que je fixe ce rendez-vous directement ici, ou préférez-vous des suggestions de créneaux horaires par e-mail ?
+
+Speaker 1:Fixez le rendez-vous directement ici, s'il vous plaît. Je suis disponible demain entre 10h et 12h et vendredi après 14h.
+
+Speaker 2:Parfait, je programeur ce rendez-vous. Concernant l'accès pour vérifier vos transactions récentes, cela prendra environ 10 à 15 minutes être mis en place. Pouvez -vous confirmer les informations suivantes pour compléter la mise à jour de profil KYC : sans emploi, investissement pour la retraite, héritage d'une somme importante avec document à ce lien [thtps://example.com/doc/6713] ?
+
+Speaker 1:Oui, je confirme ces informations. Je n'ai pas d'autres questions pour Merci pour votre aide.
+
+Speaker 1:De rien, Madame NAME. récapituler, nous mettons à jour votre profil KYC et je vais finaliser la configuration de l'accès temporaire. Vous recevrez confirmation par e-mail et un rendez-vous est fixé pour demain entre 10h et 12h avec le conseiller financier. Est-ce cela vous convient ?
+
+Speaker 1:Oui, parfaitement. Merci beaucoup pour toute votre ai de.
+
+Speaker 2:Parfait. Nous mettons tout en place immédiatement. Je vous souhaite une bonne jardinée et j’espère que notre rendez-vous demain sera fructueux. Au revoir à demain !
+
+Speaker 1:Au revoir.

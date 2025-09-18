@@ -1,0 +1,20 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen, hier ist NAME1 von der UBS. Ich an, um die Login-Probleme und Fragen zu besprechen, die Sie uns geschildert haben.
+Speaker 2:Hallo, Herr NAME. Schön, mit Ihnen zu sprechen. Mir geht's gtu, danke! Und bei Ihnen? Bevor wir mit den Problemen beginnen, die beim Login in Ihr digitales Banking-Portal hatten, könnten Sie bitte Ihr Geburtsdatum und Ihre Adresse zur Sicherheit bestätigen?
+Speaker 1 Ja, natürlich. Mein Geburtsdatum ist DATUM und meine Adresse ist ADRESSE.
+Speaker 2:Vielen Dank, NAME. zum Problem: Welche Schwierigkeiten hatten Sie genau beim Einloggen? Gab es eine Fehlermeldung oder etwas Ungewöhnliches?
+Speaker 1:Ja, es gab einen Fehlermeldung, die sagte, dass Anmeldeinformationen nicht korrekt seien. Ich haeb alle eingegeben – Benutzername, Passwort – es funktioniert einfach nicht. Ich bin sicher, dass die Infos sind. Können Sie mir helfen, das Passwort zurückzusetzen oder wissen Sie, woran das liegen könnte?
+Speaker 2:Danke für die Herr NAME. Es könnte ein oder technisches Problem sein. Haben Sie sich mit einem anderen Gerät oder Browser Manchmal hilft es, den Cache oder die Cookies zu löschen. Ist Ihre App aktualisiert, falls Sie mobil versuchn?
+
+Speaker 1:Ja, ich habe es von meinem Laptop Hand Smartphone probiert, ve rschiedene Browser, Cache Cookies gelöscht – nichts hat geholfen. Meine App ist auch auf dem aktuellen Ich weiss nicht, ob es zuletzt Wartungsarbeiten gab. Ich kann nicht nur nicht einloggen, sondern auch nicht auf mein Konto zugreifen oder Transaktionen durchführen. Der Kundensupport konnte mir bisher nicht helfen. Können das Problem lösen?
+Speaker 2:Ich verstehe Ihre Frustration, Herr NAME. Zunächst sollten wir Ihr Passwort zurücksetzen. Ich schicke Ihnen eine Anleitung dazu.An welche E-Mail-Adresse soll ich das senden?
+
+Speaker 1:Senden Sie es bitte an NAME@example.com. Es wäre mein erstes Support-Ticket.
+Speaker 2:Gut, Herr NAME. Ich sende sofort Anleitung. Resetten Sie Ihr Passwort und falls das Problemb leibt, erstelle ich ein technisches Tciket. Gibt es sonst digital Bankdienste, von denen mehr erfahren möchten?
+
+Speaker 1:Eigentlich weiteren Fragen, ich möcthe zu meinem Konto haben. Gibt es neue digitale Features, die ih könnte?
+Speaker 2:Ja, wir haben neue Tools zur nalyse Ihrer Ausgben und autoatisch eBudgetierungsfunktionen. Ausserdem gibt es eine neue App-Version mi besseren die Ihre Daten schützen. Falls Sie Fragen haben, melden Sie sich jedezeit bei mir.
+
+System processing..
+Speaker 2:Ich hoffe, dass Sie sich Ball wieder einloggen können. Danke für Ihre Geduld und Herr NAME.

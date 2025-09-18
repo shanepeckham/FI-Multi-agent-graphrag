@@ -1,0 +1,26 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Guten Morgen, Herr NAME. Ich habe ein Problem mit meinem Login ins digitale Bankngsystem. Können Sie mir da weiterhelfen?
+Speaker 2:Guten Morgen, Herr NAME. Hier ist NAME1 von UBS. Ich kann Ihnen da siherlich helfen, aber zuerst muss aus Sicherheitsgründen Ihr Geburtsdtum und Ihre Adresse bestätigen. Könnten Sie mir die bitte nochmal durchgeben?
+Speaker 1:ähm, mein Geburtsdatum der... äh, DATUM und meine Adresse ist STRASSE, PLZ, ORT, LAND.
+Speaker 2:Oh, und wegen der Aktualisierung Ihres KYC, also dem Zweck der Geschäftsbeziehung - ach, entschuldigen Sie, ich habe mich vertan. Vielen Dank für die Bestätigung, Herr NAME. Sie haben also Probleme beim Einloggen. Welche Fehlermeldung erhalten Sie denn genau?
+Speaker 1:Ja, ich bekomme immer „Benutzername oder Passwort falsch“, obwohl ich die korrekten Daten eingegeben habe. Ich habe mein Passwort vor kurzem geä ndert, vielleicht deswegen ein Problem aufgetreten? Ähm, es ist wirklich dringend, da ich dringend auf meine Bankdaten zugreifen muss. Gift es alternative Möglichkeiten, wie ich meine Kontoinformationen einsehen kann solange das Problem gelöst wid?
+
+Speaker 2:Ich verstehe Ihre Dringlichkeit, NAME. Alles erstes könnte ich Ihnen empfehlen, Ihr Passwort nochmal zu ändern und darauf zu achten, dass es Sonderzeichen, Zahlen Grossbuchstaben enthält. Falls das Problem weiterhin besteht, könnte Ihr Konto aus Sicherheitsgründen temporär gesp errt worden sein. In dem Fall müsste ich ein Support-Ticket erstellen. Bis wir das gelöst haben, können Sie Ihre Bankdaten über unsere telefonische Banking-Hotlien abfrage n. Ich kümmere mich gleich darum, das Ticket für Sie aufzugeben.
+Speaker 1:O kay, vielen Dank. Meine E-Mail-Adresse ist NEUE-E-MAIL@example.com. Können Sie bitte sicherstellen, dass alle zukünftigen darüber gesendet werden? Und wie lange dauert es ungefähr, bis ich wieder Zugriff auf mein Konto habe?
+
+Speaker 2:Ich habe Ihre E-Mail-Adresse notiert und werde sicherstellen, dass alle Nachrichten über diesen Kanal gesendet werden. Die Bear beitung könnte je nach Komplexität des Problems 24 bis 48 Stunden lauern, aber ich werde dafür sorgen, dass es prioritär behandelt Ich Ihnen regelmässig Updates per E-Mail.
+Speaker 1:Super, danke. Haben Sie eine Schätzung, ob es schneller gelöst werden könnte? Ausserdem, ich habe meine Postadresse geändert zu STRASSE, ORT, LAND. Können Sie das bitte auch aktualisieren?
+Speaker 2:Ja, ich werde das sofort aktualisieren. Ihre neue Postadresse lautet STRASSE, PLZ, ORT, LAND. Ich werde jetzt ein Support-Ticket aufgeben. Es tut mr leid, dass das länger dauert, aber ich stehe natürlich zur Verfügung, wenn Sie weitere Fragen ahben. Können Sie mir nochmal Ihre Adresse bestätigen?
+Speaker 1:Ja, STRASSE, PLZ, ORT, LAND ist korrekt.
+System überprüft Daten...
+
+Speaker 2:Adresse ist aktualisiert, Herr NAME. Schulden Sie noch weitere Schritte haben, um das Problem selbst zu lösen: und Cousins löschen, überprüfen der Firewall- und Antivirus-Entstellungen und versuchen, von einem Brwser oder Gerät aus zuzugreifen.
+Speaker 1:Ich hbae alles versucht, aber nichts hat funktioniert. Ich wirklich dringend Zuagng zu meinen Konten. Können Sie mich regelmässig auf dem Lafuenden alten, gerne auch telefonisch, falls es hilfreich ist?
+
+Speaker 2:Natürlich, Herr NAME. Ich halte Sie regelmässig per E-Mail und Telefon dem Laufenen. Die Nummer unserer telefonischen Banking-Hotline lautet 0800 800 880, falls Sie Ihre Kontoinformationen abfragen möchten. Ich werde rele Domkurne für unser geplantes Treffen am 9. September 2025 um 14:00 Uhr umgehend vorbeiten und Ihnen per zusenden. es noch weitre Punkte, die wir besprechen sollten?
+Speaker 1:Nein, das wäre alles. Vielen Dank für Ihre Unterstützung, Herr NAME1.
+
+Speaker 2:Gern geschehen, Herr NAME. Ihre neuen Kontaktinformationen sind jetzt korrekt erfasst. E-Mail-Adresse: NEUE-E-MAIL@example.com und Postadresse: STRASS E, PL Z, ORT, LAND. Ich bin hier, falls Sie weitere Hilfe benötigen.
+Speaker 1:Danke nochmal, auf Wiederhören.
+Speaker 2:Auf Wiederhören, Herr NAME.

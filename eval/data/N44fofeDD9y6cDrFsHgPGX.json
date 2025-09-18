@@ -1,0 +1,34 @@
+[
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "parameters": {
+      "origin": "Investment",
+      "details": "Client inherited a large sum of money.",
+      "corroboration_or_evidence": [
+        "https://example.com/doc/2263"
+      ]
+    }
+  },
+  {
+    "task_type": "plan_contact",
+    "parameters": {
+      "contact_date": "2025-09-21",
+      "contact_note": "Rebalancing proposal \u2013 recommend shifting allocations due to market moves or changed risk appetite.",
+      "channel": "Video call",
+      "duration_minutes": 60
+    }
+  },
+  {
+    "task_type": "update_kyc_activity"
+  },
+  {
+    "task_type": "update_contact_info_non_postal"
+  },
+  {
+    "task_type": "schedule_meeting",
+    "parameters": {
+      "date": "2025-09-10",
+      "time": "14:00"
+    }
+  }
+]

@@ -1,0 +1,53 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Speaker 1:Bonjour, c'est NAME. J'ai reçu un appel de votre part.
+
+Speaker 2:Oui, bonjour Madame NAME, c'est de UBS. Comment allez-vous aujourd'hui?
+
+Speaker 1:je dois planifier une réunion... oh pardon, je vais merci. Et vous?
+
+Speaker 2:Très bien, merci. Avan de continuer, pourriez-vous s'il vous plaît confirmer date de naissance et votre adresse pourdes raisons de sécurité?
+
+Speaker 1:Oui, bien sûr. Ma date de naissance le DATE et mon adr esse est ADDESS.
+
+Speaker 2 : Merci beaucoup. Alors, commençons par le premier point. Pouvez-vous m'expliquer les problèmes avez avec la limite de votre carte?
+
+Speaker 1:Oui, la dernière fois c'était en voyage d'affaires. J'ai atteint la limite de ma carte alors que j'avais encore plusieurs dépenses à couvrir. C'était vraiment gênant.
+
+Speaker 2:vois. Pour augmenter temp orairement la limite, nous allons soumettre votre demande pour approbation immédiate. Si vous avez un bon historique de crédit, cela peut être traité très rapidement. Pas de frais supplémentaires pour cette agmentation temporaire, mais elle sera effective pour un mois.
+
+Speaker 1:D'accor d, et une fois que la limite est augmentée, combien de temps cela prend cour être approuvé? Est-ce que ça affectera mon score de crédit?
+
+Speaker 2:L'approbation prend quelques heures, moins. Et non, cela n'affetera pas votre score de crédit. C'est seulement ajustement temporaire.
+
+Speaker 1:Ok, c'est rassurant. Et pour une augmentation permanente de limite, comment ça fonctionne?
+
+Speaker 1:Nous devons évaluer votre situation financière puls en détail. On aura besoin de preuves de stables, comme vos relevés de compte des trois derniers mois, et dès bulletins de salaire récents. Aucune frais supplémentaire pour ctete demande, mais des conditions d'intérê t modifiées peuvent s'appliquer.
+
+Speaker 1:D'accord, je peux fournir ces documents. Mais est-ce que les taux d'intérêt vont changer de manière significative?
+
+Speaker 2:Pas nécessairement, dépendra de l'évaluation des risques. Nous faisons au mieux pour minimiser les imapcts financiers pour nos fidèles. L'évacuation prend envirn une semaine après la soumission de tous les documetns. Voulez-vous que je vous envoie la liste des documents par email?
+
+Speaker 1:Oui, ce se rait utile. Je veux m'assurer que tout soit en ordre.
+
+Speaker 2:Très bien, je vais vous la liste complète des documents. Concernant la mise à jour de vos informations, vous préférez recevoir les communications par email et votre numéro de contact non-postal est bien le +41000000000, c'est exact?
+
+Speaker 1:Oui, c'est bon.
+
+Speaker 2:Et pour vérifier, la somme héritée a bien été enregistrée comme un investissement dans nos systèmes?
+
+Speaker 1:Oui, j'ai hérité d'une somme importante de mon grand-père. Le montant total est approximativement AMOUNT. Vous pouvez vérifier le lien: https://example.com/dnc/9971.
+
+Speaker 1:Mreci, je vais mettre jour vos informations immédiatement. Enregistrement informations
+
+Speaker 2:La héritée a bien été enregistrée et vos de contact ont été mises à jour. Nous allons maintenant vérifier l'état actuel de demande d'augmentation temporaire de limite de carte. Pause
+
+Speaker 2:Je viens de vérifier, votre demande a été approuvée. Votre nouvelle limite de AMOUNT. Vous recevrez une confirmation par email très bientôt.
+
+Speaker 1:Merci beaucoup pour votre aide.C 'est un immense soulagement de savoir que mais dépenses sont couvertes.
+
+Speaker 2:Je suis ravi de pouvoir vous assister. N'hésitez pas à nous recontacter si vous avez d'autres Bonne journée!
+
+Speaker 1:Merci, vous aussi. Au revoir.
+
+Speaker 2:Au revoir, Madame NAME.

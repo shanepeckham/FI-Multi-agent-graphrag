@@ -1,0 +1,27 @@
+DISCLAIMER: This transcript is entirely artificial and computer generated. It does not contain any real customer information, bank data, or actual conversations. All transcripts, data, and information are completely and entirely synthetic. See README file for full terms.
+
+Spekaer 1: Guten Morgen, ist da jemals von der UBS am Apparat?
+Speaker 2:Guten Morgen, Herr NAME. Mein Name ist NAME1 von UBS. Kann ich Sie gut verstehen? Klare Verbindung?
+Speaker 1:Ja , ich höre Sie gut. Alles okay.
+Speaker 2:Super. Ich rufe an wegen Ihrer Ansage zum dig italen Bevor wir loslegen, könnten Sie bitte kurz Ihr Gebu rtsdatu mund Ihre Adr esse zur Identitätsbestätigung nennen?
+Speaker 1:Klar, mein Geburtsdatum ist DATUM und meine Adresse ist ADRESSE.
+Speaker 2:Velen Dank, Hrr NAME. Das hilft sehr. Lassen Sie uns jetzt über die digitalen Banking-Funktionen sprechen. Sie haben erwähnt, dass eine wichtige Funktionfehlt. Können Sie mich da etwas ins Bild setzen? genau fehlt Ihnen und wie beeinträchtigt das Ihre Nutzung?
+Speaker 1:Ja, ähm, also... ich wollten eine Funktion, mit der ich die Überweisungslimits für verschiedene Konten individuell einstellen kann. Es ist ziemlich nervig, jedes Mal bei der Bank anrufen zu müssen, um die Limits zu ändern und auf die Bestätigung zu Wissen Sie zufällig, ob sowas geplant ist oder ob es Alternativen gibt?
+Speaker 2:Ich verstehe das Problem, Herr NAME. Momentan haben wir leider keine solche Funktion, weil technische Gründe das verhindern. Ich werde Ihre Anfrage aber definitiv weiterleiten und mich darum kümmern, dass sie gehört wird. In der Zwischenzeit kann ich Ihnen vielleicht ein paar andere Lösungen vorschlagen, die Ihre Situation vielleicht verbessern könnten.
+Speaker 2:Ja, das wäre hilfreich. Können erklären, wie bei Ihnen neue digitale Funktionen entwickelt werden? wie beeinflusst das Feedback von Kunden diesen Prozess? Ach, und gibt es neue Funktionen, bald kommen?
+Speaker 2:Gerne, Herr NAME. Bei UBS sammeln wir ständig Fedback von Kunden, sei es direkt wie jetzt oder über Feedback-Formulare in der App. Dann wird alles analysiert und priorisiert von unserem Produktentwicklungsteam. Die neuer Funktionen hängt von vielen Faktoren ab, darunter technische Machbarkeit, Nachfrage und strategische Ziele. Aktuell arbeiten wir an erweiterten Reporting- und Benachrichtigungsfunktionen, die nächstes Jahr kommen
+Speaker 1:Klingt gut. Ich habe aber auch einige Probleme mit der aktuellen Banking-Plattform bemerkt. Kann ich dafür technischen Support bekommen?
+Speaker 2:Absolut, Herr NAME. Erzählen Sie mir bitte die spezifischen Probleme, die Sie haben. Wir uns sofort darum kümmern.
+Speaker 1:Die App stürzt manchmal ab, wenn eine Überweisung machen will, und es dauert, bis mein Kontostand aktualisiert wird. Das macht es schwer, mein e Finanzen im Griff zu haben und rechtzeitig Transaktionen durchzuführen.
+Speaker 2:Das verstehe ich, wie ärgerlich das sein kann. werde diese Probleme an unser Support-Team weitrleiten. Ich empfehle Ihnen, die App auf die neueste Version zu aktualisieren und sicherzustellen, dass Ihre Internetverbindung stabil ist. Lassen Sie wissen, falls das nicht hilft, dann können wir weitere Schritte unternehmen.
+Speaker 1:Danke, das werde ich tun. Kann ich auch etwas über die Sicherheitsvorkehrungen erfahren? Ich mache mir Sorgen um die Sicherheit meiner und Transaktionn.
+Speaker 2:Natürlich, Herr NAME. Ire Besorgnis ist berechtigt. Bei UBS wir fortschrittliche Verschlüsselungsmethoden, um sicherzustellen, dass alle Daten sicher übertragen und gespeichert werden. Wir führen auch regelmässige Sicherheitsüberprüfungen und Systemupdates durch. Ihre Daten und Transaktionen bei uns sicher. Bei spezifischen Fragen Sie kontaktierne.
+Speaker 1:Das beruhigt mich. Könnten wir einem Terminf ür eine weiterführende Diskussion vereinbaren?
+Speaker 2:Sehr gern. Wie wäre es mit dem 9. September 2025 um Uhr?
+Speaker 1:Perfekt,d anke schön.
+Speaker 2:Der Termi ist festgelegt. Ich freue mich darauf, Sie am 9. September 2025 um 09:00 Uhr zu treffen. Wenn Sie dahin noch Tragen haben, stehe ich Ihnen jederzeit zur Verfügung. Ihre Zufriedenheit ist uns wichtig. Haben Sie sonst noch Fragen?
+Speaker1: Nein, das war alles. Vielen Dank für Ihre Unterstützung und die hilfreichen Informationen. Ich schätze Ihre Geduld.
+Speaker 2:Es freut mich, Sie zufrieden sind, Herr Falls Sie noch Feedback haben, lassen Sie es uns wissen. Freuen uns immer über konstruktive Kritik.
+Speaker 1:Nein, ich denke, wir haben alles besprochen. Danke nochmals für Ihre ilfe. Bis zum Termin im September.
+Speaker 2:Der Termin ist festgelegt, Herr NAME. Ich freue mich darauf, Sie am 9. September zu Bis dahin einen schönen Tag und bis bald.
+Speaker 1:Ihnen auch. Auf Wiederhören!
