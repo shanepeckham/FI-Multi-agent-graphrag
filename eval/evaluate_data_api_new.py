@@ -22,7 +22,7 @@ if env_file_path.exists():
     load_dotenv(env_file_path)
 
 # Configuration
-JSONL_FILE_PATH = Path(__file__).parent / "johnson.jsonl"  # Path to the input JSONL file with questions
+JSONL_FILE_PATH = Path(__file__).parent / "new.jsonl"  # Path to the input JSONL file with questions
 RESULTS_FILE_PATH = Path(__file__).parent / "response_results.jsonl"  #Path to save response results
 AGENT_RESULTS_FILE_PATH = Path(__file__).parent / "agent_converted_data.json"
 EVAL_RESULTS_FILE_PATH = Path(__file__).parent / "evaluation_results.jsonl"  # Path to save evaluation results
@@ -83,25 +83,55 @@ def call_query_team_api(question: str) -> Dict[str, Any]:
     except requests.exceptions.RequestException as e:
         return {"error": str(e)}
 
+def load_transcript(transcript_path: str) -> str:
+    try:
+        with open(transcript_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        print(f"Successfully loaded transcript from {transcript_path}")
+        return content
+    except FileNotFoundError:
+        print(f"Error: Transcript file {transcript_path} not found")
+        return ""
+    except Exception as e:
+        print(f"Error reading transcript file: {e}")
+        return ""
+
+def load_expected_tasks(expected_tasks_path: str) -> Any:
+    # Load expected tasks from JSON file
+    try:
+        with open(expected_tasks_path, 'r', encoding='utf-8') as file:
+            expected_tasks = json.load(file)
+        print(f"Successfully loaded expected tasks from {expected_tasks_path}")
+        return expected_tasks
+    except FileNotFoundError:
+        print(f"Error: Expected tasks file {expected_tasks_path} not found")
+        return None
+    except json.JSONDecodeError as e:
+        print(f"Error parsing expected tasks JSON: {e}")
+        return None
+    except Exception as e:
+        print(f"Error reading expected tasks file: {e}")
+        return None
+
 def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
     """Evaluate a single question using the agent team API."""
-    question = question_data["question"]
-    expected_answer = question_data["answer"]
-    financebench_id = question_data["financebench_id"]
-    company = question_data["company"]
+    transcript_path = Path(__file__).parent / "data" / question_data["transcript"]
+    transcript = load_transcript(transcript_path)
+    expected_tasks_path = Path(__file__).parent / "data" / question_data["expected_tasks"]
+    expected_tasks = load_expected_tasks(expected_tasks_path)
 
     print("\n" + "="*80)
-    print(f"Evaluating Question ID: {financebench_id}")
-    print(f"Company: {company}")
-    print(f"Question: {question}")
-    print(f"Expected Answer: {expected_answer}")
+    print(f"Evaluating transcript file: {transcript_path}")
+    print(f"Transcript: {transcript}")
+    print(f"Expected tasks file: {expected_tasks_path}")
+    print(f"Expected tasks: {expected_tasks}")
     print("="*80)
 
     start_time = time.time()
 
     try:
         # Call the API
-        api_response = call_query_team_api(question)
+        api_response = call_query_team_api(transcript)
 
         end_time = time.time()
         response_time = end_time - start_time
@@ -109,10 +139,10 @@ def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
         if "error" in api_response:
             print(f"\nAPI Error: {api_response['error']}")
             result = {
-                "financebench_id": financebench_id,
-                "company": company,
-                "question": question,
-                "expected_answer": expected_answer,
+                "transcript_path": transcript_path,
+                "transcript": transcript,
+                "expected_tasks_path": expected_tasks_path,
+                "expected_tasks": expected_tasks,
                 "agent_response": f"API Error: {api_response['error']}",
                 "response_time": response_time,
                 "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
@@ -127,10 +157,10 @@ def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
             print(f"\nResponse Time: {response_time:.2f} seconds")
 
             result = {
-                "financebench_id": financebench_id,
-                "company": company,
-                "query": question,
-                "ground_truth": expected_answer,
+                "transcript_path": transcript_path,
+                "transcript": transcript,
+                "expected_tasks_path": expected_tasks_path,
+                "expected_tasks": expected_tasks,
                 "context": api_response.get("context"),
                 "response": agent_response,
                 "thread_id": api_response.get("thread_id"),
@@ -268,7 +298,7 @@ def test_api_connection():
 
 def main():
     """Main evaluation function."""
-    print("Starting Financial Analysis Evaluation")
+    print("Starting Evaluation")
     print("="*80)
     print(f"API Base URL: {API_BASE_URL}")
     print(f"API Key configured: {'Yes' if API_KEY else 'No'}")
@@ -305,6 +335,7 @@ def main():
 
     print("\nResponses to questions completed!")
 
+    # TODO: This is evaluating the old format for johnson.jsonl. Needs to be adapted to the new results
     # Azure AI Projects evaluation (optional)
     try:
         import os
