@@ -736,23 +736,11 @@ class AgentTeam:
                 markdown_response = self._format_markdown_response(request, agent_responses, thread_id)
             else:
                 # In evaluation mode, we return a simple summary without formatting
-                markdown_response = agent_responses
-                for response in markdown_response:
-                    # We should eval a single agent only if not the TeamLeader
-                    if response['agent'] != "TeamLeader":
-                        agent = self._get_member_by_name(response['agent'])
-                        run_id = agent.run_id if agent.run_id else None
-                        context = response['response']
-                        index = context.find("Conclusion:")
-                        if index != -1:
-                            conclusion = context[index + len("Conclusion:"):].strip()
-                            context = context[:index].strip()
-                        else:
-                            conclusion = context.strip()
-
-
-                markdown_response = conclusion
-
+                for response_data in agent_responses:
+                    agent_name = response_data.get('agent', 'Unknown Agent')
+                    if "Classifier-agent-multi" in agent_name :
+                        markdown_response = response_data.get('response', '')
+                        break
 
             # Emit team processing completed event
             if WEBSOCKET_EVENTS_AVAILABLE and event_emitter:
