@@ -72,27 +72,45 @@ CLASSIFIER_AGENT_INSTRUCTIONS: |
     {% endfor %}
 
     **OUTPUT FORMAT REQUIREMENT:**
-    You MUST return your response as a valid JSON object that follows this base structure:
+    You MUST return your response as a valid JSON list object that follows this base structure:
     ```json
-    {
-        "task_type": "string",
-        "parameters":
+    [
         {
+            "task_type": "string",
+            "parameters":
+            {
 
+            }
+        },
+        {
+            "task_type": "string",
+            "parameters":
+            {
+
+            }
         }
-    }
+    ]
     ```
     Where the parameters will come from the action_parameters that match the task_type.
     For example:
     ```json
-    {
-        "task_type": "update_kyc_origin_of_assets",
-        "parameters": {
-            "origin": "str",
-            "details": "str",
-            "corroboration_or_evidence": "list"
+    [
+        {
+            "task_type": "update_kyc_origin_of_assets",
+            "parameters": {
+                "origin": "str",
+                "details": "str",
+                "corroboration_or_evidence": "list"
+            }
+        },
+             {
+            "task_type": "plan_contact",
+            "parameters": {
+                "contact_date": "Next friday",
+                "contact_note": "Invite to the annual meeting"
+            }
         }
-    }
+    ]
     ```
 
     **Instructions:**
@@ -103,7 +121,7 @@ CLASSIFIER_AGENT_INSTRUCTIONS: |
     - If you are not able to extract any actions, return 'Unknown' as the action_name and provide an explanation in the metadata.
     - Be precise and only extract actions that are clearly mentioned or implied in the transcript.
     - For each action, provide relevant context and details in the metadata field.
-    - CRITICAL: Your response must be valid JSON in the ClassificationResult format shown above. Do not include any additional text, explanations, or formatting outside the JSON structure.
+    - CRITICAL: Your response must be valid JSON list obejct in the ClassificationResult format shown above. Do not include any additional text, explanations, or formatting outside the JSON structure.
     - All elements of the JSON MUST be in English, even the individual arguments, for example "origin", "details" etc..
     - Each action should be a separate object in the actions array.
     - The action_name should match one of the available actions or be 'Unknown' if no clear action is identified.
@@ -145,7 +163,6 @@ TEAM_LEADER_INSTRUCTIONS: |
     If an agent does not know the answer, do not assign it any more tasks.
     Using the skills of all the team members when applicable is highly valued.
     Do not create parallel tasks.
-    Always utilize the language classification agent first to identify the language of the transcript.
     Here are the other agents in your team:
 
 TEAM_LEADER_INITIAL_REQUEST: |
@@ -161,7 +178,40 @@ TEAM_LEADER_TASK_COMPLETENESS_CHECK_INSTRUCTIONS: |
     Then use the _create_task function to create the final task to report the answer.
     Do not ever ask user confirmation for creating a task.
     If the request is completely processed, you do not have to create any more tasks.
-    Remember your final response MUST be in the original language of the user question.
+    Remember your final response MUST must be a valid JSON object that follows this base structure:
+    ```json
+    {
+        "response": "string",
+        "sub_agent_response":
+        [{
+            "task_type": "string",
+            "parameters":
+            {
+
+            }
+        },
+        {
+            "task_type": "string",
+            "parameters":
+            {
+
+            }
+        }]
+    }
+    ```
+    Where the parameters will come from the action_parameters that match the task_type.
+    For example:
+    ```json
+    {
+        "task_type": "update_kyc_origin_of_assets",
+        "parameters": {
+            "origin": "str",
+            "details": "str",
+            "corroboration_or_evidence": "list"
+        }
+    }
+    ```
+    .
 
 TEAM_MEMBER_CAN_DELEGATE_INSTRUCTIONS: |
     You are an agent named '{name}'. You are a member in a team of agents. The name of your team is '{TEAM_NAME}'.
