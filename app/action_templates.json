@@ -1,0 +1,109 @@
+[
+  {
+    "task_type": "schedule_meeting",
+    "display_name": "Schedule Meeting",
+    "description": "ScheduleMeeting-agent-multi: Schedules a meeting for a specified date and time. Parameters: date (str), time (str).",
+    "verb_description": "schedule a meeting",
+    "parameters": {
+      "date": "str",
+      "time": "str"
+    },
+    "return_message_template": "Scheduled meeting on {date} at {time}.",
+    "category": "scheduling",
+    "instructions": "You are an agent named ScheduleMeeting-agent-multi. Use the schedule_meeting method to schedule a meeting. You must accept the following parameters: date (str), time (str)."
+  },
+  {
+    "task_type": "update_kyc_total_assets",
+    "display_name": "Update KYC Total Assets",
+    "description": "UpdateKycTotalAssets-agent-multi: Updates the KYC total assets information. No parameters required.",
+    "verb_description": "update KYC total assets",
+    "parameters": {},
+    "return_message_template": "Updated KYC total assets.",
+    "category": "kyc",
+    "instructions": "You are an agent named UpdateKycTotalAssets-agent-multi. Use the update_kyc_total_assets method to update KYC total assets. No parameters required."
+  },
+  {
+    "task_type": "update_kyc_origin_of_assets",
+    "display_name": "Update KYC Origin of Assets",
+    "description": "UpdateKycOriginOfAssets-agent-multi: Updates the origin of assets for KYC. Parameters: origin (str), details (str), corroboration_or_evidence (list).",
+    "verb_description": "update the origin of assets for KYC",
+    "parameters": {
+      "origin": "str",
+      "details": "str",
+      "corroboration_or_evidence": "list"
+    },
+    "return_message_template": "Updated KYC origin of assets: {origin}, details: {details}, evidence: {corroboration_or_evidence}.",
+    "category": "kyc",
+    "instructions": "You are an agent named UpdateKycOriginOfAssets-agent-multi. Use the update_kyc_origin_of_assets method to update the origin of assets for KYC. You must accept the following parameters: origin (str), details (str), corroboration_or_evidence (list)."
+  },
+  {
+    "task_type": "update_kyc_purpose_of_businessrelation",
+    "display_name": "Update KYC Purpose of Business Relation",
+    "description": "UpdateKycPurposeOfBusinessrelation-agent-multi: Updates the purpose of business relation for KYC. Parameters: purpose_category (str), details (str).",
+    "verb_description": "update the purpose of business relation for KYC",
+    "parameters": {
+      "purpose_category": "str",
+      "details": "str"
+    },
+    "return_message_template": "Updated KYC purpose of business relation: {purpose_category}, details: {details}.",
+    "category": "kyc",
+    "instructions": "You are an agent named UpdateKycPurposeOfBusinessrelation-agent-multi. Use the update_kyc_purpose_of_businessrelation method to update the purpose of business relation for KYC. You must accept the following parameters: purpose_category (str), details (str)."
+  },
+  {
+    "task_type": "plan_contact",
+    "display_name": "Plan Contact",
+    "description": "PlanContact-agent-multi: Plans a contact with a client. Parameters: contact_date (str), contact_note (str), channel (str), duration_minutes (int).",
+    "verb_description": "plan a contact with a client",
+    "parameters": {
+      "contact_date": "str",
+      "contact_note": "str",
+      "channel": "str",
+      "duration_minutes": "int"
+    },
+    "return_message_template": "Planned contact on {contact_date} via {channel} for {duration_minutes} minutes. Note: {contact_note}",
+    "category": "contact_management",
+    "instructions": "You are an agent named PlanContact-agent-multi. Use the plan_contact method to plan a contact with a client. You must accept the following parameters: contact_date (str), contact_note (str), channel (str), duration_minutes (int)."
+  },
+  {
+    "task_type": "update_contact_info_non_postal",
+    "display_name": "Update Non-Postal Contact Info",
+    "description": "UpdateContactInfoNonPostal-agent-multi: Updates non-postal contact information. No parameters required.",
+    "verb_description": "update non-postal contact information",
+    "parameters": {},
+    "return_message_template": "Updated non-postal contact info.",
+    "category": "contact_management",
+    "instructions": "You are an agent named UpdateContactInfoNonPostal-agent-multi. Use the update_contact_info_non_postal method to update non-postal contact information. No parameters required."
+  },
+  {
+    "task_type": "update_kyc_activity",
+    "display_name": "Update KYC Activity",
+    "description": "UpdateKycActivity-agent-multi: Updates KYC activity information. No parameters required.",
+    "verb_description": "update KYC activity information",
+    "parameters": {},
+    "return_message_template": "Updated KYC activity.",
+    "category": "kyc",
+    "instructions": "You are an agent named UpdateKycActivity-agent-multi. Use the update_kyc_activity method to update KYC activity information. No parameters required."
+  },
+  {
+    "task_type": "update_contact_info_postal_address",
+    "display_name": "Update Postal Address",
+    "description": "UpdateContactInfoPostalAddress-agent-multi: Updates postal address contact information. No parameters required.",
+    "verb_description": "update postal address contact information",
+    "parameters": {},
+    "return_message_template": "Updated postal address contact info.",
+    "category": "contact_management",
+    "instructions": "You are an agent named UpdateContactInfoPostalAddress-agent-multi. Use the update_contact_info_postal_address method to update postal address contact information. No parameters required."
+  },
+  {
+    "task_type": "save_to_file",
+    "display_name": "Save to File",
+    "description": "SaveToFile-agent-multi: Saves provided content to a specified file. Parameters: content (str).",
+    "verb_description": "save content to a file",
+    "parameters": {
+      "content": "str"
+    },
+    "return_message_template": "Content saved to {file_path}.",
+    "category": "utility",
+    "instructions": "You are an agent named SaveToFile-agent-multi. Use the save_to_file method to save content to a file. You must accept the following parameter: content (str)."
+  }
+]

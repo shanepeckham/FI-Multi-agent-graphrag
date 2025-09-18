@@ -1,37 +1,11 @@
 TEAM_LEADER_MODEL: |
     gpt-4o-mini
 
-# Action Agent Descriptions
-SCHEDULE_MEETING_AGENT_DESCRIPTION: |
-    - ScheduleMeeting-agent-multi: Schedules a meeting for a specified date and time. Parameters: date (str), time (str).
-
-UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION: |
-    - UpdateKYCTotalAssets-agent-multi: Updates the KYC total assets information. No parameters required.
-
-UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION: |
-    - UpdateKYCOriginOfAssets-agent-multi: Updates the origin of assets for KYC. Parameters: origin (str), details (str), corroboration_or_evidence (list).
-
-UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION: |
-    - UpdateKYCPurposeOfBusinessRelation-agent-multi: Updates the purpose of business relation for KYC. Parameters: purpose_category (str), details (str).
-
-PLAN_CONTACT_AGENT_DESCRIPTION: |
-    - PlanContact-agent-multi: Plans a contact with a client. Parameters: contact_date (str), contact_note (str), channel (str), duration_minutes (int).
-
-UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION: |
-    - UpdateContactInfoNonPostal-agent-multi: Updates non-postal contact information. No parameters required.
-
-UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION: |
-    - UpdateKYCActivity-agent-multi: Updates KYC activity information. No parameters required.
-
-UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION: |
-    - UpdateContactInfoPostalAddress-agent-multi: Updates postal address contact information. No parameters required.
-
 CLASSIFIER_AGENT_DESCRIPTION: |
     - Classifier-agent-multi is an expert agent in text classification, capable of categorizing text into predefined categories based on its content.
 
 LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION: |
     - Language-classifier-agent-multi is an expert agent in text classification, capable of categorizing the language of a text into predefined categories based on its content.
-
 
 
 TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS: |
@@ -47,6 +21,7 @@ TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS: |
     original user request is processed completely utilizing all available talent,
     you do not need to create more tasks. Using the skills of all team members
     when applicable is highly valued. Do not create parallel tasks.\n\n
+    Save the output from the classifier, as this will be used for evaluation.\n\n
     Here are the other agents in your team:\n
 
 TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS: |
@@ -61,6 +36,7 @@ TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS: |
     original user request is processed completely utilizing all available talent,
     you do not need to create more tasks. Using the skills of all team members
     when applicable is highly valued. Do not create parallel tasks.\n\n
+    Save the output from the classifier, as this will be used for evaluation.\n\n
     Here are the other agents in your team:\n"
 
 CLASSIFIER_AGENT_INSTRUCTIONS: |
@@ -108,30 +84,6 @@ CLASSIFIER_AGENT_INSTRUCTIONS: |
     - Each action should be a separate object in the actions array.
     - The action_name should match one of the available actions or be 'Unknown' if no clear action is identified.
     - The metadata should provide context, parameters, or details about the action.
-# Action Agent Instructions
-SCHEDULE_MEETING_AGENT_INSTRUCTIONS: |
-    You are an agent named ScheduleMeeting-agent-multi. Use the schedule_meeting method to schedule a meeting. You must accept the following parameters: date (str), time (str).
-
-UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS: |
-    You are an agent named UpdateKYCTotalAssets-agent-multi. Use the update_kyc_total_assets method to update KYC total assets. No parameters required.
-
-UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS: |
-    You are an agent named UpdateKYCOriginOfAssets-agent-multi. Use the update_kyc_origin_of_assets method to update the origin of assets for KYC. You must accept the following parameters: origin (str), details (str), corroboration_or_evidence (list).
-
-UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS: |
-    You are an agent named UpdateKYCPurposeOfBusinessRelation-agent-multi. Use the update_kyc_purpose_of_businessrelation method to update the purpose of business relation for KYC. You must accept the following parameters: purpose_category (str), details (str).
-
-PLAN_CONTACT_AGENT_INSTRUCTIONS: |
-    You are an agent named PlanContact-agent-multi. Use the plan_contact method to plan a contact with a client. You must accept the following parameters: contact_date (str), contact_note (str), channel (str), duration_minutes (int).
-
-UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS: |
-    You are an agent named UpdateContactInfoNonPostal-agent-multi. Use the update_contact_info_non_postal method to update non-postal contact information. No parameters required.
-
-UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS: |
-    You are an agent named UpdateKYCActivity-agent-multi. Use the update_kyc_activity method to update KYC activity information. No parameters required.
-
-UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS: |
-    You are an agent named UpdateContactInfoPostalAddress-agent-multi. Use the update_contact_info_postal_address method to update postal address contact information. No parameters required.
 
 TEAM_LEADER_INSTRUCTIONS: |
     You are an agent named '{agent_name}'. You are a leader of a team of agents. The name of your team is '{TEAM_NAME}'.

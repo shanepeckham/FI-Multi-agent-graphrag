@@ -1,3 +1,6 @@
+import os
+from datetime import datetime
+
 class ActionAgents:
     """
     Action agent methods generated from tasks.json. Each method name matches the task_type and accepts the specified parameters.
@@ -34,3 +37,12 @@ class ActionAgents:
     def update_contact_info_postal_address(self):
         # Implement postal address update logic here
         return "Updated postal address contact info."
+
+    def save_to_file(self, content: str):
+        # Implement file saving logic here
+        filename = datetime.now().isoformat() + ".json"
+        os.makedirs("response", exist_ok=True)
+        file_path = os.path.join("response", filename)
+        with open(file_path, "w") as file:
+            file.write(content + "\n")
+        return f"Content saved to {file_path}."

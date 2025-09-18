@@ -6,14 +6,14 @@ from typing import List, Dict, Any
 
 def load_actions() -> List[Dict[str, Any]]:
     """
-    Load available actions from the actions.json file.
+    Load available actions from the action_templates.json file.
 
     Returns:
         List of action dictionaries, each containing:
         - task_type: The action type (e.g., "schedule_meeting")
         - parameters: Dictionary of parameter names and their types
     """
-    actions_path = "./actions.json"
+    actions_path = "./action_templates.json"
     with open(actions_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 

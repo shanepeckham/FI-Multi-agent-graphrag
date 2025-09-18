@@ -132,6 +132,7 @@ from pathlib import Path
 
 from agent_team_dashboard import AgentTeam, AgentTask
 from agent_trace_configurator import AgentTraceConfigurator
+from runtime_integration_helper import RuntimeAgentIntegrator
 
 # Conditional import for WebSocket manager
 try:
@@ -480,20 +481,13 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
     # Use the shared agents client without 'with' statement to keep it open
     agents_client = _project_client.agents
 
-    action_agents = ActionAgents()
+    # Initialize runtime agent integrator for dynamic agent generation
+    runtime_integrator = RuntimeAgentIntegrator(
+        enable_hot_reload=False  # Set to True for development mode
+    )
 
-    # Register all agent functions
-    agents_client.enable_auto_function_calls({
-        create_task,
-        action_agents.schedule_meeting,
-        action_agents.update_kyc_total_assets,
-        action_agents.update_kyc_origin_of_assets,
-        action_agents.update_kyc_purpose_of_businessrelation,
-        action_agents.plan_contact,
-        action_agents.update_contact_info_non_postal,
-        action_agents.update_kyc_activity,
-        action_agents.update_contact_info_postal_address
-    })
+    # Register all agent functions dynamically from action_templates.json
+    runtime_integrator.register_all_action_functions(agents_client, create_task)
 
     # Setup tracing for debugging
     AgentTraceConfigurator(agents_client=agents_client).setup_tracing()
@@ -520,48 +514,22 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
         LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION = config["LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION"].strip()
         LANGUAGE_CLASSIFIER_AGENT_INSTRUCTIONS = config["LANGUAGE_CLASSIFIER_AGENT_INSTRUCTIONS"].strip()
 
-        # Action Agent Descriptions
-        SCHEDULE_MEETING_AGENT_DESCRIPTION = config["SCHEDULE_MEETING_AGENT_DESCRIPTION"].strip()
-        UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION = config["UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION"].strip()
-        UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION = config["UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION"].strip()
-        UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION = config["UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION"].strip()
-        PLAN_CONTACT_AGENT_DESCRIPTION = config["PLAN_CONTACT_AGENT_DESCRIPTION"].strip()
-        UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION = config["UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION"].strip()
-        UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION = config["UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION"].strip()
-        UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION = config["UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION"].strip()
+        # NOTE: Action Agent Descriptions and Instructions are now dynamically generated
+        # from action_templates.json via the RuntimeAgentIntegrator. No need to load
+        # them from YAML config anymore - they are handled in runtime_integrator.setup_dynamic_agents()
 
-        # Action Agent Instructions
-        SCHEDULE_MEETING_AGENT_INSTRUCTIONS = config["SCHEDULE_MEETING_AGENT_INSTRUCTIONS"].strip()
-        UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS = config["UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS"].strip()
-        UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS = config["UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS"].strip()
-        UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS = config["UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS"].strip()
-        PLAN_CONTACT_AGENT_INSTRUCTIONS = config["PLAN_CONTACT_AGENT_INSTRUCTIONS"].strip()
-        UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS = config["UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS"].strip()
-        UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS = config["UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS"].strip()
-        UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS = config["UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS"].strip()
+        # Get dynamic agent descriptions for Team Leader instructions
+        dynamic_agent_descriptions = runtime_integrator.get_dynamic_agent_descriptions()
+        dynamic_descriptions_text = "\n".join(dynamic_agent_descriptions)
 
         if not use_reasoning:
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{PLAN_CONTACT_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{dynamic_descriptions_text}"
         else:
             TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{CLASSIFIER_AGENT_DESCRIPTION}"
             TEAM_LEADER_INSTRUCTIONS_ALL_AGENTS += f"\n\n{LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{SCHEDULE_MEETING_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_TOTAL_ASSETS_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{PLAN_CONTACT_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_KYC_ACTIVITY_AGENT_DESCRIPTION}"
-            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_DESCRIPTION}"
+            TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS += f"\n\n{dynamic_descriptions_text}"
 
             # If no question is provided, use the reasoning current question
             if question == "":
@@ -622,87 +590,18 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
         can_delegate=False
     )
 
-    # Action Agents
-    # ScheduleMeeting-agent
-    schedule_meeting_tool = ToolSet()
-    schedule_meeting_tool.add(FunctionTool(functions={action_agents.schedule_meeting}))
-    agent_team.add_agent(
-        model=MODEL_DEPLOYMENT_NAME,
-        name="ScheduleMeeting-agent-multi",
-        instructions=(SCHEDULE_MEETING_AGENT_INSTRUCTIONS),
-        tools=schedule_meeting_tool.definitions,
-        can_delegate=False
-    )
-    # UpdateKYCTotalAssets-agent
-    update_kyc_total_assets_tool = ToolSet()
-    update_kyc_total_assets_tool.add(FunctionTool(functions={action_agents.update_kyc_total_assets}))
-    agent_team.add_agent(
-        model=MODEL_DEPLOYMENT_NAME,
-        name="UpdateKYCTotalAssets-agent-multi",
-        instructions=(UPDATE_KYC_TOTAL_ASSETS_AGENT_INSTRUCTIONS),
-        tools=update_kyc_total_assets_tool.definitions,
-        can_delegate=False
-    )
-    # UpdateKYCOriginOfAssets-agent
-    update_kyc_origin_of_assets_tool = ToolSet()
-    update_kyc_origin_of_assets_tool.add(FunctionTool(functions={action_agents.update_kyc_origin_of_assets}))
-    agent_team.add_agent(
-        model=MODEL_DEPLOYMENT_NAME,
-        name="UpdateKYCOriginOfAssets-agent-multi",
-        instructions=(UPDATE_KYC_ORIGIN_OF_ASSETS_AGENT_INSTRUCTIONS),
-        tools=update_kyc_origin_of_assets_tool.definitions,
-        can_delegate=False
-    )
-    # UpdateKYCPurposeOfBusinessRelation-agent
-    update_kyc_purpose_of_businessrelation_tool = ToolSet()
-    update_kyc_purpose_of_businessrelation_tool.add(FunctionTool(functions={action_agents.update_kyc_purpose_of_businessrelation}))
-    agent_team.add_agent(
-        model=MODEL_DEPLOYMENT_NAME,
-        name="UpdateKYCPurposeOfBusinessRelation-agent-multi",
-        instructions=(UPDATE_KYC_PURPOSE_OF_BUSINESSRELATION_AGENT_INSTRUCTIONS),
-        tools=update_kyc_purpose_of_businessrelation_tool.definitions,
-        can_delegate=False
-    )
-    # PlanContact-agent
-    plan_contact_tool = ToolSet()
-    plan_contact_tool.add(FunctionTool(functions={action_agents.plan_contact}))
-    agent_team.add_agent(
-        model=MODEL_DEPLOYMENT_NAME,
-        name="PlanContact-agent-multi",
-        instructions=(PLAN_CONTACT_AGENT_INSTRUCTIONS),
-        tools=plan_contact_tool.definitions,
-        can_delegate=False
-    )
-    # UpdateContactInfoNonPostal-agent
-    update_contact_info_non_postal_tool = ToolSet()
-    update_contact_info_non_postal_tool.add(FunctionTool(functions={action_agents.update_contact_info_non_postal}))
-    agent_team.add_agent(
-        model=MODEL_DEPLOYMENT_NAME,
-        name="UpdateContactInfoNonPostal-agent-multi",
-        instructions=(UPDATE_CONTACT_INFO_NON_POSTAL_AGENT_INSTRUCTIONS),
-        tools=update_contact_info_non_postal_tool.definitions,
-        can_delegate=False
-    )
-    # UpdateKYCActivity-agent
-    update_kyc_activity_tool = ToolSet()
-    update_kyc_activity_tool.add(FunctionTool(functions={action_agents.update_kyc_activity}))
-    agent_team.add_agent(
-        model=MODEL_DEPLOYMENT_NAME,
-        name="UpdateKYCActivity-agent-multi",
-        instructions=(UPDATE_KYC_ACTIVITY_AGENT_INSTRUCTIONS),
-        tools=update_kyc_activity_tool.definitions,
-        can_delegate=False
-    )
-    # UpdateContactInfoPostalAddress-agent
-    update_contact_info_postal_address_tool = ToolSet()
-    update_contact_info_postal_address_tool.add(FunctionTool(functions={action_agents.update_contact_info_postal_address}))
-    agent_team.add_agent(
-        model=MODEL_DEPLOYMENT_NAME,
-        name="UpdateContactInfoPostalAddress-agent-multi",
-        instructions=(UPDATE_CONTACT_INFO_POSTAL_ADDRESS_AGENT_INSTRUCTIONS),
-        tools=update_contact_info_postal_address_tool.definitions,
-        can_delegate=False
-    )
+    # =========================================================================
+    # DYNAMIC AGENT SETUP - Runtime generation from action_templates.json
+    # =========================================================================
+    print("🤖 Setting up dynamic agents from action_templates.json...")
+    agent_count = runtime_integrator.get_agent_count()
+    print(f"📊 Found {agent_count} action agents to create")
+
+    # Set up all action agents dynamically
+    runtime_integrator.setup_dynamic_agents(agent_team, MODEL_DEPLOYMENT_NAME, config)
+
+    print("✅ Dynamic agent setup completed!")
+    print(f"📝 Available agents: {', '.join(runtime_integrator.list_available_agents())}")
 
     # Assemble and run the team
     print("🔧 Assembling agent team...")
@@ -715,7 +614,7 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
     print(f"   - Evaluation: {evaluation_mode}")
 
     # Process the request and ensure we wait for completion
-    result = agent_team.process_request(request=question, evaluation_mode=evaluation_mode)
+    result, context, thread_id, run_id, token_usage = agent_team.process_request(request=question, evaluation_mode=evaluation_mode)
     agent_team.dismantle_team()
 
     print(f"✅ Agent team processing completed")
@@ -723,9 +622,10 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
 
     if not result:
         print("⚠️  Error: Agent team returned empty or incomplete response. Please try again.")
-        return "Error: Agent team returned empty or incomplete response. Please try again."
+        error_msg = "Error: Agent team returned empty or incomplete response. Please try again."
+        return error_msg, "", "", "", None
 
-    return result
+    return result, context, thread_id, run_id, token_usage
 
 
 @app.get("/")
@@ -838,11 +738,11 @@ def query_team_endpoint(request: QueryRequest) -> QueryResponse:
             raise HTTPException(status_code=400, detail="Query is required")
 
         # Run the agent team with the question using pre-loaded resources
-        markdown_response, context, thread_id, run_id, token_usage = _setup_agent_team_with_globals(question,
+        result, context, thread_id, run_id, token_usage = _setup_agent_team_with_globals(question,
             classifier_type=request.classifier_type, use_reasoning=request.use_reasoning, evaluation_mode=request.evaluation_mode)
 
         return QueryResponse(
-            response=markdown_response,
+            response=result,
             query=question,
             context=context,
             thread_id=thread_id,
