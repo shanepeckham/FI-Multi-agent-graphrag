@@ -139,9 +139,9 @@ def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
         if "error" in api_response:
             print(f"\nAPI Error: {api_response['error']}")
             result = {
-                "transcript_path": transcript_path,
+                "transcript_path": str(transcript_path),
                 "transcript": transcript,
-                "expected_tasks_path": expected_tasks_path,
+                "expected_tasks_path": str(expected_tasks_path),
                 "expected_tasks": expected_tasks,
                 "agent_response": f"API Error: {api_response['error']}",
                 "response_time": response_time,
@@ -157,7 +157,9 @@ def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
             print(f"\nResponse Time: {response_time:.2f} seconds")
 
             result = {
+                "transcript_path": str(transcript_path),
                 "transcript": transcript,
+                "expected_tasks_path": str(expected_tasks_path),
                 "expected_tasks": expected_tasks,
                 "context": api_response.get("context"),
                 "response": agent_response,
@@ -178,10 +180,10 @@ def evaluate_question(question_data: Dict[str, Any]) -> Dict[str, Any]:
         print(f"\nError processing question: {str(e)}")
 
         result = {
-            "financebench_id": financebench_id,
-            "company": company,
-            "query": question,
-            "ground_truth": expected_answer,
+            "transcript_path": str(transcript_path),
+            "transcript": transcript,
+            "expected_tasks_path": str(expected_tasks_path),
+            "expected_tasks": expected_tasks,
             "response": f"Error: {str(e)}",
             "response_time": response_time,
             "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
@@ -398,9 +400,9 @@ def main():
             run_id = result['run_id']
 
             converted_data = converter.convert(thread_id, run_id)
-            question_id = result['financebench_id']
+            transcript_path = result['transcript_path']
 
-            print(f"Evaluating question ID: {question_id}")
+            print(f"Evaluating transcript file: {transcript_path}")
 
             # Save converted data to JSON file
             save_agent_converted_data(converted_data, AGENT_RESULTS_FILE_PATH)
