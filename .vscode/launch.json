@@ -3,40 +3,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Indexer",
-			"type": "debugpy",
-			"request": "launch",
-			"module": "poetry",
-			"args": [
-				"poe", "index",
-				"--root", "<path_to_ragtest_root_demo>"
-			],
-		},
-		{
-			"name": "Query",
-			"type": "debugpy",
-			"request": "launch",
-			"module": "poetry",
-			"args": [
-				"poe", "query",
-				"--root", "<path_to_ragtest_root_demo>",
-				"--method", "global",
-				"--query", "What are the top themes in this story",
-			]
-		},
-		{
-			"name": "Prompt Tuning",
-			"type": "debugpy",
-			"request": "launch",
-			"module": "poetry",
-			"args": [
-				"poe", "prompt-tune",
-				"--config",
-				"<path_to_ragtest_root_demo>/settings.yaml",
-			]
-		},
-		{
-			"name": "Web Debug",
+			"name": "Debug App",
 			"type": "debugpy",
 			"request": "launch",
 			"module": "uvicorn",
@@ -46,6 +13,15 @@
 				"--host", "0.0.0.0",
 				"--port", "8000"
 			]
+		},
+		{
+			"name": "Debug Evaluation",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "${workspaceFolder}/eval/evaluate_data_api_new.py",
+			"cwd": "${workspaceFolder}/eval",
+			"justMyCode": false,
+			"console": "integratedTerminal"
 		}
 	]
 }
