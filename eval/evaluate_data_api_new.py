@@ -33,7 +33,7 @@ API_KEY = os.getenv("API_KEY")
 
 # default payload for API requests
 DEFAULT_PAYLOAD = {
-        "classifier_type": "LLM",  # or "SLM"
+        "classifier_type": "LLM",  # "LLM" or "SLM"
         "use_reasoning": False,
         "evaluation_mode": True
     }
