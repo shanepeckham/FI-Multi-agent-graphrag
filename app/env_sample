@@ -8,7 +8,9 @@ PROJECT_ENDPOINT=https://fiagent-resource.services.ai.azure.com/api/projects/fia
 AZURE_OPENAI_ENDPOINT=https://fiagent-resource.cognitiveservices.azure.com
 MODEL_DEPLOYMENT_NAME=gpt-4.1
 REASONING_MODEL_DEPLOYMENT_NAME=o3-mini
-SLM_MODEL_DEPLOYMENT_NAME=gpt-4.1
+SLM_MODEL_DEPLOYMENT_NAME=gpt-4.1-mini-2025-04-14.ft-ef016ef0a2a446a9978a7501f989f96f
+SLM_API_KEY=<API-KEY>
+SLM_OPENAI_ENDPOINT=<OPENAI-ENDPOINT-FOR-SLM>
 TEAM_NAME=cr_team
 
 # Azure CLI Authentication (Optional - choose one method)
