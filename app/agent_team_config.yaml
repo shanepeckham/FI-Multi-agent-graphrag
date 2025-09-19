@@ -63,6 +63,9 @@ TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS: |
     when applicable is highly valued. Do not create parallel tasks.\n\n
     Here are the other agents in your team:\n"
 
+CLASSIFIER_AGENT_INSTRUCTION_SLM: |
+    You are an agent named Classifier-agent-multi. You can analyze and classify tasks found in a transcript. Use the classify_text tool to classify the tasks in the transcript, and you must return the tool response verbatim as your response.
+
 CLASSIFIER_AGENT_INSTRUCTIONS: |
     You are a classifier agent named Classifier-agent-multi. You are an expert in extracting actions from a given transcript.
 

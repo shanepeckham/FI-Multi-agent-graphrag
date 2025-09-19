@@ -67,6 +67,7 @@ import traceback
 import warnings
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Optional, Union, Annotated
+from openai import AzureOpenAI
 
 import yaml
 from jinja2 import Template
@@ -485,6 +486,7 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
     # Register all agent functions
     agents_client.enable_auto_function_calls({
         create_task,
+        classify_text,
         action_agents.schedule_meeting,
         action_agents.update_kyc_total_assets,
         action_agents.update_kyc_origin_of_assets,
@@ -517,6 +519,7 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
         TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS = config["TEAM_LEADER_INSTRUCTIONS_REASONING_ALL_AGENTS"].strip()
         CLASSIFIER_AGENT_DESCRIPTION = config["CLASSIFIER_AGENT_DESCRIPTION"].strip()
         CLASSIFIER_AGENT_INSTRUCTIONS = config["CLASSIFIER_AGENT_INSTRUCTIONS"].strip()
+        CLASSIFIER_AGENT_INSTRUCTION_SLM = config["CLASSIFIER_AGENT_INSTRUCTION_SLM"].strip()
         LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION = config["LANGUAGE_CLASSIFIER_AGENT_DESCRIPTION"].strip()
         LANGUAGE_CLASSIFIER_AGENT_INSTRUCTIONS = config["LANGUAGE_CLASSIFIER_AGENT_INSTRUCTIONS"].strip()
 
@@ -600,12 +603,14 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
         action_parameters=all_action_parameters
     )
 
-    classifier_model = MODEL_DEPLOYMENT_NAME if classifier_type == "LLM" else SLM_MODEL_DEPLOYMENT_NAME
+    classifier_toolset = ToolSet()
+    classifier_toolset.add(FunctionTool(functions={classify_text}))
     agent_team.add_agent(
-        model=classifier_model,
+        model=MODEL_DEPLOYMENT_NAME,
         name="Classifier-agent-multi",
-        instructions=rendered_classifier_instructions,
-        can_delegate=False
+        instructions=rendered_classifier_instructions if classifier_type == "LLM" else CLASSIFIER_AGENT_INSTRUCTION_SLM,
+        can_delegate=False,
+        tools=None if classifier_type == "LLM" else classifier_toolset.definitions
     )
 
     # Render the classifier instructions template with actual action data
@@ -613,7 +618,6 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
     rendered_language_classifier_instructions = language_classifier_template.render(
         languages=languages
     )
-
     language_classifier_model = MODEL_DEPLOYMENT_NAME if classifier_type == "LLM" else SLM_MODEL_DEPLOYMENT_NAME
     agent_team.add_agent(
         model=language_classifier_model,
@@ -727,6 +731,39 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
 
     return result
 
+def classify_text(transcript: str) -> str:
+    """
+    Classify input text by extracting actions from a given transcript.
+
+    """
+    endpoint = os.getenv("SLM_OPENAI_ENDPOINT", "https://isaca-mfmlpbix-northcentralus.openai.azure.com/")
+    deployment = os.getenv("SLM_MODEL_DEPLOYMENT_NAME", "gpt-4o")
+    subscription_key = os.getenv("SLM_API_KEY")
+    api_version = "2024-12-01-preview"
+
+    client = AzureOpenAI(
+        api_version=api_version,
+        azure_endpoint=endpoint,
+        api_key=subscription_key,
+    )
+
+    response = client.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are an expert in classifying tasks from text. ",
+            },
+            {
+                "role": "user",
+                "content": transcript,
+            }
+        ],
+
+        model=deployment
+    )
+    # the slm only responds once with the output in json as text. The other
+    # agent will convert it to json and show it in the output.
+    return response.choices[0].message.content
 
 @app.get("/")
 async def root():
