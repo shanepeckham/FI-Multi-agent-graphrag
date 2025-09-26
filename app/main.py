@@ -618,9 +618,8 @@ def _setup_agent_team_with_globals(question: str, classifier_type: str, use_reas
     rendered_language_classifier_instructions = language_classifier_template.render(
         languages=languages
     )
-    language_classifier_model = MODEL_DEPLOYMENT_NAME if classifier_type == "LLM" else SLM_MODEL_DEPLOYMENT_NAME
     agent_team.add_agent(
-        model=language_classifier_model,
+        model=MODEL_DEPLOYMENT_NAME,
         name="Language-classifier-agent-multi",
         instructions=rendered_language_classifier_instructions,
         can_delegate=False
